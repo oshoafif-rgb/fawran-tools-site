@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محلل عنوان فيديو يوتيوب (Title Analyzer) | فورا.tools</title>
+<meta name="description" content="افحص عنوان فيديوك على يوتيوب: الطول المثالي، الكلمات المفتاحية، كلمات الجذب، والأحرف الكبيرة، واحصل على نقاط تحسين فورية.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#4F3FF0">
+<link rel="canonical" href="https://fawran.tools/tools/youtube-title-analyzer.html">
+<link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/youtube-title-analyzer.html">
+<link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/youtube-title-analyzer.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fawran.tools/tools/youtube-title-analyzer.html">
+<meta property="og:title" content="محلل عنوان فيديو يوتيوب (Title Analyzer) | فورا.tools">
+<meta property="og:description" content="افحص عنوان فيديوك على يوتيوب: الطول المثالي، الكلمات المفتاحية، كلمات الجذب، والأحرف الكبيرة، واحصل على نقاط تحسين فورية.">
+<meta property="og:site_name" content="فورا.tools">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="محلل عنوان فيديو يوتيوب (Title Analyzer) | فورا.tools">
+<meta name="twitter:description" content="افحص عنوان فيديوك على يوتيوب: الطول المثالي، الكلمات المفتاحية، كلمات الجذب، والأحرف الكبيرة، واحصل على نقاط تحسين فورية.">
+<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .title-input{
+    width:100%;font-family:'Tajawal',sans-serif;font-size:17px;font-weight:700;padding:16px 18px;
+    border-radius:12px;border:1.5px solid var(--line);background:#FDFCFA;color:var(--ink);
+  }
+  [data-theme="dark"] .title-input{background:#211F34;}
+  .title-input:focus{outline:none;border-color:var(--indigo);}
+
+  .len-bar-wrap{margin-top:10px;}
+  .len-bar{height:8px;border-radius:99px;background:var(--surface-sunk);overflow:hidden;}
+  .len-bar .fill{height:100%;border-radius:99px;transition:width .2s, background-color .2s;}
+  .len-label{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:6px;font-family:'IBM Plex Mono',monospace;}
+
+  .score-ring-wrap{display:flex;align-items:center;gap:20px;margin:26px 0;flex-wrap:wrap;}
+  .score-ring{position:relative;width:100px;height:100px;flex:0 0 auto;}
+  .score-ring svg{transform:rotate(-90deg);}
+  .score-ring .num{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:24px;
+  }
+  .score-summary .title{font-weight:800;font-size:15px;}
+  .score-summary .sub{font-size:13px;color:var(--muted);margin-top:4px;}
+
+  .check-list{display:flex;flex-direction:column;gap:9px;}
+  .check-item{
+    display:flex;align-items:flex-start;gap:10px;padding:11px 13px;border-radius:10px;
+    background:var(--surface);border:1px solid var(--line);font-size:13px;
+  }
+  .check-item .ic{flex:0 0 auto;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+  .check-item .ic svg{width:11px;height:11px;}
+  .check-item.pass .ic{background:rgba(47,125,83,.15);color:var(--good);}
+  .check-item.fail .ic{background:rgba(180,35,44,.12);color:var(--danger);}
+  .check-item.info .ic{background:var(--indigo-soft);color:var(--indigo-deep);}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "محلل عنوان فيديو يوتيوب",
+  "url": "https://fawran.tools/tools/youtube-title-analyzer.html",
+  "description": "افحص عنوان فيديوك على يوتيوب: الطول المثالي، الكلمات المفتاحية، كلمات الجذب، والأحرف الكبيرة، واحصل على نقاط تحسين فورية.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "فورا.tools", "url": "https://fawran.tools/index.html"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "الأدوات", "item": "https://fawran.tools/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "أدوات يوتيوب", "item": "https://fawran.tools/index.html#youtube"},
+    {"@type": "ListItem", "position": 3, "name": "محلل عنوان الفيديو", "item": "https://fawran.tools/tools/youtube-title-analyzer.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="../index.html" class="active">الأدوات</a>
+        <a href="../blog/index.html">المدونة</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../contact.html">تواصل معنا</a>
+      </nav>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="../en/tools/youtube-title-analyzer.html" class="lang-switch" title="View in English">EN</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap tool-page">
+  <div class="crumb"><a href="../index.html">الأدوات</a> / أدوات يوتيوب / محلل العنوان</div>
+  <h1>محلل عنوان فيديو يوتيوب</h1>
+  <p class="tool-lede">
+    اكتب عنوان فيديوك واحصل على تحليل فوري لنقاط القوة والضعف — الطول، الكلمات الجاذبة، والأحرف
+    الكبيرة — عشان تزوّد فرصة نقر أعلى.
+  </p>
+
+  <div class="tool-card-shell">
+    <input type="text" class="title-input" id="titleInput" placeholder="اكتب عنوان الفيديو هنا..." maxlength="150">
+    <div class="len-bar-wrap">
+      <div class="len-bar"><div class="fill" id="lenFill"></div></div>
+      <div class="len-label"><span id="lenCount">0 حرف</span><span>المثالي: 40–70 حرف</span></div>
+    </div>
+
+    <div class="score-ring-wrap">
+      <div class="score-ring">
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="42" fill="none" stroke="var(--surface-sunk)" stroke-width="10"/>
+          <circle cx="50" cy="50" r="42" fill="none" id="scoreCircle" stroke="var(--indigo)" stroke-width="10"
+            stroke-dasharray="264" stroke-dashoffset="264" stroke-linecap="round"/>
+        </svg>
+        <div class="num" id="scoreNum">0</div>
+      </div>
+      <div class="score-summary">
+        <div class="title" id="scoreTitle">اكتب عنوانًا للبدء</div>
+        <div class="sub" id="scoreSub">سيظهر تحليل مفصّل هنا</div>
+      </div>
+    </div>
+
+    <div class="check-list" id="checkList"></div>
+  </div>
+
+  <div class="footer-note">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    التحليل يتم محليًا في متصفحك — عنوانك لا يُرسل لأي خادم
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ad-slot ad-slot-leaderboard">
+    <span class="ad-label">إعلان · Advertisement</span>
+    <div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+    </div>
+    <div class="footer-col">
+      <h4>الموقع</h4>
+      <a href="../index.html">الصفحة الرئيسية</a>
+      <a href="../blog/index.html">المدونة</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="../privacy.html">سياسة الخصوصية</a>
+      <a href="../terms.html">شروط الاستخدام</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>
+const titleInput = document.getElementById('titleInput');
+const lenFill = document.getElementById('lenFill');
+const lenCount = document.getElementById('lenCount');
+const scoreCircle = document.getElementById('scoreCircle');
+const scoreNum = document.getElementById('scoreNum');
+const scoreTitle = document.getElementById('scoreTitle');
+const scoreSub = document.getElementById('scoreSub');
+const checkList = document.getElementById('checkList');
+
+const POWER_WORDS = ['أفضل','مجاني','سريع','سهل','جديد','حصري','مذهل','خطير','سر','أسرار','كيف','لماذا','النهائي','خطوة بخطوة','مضمون','احترافي','كامل','شامل'];
+const CLICKBAIT_WORDS = ['صادم','لن تصدق','خطير جدًا','مستحيل'];
+
+function analyze(){
+  const title = titleInput.value;
+  const len = title.length;
+
+  lenCount.textContent = len + ' حرف';
+  let lenColor = 'var(--danger)';
+  let lenPct = Math.min(100, (len/70)*100);
+  if(len >= 40 && len <= 70){ lenColor = 'var(--good)'; }
+  else if(len >= 25 && len < 40){ lenColor = 'var(--gold-deep)'; }
+  else if(len > 70 && len <= 100){ lenColor = 'var(--gold-deep)'; }
+  lenFill.style.width = lenPct + '%';
+  lenFill.style.background = lenColor;
+
+  if(!title.trim()){
+    scoreNum.textContent = '0';
+    scoreCircle.style.strokeDashoffset = 264;
+    scoreTitle.textContent = 'اكتب عنوانًا للبدء';
+    scoreSub.textContent = 'سيظهر تحليل مفصّل هنا';
+    checkList.innerHTML = '';
+    return;
+  }
+
+  const checks = [];
+  let score = 0;
+  const maxScore = 6;
+
+  // 1. Length check
+  if(len >= 40 && len <= 70){
+    checks.push({pass:true, text:`طول العنوان ممتاز (${len} حرفًا) — ضمن النطاق المثالي 40–70.`});
+    score++;
+  } else if(len < 40){
+    checks.push({pass:false, text:`العنوان قصير (${len} حرفًا) — حاول توسيعه لـ40–70 حرفًا لاستغلال مساحة النتائج.`});
+  } else {
+    checks.push({pass:false, text:`العنوان طويل (${len} حرفًا) — ممكن يتقطع في نتائج البحث والمقترحات.`});
+  }
+
+  // 2. Power/attention words
+  const hasPower = POWER_WORDS.some(w => title.includes(w));
+  if(hasPower){
+    checks.push({pass:true, text:'يحتوي على كلمة جاذبة للانتباه (زي "أفضل"، "سر"، "خطوة بخطوة").'});
+    score++;
+  } else {
+    checks.push({pass:false, text:'لا يوجد كلمات جاذبة واضحة — جرّب إضافة كلمة زي "أفضل" أو "كيف" أو "مجاني".'});
+  }
+
+  // 3. Numbers
+  if(/\d/.test(title)){
+    checks.push({pass:true, text:'يحتوي على رقم — الأرقام بتزوّد نسبة النقر عادة (زي "5 طرق" أو "2026").'});
+    score++;
+  } else {
+    checks.push({pass:false, text:'لا يوجد أرقام — فكّر تضيف رقم (عدد نقاط، سنة، مدة) لو مناسب لمحتواك.', soft:true});
+  }
+
+  // 4. Capitalization pattern (relevant mainly for English, but check for ALL CAPS spam)
+  const upperRatio = (title.match(/[A-Z]/g) || []).length / (title.match(/[A-Za-z]/g) || [1]).length;
+  if(title.match(/[A-Za-z]/) && upperRatio > 0.7){
+    checks.push({pass:false, text:'أغلب العنوان بأحرف كبيرة (CAPS) — يوتيوب أحيانًا يعتبره سبام ويقلّل ظهوره.'});
+  } else {
+    checks.push({pass:true, text:'استخدام الأحرف الكبيرة/الصغيرة طبيعي وغير مبالغ فيه.'});
+    score++;
+  }
+
+  // 5. Clickbait extreme phrases
+  const hasClickbait = CLICKBAIT_WORDS.some(w=> title.includes(w));
+  if(hasClickbait){
+    checks.push({pass:false, text:'يحتوي على عبارات تضليل قوية جدًا (Clickbait) — قد تقلل ثقة المشاهد وتزوّد معدل الخروج المبكر.'});
+  } else {
+    checks.push({pass:true, text:'خالٍ من عبارات التضليل الفجّة — عنوان يبني ثقة أفضل مع الوقت.'});
+    score++;
+  }
+
+  // 6. Brackets/year usage (common high-CTR pattern)
+  if(/[\(\[].*[\)\]]/.test(title) || /202[4-9]/.test(title)){
+    checks.push({pass:true, text:'يستخدم أقواس أو سنة — نمط معروف بجذب الانتباه في نتائج البحث.', info:true});
+    score++;
+  } else {
+    checks.push({pass:false, text:'ممكن تضيف سنة أو كلمة توضيحية بين قوسين، زي "(دليل 2026)" — اختياري مش إلزامي.', soft:true});
+  }
+
+  const pct = Math.round((score/maxScore)*100);
+  const circumference = 264;
+  scoreCircle.style.strokeDashoffset = circumference - (circumference * pct/100);
+  scoreCircle.style.stroke = pct >= 70 ? 'var(--good)' : pct >= 40 ? 'var(--gold-deep)' : 'var(--danger)';
+  scoreNum.textContent = pct;
+
+  if(pct >= 80){ scoreTitle.textContent = 'عنوان قوي جدًا 🎉'; scoreSub.textContent = 'يحقق أغلب معايير العناوين الناجحة.'; }
+  else if(pct >= 50){ scoreTitle.textContent = 'عنوان جيد، فيه مجال للتحسين'; scoreSub.textContent = 'راجع النقاط اللي محتاجة تعديل بالأسفل.'; }
+  else { scoreTitle.textContent = 'العنوان محتاج تحسين'; scoreSub.textContent = 'طبّق النصايح بالأسفل لتقوية العنوان.'; }
+
+  checkList.innerHTML = checks.map(c=>`
+    <div class="check-item ${c.info ? 'info' : (c.pass ? 'pass' : 'fail')}">
+      <span class="ic">
+        ${c.pass || c.info
+          ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'
+          : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>'}
+      </span>
+      <span>${c.text}</span>
+    </div>
+  `).join('');
+}
+
+titleInput.addEventListener('input', analyze);
+analyze();
+</script>
+</body>
+</html>

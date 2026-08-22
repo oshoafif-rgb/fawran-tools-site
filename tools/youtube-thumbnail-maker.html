@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صانع الصورة المصغرة الاحترافي (Thumbnail Maker) | فورا.tools</title>
+<meta name="description" content="صمّم صورة مصغرة احترافية لفيديوهات يوتيوب بالمقاس الصحيح 1280×720، مع نصوص متعددة بحدود وظلال وخلفيات هايلايت، ورموز تعبيرية جاهزة، للتحميل.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#4F3FF0">
+<link rel="canonical" href="https://fawran.tools/tools/youtube-thumbnail-maker.html">
+<link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/youtube-thumbnail-maker.html">
+<link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/youtube-thumbnail-maker.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fawran.tools/tools/youtube-thumbnail-maker.html">
+<meta property="og:title" content="صانع الصورة المصغرة الاحترافي (Thumbnail Maker) | فورا.tools">
+<meta property="og:description" content="صمّم صورة مصغرة احترافية لفيديوهات يوتيوب بالمقاس الصحيح 1280×720، مع نصوص متعددة بحدود وظلال وخلفيات هايلايت، ورموز تعبيرية جاهزة، للتحميل.">
+<meta property="og:site_name" content="فورا.tools">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="صانع الصورة المصغرة الاحترافي (Thumbnail Maker) | فورا.tools">
+<meta name="twitter:description" content="صمّم صورة مصغرة احترافية لفيديوهات يوتيوب بالمقاس الصحيح 1280×720، مع نصوص متعددة بحدود وظلال وخلفيات هايلايت، ورموز تعبيرية جاهزة، للتحميل.">
+<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .editor-layout{display:grid;grid-template-columns:1fr 320px;gap:20px;}
+  @media(max-width:960px){.editor-layout{grid-template-columns:1fr;}}
+
+  .stage-wrap{
+    background:#111;border-radius:14px;overflow:hidden;position:relative;
+    aspect-ratio:1280/720;width:100%;
+  }
+  .stage-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
+
+  .layer{
+    position:absolute;cursor:move;user-select:none;display:flex;align-items:center;justify-content:center;
+    border:1.5px dashed transparent;padding:2px;white-space:nowrap;
+  }
+  .layer.selected{border-color:var(--indigo);}
+  .layer .handle-rs{
+    position:absolute;bottom:-9px;left:-9px;width:16px;height:16px;border-radius:50%;
+    background:#fff;border:2px solid var(--indigo);cursor:nesw-resize;display:none;
+  }
+  .layer.selected .handle-rs{display:block;}
+  .layer .handle-del{
+    position:absolute;top:-9px;right:-9px;width:16px;height:16px;border-radius:50%;
+    background:var(--danger);color:#fff;display:none;align-items:center;justify-content:center;cursor:pointer;
+  }
+  .layer.selected .handle-del{display:flex;}
+  .layer .handle-del svg{width:9px;height:9px;}
+  .layer.img-layer img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;}
+
+  .panel-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;}
+  .panel-card h3{margin:0 0 12px;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:space-between;}
+  .panel-row{margin-bottom:12px;}
+  .panel-row:last-child{margin-bottom:0;}
+  .panel-row label{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:6px;color:var(--ink-soft);}
+  .panel-row label .val{font-family:'IBM Plex Mono',monospace;color:var(--indigo-deep);font-weight:600;}
+  .panel-row input[type=text]{
+    width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--line);
+    font-family:'Tajawal',sans-serif;font-size:13.5px;background:#FDFCFA;color:var(--ink);
+  }
+  [data-theme="dark"] .panel-row input[type=text]{background:#211F34;}
+  .swatch-row{display:flex;gap:8px;align-items:center;}
+  .swatch-row input[type=color]{width:36px;height:32px;border-radius:8px;border:1px solid var(--line);cursor:pointer;padding:2px;}
+  .bg-mode-chips{display:flex;gap:6px;flex-wrap:wrap;}
+  .bg-mode-chip{font-size:11.5px;font-weight:700;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;}
+  .bg-mode-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+  [data-theme="dark"] .bg-mode-chip{background:var(--surface);}
+  .upload-mini{
+    display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;border:1.5px dashed var(--line);
+    border-radius:9px;cursor:pointer;font-size:12.5px;font-weight:700;color:var(--ink-soft);
+  }
+  .upload-mini:hover{border-color:var(--indigo);color:var(--indigo-deep);}
+
+  .mini-toggle{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;cursor:pointer;color:var(--ink-soft);}
+  .mini-toggle input{width:16px;height:16px;cursor:pointer;}
+
+  .layers-list{display:flex;flex-direction:column;gap:6px;max-height:150px;overflow-y:auto;}
+  .layer-chip{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:12.5px;
+  }
+  [data-theme="dark"] .layer-chip{background:var(--surface-sunk);}
+  .layer-chip.active{border-color:var(--indigo);background:var(--indigo-soft);}
+  .layer-chip .txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;font-weight:700;}
+  .layer-chip .del{color:var(--danger);flex:0 0 auto;}
+
+  .empty-hint{font-size:12.5px;color:var(--muted);text-align:center;padding:14px 0;}
+
+  .emoji-popover{
+    position:absolute;bottom:calc(100% + 10px);right:0;z-index:80;width:290px;
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    box-shadow:var(--shadow);padding:14px;
+  }
+  .emoji-popover-title{font-size:12px;font-weight:800;margin-bottom:10px;color:var(--ink-soft);}
+  .emoji-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;}
+  .emoji-grid button{
+    font-size:22px;line-height:1;padding:8px 0;border-radius:9px;border:1px solid var(--line);
+    background:#FDFCFA;cursor:pointer;transition:.12s;
+  }
+  [data-theme="dark"] .emoji-grid button{background:var(--surface-sunk);}
+  .emoji-grid button:hover{border-color:var(--indigo);background:var(--indigo-soft);transform:scale(1.08);}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "صانع الصورة المصغرة الاحترافي",
+  "url": "https://fawran.tools/tools/youtube-thumbnail-maker.html",
+  "description": "صمّم صورة مصغرة احترافية لفيديوهات يوتيوب بالمقاس الصحيح 1280×720، مع نصوص متعددة بحدود وظلال وخلفيات هايلايت، ورموز تعبيرية جاهزة، للتحميل.",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "فورا.tools", "url": "https://fawran.tools/index.html"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "الأدوات", "item": "https://fawran.tools/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "أدوات يوتيوب", "item": "https://fawran.tools/index.html#youtube"},
+    {"@type": "ListItem", "position": 3, "name": "صانع الصورة المصغرة الاحترافي", "item": "https://fawran.tools/tools/youtube-thumbnail-maker.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="../index.html" class="active">الأدوات</a>
+        <a href="../blog/index.html">المدونة</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../contact.html">تواصل معنا</a>
+      </nav>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="../en/tools/youtube-thumbnail-maker.html" class="lang-switch" title="View in English">EN</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap tool-page">
+  <div class="crumb"><a href="../index.html">الأدوات</a> / أدوات يوتيوب / صانع الصورة المصغرة</div>
+  <h1>صانع الصورة المصغرة الاحترافي</h1>
+  <p class="tool-lede">
+    ارفع صورة الخلفية (لقطة من الفيديو أو صورة تعبيرية)، وأضف نصوص متعددة بخط سميك وحدود وظل وخلفية
+    هايلايت — نفس الأسلوب اللي بيخلّي الصورة المصغرة تلفت الانتباه — وحمّلها بالمقاس الرسمي 1280×720.
+  </p>
+
+  <div class="tool-card-shell">
+    <div class="editor-layout">
+      <div>
+        <div class="stage-wrap" id="stageWrap">
+          <div class="stage-bg" id="stageBg" style="background-color:#1A1826;"></div>
+          <input type="file" id="bgImgInput" accept="image/*" style="display:none;">
+        </div>
+
+        <div class="actions" style="margin-top:18px;position:relative;">
+          <button class="btn btn-primary" id="exportBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            تصدير الصورة (1280×720)
+          </button>
+          <button class="btn btn-dark" id="addTextBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+            إضافة نص
+          </button>
+          <button class="btn btn-dark" id="addEmojiBtn">
+            <span style="font-size:16px;line-height:1;">😀</span>
+            إضافة رمز
+          </button>
+          <button class="btn btn-ghost" id="resetDesignBtn">إعادة تعيين</button>
+
+          <div id="emojiPopover" class="emoji-popover" style="display:none;">
+            <div class="emoji-popover-title">اختر رمزًا لإضافته</div>
+            <div class="emoji-grid" id="emojiGrid"></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel-card">
+          <h3>الخلفية</h3>
+          <div class="bg-mode-chips" style="margin-bottom:12px;">
+            <span class="bg-mode-chip active" data-bg="image">صورة</span>
+            <span class="bg-mode-chip" data-bg="color">لون</span>
+            <span class="bg-mode-chip" data-bg="gradient">تدرّج</span>
+          </div>
+          <div id="bgImageRow">
+            <label class="upload-mini" for="bgImgInput">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 8l5-5 5 5"/><path d="M5 21h14"/></svg>
+              رفع صورة الخلفية
+            </label>
+          </div>
+          <div id="bgColorRow" class="swatch-row" style="display:none;">
+            <input type="color" id="bgColor1" value="#1A1826">
+          </div>
+          <div id="bgGradientRow" class="swatch-row" style="display:none;">
+            <input type="color" id="bgColor2a" value="#4F3FF0">
+            <input type="color" id="bgColor2b" value="#1A1826">
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <h3>طبقات النص</h3>
+          <div id="layersList" class="layers-list">
+            <div class="empty-hint" id="emptyHint">اضغط "إضافة نص" من الأسفل عشان تبدأ</div>
+          </div>
+        </div>
+
+        <div class="panel-card" id="textPropsCard" style="display:none;">
+          <h3>تنسيق النص المحدّد</h3>
+          <div class="panel-row">
+            <label>النص</label>
+            <input type="text" id="pText" value="">
+          </div>
+          <div class="panel-row">
+            <label>حجم الخط <span class="val" id="pSizeVal">10%</span></label>
+            <input type="range" id="pSize" min="3" max="22" step="0.5" value="10">
+          </div>
+          <div class="panel-row">
+            <label>لون النص</label>
+            <div class="swatch-row"><input type="color" id="pColor" value="#ffffff"></div>
+          </div>
+          <div class="panel-row">
+            <label class="mini-toggle"><input type="checkbox" id="pOutline" checked> حدود خارجية (Outline)</label>
+          </div>
+          <div class="panel-row" id="pOutlineColorRow">
+            <label>لون الحدود <span class="val" id="pOutlineWidthVal">6px</span></label>
+            <div class="swatch-row">
+              <input type="color" id="pOutlineColor" value="#000000">
+              <input type="range" id="pOutlineWidth" min="1" max="14" step="1" value="6" style="flex:1;">
+            </div>
+          </div>
+          <div class="panel-row">
+            <label class="mini-toggle"><input type="checkbox" id="pShadow" checked> ظل خلف النص</label>
+          </div>
+          <div class="panel-row">
+            <label class="mini-toggle"><input type="checkbox" id="pHighlight"> خلفية هايلايت</label>
+          </div>
+          <div class="panel-row" id="pHighlightColorRow" style="display:none;">
+            <label>لون الخلفية</label>
+            <div class="swatch-row"><input type="color" id="pHighlightColor" value="#F0A93B"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    كل التصميم يتم محليًا في متصفحك — صورتك وتصميمك لا يغادران جهازك أبدًا
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ad-slot ad-slot-leaderboard">
+    <span class="ad-label">إعلان · Advertisement</span>
+    <div class="ad-slot-inner">
+      <!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك -->
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+    </div>
+    <div class="footer-col">
+      <h4>الموقع</h4>
+      <a href="../index.html">الصفحة الرئيسية</a>
+      <a href="../blog/index.html">المدونة</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="../privacy.html">سياسة الخصوصية</a>
+      <a href="../terms.html">شروط الاستخدام</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>
+const stageWrap = document.getElementById('stageWrap');
+const stageBg = document.getElementById('stageBg');
+const bgImgInput = document.getElementById('bgImgInput');
+const bgModeChips = document.querySelectorAll('.bg-mode-chip');
+const bgImageRow = document.getElementById('bgImageRow');
+const bgColorRow = document.getElementById('bgColorRow');
+const bgGradientRow = document.getElementById('bgGradientRow');
+const bgColor1 = document.getElementById('bgColor1');
+const bgColor2a = document.getElementById('bgColor2a');
+const bgColor2b = document.getElementById('bgColor2b');
+
+const addTextBtn = document.getElementById('addTextBtn');
+const exportBtn = document.getElementById('exportBtn');
+const resetDesignBtn = document.getElementById('resetDesignBtn');
+const layersList = document.getElementById('layersList');
+const emptyHint = document.getElementById('emptyHint');
+const textPropsCard = document.getElementById('textPropsCard');
+
+const pText = document.getElementById('pText');
+const pSize = document.getElementById('pSize');
+const pSizeVal = document.getElementById('pSizeVal');
+const pColor = document.getElementById('pColor');
+const pOutline = document.getElementById('pOutline');
+const pOutlineColorRow = document.getElementById('pOutlineColorRow');
+const pOutlineColor = document.getElementById('pOutlineColor');
+const pOutlineWidth = document.getElementById('pOutlineWidth');
+const pOutlineWidthVal = document.getElementById('pOutlineWidthVal');
+const pShadow = document.getElementById('pShadow');
+const pHighlight = document.getElementById('pHighlight');
+const pHighlightColorRow = document.getElementById('pHighlightColorRow');
+const pHighlightColor = document.getElementById('pHighlightColor');
+
+let bgMode = 'image';
+let bgImageDataUrl = null;
+let layers = []; // {id, el, text, size, color, outline, outlineColor, outlineWidth, shadow, highlight, highlightColor}
+let selectedId = null;
+let layerCounter = 0;
+
+// ---------- Background ----------
+bgModeChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    bgModeChips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    bgMode = chip.dataset.bg;
+    bgImageRow.style.display = bgMode === 'image' ? 'block' : 'none';
+    bgColorRow.style.display = bgMode === 'color' ? 'flex' : 'none';
+    bgGradientRow.style.display = bgMode === 'gradient' ? 'flex' : 'none';
+    updateBackground();
+  });
+});
+function updateBackground(){
+  if(bgMode === 'color'){
+    stageBg.style.background = bgColor1.value;
+  } else if(bgMode === 'gradient'){
+    stageBg.style.background = `linear-gradient(135deg, ${bgColor2a.value}, ${bgColor2b.value})`;
+  } else if(bgMode === 'image' && bgImageDataUrl){
+    stageBg.style.background = `url(${bgImageDataUrl}) center/cover no-repeat`;
+  } else if(bgMode === 'image'){
+    stageBg.style.background = '#1A1826';
+  }
+}
+bgColor1.addEventListener('input', updateBackground);
+bgColor2a.addEventListener('input', updateBackground);
+bgColor2b.addEventListener('input', updateBackground);
+bgImgInput.addEventListener('change', e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ev=>{ bgImageDataUrl = ev.target.result; updateBackground(); };
+  reader.readAsDataURL(file);
+});
+
+// ---------- Text layer management ----------
+function createLayer(overrides){
+  overrides = overrides || {};
+  layerCounter++;
+  const id = 'L' + layerCounter;
+  const el = document.createElement('div');
+  el.className = 'layer text-layer';
+  el.dataset.id = id;
+  el.innerHTML = `<span class="txt-content"></span><div class="handle-rs"></div><div class="handle-del"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></div>`;
+  el.style.top = (30 + layers.length*12) + '%';
+  el.style.left = '10%';
+  stageWrap.appendChild(el);
+
+  const layer = Object.assign({
+    id, el,
+    text: 'نص جديد',
+    size: 10, color: '#ffffff',
+    outline: true, outlineColor: '#000000', outlineWidth: 6,
+    shadow: true,
+    highlight: false, highlightColor: '#F0A93B'
+  }, overrides, { id, el });
+  layers.push(layer);
+  applyLayerStyle(layer);
+  makeLayerDraggable(layer);
+  selectLayer(id);
+  renderLayersList();
+  return layer;
+}
+
+// ---------- Emoji / symbol picker ----------
+const THUMBNAIL_EMOJIS = ['🔥','😱','💯','👉','➡️','⭐','✅','❌','⚠️','💰','🎯','👀','😍','🤯','💥','⚡','🚀','📈','✨','🎉','❓','❗','👍','🏆'];
+const addEmojiBtn = document.getElementById('addEmojiBtn');
+const emojiPopover = document.getElementById('emojiPopover');
+const emojiGrid = document.getElementById('emojiGrid');
+
+THUMBNAIL_EMOJIS.forEach(emoji=>{
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.textContent = emoji;
+  btn.addEventListener('click', ()=>{
+    createLayer({ text: emoji, size: 16, outline: false, shadow: true, highlight: false });
+    emojiPopover.style.display = 'none';
+  });
+  emojiGrid.appendChild(btn);
+});
+
+addEmojiBtn.addEventListener('click', e=>{
+  e.stopPropagation();
+  emojiPopover.style.display = emojiPopover.style.display === 'none' ? 'block' : 'none';
+});
+document.addEventListener('click', e=>{
+  if(emojiPopover.style.display === 'block' && !emojiPopover.contains(e.target) && e.target !== addEmojiBtn && !addEmojiBtn.contains(e.target)){
+    emojiPopover.style.display = 'none';
+  }
+});
+
+function applyLayerStyle(layer){
+  const span = layer.el.querySelector('.txt-content');
+  span.textContent = layer.text;
+  const stageH = stageWrap.getBoundingClientRect().height;
+  const px = (layer.size/100) * stageH;
+  span.style.fontSize = px + 'px';
+  span.style.fontWeight = '900';
+  span.style.color = layer.color;
+  span.style.lineHeight = '1.15';
+  span.style.padding = layer.highlight ? '0.15em 0.35em' : '0';
+  span.style.borderRadius = layer.highlight ? '6px' : '0';
+  span.style.backgroundColor = layer.highlight ? layer.highlightColor : 'transparent';
+
+  let shadowParts = [];
+  if(layer.outline){
+    const w = layer.outlineWidth / 10;
+    shadowParts.push(
+      `-${w}px -${w}px 0 ${layer.outlineColor}`,
+      `${w}px -${w}px 0 ${layer.outlineColor}`,
+      `-${w}px ${w}px 0 ${layer.outlineColor}`,
+      `${w}px ${w}px 0 ${layer.outlineColor}`,
+      `0 -${w}px 0 ${layer.outlineColor}`,
+      `0 ${w}px 0 ${layer.outlineColor}`,
+      `-${w}px 0 0 ${layer.outlineColor}`,
+      `${w}px 0 0 ${layer.outlineColor}`
+    );
+  }
+  if(layer.shadow){
+    shadowParts.push('4px 6px 10px rgba(0,0,0,.55)');
+  }
+  span.style.textShadow = shadowParts.join(', ');
+}
+
+function makeLayerDraggable(layer){
+  const el = layer.el;
+  let mode = null, startX, startY, startLeft, startTop, startSize;
+
+  el.addEventListener('mousedown', e=>{
+    if(e.target.classList.contains('handle-rs') || e.target.closest('.handle-del')) return;
+    selectLayer(layer.id);
+    mode = 'move';
+    startX = e.clientX; startY = e.clientY;
+    startLeft = parseFloat(el.style.left);
+    startTop = parseFloat(el.style.top);
+    e.preventDefault();
+  });
+
+  el.querySelector('.handle-rs').addEventListener('mousedown', e=>{
+    mode = 'resize';
+    startX = e.clientX; startY = e.clientY;
+    startSize = layer.size;
+    e.preventDefault(); e.stopPropagation();
+  });
+
+  el.querySelector('.handle-del').addEventListener('click', e=>{
+    e.stopPropagation();
+    deleteLayer(layer.id);
+  });
+
+  document.addEventListener('mousemove', e=>{
+    if(mode === null || selectedId !== layer.id) return;
+    const rect = stageWrap.getBoundingClientRect();
+    if(mode === 'move'){
+      const dxPct = ((e.clientX - startX) / rect.width) * 100;
+      const dyPct = ((e.clientY - startY) / rect.height) * 100;
+      el.style.left = Math.max(0, Math.min(90, startLeft + dxPct)) + '%';
+      el.style.top = Math.max(0, Math.min(90, startTop + dyPct)) + '%';
+    } else if(mode === 'resize'){
+      const dyPct = ((e.clientY - startY) / rect.height) * 100;
+      layer.size = Math.max(2, Math.min(30, startSize + dyPct));
+      applyLayerStyle(layer);
+      if(selectedId === layer.id) syncPanelFromLayer(layer);
+    }
+  });
+  document.addEventListener('mouseup', ()=>{ mode = null; });
+}
+
+function selectLayer(id){
+  selectedId = id;
+  layers.forEach(l=> l.el.classList.toggle('selected', l.id === id));
+  const layer = layers.find(l=>l.id === id);
+  if(layer){
+    textPropsCard.style.display = 'block';
+    syncPanelFromLayer(layer);
+  } else {
+    textPropsCard.style.display = 'none';
+  }
+  renderLayersList();
+}
+
+function syncPanelFromLayer(layer){
+  pText.value = layer.text;
+  pSize.value = layer.size; pSizeVal.textContent = Math.round(layer.size) + '%';
+  pColor.value = layer.color;
+  pOutline.checked = layer.outline;
+  pOutlineColorRow.style.display = layer.outline ? 'block' : 'none';
+  pOutlineColor.value = layer.outlineColor;
+  pOutlineWidth.value = layer.outlineWidth; pOutlineWidthVal.textContent = layer.outlineWidth + 'px';
+  pShadow.checked = layer.shadow;
+  pHighlight.checked = layer.highlight;
+  pHighlightColorRow.style.display = layer.highlight ? 'block' : 'none';
+  pHighlightColor.value = layer.highlightColor;
+}
+
+function deleteLayer(id){
+  const idx = layers.findIndex(l=>l.id === id);
+  if(idx === -1) return;
+  layers[idx].el.remove();
+  layers.splice(idx, 1);
+  selectedId = null;
+  textPropsCard.style.display = 'none';
+  renderLayersList();
+}
+
+function renderLayersList(){
+  layersList.innerHTML = '';
+  if(!layers.length){
+    layersList.appendChild(emptyHint);
+    return;
+  }
+  layers.forEach(layer=>{
+    const chip = document.createElement('div');
+    chip.className = 'layer-chip' + (layer.id === selectedId ? ' active' : '');
+    chip.innerHTML = `<span class="txt">${layer.text || '(نص فارغ)'}</span><span class="del">✕</span>`;
+    chip.addEventListener('click', e=>{
+      if(e.target.classList.contains('del')){ deleteLayer(layer.id); return; }
+      selectLayer(layer.id);
+    });
+    layersList.appendChild(chip);
+  });
+}
+
+// ---------- Property panel wiring ----------
+function currentLayer(){ return layers.find(l=>l.id === selectedId); }
+function updateSelected(mutator){
+  const layer = currentLayer();
+  if(!layer) return;
+  mutator(layer);
+  applyLayerStyle(layer);
+  renderLayersList();
+}
+pText.addEventListener('input', ()=> updateSelected(l=> l.text = pText.value));
+pSize.addEventListener('input', ()=> updateSelected(l=>{ l.size = parseFloat(pSize.value); pSizeVal.textContent = Math.round(l.size)+'%'; }));
+pColor.addEventListener('input', ()=> updateSelected(l=> l.color = pColor.value));
+pOutline.addEventListener('change', ()=> updateSelected(l=>{ l.outline = pOutline.checked; pOutlineColorRow.style.display = l.outline ? 'block':'none'; }));
+pOutlineColor.addEventListener('input', ()=> updateSelected(l=> l.outlineColor = pOutlineColor.value));
+pOutlineWidth.addEventListener('input', ()=> updateSelected(l=>{ l.outlineWidth = parseInt(pOutlineWidth.value); pOutlineWidthVal.textContent = l.outlineWidth+'px'; }));
+pShadow.addEventListener('change', ()=> updateSelected(l=> l.shadow = pShadow.checked));
+pHighlight.addEventListener('change', ()=> updateSelected(l=>{ l.highlight = pHighlight.checked; pHighlightColorRow.style.display = l.highlight ? 'block':'none'; }));
+pHighlightColor.addEventListener('input', ()=> updateSelected(l=> l.highlightColor = pHighlightColor.value));
+
+window.addEventListener('resize', ()=> layers.forEach(applyLayerStyle));
+
+stageWrap.addEventListener('mousedown', e=>{
+  if(e.target === stageWrap || e.target === stageBg){
+    selectedId = null;
+    layers.forEach(l=>l.el.classList.remove('selected'));
+    textPropsCard.style.display = 'none';
+    renderLayersList();
+  }
+});
+
+addTextBtn.addEventListener('click', createLayer);
+
+// ---------- Export ----------
+function loadImg(src){
+  return new Promise((resolve,reject)=>{
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = ()=>resolve(img);
+    img.onerror = reject;
+    img.src = src;
+  });
+}
+
+function drawOutlinedText(ctx, text, x, y, layer, W, H){
+  const size = (layer.size/100) * H;
+  ctx.font = `900 ${size}px Tajawal, Arial, sans-serif`;
+  ctx.textBaseline = 'middle';
+
+  if(layer.highlight){
+    const metrics = ctx.measureText(text);
+    const padX = size*0.35, padY = size*0.25;
+    ctx.fillStyle = layer.highlightColor;
+    const bw = metrics.width + padX*2, bh = size + padY*2;
+    const rx = 10;
+    ctx.beginPath();
+    ctx.roundRect ? ctx.roundRect(x-padX, y-bh/2, bw, bh, rx) : ctx.rect(x-padX, y-bh/2, bw, bh);
+    ctx.fill();
+  }
+
+  if(layer.shadow){
+    ctx.save();
+    ctx.shadowColor = 'rgba(0,0,0,.55)';
+    ctx.shadowBlur = size*0.12;
+    ctx.shadowOffsetX = size*0.04;
+    ctx.shadowOffsetY = size*0.06;
+  }
+
+  if(layer.outline){
+    ctx.lineJoin = 'round';
+    ctx.miterLimit = 2;
+    ctx.strokeStyle = layer.outlineColor;
+    ctx.lineWidth = (layer.outlineWidth/10) * (size/10);
+    ctx.strokeText(text, x, y);
+  }
+
+  ctx.fillStyle = layer.color;
+  ctx.fillText(text, x, y);
+
+  if(layer.shadow) ctx.restore();
+}
+
+exportBtn.addEventListener('click', async ()=>{
+  exportBtn.disabled = true;
+  exportBtn.textContent = 'جارٍ التصدير...';
+  try{
+    const W = 1280, H = 720;
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+
+    if(bgMode === 'color'){
+      ctx.fillStyle = bgColor1.value; ctx.fillRect(0,0,W,H);
+    } else if(bgMode === 'gradient'){
+      const grad = ctx.createLinearGradient(0,0,W,H);
+      grad.addColorStop(0, bgColor2a.value); grad.addColorStop(1, bgColor2b.value);
+      ctx.fillStyle = grad; ctx.fillRect(0,0,W,H);
+    } else if(bgMode === 'image' && bgImageDataUrl){
+      const img = await loadImg(bgImageDataUrl);
+      const scale = Math.max(W/img.width, H/img.height);
+      const dw = img.width*scale, dh = img.height*scale;
+      ctx.drawImage(img, (W-dw)/2, (H-dh)/2, dw, dh);
+    } else {
+      ctx.fillStyle = '#1A1826'; ctx.fillRect(0,0,W,H);
+    }
+
+    for(const layer of layers){
+      const x = parseFloat(layer.el.style.left)/100 * W;
+      const y = parseFloat(layer.el.style.top)/100 * H + ((layer.size/100)*H)/2;
+      drawOutlinedText(ctx, layer.text, x, y, layer, W, H);
+    }
+
+    canvas.toBlob(blob=>{
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'youtube-thumbnail.png';
+      document.body.appendChild(a); a.click(); a.remove();
+    }, 'image/png');
+  } catch(err){
+    console.error(err);
+    alert('تعذّر تصدير الصورة. جرّب مرة أخرى.');
+  }
+  exportBtn.disabled = false;
+  exportBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg> تصدير الصورة (1280×720)`;
+});
+
+resetDesignBtn.addEventListener('click', ()=>{
+  layers.forEach(l=>l.el.remove());
+  layers = []; selectedId = null;
+  bgMode = 'image'; bgImageDataUrl = null;
+  bgModeChips.forEach(c=>c.classList.remove('active'));
+  bgModeChips[0].classList.add('active');
+  bgImageRow.style.display = 'block'; bgColorRow.style.display = 'none'; bgGradientRow.style.display = 'none';
+  updateBackground();
+  textPropsCard.style.display = 'none';
+  renderLayersList();
+});
+
+// Start with one default text layer for guidance
+createLayer();
+</script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إزالة الأسطر المكررة مجانًا | فورا.tools</title>
+<meta name="description" content="نظّف قوائم نصية طويلة من الأسطر المكررة في ثوانٍ، مباشرة داخل متصفحك.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#4F3FF0">
+<link rel="canonical" href="https://fawran.tools/tools/remove-duplicate-lines.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fawran.tools/tools/remove-duplicate-lines.html">
+<meta property="og:title" content="إزالة الأسطر المكررة مجانًا | فورا.tools">
+<meta property="og:description" content="نظّف قوائم نصية طويلة من الأسطر المكررة في ثوانٍ، مباشرة داخل متصفحك.">
+<meta property="og:site_name" content="فورا.tools">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="إزالة الأسطر المكررة مجانًا | فورا.tools">
+<meta name="twitter:description" content="نظّف قوائم نصية طويلة من الأسطر المكررة في ثوانٍ، مباشرة داخل متصفحك.">
+<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  textarea.dl-input{
+    width:100%;min-height:300px;resize:vertical;font-family:'IBM Plex Mono',monospace;font-size:13.5px;
+    line-height:1.8;padding:16px;border-radius:12px;border:1.5px solid var(--line);
+    background:#FDFCFA;color:var(--ink);direction:ltr;text-align:left;
+  }
+  textarea.dl-input:focus{outline:none;border-color:var(--indigo);}
+  .opt-row{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0;}
+  .opt-row label{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;cursor:pointer;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "إزالة الأسطر المكررة مجانًا",
+  "url": "https://fawran.tools/tools/remove-duplicate-lines.html",
+  "description": "نظّف قوائم نصية طويلة من الأسطر المكررة في ثوانٍ، مباشرة داخل متصفحك.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "فورا.tools",
+    "url": "https://fawran.tools/index.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الأدوات",
+      "item": "https://fawran.tools/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "أدوات النصوص",
+      "item": "https://fawran.tools/index.html#text"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "إزالة الأسطر المكررة مجانًا",
+      "item": "https://fawran.tools/tools/remove-duplicate-lines.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+          <div class="nav-wrap">
+      <nav class="nav">
+      <a href="../index.html" class="active">الأدوات</a>
+      <a href="../blog/index.html">المدونة</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../contact.html">تواصل معنا</a>
+    </nav>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap tool-page">
+  <div class="crumb"><a href="../index.html">الأدوات</a> / أدوات النصوص / إزالة الأسطر المكررة</div>
+  <h1>إزالة الأسطر المكررة</h1>
+  <p class="tool-lede">
+    الصق قائمتك الطويلة (إيميلات، روابط، كلمات مفتاحية...) واحصل على نسخة نظيفة بدون تكرار في ثانية.
+  </p>
+
+  <div class="tool-card-shell">
+    <textarea class="dl-input" id="textInput" placeholder="الصق قائمتك هنا، سطر لكل عنصر..."></textarea>
+
+    <div class="opt-row">
+      <label><input type="checkbox" id="ignoreCase"> تجاهل حالة الأحرف (Aa = aa)</label>
+      <label><input type="checkbox" id="trimLines" checked> تجاهل المسافات الزائدة</label>
+      <label><input type="checkbox" id="removeEmpty" checked> حذف الأسطر الفارغة</label>
+      <label><input type="checkbox" id="sortLines"> ترتيب أبجدي</label>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="processBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        إزالة التكرار
+      </button>
+      <button class="btn btn-dark" id="copyBtn">نسخ النتيجة</button>
+      <button class="btn btn-ghost" id="clearBtn">مسح الكل</button>
+    </div>
+
+    <div class="summary" id="summary" style="display:none;margin-top:20px;"></div>
+  </div>
+
+  <div class="footer-note">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    كل المعالجة تتم محليًا في متصفحك — نصك لا يُرسل لأي خادم
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ad-slot ad-slot-leaderboard">
+    <span class="ad-label">إعلان · Advertisement</span>
+    <div class="ad-slot-inner">
+      <!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+      <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+      <!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+    </div>
+    <div class="footer-col">
+      <h4>الموقع</h4>
+      <a href="../index.html">الصفحة الرئيسية</a>
+      <a href="../blog/index.html">المدونة</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="../privacy.html">سياسة الخصوصية</a>
+      <a href="../terms.html">شروط الاستخدام</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>
+const textInput = document.getElementById('textInput');
+const ignoreCase = document.getElementById('ignoreCase');
+const trimLines = document.getElementById('trimLines');
+const removeEmpty = document.getElementById('removeEmpty');
+const sortLines = document.getElementById('sortLines');
+const processBtn = document.getElementById('processBtn');
+const copyBtn = document.getElementById('copyBtn');
+const clearBtn = document.getElementById('clearBtn');
+const summary = document.getElementById('summary');
+
+processBtn.addEventListener('click', ()=>{
+  let lines = textInput.value.split('\n');
+  const originalCount = lines.length;
+
+  if(trimLines.checked) lines = lines.map(l=>l.trim());
+  if(removeEmpty.checked) lines = lines.filter(l=>l.length>0);
+
+  const seen = new Set();
+  const result = [];
+  lines.forEach(line=>{
+    const key = ignoreCase.checked ? line.toLowerCase() : line;
+    if(!seen.has(key)){ seen.add(key); result.push(line); }
+  });
+
+  if(sortLines.checked) result.sort((a,b)=> a.localeCompare(b, 'ar'));
+
+  textInput.value = result.join('\n');
+  const removed = originalCount - result.length;
+  summary.style.display = 'flex';
+  summary.innerHTML = `
+    <div class="stat"><div class="n">${originalCount}</div><div class="l">سطر أصلي</div></div>
+    <div class="stat"><div class="n" style="color:var(--good)">${result.length}</div><div class="l">سطر بعد التنظيف</div></div>
+    <div class="stat"><div class="n" style="color:var(--danger)">${removed}</div><div class="l">سطر تم حذفه</div></div>
+  `;
+});
+
+copyBtn.addEventListener('click', async ()=>{
+  try{
+    await navigator.clipboard.writeText(textInput.value);
+    const original = copyBtn.textContent;
+    copyBtn.textContent = 'تم النسخ ✓';
+    setTimeout(()=> copyBtn.textContent = original, 1500);
+  }catch(e){ console.error(e); }
+});
+
+clearBtn.addEventListener('click', ()=>{
+  textInput.value = '';
+  summary.style.display = 'none';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مولّد فصول وتوقيتات فيديو يوتيوب (Chapters) | فورا.tools</title>
+<meta name="description" content="أنشئ فصول وتوقيتات (Chapters) لفيديو يوتيوب بالصيغة الصحيحة، رتّبها بسهولة، وانسخها جاهزة للصق في وصف الفيديو مباشرة.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#4F3FF0">
+<link rel="canonical" href="https://fawran.tools/tools/youtube-chapters-generator.html">
+<link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/youtube-chapters-generator.html">
+<link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/youtube-chapters-generator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fawran.tools/tools/youtube-chapters-generator.html">
+<meta property="og:title" content="مولّد فصول وتوقيتات فيديو يوتيوب (Chapters) | فورا.tools">
+<meta property="og:description" content="أنشئ فصول وتوقيتات (Chapters) لفيديو يوتيوب بالصيغة الصحيحة، رتّبها بسهولة، وانسخها جاهزة للصق في وصف الفيديو مباشرة.">
+<meta property="og:site_name" content="فورا.tools">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="مولّد فصول وتوقيتات فيديو يوتيوب (Chapters) | فورا.tools">
+<meta name="twitter:description" content="أنشئ فصول وتوقيتات (Chapters) لفيديو يوتيوب بالصيغة الصحيحة، رتّبها بسهولة، وانسخها جاهزة للصق في وصف الفيديو مباشرة.">
+<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .chapter-row{
+    display:grid;grid-template-columns:110px 1fr auto;gap:10px;align-items:center;
+    padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-bottom:8px;
+  }
+  .chapter-row input[type=text]{
+    padding:9px 11px;border-radius:8px;border:1px solid var(--line);
+    font-family:'Tajawal',sans-serif;font-size:13.5px;background:#FDFCFA;color:var(--ink);
+  }
+  [data-theme="dark"] .chapter-row input[type=text]{background:#211F34;}
+  .chapter-row input.time-input{font-family:'IBM Plex Mono',monospace;text-align:center;direction:ltr;}
+  .chapter-row .order-num{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);
+    position:absolute;
+  }
+  .row-actions{display:flex;gap:6px;}
+  .code-out{
+    background:var(--ink);color:#E8E6F5;border-radius:12px;padding:18px;
+    font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:2;
+    white-space:pre-wrap;word-break:break-all;direction:ltr;text-align:left;
+    max-height:340px;overflow:auto;margin-top:18px;
+  }
+  .hint-box{
+    background:var(--gold-soft);border:1px solid rgba(240,169,59,.3);border-radius:10px;
+    padding:12px 14px;font-size:12.5px;color:var(--ink-soft);margin-bottom:18px;line-height:1.8;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "مولّد فصول وتوقيتات فيديو يوتيوب",
+  "url": "https://fawran.tools/tools/youtube-chapters-generator.html",
+  "description": "أنشئ فصول وتوقيتات (Chapters) لفيديو يوتيوب بالصيغة الصحيحة، رتّبها بسهولة، وانسخها جاهزة للصق في وصف الفيديو مباشرة.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "فورا.tools", "url": "https://fawran.tools/index.html"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "الأدوات", "item": "https://fawran.tools/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "أدوات يوتيوب", "item": "https://fawran.tools/index.html#youtube"},
+    {"@type": "ListItem", "position": 3, "name": "مولّد فصول وتوقيتات يوتيوب", "item": "https://fawran.tools/tools/youtube-chapters-generator.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="../index.html" class="active">الأدوات</a>
+        <a href="../blog/index.html">المدونة</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../contact.html">تواصل معنا</a>
+      </nav>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="../en/tools/youtube-chapters-generator.html" class="lang-switch" title="View in English">EN</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap tool-page">
+  <div class="crumb"><a href="../index.html">الأدوات</a> / أدوات يوتيوب / مولّد الفصول</div>
+  <h1>مولّد فصول وتوقيتات يوتيوب</h1>
+  <p class="tool-lede">
+    أضف اللحظات المهمة في فيديوك مع عنوان لكل واحدة، وهتترتب تلقائيًا وتتنسّق بالصيغة اللي يوتيوب يتعرّف
+    عليها كفصول قابلة للتنقل — انسخها والصقها في وصف الفيديو.
+  </p>
+
+  <div class="tool-card-shell">
+    <div class="hint-box">
+      <b>شرط يوتيوب:</b> أول فصل لازم يبدأ من 00:00، ولازم يكون عندك 3 فصول على الأقل (كل فصل مدته
+      10 ثواني على الأقل) عشان يوتيوب يفعّلهم كفصول قابلة للتنقل تحت الفيديو.
+    </div>
+
+    <div id="chaptersList"></div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="addChapterBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+        إضافة فصل جديد
+      </button>
+      <button class="btn btn-dark" id="copyBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        نسخ الفصول
+      </button>
+      <button class="btn btn-ghost" id="clearAllBtn">مسح الكل</button>
+    </div>
+
+    <p id="validationMsg" style="display:none;color:var(--danger);font-size:12.5px;margin-top:12px;"></p>
+
+    <div class="code-out" id="codeOut"></div>
+  </div>
+
+  <div class="footer-note">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    كل المعالجة تتم محليًا في متصفحك — لا حاجة لرفع أي فيديو أو رابط
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ad-slot ad-slot-leaderboard">
+    <span class="ad-label">إعلان · Advertisement</span>
+    <div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+    </div>
+    <div class="footer-col">
+      <h4>الموقع</h4>
+      <a href="../index.html">الصفحة الرئيسية</a>
+      <a href="../blog/index.html">المدونة</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="../privacy.html">سياسة الخصوصية</a>
+      <a href="../terms.html">شروط الاستخدام</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>
+const chaptersList = document.getElementById('chaptersList');
+const addChapterBtn = document.getElementById('addChapterBtn');
+const copyBtn = document.getElementById('copyBtn');
+const clearAllBtn = document.getElementById('clearAllBtn');
+const codeOut = document.getElementById('codeOut');
+const validationMsg = document.getElementById('validationMsg');
+
+let chapters = [];
+let counter = 0;
+
+function addChapter(time, title){
+  counter++;
+  chapters.push({ id: 'c'+counter, time: time || '', title: title || '' });
+  render();
+}
+
+function timeToSeconds(t){
+  const parts = t.split(':').map(p=>parseInt(p,10));
+  if(parts.some(isNaN)) return null;
+  if(parts.length === 2) return parts[0]*60 + parts[1];
+  if(parts.length === 3) return parts[0]*3600 + parts[1]*60 + parts[2];
+  return null;
+}
+
+function render(){
+  chaptersList.innerHTML = '';
+  chapters.forEach((ch, idx)=>{
+    const row = document.createElement('div');
+    row.className = 'chapter-row';
+    row.innerHTML = `
+      <input type="text" class="time-input" data-id="${ch.id}" data-field="time" value="${ch.time}" placeholder="00:00">
+      <input type="text" data-id="${ch.id}" data-field="title" value="${ch.title}" placeholder="عنوان هذا الجزء من الفيديو">
+      <div class="row-actions">
+        <button class="icon-btn" data-up="${ch.id}" ${idx===0?'disabled':''} title="لأعلى">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+        </button>
+        <button class="icon-btn" data-down="${ch.id}" ${idx===chapters.length-1?'disabled':''} title="لأسفل">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <button class="icon-btn del" data-remove="${ch.id}" title="حذف">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+        </button>
+      </div>
+    `;
+    chaptersList.appendChild(row);
+  });
+
+  chaptersList.querySelectorAll('input').forEach(inp=>{
+    inp.addEventListener('input', ()=>{
+      const ch = chapters.find(c=>c.id === inp.dataset.id);
+      if(ch) ch[inp.dataset.field] = inp.value;
+      updateOutput();
+    });
+  });
+  chaptersList.querySelectorAll('[data-up]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const i = chapters.findIndex(c=>c.id === btn.dataset.up);
+      if(i>0){ [chapters[i-1],chapters[i]] = [chapters[i],chapters[i-1]]; render(); }
+    });
+  });
+  chaptersList.querySelectorAll('[data-down]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const i = chapters.findIndex(c=>c.id === btn.dataset.down);
+      if(i<chapters.length-1){ [chapters[i+1],chapters[i]] = [chapters[i],chapters[i+1]]; render(); }
+    });
+  });
+  chaptersList.querySelectorAll('[data-remove]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      chapters = chapters.filter(c=>c.id !== btn.dataset.remove);
+      render(); updateOutput();
+    });
+  });
+
+  updateOutput();
+}
+
+function updateOutput(){
+  const lines = chapters
+    .filter(c=> c.time.trim() && c.title.trim())
+    .map(c=> `${c.time.trim()} ${c.title.trim()}`);
+  codeOut.textContent = lines.join('\n');
+
+  // Validation
+  let msg = '';
+  const withTime = chapters.filter(c=>c.time.trim());
+  if(withTime.length && withTime[0].time.trim() !== '0:00' && withTime[0].time.trim() !== '00:00'){
+    msg = 'تنبيه: أول فصل لازم يبدأ من 00:00 عشان يوتيوب يفعّل الفصول.';
+  } else if(chapters.filter(c=>c.time.trim() && c.title.trim()).length < 3 && chapters.length > 0){
+    msg = 'تنبيه: يوتيوب يحتاج 3 فصول على الأقل (بعنوان وتوقيت) عشان يفعّلهم كقائمة فصول.';
+  }
+  validationMsg.textContent = msg;
+  validationMsg.style.display = msg ? 'block' : 'none';
+}
+
+addChapterBtn.addEventListener('click', ()=>{
+  if(!chapters.length) addChapter('00:00', 'المقدمة');
+  else addChapter('', '');
+});
+
+copyBtn.addEventListener('click', async ()=>{
+  try{
+    await navigator.clipboard.writeText(codeOut.textContent);
+    const original = copyBtn.innerHTML;
+    copyBtn.innerHTML = 'تم النسخ ✓';
+    setTimeout(()=> copyBtn.innerHTML = original, 1500);
+  }catch(e){ console.error(e); }
+});
+
+clearAllBtn.addEventListener('click', ()=>{
+  chapters = [];
+  render();
+});
+
+// Seed with a starting example
+addChapter('00:00', 'المقدمة');
+addChapter('01:30', 'الجزء الأول');
+addChapter('05:00', 'الخاتمة');
+</script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مولّد أيقونة الموقع Favicon مجانًا | فورا.tools</title>
+<meta name="description" content="صمّم أيقونة موقعك (Favicon) بكل المقاسات المطلوبة (16، 32، 180، 192، 512)، مع كود HTML جاهز للصق، وحمّلها كلها دفعة واحدة.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#4F3FF0">
+<link rel="canonical" href="https://fawran.tools/tools/favicon-generator.html">
+<link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/favicon-generator.html">
+<link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/favicon-generator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fawran.tools/tools/favicon-generator.html">
+<meta property="og:title" content="مولّد أيقونة الموقع Favicon مجانًا | فورا.tools">
+<meta property="og:description" content="صمّم أيقونة موقعك (Favicon) بكل المقاسات المطلوبة (16، 32، 180، 192، 512)، مع كود HTML جاهز للصق، وحمّلها كلها دفعة واحدة.">
+<meta property="og:site_name" content="فورا.tools">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="مولّد أيقونة الموقع Favicon مجانًا | فورا.tools">
+<meta name="twitter:description" content="صمّم أيقونة موقعك (Favicon) بكل المقاسات المطلوبة (16، 32، 180، 192، 512)، مع كود HTML جاهز للصق، وحمّلها كلها دفعة واحدة.">
+<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .editor-layout{display:grid;grid-template-columns:1fr 300px;gap:20px;}
+  @media(max-width:900px){.editor-layout{grid-template-columns:1fr;}}
+
+  .stage-wrap{
+    background:#111;border-radius:14px;overflow:hidden;position:relative;
+    aspect-ratio:1/1;width:100%;max-width:280px;margin:0 auto;
+  }
+  .stage-bg{position:absolute;inset:0;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;}
+  .stage-bg .txt{font-weight:900;color:#fff;}
+  .stage-bg img{max-width:70%;max-height:70%;object-fit:contain;}
+
+  .panel-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;}
+  .panel-card h3{margin:0 0 12px;font-size:13px;font-weight:800;}
+  .panel-row{margin-bottom:12px;}
+  .panel-row label{display:block;font-size:12px;font-weight:700;margin-bottom:6px;color:var(--ink-soft);}
+  .panel-row input[type=text]{
+    width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--line);
+    font-family:'Tajawal',sans-serif;font-size:13.5px;background:#FDFCFA;color:var(--ink);
+  }
+  [data-theme="dark"] .panel-row input[type=text]{background:#211F34;}
+  .swatch-row{display:flex;gap:8px;align-items:center;}
+  .swatch-row input[type=color]{width:38px;height:34px;border-radius:8px;border:1px solid var(--line);cursor:pointer;padding:2px;}
+  .bg-mode-chips{display:flex;gap:6px;flex-wrap:wrap;}
+  .bg-mode-chip{font-size:11.5px;font-weight:700;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;}
+  [data-theme="dark"] .bg-mode-chip{background:var(--surface);}
+  .bg-mode-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+  .upload-mini{
+    display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;border:1.5px dashed var(--line);
+    border-radius:9px;cursor:pointer;font-size:12.5px;font-weight:700;color:var(--ink-soft);
+  }
+  .upload-mini:hover{border-color:var(--indigo);color:var(--indigo-deep);}
+  .shape-chips{display:flex;gap:6px;}
+  .shape-chip{flex:1;padding:9px;border-radius:9px;border:1.5px solid var(--line);background:#fff;text-align:center;font-size:12px;font-weight:700;cursor:pointer;}
+  [data-theme="dark"] .shape-chip{background:var(--surface-sunk);}
+  .shape-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+
+  .preview-strip{display:flex;gap:16px;align-items:flex-end;justify-content:center;margin-top:20px;flex-wrap:wrap;}
+  .preview-strip .pv-item{text-align:center;}
+  .preview-strip .pv-box{background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin:0 auto;}
+  .preview-strip .lbl{font-size:10.5px;color:var(--muted);margin-top:6px;font-family:'IBM Plex Mono',monospace;}
+
+  .code-out{
+    background:var(--ink);color:#E8E6F5;border-radius:12px;padding:16px;
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.8;
+    white-space:pre-wrap;word-break:break-all;direction:ltr;text-align:left;margin-top:14px;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "مولّد أيقونة الموقع Favicon",
+  "url": "https://fawran.tools/tools/favicon-generator.html",
+  "description": "صمّم أيقونة موقعك (Favicon) بكل المقاسات المطلوبة (16، 32، 180، 192، 512)، مع كود HTML جاهز للصق، وحمّلها كلها دفعة واحدة.",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "فورا.tools", "url": "https://fawran.tools/index.html"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "الأدوات", "item": "https://fawran.tools/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "أدوات المواقع والمدونات", "item": "https://fawran.tools/index.html#websites"},
+    {"@type": "ListItem", "position": 3, "name": "مولّد أيقونة الموقع", "item": "https://fawran.tools/tools/favicon-generator.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="../index.html" class="active">الأدوات</a>
+        <a href="../blog/index.html">المدونة</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../contact.html">تواصل معنا</a>
+      </nav>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="../en/tools/favicon-generator.html" class="lang-switch" title="View in English">EN</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap tool-page">
+  <div class="crumb"><a href="../index.html">الأدوات</a> / أدوات المواقع والمدونات / مولّد الأيقونة</div>
+  <h1>مولّد أيقونة الموقع (Favicon)</h1>
+  <p class="tool-lede">
+    صمّم أيقونة موقعك بحرف أو شعار، واحصل على كل المقاسات المطلوبة للمتصفحات والجوال دفعة واحدة،
+    مع كود HTML جاهز للصق في &lt;head&gt; موقعك.
+  </p>
+
+  <div class="tool-card-shell">
+    <div class="editor-layout">
+      <div>
+        <div class="stage-wrap" id="stageWrap">
+          <div class="stage-bg" id="stageBg" style="background-color:#4F3FF0;">
+            <span class="txt" id="txtPreview" style="font-size:40%;">F</span>
+          </div>
+        </div>
+
+        <div class="preview-strip">
+          <div class="pv-item"><div class="pv-box" id="pv16" style="width:16px;height:16px;"></div><div class="lbl">16×16</div></div>
+          <div class="pv-item"><div class="pv-box" id="pv32" style="width:32px;height:32px;"></div><div class="lbl">32×32</div></div>
+          <div class="pv-item"><div class="pv-box" id="pv48" style="width:48px;height:48px;border-radius:8px;"></div><div class="lbl">180×180</div></div>
+        </div>
+
+        <div class="actions" style="margin-top:18px;justify-content:center;">
+          <button class="btn btn-primary" id="downloadZipBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            تحميل كل المقاسات (ZIP)
+          </button>
+          <button class="btn btn-ghost" id="resetBtn">إعادة تعيين</button>
+        </div>
+
+        <div class="code-out" id="codeOut"></div>
+        <button class="btn btn-dark" id="copyCodeBtn" style="width:100%;justify-content:center;margin-top:10px;">نسخ كود HTML</button>
+      </div>
+
+      <div>
+        <div class="panel-card">
+          <h3>الخلفية</h3>
+          <div class="bg-mode-chips" style="margin-bottom:12px;">
+            <span class="bg-mode-chip active" data-bg="color">لون</span>
+            <span class="bg-mode-chip" data-bg="gradient">تدرّج</span>
+          </div>
+          <div id="bgColorRow" class="swatch-row">
+            <input type="color" id="bgColor1" value="#4F3FF0">
+          </div>
+          <div id="bgGradientRow" class="swatch-row" style="display:none;">
+            <input type="color" id="bgColor2a" value="#4F3FF0">
+            <input type="color" id="bgColor2b" value="#F0A93B">
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <h3>الشكل</h3>
+          <div class="shape-chips">
+            <span class="shape-chip active" data-shape="rounded">حواف دائرية</span>
+            <span class="shape-chip" data-shape="square">مربع</span>
+            <span class="shape-chip" data-shape="circle">دائرة كاملة</span>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <h3>الحرف / النص</h3>
+          <div class="panel-row">
+            <label>النص (حرف أو حرفين)</label>
+            <input type="text" id="iconText" value="F" maxlength="2">
+          </div>
+          <div class="panel-row">
+            <label>لون النص</label>
+            <div class="swatch-row"><input type="color" id="textColor" value="#ffffff"></div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <h3>أو ارفع شعار جاهز</h3>
+          <input type="file" id="logoInput" accept="image/*" style="display:none;">
+          <label class="upload-mini" for="logoInput">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 8l5-5 5 5"/><path d="M5 21h14"/></svg>
+            رفع صورة الشعار
+          </label>
+          <button class="btn btn-ghost" id="removeLogoBtn" style="width:100%;margin-top:10px;font-size:12.5px;padding:9px;display:none;">حذف الشعار المرفوع</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    كل التصميم يتم محليًا في متصفحك — تصميمك وصورك لا تغادران جهازك أبدًا
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ad-slot ad-slot-leaderboard">
+    <span class="ad-label">إعلان · Advertisement</span>
+    <div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+    </div>
+    <div class="footer-col">
+      <h4>الموقع</h4>
+      <a href="../index.html">الصفحة الرئيسية</a>
+      <a href="../blog/index.html">المدونة</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="../privacy.html">سياسة الخصوصية</a>
+      <a href="../terms.html">شروط الاستخدام</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>
+const stageWrap = document.getElementById('stageWrap');
+const stageBg = document.getElementById('stageBg');
+const txtPreview = document.getElementById('txtPreview');
+
+const bgModeChips = document.querySelectorAll('.bg-mode-chip');
+const bgColorRow = document.getElementById('bgColorRow');
+const bgGradientRow = document.getElementById('bgGradientRow');
+const bgColor1 = document.getElementById('bgColor1');
+const bgColor2a = document.getElementById('bgColor2a');
+const bgColor2b = document.getElementById('bgColor2b');
+
+const shapeChips = document.querySelectorAll('.shape-chip');
+const iconText = document.getElementById('iconText');
+const textColor = document.getElementById('textColor');
+const logoInput = document.getElementById('logoInput');
+const removeLogoBtn = document.getElementById('removeLogoBtn');
+const downloadZipBtn = document.getElementById('downloadZipBtn');
+const copyCodeBtn = document.getElementById('copyCodeBtn');
+const resetBtn = document.getElementById('resetBtn');
+const codeOut = document.getElementById('codeOut');
+
+const pv16 = document.getElementById('pv16');
+const pv32 = document.getElementById('pv32');
+const pv48 = document.getElementById('pv48');
+
+let bgMode = 'color';
+let shape = 'rounded';
+let logoDataUrl = null;
+let previewTimer = null;
+
+bgModeChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    bgModeChips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    bgMode = chip.dataset.bg;
+    bgColorRow.style.display = bgMode === 'color' ? 'flex' : 'none';
+    bgGradientRow.style.display = bgMode === 'gradient' ? 'flex' : 'none';
+    updateBackground();
+  });
+});
+function updateBackground(){
+  stageBg.style.background = bgMode === 'gradient'
+    ? `linear-gradient(135deg, ${bgColor2a.value}, ${bgColor2b.value})`
+    : bgColor1.value;
+  schedulePreview();
+}
+bgColor1.addEventListener('input', updateBackground);
+bgColor2a.addEventListener('input', updateBackground);
+bgColor2b.addEventListener('input', updateBackground);
+
+shapeChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    shapeChips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    shape = chip.dataset.shape;
+    applyShapePreview();
+    schedulePreview();
+  });
+});
+function applyShapePreview(){
+  const radius = shape === 'circle' ? '50%' : shape === 'rounded' ? '22%' : '0';
+  stageBg.style.borderRadius = radius;
+  pv48.style.borderRadius = shape === 'circle' ? '50%' : shape === 'rounded' ? '22%' : '0';
+}
+
+function updateText(){
+  txtPreview.textContent = iconText.value || 'F';
+  txtPreview.style.color = textColor.value;
+  schedulePreview();
+}
+iconText.addEventListener('input', updateText);
+textColor.addEventListener('input', updateText);
+
+logoInput.addEventListener('change', e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ev=>{
+    logoDataUrl = ev.target.result;
+    stageBg.innerHTML = `<img src="${logoDataUrl}" style="max-width:70%;max-height:70%;object-fit:contain;">`;
+    removeLogoBtn.style.display = 'block';
+    schedulePreview();
+  };
+  reader.readAsDataURL(file);
+});
+removeLogoBtn.addEventListener('click', ()=>{
+  logoDataUrl = null;
+  stageBg.innerHTML = `<span class="txt" id="txtPreview" style="font-size:40%;">${iconText.value||'F'}</span>`;
+  removeLogoBtn.style.display = 'none';
+  schedulePreview();
+});
+
+function loadImg(src){
+  return new Promise((resolve,reject)=>{
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = ()=>resolve(img);
+    img.onerror = reject;
+    img.src = src;
+  });
+}
+
+async function renderCanvas(size){
+  const canvas = document.createElement('canvas');
+  canvas.width = size; canvas.height = size;
+  const ctx = canvas.getContext('2d');
+
+  // Shape clip
+  ctx.save();
+  ctx.beginPath();
+  if(shape === 'circle'){
+    ctx.arc(size/2, size/2, size/2, 0, Math.PI*2);
+  } else if(shape === 'rounded'){
+    const r = size*0.22;
+    ctx.moveTo(r,0); ctx.arcTo(size,0,size,size,r); ctx.arcTo(size,size,0,size,r);
+    ctx.arcTo(0,size,0,0,r); ctx.arcTo(0,0,size,0,r);
+  } else {
+    ctx.rect(0,0,size,size);
+  }
+  ctx.closePath();
+  ctx.clip();
+
+  if(bgMode === 'gradient'){
+    const grad = ctx.createLinearGradient(0,0,size,size);
+    grad.addColorStop(0, bgColor2a.value); grad.addColorStop(1, bgColor2b.value);
+    ctx.fillStyle = grad;
+  } else {
+    ctx.fillStyle = bgColor1.value;
+  }
+  ctx.fillRect(0,0,size,size);
+
+  if(logoDataUrl){
+    const img = await loadImg(logoDataUrl);
+    const scale = Math.min((size*0.7)/img.width, (size*0.7)/img.height);
+    const dw = img.width*scale, dh = img.height*scale;
+    ctx.drawImage(img, (size-dw)/2, (size-dh)/2, dw, dh);
+  } else {
+    ctx.fillStyle = textColor.value;
+    ctx.font = `900 ${size*0.5}px Tajawal, Arial, sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(iconText.value || 'F', size/2, size/2 + size*0.05);
+  }
+
+  ctx.restore();
+  return canvas;
+}
+
+function schedulePreview(){
+  clearTimeout(previewTimer);
+  previewTimer = setTimeout(updatePreviews, 150);
+}
+async function updatePreviews(){
+  const canvas = await renderCanvas(96);
+  const url = canvas.toDataURL('image/png');
+  pv16.style.backgroundImage = `url(${url})`; pv16.style.backgroundSize = 'cover';
+  pv32.style.backgroundImage = `url(${url})`; pv32.style.backgroundSize = 'cover';
+  pv48.style.backgroundImage = `url(${url})`; pv48.style.backgroundSize = 'cover';
+}
+
+const HTML_SNIPPET = `<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">`;
+codeOut.textContent = HTML_SNIPPET;
+
+copyCodeBtn.addEventListener('click', async ()=>{
+  try{
+    await navigator.clipboard.writeText(HTML_SNIPPET);
+    const original = copyCodeBtn.textContent;
+    copyCodeBtn.textContent = 'تم النسخ ✓';
+    setTimeout(()=> copyCodeBtn.textContent = original, 1500);
+  }catch(e){ console.error(e); }
+});
+
+downloadZipBtn.addEventListener('click', async ()=>{
+  downloadZipBtn.disabled = true;
+  downloadZipBtn.textContent = 'جارٍ التجهيز...';
+  try{
+    const sizes = [
+      {size:16, name:'favicon-16x16.png'},
+      {size:32, name:'favicon-32x32.png'},
+      {size:180, name:'apple-touch-icon.png'},
+      {size:192, name:'android-chrome-192x192.png'},
+      {size:512, name:'android-chrome-512x512.png'},
+    ];
+    const zip = new JSZip();
+    for(const s of sizes){
+      const canvas = await renderCanvas(s.size);
+      const blob = await new Promise(res=> canvas.toBlob(res, 'image/png'));
+      zip.file(s.name, blob);
+    }
+    zip.file('favicon-html-snippet.txt', HTML_SNIPPET);
+    const content = await zip.generateAsync({type:'blob'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(content);
+    a.download = 'favicon-package.zip';
+    document.body.appendChild(a); a.click(); a.remove();
+  } catch(err){
+    console.error(err);
+    alert('تعذّر إنشاء ملف الأيقونات. جرّب مرة أخرى.');
+  }
+  downloadZipBtn.disabled = false;
+  downloadZipBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg> تحميل كل المقاسات (ZIP)`;
+});
+
+resetBtn.addEventListener('click', ()=>{
+  bgMode = 'color'; shape = 'rounded'; logoDataUrl = null;
+  bgModeChips.forEach(c=>c.classList.remove('active')); bgModeChips[0].classList.add('active');
+  shapeChips.forEach(c=>c.classList.remove('active')); shapeChips[0].classList.add('active');
+  bgColorRow.style.display = 'flex'; bgGradientRow.style.display = 'none';
+  bgColor1.value = '#4F3FF0';
+  iconText.value = 'F'; textColor.value = '#ffffff';
+  stageBg.innerHTML = `<span class="txt" id="txtPreview" style="font-size:40%;color:#ffffff;">F</span>`;
+  removeLogoBtn.style.display = 'none';
+  applyShapePreview();
+  updateBackground();
+  schedulePreview();
+});
+
+applyShapePreview();
+schedulePreview();
+</script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحميل الصورة المصغرة من يوتيوب مجانًا (Thumbnail) | فورا.tools</title>
+<meta name="description" content="حمّل الصورة المصغرة (Thumbnail) لأي فيديو يوتيوب بأعلى جودة متاحة، بجميع المقاسات، مباشرة من رابط الفيديو.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#4F3FF0">
+<link rel="canonical" href="https://fawran.tools/tools/youtube-thumbnail-downloader.html">
+<link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/youtube-thumbnail-downloader.html">
+<link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/youtube-thumbnail-downloader.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fawran.tools/tools/youtube-thumbnail-downloader.html">
+<meta property="og:title" content="تحميل الصورة المصغرة من يوتيوب مجانًا (Thumbnail) | فورا.tools">
+<meta property="og:description" content="حمّل الصورة المصغرة (Thumbnail) لأي فيديو يوتيوب بأعلى جودة متاحة، بجميع المقاسات، مباشرة من رابط الفيديو.">
+<meta property="og:site_name" content="فورا.tools">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="تحميل الصورة المصغرة من يوتيوب مجانًا (Thumbnail) | فورا.tools">
+<meta name="twitter:description" content="حمّل الصورة المصغرة (Thumbnail) لأي فيديو يوتيوب بأعلى جودة متاحة، بجميع المقاسات، مباشرة من رابط الفيديو.">
+<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .thumb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px;}
+  @media(max-width:640px){.thumb-grid{grid-template-columns:1fr;}}
+  .thumb-item{
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);
+  }
+  .thumb-item .prev{
+    aspect-ratio:16/9;background:var(--surface-sunk);display:flex;align-items:center;justify-content:center;
+    overflow:hidden;position:relative;
+  }
+  .thumb-item .prev img{width:100%;height:100%;object-fit:cover;display:block;}
+  .thumb-item .prev .unavailable{font-size:12.5px;color:var(--muted);text-align:center;padding:14px;}
+  .thumb-meta{padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .thumb-meta .info{}
+  .thumb-meta .name{font-weight:800;font-size:14px;}
+  .thumb-meta .dims{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);margin-top:2px;}
+  .best-badge{
+    position:absolute;top:10px;right:10px;background:var(--gold);color:#3A2600;
+    font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px;
+  }
+  .url-input-row{display:flex;gap:10px;flex-wrap:wrap;}
+  .url-input-row input{
+    flex:1;min-width:220px;font-family:'Tajawal',sans-serif;font-size:15px;padding:14px 16px;
+    border-radius:12px;border:1.5px solid var(--line);background:#FDFCFA;color:var(--ink);
+  }
+  .url-input-row input:focus{outline:none;border-color:var(--indigo);}
+  [data-theme="dark"] .url-input-row input{background:#211F34;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "تحميل الصورة المصغرة من يوتيوب",
+  "url": "https://fawran.tools/tools/youtube-thumbnail-downloader.html",
+  "description": "حمّل الصورة المصغرة (Thumbnail) لأي فيديو يوتيوب بأعلى جودة متاحة، بجميع المقاسات، مباشرة من رابط الفيديو.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "فورا.tools", "url": "https://fawran.tools/index.html"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "الأدوات", "item": "https://fawran.tools/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "أدوات يوتيوب", "item": "https://fawran.tools/index.html#youtube"},
+    {"@type": "ListItem", "position": 3, "name": "تحميل الصورة المصغرة من يوتيوب", "item": "https://fawran.tools/tools/youtube-thumbnail-downloader.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="../index.html" class="active">الأدوات</a>
+        <a href="../blog/index.html">المدونة</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../contact.html">تواصل معنا</a>
+      </nav>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="../en/tools/youtube-thumbnail-downloader.html" class="lang-switch" title="View in English">EN</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap tool-page">
+  <div class="crumb"><a href="../index.html">الأدوات</a> / أدوات يوتيوب / تحميل الصورة المصغرة</div>
+  <h1>تحميل الصورة المصغرة من يوتيوب</h1>
+  <p class="tool-lede">
+    الصق رابط أي فيديو يوتيوب واحصل على الصورة المصغرة (Thumbnail) الخاصة به بكل المقاسات المتاحة،
+    من أعلى جودة (HD) إلى أصغر مقاس — جاهزة للتحميل مباشرة.
+  </p>
+
+  <div class="tool-card-shell">
+    <div class="url-input-row">
+      <input type="text" id="ytUrl" placeholder="https://www.youtube.com/watch?v=... أو https://youtu.be/...">
+      <button class="btn btn-primary" id="fetchBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        جلب الصور
+      </button>
+    </div>
+    <p id="errMsg" style="display:none;color:var(--danger);font-size:13px;margin-top:10px;"></p>
+
+    <div id="thumbGrid" class="thumb-grid" style="display:none;"></div>
+  </div>
+
+  <div class="footer-note">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    الأداة تعتمد فقط على رابط الفيديو المتاح للعامة — لا حاجة لتسجيل الدخول أو مفتاح API
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ad-slot ad-slot-leaderboard">
+    <span class="ad-label">إعلان · Advertisement</span>
+    <div class="ad-slot-inner">
+      <!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك -->
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+    </div>
+    <div class="footer-col">
+      <h4>الموقع</h4>
+      <a href="../index.html">الصفحة الرئيسية</a>
+      <a href="../blog/index.html">المدونة</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="../privacy.html">سياسة الخصوصية</a>
+      <a href="../terms.html">شروط الاستخدام</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>
+const ytUrl = document.getElementById('ytUrl');
+const fetchBtn = document.getElementById('fetchBtn');
+const errMsg = document.getElementById('errMsg');
+const thumbGrid = document.getElementById('thumbGrid');
+
+const SIZES = [
+  { key: 'maxresdefault', label: 'أعلى جودة (HD)', dims: '1280×720', best: true },
+  { key: 'sddefault',     label: 'جودة قياسية',      dims: '640×480' },
+  { key: 'hqdefault',     label: 'جودة عالية',        dims: '480×360' },
+  { key: 'mqdefault',     label: 'جودة متوسطة',       dims: '320×180' },
+  { key: 'default',       label: 'مصغّرة',            dims: '120×90'  },
+];
+
+function extractVideoId(url){
+  url = url.trim();
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtube\.com\/shorts\/|youtube\.com\/embed\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
+    /^([a-zA-Z0-9_-]{11})$/
+  ];
+  for(const p of patterns){
+    const m = url.match(p);
+    if(m) return m[1];
+  }
+  return null;
+}
+
+function checkImageLoads(url){
+  return new Promise(resolve=>{
+    const img = new Image();
+    img.onload = ()=> resolve(img.naturalWidth > 120); // youtube returns a 120x90 gray placeholder when maxres unavailable
+    img.onerror = ()=> resolve(false);
+    img.src = url;
+  });
+}
+
+async function downloadImage(url, filename){
+  try{
+    const res = await fetch(url, {mode:'cors'});
+    const blob = await res.blob();
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+  } catch(e){
+    // fallback: open in new tab if cross-origin fetch is blocked
+    window.open(url, '_blank');
+  }
+}
+
+async function fetchThumbnails(){
+  errMsg.style.display = 'none';
+  thumbGrid.style.display = 'none';
+  const id = extractVideoId(ytUrl.value);
+  if(!id){
+    errMsg.textContent = 'تعذّر التعرّف على الفيديو — تأكد من صحة الرابط.';
+    errMsg.style.display = 'block';
+    return;
+  }
+
+  fetchBtn.disabled = true;
+  thumbGrid.innerHTML = '';
+
+  for(const size of SIZES){
+    const url = `https://img.youtube.com/vi/${id}/${size.key}.jpg`;
+    const card = document.createElement('div');
+    card.className = 'thumb-item';
+    card.innerHTML = `
+      <div class="prev">
+        ${size.best ? '<span class="best-badge">الأفضل</span>' : ''}
+        <img src="${url}" alt="${size.label}" loading="lazy">
+      </div>
+      <div class="thumb-meta">
+        <div class="info">
+          <div class="name">${size.label}</div>
+          <div class="dims">${size.dims}</div>
+        </div>
+        <button class="icon-btn dl" data-url="${url}" data-name="${id}-${size.key}.jpg">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          تحميل
+        </button>
+      </div>
+    `;
+    thumbGrid.appendChild(card);
+
+    // Check availability (maxres often missing for older/low-res videos)
+    const available = await checkImageLoads(url);
+    if(!available && size.key !== 'default'){
+      card.querySelector('.prev').innerHTML = `${size.best ? '<span class="best-badge">الأفضل</span>' : ''}<div class="unavailable">غير متاح لهذا الفيديو</div>`;
+      card.querySelector('.dl').disabled = true;
+      card.querySelector('.dl').style.opacity = '.4';
+    }
+  }
+
+  thumbGrid.style.display = 'grid';
+  thumbGrid.querySelectorAll('[data-url]').forEach(btn=>{
+    btn.addEventListener('click', ()=> downloadImage(btn.dataset.url, btn.dataset.name));
+  });
+
+  fetchBtn.disabled = false;
+}
+
+fetchBtn.addEventListener('click', fetchThumbnails);
+ytUrl.addEventListener('keydown', e=>{ if(e.key === 'Enter') fetchThumbnails(); });
+</script>
+</body>
+</html>

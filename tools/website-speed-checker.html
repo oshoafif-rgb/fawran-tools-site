@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فاحص سرعة الموقع مجانًا (PageSpeed) | فورا.tools</title>
+<meta name="description" content="افحص سرعة تحميل موقعك على الجوال والكمبيوتر بناءً على بيانات جوجل الرسمية (Core Web Vitals)، مع نقاط الأداء وأهم فرص التحسين.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#4F3FF0">
+<link rel="canonical" href="https://fawran.tools/tools/website-speed-checker.html">
+<link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/website-speed-checker.html">
+<link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/website-speed-checker.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fawran.tools/tools/website-speed-checker.html">
+<meta property="og:title" content="فاحص سرعة الموقع مجانًا (PageSpeed) | فورا.tools">
+<meta property="og:description" content="افحص سرعة تحميل موقعك على الجوال والكمبيوتر بناءً على بيانات جوجل الرسمية (Core Web Vitals)، مع نقاط الأداء وأهم فرص التحسين.">
+<meta property="og:site_name" content="فورا.tools">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="فاحص سرعة الموقع مجانًا (PageSpeed) | فورا.tools">
+<meta name="twitter:description" content="افحص سرعة تحميل موقعك على الجوال والكمبيوتر بناءً على بيانات جوجل الرسمية (Core Web Vitals)، مع نقاط الأداء وأهم فرص التحسين.">
+<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .url-input-row{display:flex;gap:10px;flex-wrap:wrap;}
+  .url-input-row input{
+    flex:1;min-width:220px;font-family:'IBM Plex Mono',monospace;font-size:14px;padding:14px 16px;
+    border-radius:12px;border:1.5px solid var(--line);background:#FDFCFA;color:var(--ink);direction:ltr;text-align:left;
+  }
+  [data-theme="dark"] .url-input-row input{background:#211F34;}
+  .url-input-row input:focus{outline:none;border-color:var(--indigo);}
+
+  .strategy-chips{display:flex;gap:8px;margin-top:12px;}
+  .strategy-chip{font-size:12.5px;font-weight:700;padding:8px 15px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer;}
+  [data-theme="dark"] .strategy-chip{background:var(--surface-sunk);}
+  .strategy-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+
+  .loading-row{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;margin-top:18px;}
+  .spinner{width:16px;height:16px;border-radius:50%;border:2.5px solid var(--line);border-top-color:var(--indigo);animation:spin .7s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .score-hero{display:flex;align-items:center;gap:20px;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;margin-top:22px;flex-wrap:wrap;}
+  .score-ring-big{position:relative;width:100px;height:100px;flex:0 0 auto;}
+  .score-ring-big svg{transform:rotate(-90deg);}
+  .score-ring-big .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:30px;}
+  .score-hero .t{font-weight:800;font-size:15px;}
+  .score-hero .s{font-size:12.5px;color:var(--muted);margin-top:4px;}
+
+  .metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:18px;}
+  .metric-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;}
+  .metric-box .n{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:19px;}
+  .metric-box .l{font-size:11px;color:var(--muted);margin-top:4px;}
+  .metric-box.good .n{color:var(--good);}
+  .metric-box.average .n{color:var(--gold-deep);}
+  .metric-box.poor .n{color:var(--danger);}
+
+  .opportunities{margin-top:22px;}
+  .opp-item{padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-bottom:8px;font-size:13px;}
+  .opp-item .t{font-weight:700;}
+  .opp-item .save{font-family:'IBM Plex Mono',monospace;color:var(--gold-deep);font-size:11.5px;margin-top:3px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "فاحص سرعة الموقع",
+  "url": "https://fawran.tools/tools/website-speed-checker.html",
+  "description": "افحص سرعة تحميل موقعك على الجوال والكمبيوتر بناءً على بيانات جوجل الرسمية (Core Web Vitals)، مع نقاط الأداء وأهم فرص التحسين.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "فورا.tools", "url": "https://fawran.tools/index.html"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "الأدوات", "item": "https://fawran.tools/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "أدوات المواقع والمدونات", "item": "https://fawran.tools/index.html#websites"},
+    {"@type": "ListItem", "position": 3, "name": "فاحص سرعة الموقع", "item": "https://fawran.tools/tools/website-speed-checker.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="../index.html" class="active">الأدوات</a>
+        <a href="../blog/index.html">المدونة</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../contact.html">تواصل معنا</a>
+      </nav>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="../en/tools/website-speed-checker.html" class="lang-switch" title="View in English">EN</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap tool-page">
+  <div class="crumb"><a href="../index.html">الأدوات</a> / أدوات المواقع والمدونات / فاحص السرعة</div>
+  <h1>فاحص سرعة الموقع</h1>
+  <p class="tool-lede">
+    الصق رابط موقعك واحصل على تحليل سرعة حقيقي من بيانات جوجل الرسمية (نفس المحرك اللي بيستخدمه
+    PageSpeed Insights)، مع أهم فرص التحسين.
+  </p>
+
+  <div class="tool-card-shell">
+    <div class="url-input-row">
+      <input type="text" id="siteUrl" placeholder="https://example.com">
+      <button class="btn btn-primary" id="checkBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        فحص السرعة
+      </button>
+    </div>
+    <div class="strategy-chips">
+      <span class="strategy-chip active" data-strategy="mobile">📱 الجوال</span>
+      <span class="strategy-chip" data-strategy="desktop">💻 الكمبيوتر</span>
+    </div>
+
+    <div id="loadingRow" class="loading-row" style="display:none;">
+      <div class="spinner"></div>
+      <span>جارٍ التحليل... قد يستغرق 15-30 ثانية</span>
+    </div>
+    <p id="errMsg" style="display:none;color:var(--danger);font-size:13px;margin-top:16px;line-height:1.8;"></p>
+
+    <div id="resultsWrap" style="display:none;">
+      <div class="score-hero">
+        <div class="score-ring-big">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="var(--surface-sunk)" stroke-width="10"/>
+            <circle cx="50" cy="50" r="42" fill="none" id="scoreCircleBig" stroke="var(--indigo)" stroke-width="10" stroke-dasharray="264" stroke-dashoffset="264" stroke-linecap="round"/>
+          </svg>
+          <div class="num" id="scoreNumBig">0</div>
+        </div>
+        <div>
+          <div class="t" id="scoreTitleBig">نقاط الأداء</div>
+          <div class="s" id="scoreSubBig">من 100</div>
+        </div>
+      </div>
+
+      <div class="metrics-grid" id="metricsGrid"></div>
+
+      <div class="opportunities" id="opportunities" style="display:none;">
+        <div class="section-title"><span class="dot"></span>أهم فرص التحسين</div>
+        <div id="oppList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    التحليل يعتمد على واجهة Google PageSpeed Insights العامة — قد تحدث فترات ازدحام في خدمة جوجل نفسها، وفي هذه الحالة أعد المحاولة بعد دقيقة
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ad-slot ad-slot-leaderboard">
+    <span class="ad-label">إعلان · Advertisement</span>
+    <div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+    </div>
+    <div class="footer-col">
+      <h4>الموقع</h4>
+      <a href="../index.html">الصفحة الرئيسية</a>
+      <a href="../blog/index.html">المدونة</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="../privacy.html">سياسة الخصوصية</a>
+      <a href="../terms.html">شروط الاستخدام</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>
+const siteUrl = document.getElementById('siteUrl');
+const checkBtn = document.getElementById('checkBtn');
+const strategyChips = document.querySelectorAll('.strategy-chip');
+const loadingRow = document.getElementById('loadingRow');
+const errMsg = document.getElementById('errMsg');
+const resultsWrap = document.getElementById('resultsWrap');
+const scoreCircleBig = document.getElementById('scoreCircleBig');
+const scoreNumBig = document.getElementById('scoreNumBig');
+const scoreTitleBig = document.getElementById('scoreTitleBig');
+const metricsGrid = document.getElementById('metricsGrid');
+const opportunities = document.getElementById('opportunities');
+const oppList = document.getElementById('oppList');
+
+let strategy = 'mobile';
+strategyChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    strategyChips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    strategy = chip.dataset.strategy;
+  });
+});
+
+function normalizeUrl(u){
+  u = u.trim();
+  if(!/^https?:\/\//i.test(u)) u = 'https://' + u;
+  return u;
+}
+
+function metricClass(value, goodMax, poorMin){
+  if(value <= goodMax) return 'good';
+  if(value >= poorMin) return 'poor';
+  return 'average';
+}
+
+async function runCheck(){
+  const url = siteUrl.value.trim();
+  if(!url){
+    errMsg.textContent = 'اكتب رابط الموقع أولًا.';
+    errMsg.style.display = 'block';
+    return;
+  }
+
+  errMsg.style.display = 'none';
+  resultsWrap.style.display = 'none';
+  loadingRow.style.display = 'flex';
+  checkBtn.disabled = true;
+
+  const target = normalizeUrl(url);
+  const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(target)}&strategy=${strategy}&category=performance`;
+
+  try{
+    const res = await fetch(apiUrl);
+    if(!res.ok){
+      throw new Error(res.status === 429 ? 'RATE_LIMIT' : 'API_ERROR');
+    }
+    const data = await res.json();
+
+    const lr = data.lighthouseResult;
+    if(!lr) throw new Error('NO_RESULT');
+
+    const perfScore = Math.round((lr.categories.performance.score || 0) * 100);
+    const audits = lr.audits;
+
+    scoreNumBig.textContent = perfScore;
+    const circumference = 264;
+    scoreCircleBig.style.strokeDashoffset = circumference - (circumference*perfScore/100);
+    scoreCircleBig.style.stroke = perfScore >= 90 ? 'var(--good)' : perfScore >= 50 ? 'var(--gold-deep)' : 'var(--danger)';
+    scoreTitleBig.textContent = perfScore >= 90 ? 'أداء ممتاز 🎉' : perfScore >= 50 ? 'أداء متوسط' : 'أداء ضعيف — يحتاج تحسين';
+
+    const metrics = [
+      { key:'first-contentful-paint', label:'أول عرض للمحتوى (FCP)' },
+      { key:'largest-contentful-paint', label:'أكبر عنصر معروض (LCP)' },
+      { key:'speed-index', label:'مؤشر السرعة' },
+      { key:'total-blocking-time', label:'وقت الحظر الكلي (TBT)' },
+      { key:'cumulative-layout-shift', label:'ثبات التخطيط (CLS)' },
+    ];
+    metricsGrid.innerHTML = metrics.map(m=>{
+      const audit = audits[m.key];
+      if(!audit) return '';
+      const displayVal = audit.displayValue || '—';
+      const score = audit.score;
+      const cls = score === null ? '' : score >= 0.9 ? 'good' : score >= 0.5 ? 'average' : 'poor';
+      return `<div class="metric-box ${cls}"><div class="n">${displayVal}</div><div class="l">${m.label}</div></div>`;
+    }).join('');
+
+    // Opportunities (audits with potential savings)
+    const oppKeys = Object.keys(audits).filter(k=>
+      audits[k].details && audits[k].details.type === 'opportunity' && audits[k].score !== null && audits[k].score < 0.9
+    );
+    if(oppKeys.length){
+      opportunities.style.display = 'block';
+      oppList.innerHTML = oppKeys.slice(0,6).map(k=>{
+        const a = audits[k];
+        return `<div class="opp-item"><div class="t">${a.title}</div>${a.displayValue ? `<div class="save">توفير محتمل: ${a.displayValue}</div>` : ''}</div>`;
+      }).join('');
+    } else {
+      opportunities.style.display = 'none';
+    }
+
+    resultsWrap.style.display = 'block';
+  } catch(err){
+    console.error(err);
+    if(err.message === 'RATE_LIMIT'){
+      errMsg.textContent = 'خدمة جوجل مزدحمة حاليًا (حد الاستخدام العام تم الوصول له). جرّب بعد دقيقة أو دقيقتين.';
+    } else {
+      errMsg.textContent = 'تعذّر تحليل هذا الموقع. تأكد من صحة الرابط وإنه متاح للعامة، ثم أعد المحاولة.';
+    }
+    errMsg.style.display = 'block';
+  }
+
+  loadingRow.style.display = 'none';
+  checkBtn.disabled = false;
+}
+
+checkBtn.addEventListener('click', runCheck);
+siteUrl.addEventListener('keydown', e=>{ if(e.key === 'Enter') runCheck(); });
+</script>
+</body>
+</html>

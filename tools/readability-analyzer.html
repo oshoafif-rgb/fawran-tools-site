@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محلل قابلية القراءة للنصوص مجانًا | فورا.tools</title>
+<meta name="description" content="افحص مدى سهولة قراءة مقالك: طول الجمل، طول الكلمات، ووقت القراءة، مع تقييم عام ونصائح لتحسين وضوح النص لقرّائك.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#4F3FF0">
+<link rel="canonical" href="https://fawran.tools/tools/readability-analyzer.html">
+<link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/readability-analyzer.html">
+<link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/readability-analyzer.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fawran.tools/tools/readability-analyzer.html">
+<meta property="og:title" content="محلل قابلية القراءة للنصوص مجانًا | فورا.tools">
+<meta property="og:description" content="افحص مدى سهولة قراءة مقالك: طول الجمل، طول الكلمات، ووقت القراءة، مع تقييم عام ونصائح لتحسين وضوح النص لقرّائك.">
+<meta property="og:site_name" content="فورا.tools">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="محلل قابلية القراءة للنصوص مجانًا | فورا.tools">
+<meta name="twitter:description" content="افحص مدى سهولة قراءة مقالك: طول الجمل، طول الكلمات، ووقت القراءة، مع تقييم عام ونصائح لتحسين وضوح النص لقرّائك.">
+<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .rd-layout{display:grid;grid-template-columns:1fr 300px;gap:20px;}
+  @media(max-width:860px){.rd-layout{grid-template-columns:1fr;}}
+  textarea#textInput{
+    width:100%;min-height:340px;resize:vertical;font-family:'Tajawal',sans-serif;font-size:15px;
+    line-height:1.9;padding:18px;border-radius:14px;border:1.5px solid var(--line);
+    background:#FDFCFA;color:var(--ink);
+  }
+  [data-theme="dark"] textarea#textInput{background:#211F34;}
+  textarea#textInput:focus{outline:none;border-color:var(--indigo);}
+
+  .score-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;margin-bottom:14px;}
+  .score-ring{position:relative;width:90px;height:90px;margin:0 auto;}
+  .score-ring svg{transform:rotate(-90deg);}
+  .score-ring .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:22px;}
+  .score-card .lbl{font-weight:800;font-size:14px;margin-top:10px;}
+  .score-card .cap{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.6;}
+
+  .stat-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .stat-box-2{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center;}
+  .stat-box-2 .n{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:17px;color:var(--indigo-deep);}
+  .stat-box-2 .l{font-size:10.5px;color:var(--muted);margin-top:3px;}
+
+  .tips-box{margin-top:14px;}
+  .tip-item{display:flex;gap:8px;padding:9px 11px;border-radius:9px;background:var(--gold-soft);font-size:12px;margin-bottom:6px;line-height:1.7;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "محلل قابلية القراءة للنصوص",
+  "url": "https://fawran.tools/tools/readability-analyzer.html",
+  "description": "افحص مدى سهولة قراءة مقالك: طول الجمل، طول الكلمات، ووقت القراءة، مع تقييم عام ونصائح لتحسين وضوح النص لقرّائك.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "فورا.tools", "url": "https://fawran.tools/index.html"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "الأدوات", "item": "https://fawran.tools/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "أدوات المواقع والمدونات", "item": "https://fawran.tools/index.html#websites"},
+    {"@type": "ListItem", "position": 3, "name": "محلل قابلية القراءة", "item": "https://fawran.tools/tools/readability-analyzer.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="../index.html" class="active">الأدوات</a>
+        <a href="../blog/index.html">المدونة</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../contact.html">تواصل معنا</a>
+      </nav>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="../en/tools/readability-analyzer.html" class="lang-switch" title="View in English">EN</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap tool-page">
+  <div class="crumb"><a href="../index.html">الأدوات</a> / أدوات المواقع والمدونات / قابلية القراءة</div>
+  <h1>محلل قابلية القراءة للنصوص</h1>
+  <p class="tool-lede">
+    الصق مقالك، وشوف تقييم فوري لمدى سهولة قراءته — طول الجمل، طول الكلمات، ونصائح عملية لتبسيط
+    النص لقرّائك.
+  </p>
+
+  <div class="tool-card-shell">
+    <div class="rd-layout">
+      <div>
+        <textarea id="textInput" placeholder="الصق نص مقالك هنا..."></textarea>
+      </div>
+
+      <div>
+        <div class="score-card">
+          <div class="score-ring">
+            <svg width="90" height="90" viewBox="0 0 90 90">
+              <circle cx="45" cy="45" r="38" fill="none" stroke="var(--surface-sunk)" stroke-width="8"/>
+              <circle cx="45" cy="45" r="38" fill="none" id="scoreCircle" stroke="var(--indigo)" stroke-width="8" stroke-dasharray="239" stroke-dashoffset="239" stroke-linecap="round"/>
+            </svg>
+            <div class="num" id="scoreNum">0</div>
+          </div>
+          <div class="lbl" id="scoreLbl">الصق نصًا للبدء</div>
+          <div class="cap" id="scoreCap">تقييم تقريبي لسهولة القراءة</div>
+        </div>
+
+        <div class="stat-grid-2">
+          <div class="stat-box-2"><div class="n" id="wordCount">0</div><div class="l">كلمة</div></div>
+          <div class="stat-box-2"><div class="n" id="sentenceCount">0</div><div class="l">جملة</div></div>
+          <div class="stat-box-2"><div class="n" id="avgSentence">0</div><div class="l">كلمة/جملة</div></div>
+          <div class="stat-box-2"><div class="n" id="readTime">0</div><div class="l">دقيقة قراءة</div></div>
+        </div>
+
+        <div class="tips-box" id="tipsBox"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    التحليل يتم محليًا في متصفحك — نصك لا يُرسل لأي خادم. التقييم تقديري ويعتمد على مؤشرات عامة لطول الجمل والكلمات، وليس معيارًا لغويًا رسميًا للعربية
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ad-slot ad-slot-leaderboard">
+    <span class="ad-label">إعلان · Advertisement</span>
+    <div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+    </div>
+    <div class="footer-col">
+      <h4>الموقع</h4>
+      <a href="../index.html">الصفحة الرئيسية</a>
+      <a href="../blog/index.html">المدونة</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="../privacy.html">سياسة الخصوصية</a>
+      <a href="../terms.html">شروط الاستخدام</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>
+const textInput = document.getElementById('textInput');
+const scoreCircle = document.getElementById('scoreCircle');
+const scoreNum = document.getElementById('scoreNum');
+const scoreLbl = document.getElementById('scoreLbl');
+const scoreCap = document.getElementById('scoreCap');
+const wordCount = document.getElementById('wordCount');
+const sentenceCount = document.getElementById('sentenceCount');
+const avgSentence = document.getElementById('avgSentence');
+const readTime = document.getElementById('readTime');
+const tipsBox = document.getElementById('tipsBox');
+
+function analyze(){
+  const text = textInput.value.trim();
+  if(!text){
+    scoreNum.textContent = '0';
+    scoreCircle.style.strokeDashoffset = 239;
+    scoreLbl.textContent = 'الصق نصًا للبدء';
+    scoreCap.textContent = 'تقييم تقريبي لسهولة القراءة';
+    wordCount.textContent = '0'; sentenceCount.textContent = '0';
+    avgSentence.textContent = '0'; readTime.textContent = '0';
+    tipsBox.innerHTML = '';
+    return;
+  }
+
+  const words = text.split(/\s+/).filter(Boolean);
+  const sentences = text.split(/[.!؟?]+/).map(s=>s.trim()).filter(Boolean);
+  const wc = words.length;
+  const sc = Math.max(1, sentences.length);
+  const avgWordsPerSentence = wc / sc;
+  const avgWordLength = words.reduce((sum,w)=> sum + w.length, 0) / Math.max(1, wc);
+  const longWords = words.filter(w=> w.length > 7).length;
+  const longWordRatio = longWords / Math.max(1, wc);
+
+  // Heuristic readability score (0-100, higher = easier). Not a validated linguistic formula.
+  let score = 100 - (avgWordsPerSentence * 1.5) - (avgWordLength * 4) - (longWordRatio * 40);
+  score = Math.max(0, Math.min(100, Math.round(score)));
+
+  scoreNum.textContent = score;
+  const circumference = 239;
+  scoreCircle.style.strokeDashoffset = circumference - (circumference*score/100);
+  scoreCircle.style.stroke = score >= 70 ? 'var(--good)' : score >= 40 ? 'var(--gold-deep)' : 'var(--danger)';
+
+  let label, cap;
+  if(score >= 70){ label = 'سهل القراءة 👍'; cap = 'جمل وكلمات مناسبة لمعظم القرّاء.'; }
+  else if(score >= 40){ label = 'متوسط الصعوبة'; cap = 'ممكن تبسّط بعض الجمل الطويلة.'; }
+  else { label = 'صعب نسبيًا'; cap = 'جمل طويلة أو كلمات معقدة كتير — فكّر تبسّط.'; }
+  scoreLbl.textContent = label;
+  scoreCap.textContent = cap;
+
+  wordCount.textContent = wc.toLocaleString('ar');
+  sentenceCount.textContent = sc.toLocaleString('ar');
+  avgSentence.textContent = avgWordsPerSentence.toFixed(1);
+  readTime.textContent = Math.max(1, Math.ceil(wc/200));
+
+  const tips = [];
+  if(avgWordsPerSentence > 25) tips.push('متوسط طول الجملة عندك مرتفع (' + avgWordsPerSentence.toFixed(0) + ' كلمة) — جرّب تقسّم الجمل الطويلة لجملتين.');
+  if(longWordRatio > 0.3) tips.push('نسبة الكلمات الطويلة عالية — استخدم مرادفات أبسط لو ممكن.');
+  if(sc < 3 && wc > 50) tips.push('النص طويل بس عدد الجمل قليل — تأكد إنك مستخدم علامات ترقيم كافية.');
+  if(!tips.length) tips.push('النص متوازن من ناحية طول الجمل والكلمات — استمر على نفس الأسلوب.');
+
+  tipsBox.innerHTML = tips.map(t=>`<div class="tip-item">💡 ${t}</div>`).join('');
+}
+
+textInput.addEventListener('input', analyze);
+analyze();
+</script>
+</body>
+</html>
