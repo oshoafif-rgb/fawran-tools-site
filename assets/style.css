@@ -224,7 +224,7 @@ h1.hero-title .hl{color:var(--indigo);}
 .quick-chip:hover, .quick-chip.active{border-color:var(--indigo);color:var(--indigo);background:var(--indigo-soft);}
 
 /* ---------- Category sections ---------- */
-.category{padding:44px 0;}
+.category{padding-top:44px;padding-bottom:44px;}
 .category-head{
   display:flex;align-items:baseline;justify-content:space-between;gap:16px;
   margin-bottom:22px;flex-wrap:wrap;
