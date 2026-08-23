@@ -1,0 +1,3 @@
+Contact: https://fawran.tools/contact.html
+Preferred-Languages: ar, en
+Canonical: https://fawran.tools/security.txt

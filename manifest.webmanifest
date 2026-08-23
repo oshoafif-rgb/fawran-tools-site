@@ -1,0 +1,36 @@
+{
+  "name": "Fawran Tools",
+  "short_name": "Fawran",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f0e16",
+  "theme_color": "#4F3FF0",
+  "description": "Free online tools for images, PDF, SEO, text, websites and YouTube.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Image Compressor",
+      "url": "/tools/image-compressor.html"
+    },
+    {
+      "name": "PDF Merger",
+      "url": "/tools/pdf-merge.html"
+    },
+    {
+      "name": "WebP Converter",
+      "url": "/tools/webp-converter.html"
+    },
+    {
+      "name": "Word Counter",
+      "url": "/tools/word-counter.html"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
-
+Disallow: /assets/
+Disallow: /sw.js
 Sitemap: https://fawran.tools/sitemap.xml
