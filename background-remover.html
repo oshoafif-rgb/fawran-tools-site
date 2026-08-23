@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إزالة خلفية الصور مجانًا | فورا.tools</title>
+<meta content="إزالة خلفية الصورة أونلاين مجانًا بدون فوتوشوب. أداة سريعة لمعالجة الخلفيات الموحدة وتصدير صور شفافة." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/background-remover.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/tools/background-remover.html" property="og:url"/>
+<meta content="إزالة الخلفية الموحدة اللون — أداة احترافية مجانًا | فورا.tools" property="og:title"/>
+<meta content="أزل الخلفية ذات اللون الموحد من صورك باحترافية: اختيار عدة ألوان، نعومة حواف، إزالة توهج اللون، معالجة دفعية لعدة صور، وخيار خلفية شفافة أو بلون مخصص." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="إزالة الخلفية الموحدة اللون — أداة احترافية مجانًا | فورا.tools" name="twitter:title"/>
+<meta content="أزل الخلفية ذات اللون الموحد من صورك باحترافية: اختيار عدة ألوان، نعومة حواف، إزالة توهج اللون، معالجة دفعية لعدة صور، وخيار خلفية شفافة أو بلون مخصص." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .editor-layout{display:grid;grid-template-columns:1fr 320px;gap:20px;}
+  @media(max-width:960px){.editor-layout{grid-template-columns:1fr;}}
+
+  .thumb-strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px;}
+  .thumb-strip .th-item{
+    position:relative;flex:0 0 auto;width:60px;height:60px;border-radius:9px;overflow:hidden;
+    border:2px solid var(--line);cursor:pointer;background:var(--surface-sunk);
+  }
+  .thumb-strip .th-item.active{border-color:var(--indigo);}
+  .thumb-strip .th-item img{width:100%;height:100%;object-fit:cover;display:block;}
+  .thumb-strip .th-item .rm{
+    position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:rgba(0,0,0,.6);
+    color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;
+  }
+  .thumb-strip .th-item .rm svg{width:9px;height:9px;}
+  .thumb-strip .add-more{
+    flex:0 0 auto;width:60px;height:60px;border-radius:9px;border:1.5px dashed var(--line);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--muted);
+  }
+
+  .bg-preview{
+    position:relative;border-radius:14px;overflow:hidden;
+    background-image: linear-gradient(45deg,#ddd 25%,transparent 25%),linear-gradient(-45deg,#ddd 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#ddd 75%),linear-gradient(-45deg,transparent 75%,#ddd 75%);
+    background-size:20px 20px;background-position:0 0,0 10px,10px -10px,-10px 0px;
+    display:flex;align-items:center;justify-content:center;min-height:280px;
+  }
+  .bg-preview canvas{max-width:100%;max-height:480px;display:block;}
+  .preview-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px;}
+  .toggle-view-chips{display:flex;gap:6px;}
+  .toggle-view-chip{font-size:12px;font-weight:700;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;}
+  [data-theme="dark"] .toggle-view-chip{background:var(--surface-sunk);}
+  .toggle-view-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+
+  .panel-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;}
+  .panel-card h3{margin:0 0 12px;font-size:13px;font-weight:800;}
+  .color-chip-row{display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid var(--line);border-radius:9px;margin-bottom:6px;background:#FDFCFA;}
+  [data-theme="dark"] .color-chip-row{background:var(--surface-sunk);}
+  .color-chip-row .sw{width:22px;height:22px;border-radius:6px;border:1px solid var(--line);flex:0 0 auto;}
+  .color-chip-row .hex{font-family:'IBM Plex Mono',monospace;font-size:11.5px;flex:1;}
+  .color-chip-row .rm{color:var(--danger);cursor:pointer;background:none;border:none;flex:0 0 auto;display:flex;}
+  .color-chip-row .rm svg{width:13px;height:13px;}
+
+  .color-add-row{display:flex;gap:8px;margin-top:8px;}
+  .color-add-row input[type=color]{width:38px;height:34px;border-radius:8px;border:1px solid var(--line);padding:2px;cursor:pointer;}
+  .pick-btn{
+    flex:1;font-size:12px;font-weight:700;padding:0 12px;border-radius:9px;border:1.5px dashed var(--line);
+    background:transparent;color:var(--ink-soft);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;
+  }
+  .pick-btn.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);border-style:solid;}
+  .pick-btn svg{width:13px;height:13px;}
+
+  .mini-toggle-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .mini-toggle-row:last-child{margin-bottom:0;}
+  .mini-toggle-row .lbl{font-size:12.5px;font-weight:700;}
+  .toggle-mini{position:relative;width:36px;height:21px;flex:0 0 auto;}
+  .toggle-mini input{opacity:0;width:0;height:0;}
+  .toggle-mini .sw2{position:absolute;inset:0;background:var(--surface-sunk);border-radius:99px;cursor:pointer;transition:.2s;}
+  .toggle-mini .sw2::before{content:"";position:absolute;width:15px;height:15px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.25);}
+  .toggle-mini input:checked + .sw2{background:var(--indigo-deep);}
+  .toggle-mini input:checked + .sw2::before{transform:translateX(-15px);}
+
+  .bg-export-chips{display:flex;gap:6px;flex-wrap:wrap;}
+  .bg-export-chip{font-size:11.5px;font-weight:700;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;}
+  [data-theme="dark"] .bg-export-chip{background:var(--surface-sunk);}
+  .bg-export-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "إزالة خلفية الصور",
+  "url": "https://fawran.tools/tools/background-remover.html",
+  "description": "إزالة خلفية الصورة أونلاين مجانًا بدون فوتوشوب. أداة سريعة لمعالجة الخلفيات الموحدة وتصدير صور شفافة.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "فورا.tools",
+    "url": "https://fawran.tools/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الأدوات",
+      "item": "https://fawran.tools/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "أدوات الصور",
+      "item": "https://fawran.tools/index.html#images"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "إزالة الخلفية الموحدة اللون",
+      "item": "https://fawran.tools/tools/background-remover.html"
+    }
+  ],
+  "name": "إزالة خلفية الصور",
+  "description": "إزالة خلفية الصورة أونلاين مجانًا بدون فوتوشوب. أداة سريعة لمعالجة الخلفيات الموحدة وتصدير صور شفافة."
+}</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="إزالة خلفية الصور, Remove Image Background, أدوات أونلاين, free online tools, SEO tools" name="keywords"/>
+<link href="https://fawran.tools/tools/background-remover.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/background-remover.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/background-remover.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../index.html">الأدوات</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../index.html">الأدوات</a> / أدوات الصور / إزالة الخلفية</div>
+<h1>إزالة الخلفية الموحّدة اللون</h1>
+<p class="tool-lede">
+    مثالية لصور المنتجات ذات الخلفية البيضاء أو أي لون موحّد — اختر لونًا أو أكثر، اضبط النعومة، وحمّل
+    النتيجة بخلفية شفافة أو بلون مخصص. تدعم معالجة عدة صور دفعة واحدة. <b>ملاحظة:</b> هذه الأداة
+    تعمل بأفضل شكل مع خلفيات بلون واحد ثابت، وليست أداة فصل ذكاء اصطناعي لخلفيات معقّدة.
+  </p>
+<div class="tool-card-shell">
+<div class="dropzone" id="dropzone">
+<input accept="image/*" id="fileInput" multiple="" type="file"/>
+<div class="dz-icon">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg>
+</div>
+<div class="dz-title">اسحب صورك هنا أو <b>اضغط للاختيار</b></div>
+<div class="dz-sub">يمكنك رفع عدة صور دفعة واحدة — نفس الإعدادات تُطبّق عليها كلها</div>
+<div class="dz-formats"><span class="chip">JPG</span><span class="chip">PNG</span></div>
+</div>
+<div id="editorArea" style="display:none;margin-top:22px;">
+<div class="thumb-strip" id="thumbStrip"></div>
+<div class="editor-layout">
+<div>
+<div class="preview-toolbar">
+<div class="toggle-view-chips">
+<span class="toggle-view-chip active" data-view="after">بعد</span>
+<span class="toggle-view-chip" data-view="before">قبل</span>
+</div>
+<span id="pickHint" style="font-size:11.5px;color:var(--muted);"></span>
+</div>
+<div class="bg-preview" id="bgPreview">
+<canvas id="previewCanvas"></canvas>
+</div>
+<div class="actions" style="margin-top:18px;">
+<button class="btn btn-primary" id="downloadBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+              تحميل الصورة الحالية
+            </button>
+<button class="btn btn-dark" id="downloadZipBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+              تحميل الكل (ZIP)
+            </button>
+<button class="btn btn-ghost" id="resetBtn">مسح الكل</button>
+</div>
+</div>
+<div>
+<div class="panel-card">
+<h3>الألوان المراد إزالتها</h3>
+<div id="colorsList"></div>
+<div class="color-add-row">
+<input id="newColor" type="color" value="#ffffff"/>
+<button class="pick-btn" id="pickFromImage">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v3M12 18v3M3 12h3M18 12h3"></path></svg>
+                اختيار من الصورة
+              </button>
+</div>
+</div>
+<div class="panel-card">
+<h3>الضبط الدقيق</h3>
+<div class="panel-row" style="margin-bottom:14px;">
+<label style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:6px;">درجة الحساسية <span class="mono" id="tolVal">40</span></label>
+<input id="tolerance" max="150" min="5" type="range" value="40"/>
+</div>
+<div class="panel-row">
+<label style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:6px;">نعومة الحواف <span class="mono" id="featherVal">1.8</span></label>
+<input id="feather" max="4" min="1" step="0.1" type="range" value="1.8"/>
+</div>
+</div>
+<div class="panel-card">
+<h3>خيارات متقدمة</h3>
+<div class="mini-toggle-row">
+<span class="lbl">إزالة توهج اللون (Despill)</span>
+<label class="toggle-mini"><input checked="" id="despillToggle" type="checkbox"/><span class="sw2"></span></label>
+</div>
+<div class="mini-toggle-row">
+<span class="lbl">وضع معكوس (إبقاء اللون بدل إزالته)</span>
+<label class="toggle-mini"><input id="invertToggle" type="checkbox"/><span class="sw2"></span></label>
+</div>
+</div>
+<div class="panel-card">
+<h3>خلفية التصدير</h3>
+<div class="bg-export-chips">
+<span class="bg-export-chip active" data-exp="transparent">شفافة</span>
+<span class="bg-export-chip" data-exp="white">أبيض</span>
+<span class="bg-export-chip" data-exp="custom">لون مخصص</span>
+</div>
+<div id="exportColorRow" style="display:none;margin-top:10px;">
+<input id="exportColor" style="width:38px;height:34px;border-radius:8px;border:1px solid var(--line);padding:2px;cursor:pointer;" type="color" value="#ffffff"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+    كل عملية معالجة تتم محليًا في متصفحك — صورك لا تغادر جهازك أبدًا
+  </div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../blog/remove-background-guide.html" style="color:var(--indigo-deep);font-weight:700;">اقرأ الدليل الكامل: كيف تعمل الأداة تقنيًا ومتى تحتاج ذكاء اصطناعي بدلًا منها</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script>
+<script>
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+const editorArea = document.getElementById('editorArea');
+const thumbStrip = document.getElementById('thumbStrip');
+const previewCanvas = document.getElementById('previewCanvas');
+const pickHint = document.getElementById('pickHint');
+
+const colorsList = document.getElementById('colorsList');
+const newColor = document.getElementById('newColor');
+const pickFromImage = document.getElementById('pickFromImage');
+const tolerance = document.getElementById('tolerance');
+const tolVal = document.getElementById('tolVal');
+const feather = document.getElementById('feather');
+const featherVal = document.getElementById('featherVal');
+const despillToggle = document.getElementById('despillToggle');
+const invertToggle = document.getElementById('invertToggle');
+const bgExportChips = document.querySelectorAll('.bg-export-chip');
+const exportColorRow = document.getElementById('exportColorRow');
+const exportColor = document.getElementById('exportColor');
+const toggleViewChips = document.querySelectorAll('.toggle-view-chip');
+
+const downloadBtn = document.getElementById('downloadBtn');
+const downloadZipBtn = document.getElementById('downloadZipBtn');
+const resetBtn = document.getElementById('resetBtn');
+
+let images = [];
+let activeId = null;
+let colors = [];
+let picking = false;
+let viewMode = 'after';
+let exportBgMode = 'transparent';
+let idCounter = 0;
+
+function hexToRgb(hex){
+  const v = parseInt(hex.slice(1), 16);
+  return { r:(v>>16)&255, g:(v>>8)&255, b:v&255 };
+}
+
+['dragenter','dragover'].forEach(ev=>{
+  dropzone.addEventListener(ev, e=>{ e.preventDefault(); dropzone.classList.add('drag'); });
+});
+['dragleave','drop'].forEach(ev=>{
+  dropzone.addEventListener(ev, e=>{ e.preventDefault(); dropzone.classList.remove('drag'); });
+});
+dropzone.addEventListener('drop', e=> handleFiles(e.dataTransfer.files));
+dropzone.addEventListener('click', ()=> fileInput.click());
+fileInput.addEventListener('change', e=> handleFiles(e.target.files));
+
+function handleFiles(fileList){
+  const files = Array.from(fileList).filter(f=> f.type.startsWith('image/'));
+  if(!files.length) return;
+  let loaded = 0;
+  files.forEach(file=>{
+    idCounter++;
+    const id = 'im'+idCounter;
+    const image = new Image();
+    image.onload = ()=>{
+      images.push({ id, file, img: image, thumbUrl: image.src });
+      if(!activeId) activeId = id;
+      loaded++;
+      if(loaded === files.length){
+        editorArea.style.display = 'block';
+        renderThumbs();
+        process();
+      }
+    };
+    image.src = URL.createObjectURL(file);
+  });
+  fileInput.value = '';
+}
+
+function renderThumbs(){
+  thumbStrip.innerHTML = '';
+  images.forEach(entry=>{
+    const item = document.createElement('div');
+    item.className = 'th-item' + (entry.id === activeId ? ' active' : '');
+    item.innerHTML = '<img src="'+entry.thumbUrl+'" alt=""><span class="rm" data-remove="'+entry.id+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>';
+    item.addEventListener('click', e=>{
+      if(e.target.closest('[data-remove]')) return;
+      activeId = entry.id;
+      renderThumbs();
+      process();
+    });
+    thumbStrip.appendChild(item);
+  });
+  const addMore = document.createElement('div');
+  addMore.className = 'add-more';
+  addMore.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>';
+  addMore.addEventListener('click', ()=> fileInput.click());
+  thumbStrip.appendChild(addMore);
+
+  thumbStrip.querySelectorAll('[data-remove]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const id = btn.dataset.remove;
+      images = images.filter(im=>im.id !== id);
+      if(activeId === id) activeId = images.length ? images[0].id : null;
+      if(!images.length){ editorArea.style.display = 'none'; }
+      renderThumbs();
+      process();
+    });
+  });
+}
+
+function activeImage(){ return images.find(im=>im.id === activeId); }
+
+function renderColors(){
+  colorsList.innerHTML = '';
+  if(!colors.length){
+    colorsList.innerHTML = '<p style="font-size:12px;color:var(--muted);margin:0 0 4px;">أضف لونًا واحدًا على الأقل (أبيض غالبًا).</p>';
+  }
+  colors.forEach((hex, idx)=>{
+    const row = document.createElement('div');
+    row.className = 'color-chip-row';
+    row.innerHTML = '<span class="sw" style="background:'+hex+';"></span><span class="hex">'+hex+'</span><button class="rm" data-idx="'+idx+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>';
+    colorsList.appendChild(row);
+  });
+  colorsList.querySelectorAll('[data-idx]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      colors.splice(parseInt(btn.dataset.idx), 1);
+      renderColors(); process();
+    });
+  });
+}
+function addColor(hex){
+  if(!colors.includes(hex)){ colors.push(hex); renderColors(); process(); }
+}
+
+newColor.addEventListener('change', ()=> addColor(newColor.value));
+pickFromImage.addEventListener('click', ()=>{
+  picking = !picking;
+  pickFromImage.classList.toggle('active', picking);
+  pickHint.textContent = picking ? 'اضغط على أي نقطة في الصورة لاختيار لونها' : '';
+  previewCanvas.style.cursor = picking ? 'crosshair' : 'default';
+});
+previewCanvas.addEventListener('click', e=>{
+  if(!picking) return;
+  const entry = activeImage();
+  if(!entry) return;
+  const rect = previewCanvas.getBoundingClientRect();
+  const scaleX = previewCanvas.width / rect.width;
+  const scaleY = previewCanvas.height / rect.height;
+  const x = Math.round((e.clientX - rect.left) * scaleX);
+  const y = Math.round((e.clientY - rect.top) * scaleY);
+  const tmp = document.createElement('canvas');
+  tmp.width = entry.img.naturalWidth; tmp.height = entry.img.naturalHeight;
+  tmp.getContext('2d').drawImage(entry.img,0,0);
+  const px = tmp.getContext('2d').getImageData(x,y,1,1).data;
+  const hex = '#' + [px[0],px[1],px[2]].map(v=>v.toString(16).padStart(2,'0')).join('');
+  addColor(hex);
+  picking = false;
+  pickFromImage.classList.remove('active');
+  pickHint.textContent = '';
+  previewCanvas.style.cursor = 'default';
+});
+
+tolerance.addEventListener('input', ()=>{ tolVal.textContent = tolerance.value; process(); });
+feather.addEventListener('input', ()=>{ featherVal.textContent = parseFloat(feather.value).toFixed(1); process(); });
+despillToggle.addEventListener('change', process);
+invertToggle.addEventListener('change', process);
+exportColor.addEventListener('input', process);
+
+toggleViewChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    toggleViewChips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    viewMode = chip.dataset.view;
+    process();
+  });
+});
+bgExportChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    bgExportChips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    exportBgMode = chip.dataset.exp;
+    exportColorRow.style.display = exportBgMode === 'custom' ? 'block' : 'none';
+    process();
+  });
+});
+
+function computeRemovedCanvas(img){
+  const canvas = document.createElement('canvas');
+  canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0);
+
+  const imageData = ctx.getImageData(0,0,canvas.width, canvas.height);
+  const data = imageData.data;
+  const tol = parseInt(tolerance.value);
+  const featherMult = parseFloat(feather.value);
+  const targets = colors.map(hexToRgb);
+  const invert = invertToggle.checked;
+
+  if(!targets.length){
+    ctx.putImageData(imageData, 0, 0);
+    return canvas;
+  }
+
+  for(let i=0;i<data.length;i+=4){
+    let minDist = Infinity;
+    for(const t of targets){
+      const dr = data[i]-t.r, dg = data[i+1]-t.g, db = data[i+2]-t.b;
+      const dist = Math.sqrt(dr*dr+dg*dg+db*db);
+      if(dist < minDist) minDist = dist;
+    }
+    let alpha;
+    if(minDist < tol) alpha = 0;
+    else if(minDist < tol*featherMult) alpha = Math.round(255 * ((minDist-tol)/(tol*(featherMult-1))));
+    else alpha = 255;
+    if(invert) alpha = 255 - alpha;
+    data[i+3] = alpha;
+  }
+
+  if(despillToggle.checked){
+    let sumR=0,sumG=0,sumB=0,count=0;
+    for(let i=0;i<data.length;i+=4){
+      if(data[i+3] > 230){ sumR+=data[i]; sumG+=data[i+1]; sumB+=data[i+2]; count++; }
+    }
+    if(count > 0){
+      const avgR = sumR/count, avgG = sumG/count, avgB = sumB/count;
+      for(let i=0;i<data.length;i+=4){
+        const a = data[i+3];
+        if(a > 5 && a < 250){
+          const blend = 0.3;
+          data[i]   = data[i]   * (1-blend) + avgR * blend;
+          data[i+1] = data[i+1] * (1-blend) + avgG * blend;
+          data[i+2] = data[i+2] * (1-blend) + avgB * blend;
+        }
+      }
+    }
+  }
+
+  ctx.putImageData(imageData, 0, 0);
+  return canvas;
+}
+
+function compositeExport(sourceCanvas){
+  if(exportBgMode === 'transparent') return sourceCanvas;
+  const out = document.createElement('canvas');
+  out.width = sourceCanvas.width; out.height = sourceCanvas.height;
+  const ctx = out.getContext('2d');
+  ctx.fillStyle = exportBgMode === 'white' ? '#ffffff' : exportColor.value;
+  ctx.fillRect(0,0,out.width,out.height);
+  ctx.drawImage(sourceCanvas, 0, 0);
+  return out;
+}
+
+function process(){
+  const entry = activeImage();
+  if(!entry) return;
+
+  previewCanvas.width = entry.img.naturalWidth;
+  previewCanvas.height = entry.img.naturalHeight;
+  const ctx = previewCanvas.getContext('2d');
+
+  if(viewMode === 'before'){
+    ctx.clearRect(0,0,previewCanvas.width, previewCanvas.height);
+    ctx.drawImage(entry.img, 0, 0);
+    return;
+  }
+
+  const processed = computeRemovedCanvas(entry.img);
+  const finalCanvas = compositeExport(processed);
+  ctx.clearRect(0,0,previewCanvas.width, previewCanvas.height);
+  ctx.drawImage(finalCanvas, 0, 0);
+}
+
+function outName(file){
+  return file.name.replace(/\.[^.]+$/,'') + '-no-bg.png';
+}
+
+downloadBtn.addEventListener('click', ()=>{
+  const entry = activeImage();
+  if(!entry) return;
+  const processed = computeRemovedCanvas(entry.img);
+  const finalCanvas = compositeExport(processed);
+  finalCanvas.toBlob(blob=>{
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = outName(entry.file);
+    document.body.appendChild(a); a.click(); a.remove();
+  }, 'image/png');
+});
+
+downloadZipBtn.addEventListener('click', async ()=>{
+  if(!images.length) return;
+  downloadZipBtn.disabled = true;
+  downloadZipBtn.textContent = 'جارٍ التجهيز...';
+  try{
+    const zip = new JSZip();
+    for(const entry of images){
+      const processed = computeRemovedCanvas(entry.img);
+      const finalCanvas = compositeExport(processed);
+      const blob = await new Promise(res=> finalCanvas.toBlob(res, 'image/png'));
+      zip.file(outName(entry.file), blob);
+    }
+    const content = await zip.generateAsync({type:'blob'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(content);
+    a.download = 'fawran-no-bg-images.zip';
+    document.body.appendChild(a); a.click(); a.remove();
+  } catch(err){
+    console.error(err);
+    alert('تعذّر إنشاء ملف مضغوط. جرّب مرة أخرى.');
+  }
+  downloadZipBtn.disabled = false;
+  downloadZipBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg> تحميل الكل (ZIP)';
+});
+
+resetBtn.addEventListener('click', ()=>{
+  images = []; activeId = null; colors = [];
+  editorArea.style.display = 'none';
+  renderThumbs(); renderColors();
+});
+
+colors.push('#ffffff');
+renderColors();
+</script>
+</body>
+</html>

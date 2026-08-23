@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>محلل كثافة الكلمات المفتاحية مجانًا | فورا.tools</title>
+<meta content="حلل كثافة الكلمات المفتاحية والعبارات في النص لتحسين المحتوى وتجنب الحشو." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/keyword-density.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/tools/keyword-density.html" property="og:url"/>
+<meta content="محلل كثافة الكلمات المفتاحية مجانًا | فورا.tools" property="og:title"/>
+<meta content="اعرف أكثر الكلمات والعبارات تكرارًا في نصك وكثافتها كنسبة مئوية، لتحسين مقالاتك لمحركات البحث." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="محلل كثافة الكلمات المفتاحية مجانًا | فورا.tools" name="twitter:title"/>
+<meta content="اعرف أكثر الكلمات والعبارات تكرارًا في نصك وكثافتها كنسبة مئوية، لتحسين مقالاتك لمحركات البحث." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .kd-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media(max-width:800px){.kd-layout{grid-template-columns:1fr;}}
+  textarea#kdInput{
+    width:100%;min-height:320px;resize:vertical;font-family:'Tajawal',sans-serif;font-size:15px;
+    line-height:1.9;padding:16px;border-radius:12px;border:1.5px solid var(--line);
+    background:#FDFCFA;color:var(--ink);
+  }
+  textarea#kdInput:focus{outline:none;border-color:var(--indigo);}
+  .kd-tabs{display:flex;gap:8px;margin-bottom:14px;}
+  .kd-tab{
+    padding:9px 16px;border-radius:9px;border:1.5px solid var(--line);background:var(--surface);
+    font-size:13px;font-weight:700;cursor:pointer;
+  }
+  .kd-tab.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+  .kd-table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  .kd-table th{text-align:right;color:var(--muted);font-weight:700;font-size:11.5px;padding:8px 10px;border-bottom:1px solid var(--line);}
+  .kd-table td{padding:9px 10px;border-bottom:1px solid var(--line);}
+  .kd-table .bar-wrap{background:var(--surface-sunk);border-radius:6px;height:8px;overflow:hidden;width:100%;}
+  .kd-table .bar{height:100%;background:linear-gradient(90deg,var(--indigo),var(--indigo-deep));}
+  .kd-table .word{font-family:'IBM Plex Mono',monospace;font-weight:600;}
+  .kd-table .pct{font-family:'IBM Plex Mono',monospace;color:var(--indigo-deep);font-weight:700;white-space:nowrap;}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "محلل كثافة الكلمات المفتاحية",
+  "url": "https://fawran.tools/tools/keyword-density.html",
+  "description": "حلل كثافة الكلمات المفتاحية والعبارات في النص لتحسين المحتوى وتجنب الحشو.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "فورا.tools",
+    "url": "https://fawran.tools/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الأدوات",
+      "item": "https://fawran.tools/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "أدوات SEO",
+      "item": "https://fawran.tools/index.html#seo"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "محلل كثافة الكلمات المفتاحية مجانًا",
+      "item": "https://fawran.tools/tools/keyword-density.html"
+    }
+  ],
+  "name": "محلل كثافة الكلمات المفتاحية",
+  "description": "حلل كثافة الكلمات المفتاحية والعبارات في النص لتحسين المحتوى وتجنب الحشو."
+}</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="محلل كثافة الكلمات المفتاحية, Keyword Density Checker, أدوات أونلاين, free online tools, SEO tools" name="keywords"/>
+<link href="https://fawran.tools/tools/keyword-density.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/keyword-density.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/keyword-density.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../index.html">الأدوات</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../index.html">الأدوات</a> / أدوات SEO / محلل كثافة الكلمات المفتاحية</div>
+<h1>محلل كثافة الكلمات المفتاحية</h1>
+<p class="tool-lede">
+    الصق مقالك أو نصك، وشاهد أكثر الكلمات والعبارات (من كلمتين وثلاث كلمات) تكرارًا ونسبتها المئوية —
+    مفيد لتفادي الحشو الزائد أو نقص الكلمة المفتاحية في مقالاتك.
+  </p>
+<div class="tool-card-shell">
+<div class="kd-layout">
+<div>
+<textarea id="kdInput" placeholder="الصق نص مقالك هنا..."></textarea>
+<div class="actions">
+<button class="btn btn-primary" id="analyzeBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 3v18h18"></path><path d="M7 15l4-5 3 3 5-7"></path></svg>
+            تحليل النص
+          </button>
+</div>
+</div>
+<div>
+<div class="kd-tabs">
+<div class="kd-tab active" data-n="1">كلمة واحدة</div>
+<div class="kd-tab" data-n="2">عبارة من كلمتين</div>
+<div class="kd-tab" data-n="3">عبارة من 3 كلمات</div>
+</div>
+<table class="kd-table">
+<thead><tr><th>الكلمة/العبارة</th><th>التكرار</th><th style="width:35%;">الكثافة</th></tr></thead>
+<tbody id="kdBody"></tbody>
+</table>
+<p id="kdEmpty" style="font-size:13px;color:var(--muted);margin-top:14px;">الصق نصًا واضغط "تحليل النص" لعرض النتائج.</p>
+</div>
+</div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+    كل التحليل يتم محليًا في متصفحك — نصك لا يُرسل لأي خادم
+  </div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../blog/keyword-density-guide.html" style="color:var(--indigo-deep);font-weight:700;">اقرأ الدليل الكامل: النسبة المثالية ولماذا حشو الكلمات يضرّك</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script>
+<script>
+const kdInput = document.getElementById('kdInput');
+const analyzeBtn = document.getElementById('analyzeBtn');
+const kdTabs = document.querySelectorAll('.kd-tab');
+const kdBody = document.getElementById('kdBody');
+const kdEmpty = document.getElementById('kdEmpty');
+
+const STOPWORDS = new Set(['في','من','على','إلى','عن','مع','هذا','هذه','ذلك','التي','الذي','و','أو','ثم','كان','كانت','يكون','هو','هي','هم','كل','بعض','أن','إن','لا','لم','لن','قد','ما','لكن','أيضا','حيث','عند','بين','بعد','قبل','the','a','an','and','or','of','to','in','on','for','is','are','was','were','with','this','that']);
+
+let currentData = { 1:[], 2:[], 3:[] };
+let activeN = 1;
+
+function tokenize(text){
+  return text
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+function analyze(){
+  const text = kdInput.value;
+  const words = tokenize(text);
+  const totalWords = words.length;
+
+  [1,2,3].forEach(n=>{
+    const counts = new Map();
+    for(let i=0;i<=words.length-n;i++){
+      const gram = words.slice(i,i+n);
+      if(n===1 && STOPWORDS.has(gram[0])) continue;
+      const key = gram.join(' ');
+      counts.set(key, (counts.get(key)||0)+1);
+    }
+    const arr = [...counts.entries()]
+      .filter(([,c])=>c>1 || n>1)
+      .sort((a,b)=>b[1]-a[1])
+      .slice(0,15)
+      .map(([word,count])=>({word, count, pct: totalWords ? (count*n/totalWords*100) : 0}));
+    currentData[n] = arr;
+  });
+
+  render();
+}
+
+function render(){
+  const arr = currentData[activeN];
+  kdEmpty.style.display = arr.length ? 'none' : 'block';
+  kdBody.innerHTML = '';
+  const maxPct = arr.length ? arr[0].pct : 1;
+  arr.forEach(row=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="word">${row.word}</td>
+      <td>${row.count}</td>
+      <td>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div class="bar-wrap"><div class="bar" style="width:${(row.pct/maxPct*100).toFixed(0)}%"></div></div>
+          <span class="pct">${row.pct.toFixed(1)}%</span>
+        </div>
+      </td>
+    `;
+    kdBody.appendChild(tr);
+  });
+}
+
+kdTabs.forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    kdTabs.forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    activeN = parseInt(tab.dataset.n);
+    render();
+  });
+});
+
+analyzeBtn.addEventListener('click', analyze);
+</script>
+</body>
+</html>

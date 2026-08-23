@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>قص الصور أونلاين مجانًا | فورا.tools</title>
+<meta content="قص الصور وتغيير نسبة الأبعاد أونلاين مجانًا للصور والمنشورات ومحتوى السوشيال ميديا." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/image-cropper.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/tools/image-cropper.html" property="og:url"/>
+<meta content="قص الصور (Crop) مجانًا | فورا.tools" property="og:title"/>
+<meta content="اقتصاص دقيق للصور بنسب جاهزة أو مخصصة، مباشرة داخل متصفحك بدون رفع صورك لأي خادم." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="قص الصور (Crop) مجانًا | فورا.tools" name="twitter:title"/>
+<meta content="اقتصاص دقيق للصور بنسب جاهزة أو مخصصة، مباشرة داخل متصفحك بدون رفع صورك لأي خادم." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .crop-stage{
+    position:relative;max-width:100%;margin:0 auto;background:#1A1826;border-radius:14px;
+    overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:320px;
+  }
+  #stageImg{max-width:100%;max-height:520px;display:block;user-select:none;-webkit-user-drag:none;}
+  .crop-box{
+    position:absolute;border:2px solid #fff;box-shadow:0 0 0 2000px rgba(20,19,31,.55);
+    cursor:move;
+  }
+  .crop-box::before, .crop-box::after{
+    content:"";position:absolute;background:rgba(255,255,255,.5);
+  }
+  .crop-box::before{left:0;right:0;top:33.33%;height:1px;box-shadow:0 33.33% 0 rgba(255,255,255,.5);}
+  .handle{
+    position:absolute;width:14px;height:14px;background:var(--surface);border:2px solid var(--indigo);
+    border-radius:50%;
+  }
+  .handle.nw{top:-8px;left:-8px;cursor:nwse-resize;}
+  .handle.ne{top:-8px;right:-8px;cursor:nesw-resize;}
+  .handle.sw{bottom:-8px;left:-8px;cursor:nesw-resize;}
+  .handle.se{bottom:-8px;right:-8px;cursor:nwse-resize;}
+  .ratio-chips{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0;}
+  .ratio-chip{
+    font-size:13px;font-weight:700;color:var(--ink-soft);background:var(--surface);border:1px solid var(--line);
+    padding:8px 15px;border-radius:999px;cursor:pointer;transition:.15s;
+  }
+  .ratio-chip:hover, .ratio-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "قص الصور أونلاين",
+  "url": "https://fawran.tools/tools/image-cropper.html",
+  "description": "قص الصور وتغيير نسبة الأبعاد أونلاين مجانًا للصور والمنشورات ومحتوى السوشيال ميديا.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "فورا.tools",
+    "url": "https://fawran.tools/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الأدوات",
+      "item": "https://fawran.tools/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "أدوات الصور",
+      "item": "https://fawran.tools/index.html#images"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "قص الصور (Crop) مجانًا",
+      "item": "https://fawran.tools/tools/image-cropper.html"
+    }
+  ],
+  "name": "قص الصور أونلاين",
+  "description": "قص الصور وتغيير نسبة الأبعاد أونلاين مجانًا للصور والمنشورات ومحتوى السوشيال ميديا."
+}</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="قص الصور أونلاين, Image Cropper, أدوات أونلاين, free online tools, SEO tools" name="keywords"/>
+<link href="https://fawran.tools/tools/image-cropper.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/image-cropper.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/image-cropper.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../index.html">الأدوات</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../index.html">الأدوات</a> / أدوات الصور / قص الصور</div>
+<h1>قص الصور (Crop)</h1>
+<p class="tool-lede">
+    ارفع صورتك، حدّد منطقة القص بالسحب، واختر نسبة جاهزة أو نسبة حرة، وحمّل النتيجة فورًا.
+  </p>
+<div class="tool-card-shell">
+<div class="dropzone" id="dropzone">
+<input accept="image/*" id="fileInput" type="file"/>
+<div class="dz-icon">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M6 2v14a2 2 0 0 0 2 2h14"></path><path d="M18 22V8a2 2 0 0 0-2-2H2"></path></svg>
+</div>
+<div class="dz-title">اسحب صورتك هنا أو <b>اضغط للاختيار</b></div>
+<div class="dz-sub">صورة واحدة في كل مرة</div>
+<div class="dz-formats"><span class="chip">JPG</span><span class="chip">PNG</span><span class="chip">WEBP</span></div>
+</div>
+<div id="editorArea" style="display:none;margin-top:24px;">
+<div class="ratio-chips">
+<span class="ratio-chip active" data-ratio="free">حر</span>
+<span class="ratio-chip" data-ratio="1:1">مربع 1:1</span>
+<span class="ratio-chip" data-ratio="4:3">4:3</span>
+<span class="ratio-chip" data-ratio="16:9">16:9</span>
+<span class="ratio-chip" data-ratio="3:4">3:4 (بورتريه)</span>
+<span class="ratio-chip" data-ratio="9:16">9:16 (ستوري)</span>
+</div>
+<div class="crop-stage" id="cropStage">
+<img alt="" id="stageImg"/>
+<div class="crop-box" id="cropBox">
+<div class="handle nw" data-handle="nw"></div>
+<div class="handle ne" data-handle="ne"></div>
+<div class="handle sw" data-handle="sw"></div>
+<div class="handle se" data-handle="se"></div>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="cropBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M6 2v14a2 2 0 0 0 2 2h14"></path><path d="M18 22V8a2 2 0 0 0-2-2H2"></path></svg>
+          قص الصورة وتنزيلها
+        </button>
+<button class="btn btn-ghost" id="resetBtn">صورة جديدة</button>
+</div>
+</div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+    كل عملية قص تتم محليًا في متصفحك — صورتك لا تغادر جهازك أبدًا
+  </div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../blog/image-crop-guide.html" style="color:var(--indigo-deep);font-weight:700;">اقرأ الدليل الكامل: نسب عرض شائعة ونصائح لاختيار منطقة القص</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script>
+<script>
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+const editorArea = document.getElementById('editorArea');
+const cropStage = document.getElementById('cropStage');
+const stageImg = document.getElementById('stageImg');
+const cropBox = document.getElementById('cropBox');
+const cropBtn = document.getElementById('cropBtn');
+const resetBtn = document.getElementById('resetBtn');
+const ratioChips = document.querySelectorAll('.ratio-chip');
+
+let currentFile = null;
+let naturalW = 0, naturalH = 0;
+let box = { x:40, y:40, w:200, h:200 };
+let currentRatio = null; // null = free
+
+['dragenter','dragover'].forEach(ev=>{
+  dropzone.addEventListener(ev, e=>{ e.preventDefault(); dropzone.classList.add('drag'); });
+});
+['dragleave','drop'].forEach(ev=>{
+  dropzone.addEventListener(ev, e=>{ e.preventDefault(); dropzone.classList.remove('drag'); });
+});
+dropzone.addEventListener('drop', e=> handleFile(e.dataTransfer.files[0]));
+dropzone.addEventListener('click', ()=> fileInput.click());
+fileInput.addEventListener('change', e=> handleFile(e.target.files[0]));
+
+function handleFile(file){
+  if(!file || !file.type.startsWith('image/')) return;
+  currentFile = file;
+  const url = URL.createObjectURL(file);
+  stageImg.onload = ()=>{
+    naturalW = stageImg.naturalWidth;
+    naturalH = stageImg.naturalHeight;
+    editorArea.style.display = 'block';
+    // init box to centered 60% of displayed image
+    requestAnimationFrame(initBox);
+  };
+  stageImg.src = url;
+  fileInput.value = '';
+}
+
+function initBox(){
+  const rect = stageImg.getBoundingClientRect();
+  const w = rect.width * 0.6, h = rect.height * 0.6;
+  box = { x:(rect.width-w)/2, y:(rect.height-h)/2, w, h };
+  drawBox();
+}
+
+function drawBox(){
+  cropBox.style.left = box.x + 'px';
+  cropBox.style.top = box.y + 'px';
+  cropBox.style.width = box.w + 'px';
+  cropBox.style.height = box.h + 'px';
+}
+
+ratioChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    ratioChips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    const val = chip.dataset.ratio;
+    if(val === 'free'){ currentRatio = null; return; }
+    const [rw, rh] = val.split(':').map(Number);
+    currentRatio = rw/rh;
+    const rect = stageImg.getBoundingClientRect();
+    let w = box.w, h = w/currentRatio;
+    if(h > rect.height){ h = rect.height*0.8; w = h*currentRatio; }
+    box = { x:(rect.width-w)/2, y:(rect.height-h)/2, w, h };
+    drawBox();
+  });
+});
+
+// Drag to move
+let dragMode = null, startPt = null, startBox = null;
+cropBox.addEventListener('mousedown', e=>{
+  if(e.target.classList.contains('handle')) return;
+  dragMode = 'move';
+  startPt = {x:e.clientX, y:e.clientY};
+  startBox = {...box};
+  e.preventDefault();
+});
+cropBox.querySelectorAll('.handle').forEach(h=>{
+  h.addEventListener('mousedown', e=>{
+    dragMode = h.dataset.handle;
+    startPt = {x:e.clientX, y:e.clientY};
+    startBox = {...box};
+    e.preventDefault();
+    e.stopPropagation();
+  });
+});
+
+document.addEventListener('mousemove', e=>{
+  if(!dragMode) return;
+  const rect = stageImg.getBoundingClientRect();
+  const dx = e.clientX - startPt.x, dy = e.clientY - startPt.y;
+
+  if(dragMode === 'move'){
+    box.x = Math.max(0, Math.min(rect.width - box.w, startBox.x + dx));
+    box.y = Math.max(0, Math.min(rect.height - box.h, startBox.y + dy));
+  } else {
+    let nx = startBox.x, ny = startBox.y, nw = startBox.w, nh = startBox.h;
+    if(dragMode.includes('e')) nw = Math.max(30, startBox.w + dx);
+    if(dragMode.includes('s')) nh = Math.max(30, startBox.h + dy);
+    if(dragMode.includes('w')){ nw = Math.max(30, startBox.w - dx); nx = startBox.x + dx; }
+    if(dragMode.includes('n')){ nh = Math.max(30, startBox.h - dy); ny = startBox.y + dy; }
+
+    if(currentRatio){
+      if(dragMode.includes('e') || dragMode.includes('w')) nh = nw / currentRatio;
+      else nw = nh * currentRatio;
+    }
+    nx = Math.max(0, Math.min(rect.width - nw, nx));
+    ny = Math.max(0, Math.min(rect.height - nh, ny));
+    box = { x:nx, y:ny, w:Math.min(nw, rect.width-nx), h:Math.min(nh, rect.height-ny) };
+  }
+  drawBox();
+});
+document.addEventListener('mouseup', ()=>{ dragMode = null; });
+
+cropBtn.addEventListener('click', ()=>{
+  const rect = stageImg.getBoundingClientRect();
+  const scaleX = naturalW / rect.width;
+  const scaleY = naturalH / rect.height;
+
+  const sx = box.x * scaleX, sy = box.y * scaleY;
+  const sw = box.w * scaleX, sh = box.h * scaleY;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.round(sw); canvas.height = Math.round(sh);
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(stageImg, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+
+  const outMime = currentFile.type === 'image/png' ? 'image/png' : 'image/jpeg';
+  canvas.toBlob(blob=>{
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = currentFile.name.replace(/\.[^.]+$/,'') + '-cropped' + (outMime==='image/png'?'.png':'.jpg');
+    document.body.appendChild(a); a.click(); a.remove();
+  }, outMime, 0.92);
+});
+
+resetBtn.addEventListener('click', ()=>{
+  currentFile = null;
+  editorArea.style.display = 'none';
+  stageImg.src = '';
+});
+</script>
+</body>
+</html>

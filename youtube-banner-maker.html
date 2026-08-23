@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>صانع غلاف يوتيوب مجانًا | فورا.tools</title>
+<meta content="صمّم غلاف قناة YouTube بالمقاس الرسمي 2560×1440 مع المنطقة الآمنة." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/youtube-banner-maker.html" rel="canonical"/>
+
+
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/tools/youtube-banner-maker.html" property="og:url"/>
+<meta content="صانع غلاف قناة يوتيوب مجانًا (Channel Art) | فورا.tools" property="og:title"/>
+<meta content="صمّم غلاف قناتك على يوتيوب بالمقاس الصحيح 2560×1440 مع دليل المنطقة الآمنة، أضف نص وشعار وخلفية، وحمّل النتيجة جاهزة." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="صانع غلاف قناة يوتيوب مجانًا (Channel Art) | فورا.tools" name="twitter:title"/>
+<meta content="صمّم غلاف قناتك على يوتيوب بالمقاس الصحيح 2560×1440 مع دليل المنطقة الآمنة، أضف نص وشعار وخلفية، وحمّل النتيجة جاهزة." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .editor-layout{display:grid;grid-template-columns:1fr 300px;gap:20px;}
+  @media(max-width:900px){.editor-layout{grid-template-columns:1fr;}}
+
+  .stage-wrap{
+    background:#111;border-radius:14px;overflow:hidden;position:relative;
+    aspect-ratio:2560/1440;width:100%;
+  }
+  .stage-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
+  .safe-zone{
+    position:absolute;border:2px dashed rgba(255,255,255,.55);pointer-events:none;
+    top:50%;left:50%;transform:translate(-50%,-50%);
+    width:60.39%;height:29.375%; /* 1546/2560, 423/1440 */
+  }
+  .safe-zone::before{
+    content:"المنطقة الآمنة — تظهر على كل الأجهزة";
+    position:absolute;top:-26px;right:0;font-size:11px;color:#fff;
+    font-family:'IBM Plex Mono',monospace;background:rgba(0,0,0,.5);padding:2px 8px;border-radius:5px;
+  }
+  .layer{
+    position:absolute;cursor:move;user-select:none;display:flex;align-items:center;justify-content:center;
+    border:1.5px dashed transparent;
+  }
+  .layer.selected{border-color:var(--indigo);}
+  .layer .handle-rs{
+    position:absolute;bottom:-8px;left:-8px;width:15px;height:15px;border-radius:50%;
+    background:#fff;border:2px solid var(--indigo);cursor:nesw-resize;display:none;
+  }
+  .layer.selected .handle-rs{display:block;}
+  .layer.text-layer{white-space:nowrap;font-weight:800;}
+  .layer.img-layer img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;}
+
+  .panel-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;
+  }
+  .panel-card h3{margin:0 0 12px;font-size:13px;font-weight:800;}
+  .panel-row{margin-bottom:12px;}
+  .panel-row label{display:block;font-size:12px;font-weight:700;margin-bottom:6px;color:var(--ink-soft);}
+  .panel-row input[type=text]{
+    width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--line);
+    font-family:'Tajawal',sans-serif;font-size:13.5px;background:#FDFCFA;color:var(--ink);
+  }
+  [data-theme="dark"] .panel-row input[type=text]{background:#211F34;}
+  .swatch-row{display:flex;gap:8px;align-items:center;}
+  .swatch-row input[type=color]{width:38px;height:34px;border-radius:8px;border:1px solid var(--line);cursor:pointer;padding:2px;}
+  .bg-mode-chips{display:flex;gap:6px;flex-wrap:wrap;}
+  .bg-mode-chip{
+    font-size:11.5px;font-weight:700;padding:6px 11px;border-radius:999px;border:1px solid var(--line);
+    background:#fff;cursor:pointer;
+  }
+  .bg-mode-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+  .upload-mini{
+    display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;border:1.5px dashed var(--line);
+    border-radius:9px;cursor:pointer;font-size:12.5px;font-weight:700;color:var(--ink-soft);
+  }
+  .upload-mini:hover{border-color:var(--indigo);color:var(--indigo-deep);}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "صانع غلاف يوتيوب",
+  "url": "https://fawran.tools/tools/youtube-banner-maker.html",
+  "description": "صمّم غلاف قناة YouTube بالمقاس الرسمي 2560×1440 مع المنطقة الآمنة.",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "فورا.tools",
+    "url": "https://fawran.tools/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الأدوات",
+      "item": "https://fawran.tools/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "أدوات يوتيوب",
+      "item": "https://fawran.tools/index.html#youtube"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "صانع غلاف قناة يوتيوب",
+      "item": "https://fawran.tools/tools/youtube-banner-maker.html"
+    }
+  ],
+  "name": "صانع غلاف يوتيوب",
+  "description": "صمّم غلاف قناة YouTube بالمقاس الرسمي 2560×1440 مع المنطقة الآمنة."
+}</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="صانع غلاف يوتيوب, YouTube Banner Maker, أدوات أونلاين, free online tools, SEO tools" name="keywords"/>
+<link href="https://fawran.tools/tools/youtube-banner-maker.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/youtube-banner-maker.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/youtube-banner-maker.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../index.html">الأدوات</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/tools/youtube-banner-maker.html" title="View in English">EN</a>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../index.html">الأدوات</a> / أدوات يوتيوب / صانع غلاف القناة</div>
+<h1>صانع غلاف قناة يوتيوب</h1>
+<p class="tool-lede">
+    صمّم غلاف قناتك بالمقاس الرسمي 2560×1440 مع دليل "المنطقة الآمنة" اللي بتظهر فعليًا على كل الأجهزة —
+    اسحب النص والشعار داخل المنطقة الآمنة عشان يبانوا صح على الموبايل والتلفزيون والكمبيوتر.
+  </p>
+<div class="tool-card-shell">
+<div class="editor-layout">
+<div>
+<div class="stage-wrap" id="stageWrap">
+<div class="stage-bg" id="stageBg" style="background-color:#4F3FF0;"></div>
+<div class="safe-zone" id="safeZone"></div>
+<div class="layer text-layer" id="textLayer" style="top:45%;left:30%;color:#ffffff;font-size:5%;">اسم القناة</div>
+<div class="layer img-layer" id="logoLayer" style="display:none;top:20%;left:10%;width:14%;height:14%;"></div>
+</div>
+<div class="actions" style="margin-top:18px;">
+<button class="btn btn-primary" id="exportBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+            تصدير الغلاف (2560×1440)
+          </button>
+<button class="btn btn-ghost" id="resetDesignBtn">إعادة تعيين</button>
+</div>
+</div>
+<div>
+<div class="panel-card">
+<h3>الخلفية</h3>
+<div class="bg-mode-chips" style="margin-bottom:12px;">
+<span class="bg-mode-chip active" data-bg="color">لون</span>
+<span class="bg-mode-chip" data-bg="gradient">تدرّج</span>
+<span class="bg-mode-chip" data-bg="image">صورة</span>
+</div>
+<div class="swatch-row" id="bgColorRow">
+<input id="bgColor1" type="color" value="#4F3FF0"/>
+</div>
+<div class="swatch-row" id="bgGradientRow" style="display:none;">
+<input id="bgColor2a" type="color" value="#4F3FF0"/>
+<input id="bgColor2b" type="color" value="#F0A93B"/>
+</div>
+<div id="bgImageRow" style="display:none;">
+<input accept="image/*" id="bgImgInput" style="display:none;" type="file"/>
+<label class="upload-mini" for="bgImgInput">
+<svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><path d="M12 3v12"></path><path d="M7 8l5-5 5 5"></path><path d="M5 21h14"></path></svg>
+              رفع صورة خلفية
+            </label>
+</div>
+</div>
+<div class="panel-card">
+<h3>النص</h3>
+<div class="panel-row">
+<label>اسم القناة</label>
+<input id="channelText" type="text" value="اسم القناة"/>
+</div>
+<div class="panel-row">
+<label>لون النص</label>
+<div class="swatch-row"><input id="textColor" type="color" value="#ffffff"/></div>
+</div>
+<div class="panel-row">
+<label>حجم الخط <span id="fontSizeVal">5%</span></label>
+<input id="fontSize" max="12" min="2" step="0.2" type="range" value="5"/>
+</div>
+</div>
+<div class="panel-card">
+<h3>الشعار / اللوجو</h3>
+<input accept="image/*" id="logoInput" style="display:none;" type="file"/>
+<label class="upload-mini" for="logoInput">
+<svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><path d="M12 3v12"></path><path d="M7 8l5-5 5 5"></path><path d="M5 21h14"></path></svg>
+            رفع شعار
+          </label>
+<button class="btn btn-ghost" id="removeLogoBtn" style="width:100%;margin-top:10px;font-size:12.5px;padding:9px;display:none;">حذف الشعار</button>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+    كل التصميم يتم محليًا في متصفحك — تصميمك وصورك لا تغادر جهازك أبدًا
+  </div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../blog/youtube-banner-guide.html" style="color:var(--indigo-deep);font-weight:700;">اقرأ الدليل الكامل: المقاس الرسمي وشرح المنطقة الآمنة</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك -->
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script>
+<script>
+const stageWrap = document.getElementById('stageWrap');
+const stageBg = document.getElementById('stageBg');
+const textLayer = document.getElementById('textLayer');
+const logoLayer = document.getElementById('logoLayer');
+
+const bgModeChips = document.querySelectorAll('.bg-mode-chip');
+const bgColorRow = document.getElementById('bgColorRow');
+const bgGradientRow = document.getElementById('bgGradientRow');
+const bgImageRow = document.getElementById('bgImageRow');
+const bgColor1 = document.getElementById('bgColor1');
+const bgColor2a = document.getElementById('bgColor2a');
+const bgColor2b = document.getElementById('bgColor2b');
+const bgImgInput = document.getElementById('bgImgInput');
+
+const channelText = document.getElementById('channelText');
+const textColor = document.getElementById('textColor');
+const fontSize = document.getElementById('fontSize');
+const fontSizeVal = document.getElementById('fontSizeVal');
+
+const logoInput = document.getElementById('logoInput');
+const removeLogoBtn = document.getElementById('removeLogoBtn');
+const exportBtn = document.getElementById('exportBtn');
+const resetDesignBtn = document.getElementById('resetDesignBtn');
+
+let bgMode = 'color';
+let bgImageDataUrl = null;
+let logoDataUrl = null;
+
+// ---- Background mode switching ----
+bgModeChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    bgModeChips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    bgMode = chip.dataset.bg;
+    bgColorRow.style.display = bgMode === 'color' ? 'flex' : 'none';
+    bgGradientRow.style.display = bgMode === 'gradient' ? 'flex' : 'none';
+    bgImageRow.style.display = bgMode === 'image' ? 'block' : 'none';
+    updateBackground();
+  });
+});
+function updateBackground(){
+  if(bgMode === 'color'){
+    stageBg.style.background = bgColor1.value;
+  } else if(bgMode === 'gradient'){
+    stageBg.style.background = `linear-gradient(135deg, ${bgColor2a.value}, ${bgColor2b.value})`;
+  } else if(bgMode === 'image' && bgImageDataUrl){
+    stageBg.style.background = `url(${bgImageDataUrl}) center/cover no-repeat`;
+  }
+}
+bgColor1.addEventListener('input', updateBackground);
+bgColor2a.addEventListener('input', updateBackground);
+bgColor2b.addEventListener('input', updateBackground);
+bgImgInput.addEventListener('change', e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ev=>{ bgImageDataUrl = ev.target.result; updateBackground(); };
+  reader.readAsDataURL(file);
+});
+
+// ---- Text layer ----
+function updateText(){
+  textLayer.textContent = channelText.value || 'اسم القناة';
+  textLayer.style.color = textColor.value;
+  const stageH = stageWrap.getBoundingClientRect().height;
+  textLayer.style.fontSize = (parseFloat(fontSize.value)/100 * stageH) + 'px';
+  fontSizeVal.textContent = fontSize.value + '%';
+}
+channelText.addEventListener('input', updateText);
+textColor.addEventListener('input', updateText);
+fontSize.addEventListener('input', updateText);
+window.addEventListener('resize', updateText);
+updateText();
+
+// ---- Logo layer ----
+// Logo image element + resize handle (created once, never wiped by innerHTML)
+const logoImgEl = document.createElement('img');
+logoLayer.appendChild(logoImgEl);
+const rsHandle = document.createElement('div');
+rsHandle.className = 'handle-rs';
+logoLayer.appendChild(rsHandle);
+
+logoInput.addEventListener('change', e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ev=>{
+    logoDataUrl = ev.target.result;
+    logoImgEl.src = logoDataUrl;
+    logoLayer.style.display = 'flex';
+    removeLogoBtn.style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+});
+removeLogoBtn.addEventListener('click', ()=>{
+  logoDataUrl = null;
+  logoLayer.style.display = 'none';
+  logoImgEl.src = '';
+  removeLogoBtn.style.display = 'none';
+});
+
+// ---- Drag & resize for layers ----
+function makeDraggable(el){
+  let mode = null, startX, startY, startLeft, startTop, startW, startH;
+
+  el.addEventListener('mousedown', e=>{
+    if(e.target.classList.contains('handle-rs')) return;
+    document.querySelectorAll('.layer').forEach(l=>l.classList.remove('selected'));
+    el.classList.add('selected');
+    mode = 'move';
+    const rect = stageWrap.getBoundingClientRect();
+    startX = e.clientX; startY = e.clientY;
+    startLeft = parseFloat(el.style.left);
+    startTop = parseFloat(el.style.top);
+    e.preventDefault();
+  });
+
+  const handle = el.querySelector('.handle-rs');
+  if(handle){
+    handle.addEventListener('mousedown', e=>{
+      mode = 'resize';
+      startX = e.clientX; startY = e.clientY;
+      startW = parseFloat(el.style.width);
+      startH = parseFloat(el.style.height);
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  }
+
+  document.addEventListener('mousemove', e=>{
+    if(!mode) return;
+    const rect = stageWrap.getBoundingClientRect();
+    const dxPct = ((e.clientX - startX) / rect.width) * 100;
+    const dyPct = ((e.clientY - startY) / rect.height) * 100;
+
+    if(mode === 'move'){
+      let nl = startLeft + dxPct, nt = startTop + dyPct;
+      nl = Math.max(0, Math.min(95, nl));
+      nt = Math.max(0, Math.min(95, nt));
+      el.style.left = nl + '%';
+      el.style.top = nt + '%';
+    } else if(mode === 'resize'){
+      let nw = Math.max(5, startW + dxPct);
+      let nh = Math.max(5, startH + dyPct);
+      el.style.width = nw + '%';
+      el.style.height = nh + '%';
+    }
+  });
+  document.addEventListener('mouseup', ()=>{ mode = null; });
+}
+
+makeDraggable(textLayer);
+makeDraggable(logoLayer);
+
+stageWrap.addEventListener('mousedown', e=>{
+  if(e.target === stageWrap || e.target === stageBg || e.target.id === 'safeZone'){
+    document.querySelectorAll('.layer').forEach(l=>l.classList.remove('selected'));
+  }
+});
+
+// ---- Export ----
+function loadImg(src){
+  return new Promise((resolve,reject)=>{
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = ()=>resolve(img);
+    img.onerror = reject;
+    img.src = src;
+  });
+}
+
+exportBtn.addEventListener('click', async ()=>{
+  exportBtn.disabled = true;
+  exportBtn.textContent = 'جارٍ التصدير...';
+  try{
+    const W = 2560, H = 1440;
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+
+    // Background
+    if(bgMode === 'color'){
+      ctx.fillStyle = bgColor1.value;
+      ctx.fillRect(0,0,W,H);
+    } else if(bgMode === 'gradient'){
+      const grad = ctx.createLinearGradient(0,0,W,H);
+      grad.addColorStop(0, bgColor2a.value);
+      grad.addColorStop(1, bgColor2b.value);
+      ctx.fillStyle = grad;
+      ctx.fillRect(0,0,W,H);
+    } else if(bgMode === 'image' && bgImageDataUrl){
+      const img = await loadImg(bgImageDataUrl);
+      const scale = Math.max(W/img.width, H/img.height);
+      const dw = img.width*scale, dh = img.height*scale;
+      ctx.drawImage(img, (W-dw)/2, (H-dh)/2, dw, dh);
+    } else {
+      ctx.fillStyle = '#4F3FF0'; ctx.fillRect(0,0,W,H);
+    }
+
+    // Text layer
+    const tLeft = parseFloat(textLayer.style.left)/100 * W;
+    const tTop = parseFloat(textLayer.style.top)/100 * H;
+    const tSize = parseFloat(fontSize.value)/100 * H;
+    ctx.fillStyle = textColor.value;
+    ctx.font = `800 ${tSize}px Tajawal, Arial, sans-serif`;
+    ctx.textBaseline = 'middle';
+    ctx.fillText(channelText.value || 'اسم القناة', tLeft, tTop + tSize*0.15);
+
+    // Logo layer
+    if(logoDataUrl){
+      const logoImg = await loadImg(logoDataUrl);
+      const lLeft = parseFloat(logoLayer.style.left)/100 * W;
+      const lTop = parseFloat(logoLayer.style.top)/100 * H;
+      const lW = parseFloat(logoLayer.style.width)/100 * W;
+      const lH = parseFloat(logoLayer.style.height)/100 * H;
+      const scale = Math.min(lW/logoImg.width, lH/logoImg.height);
+      const dw = logoImg.width*scale, dh = logoImg.height*scale;
+      const dx = lLeft + (lW-dw)/2, dy = lTop + (lH-dh)/2;
+      ctx.drawImage(logoImg, dx, dy, dw, dh);
+    }
+
+    canvas.toBlob(blob=>{
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'youtube-channel-banner.png';
+      document.body.appendChild(a); a.click(); a.remove();
+    }, 'image/png');
+  } catch(err){
+    console.error(err);
+    alert('تعذّر تصدير التصميم. جرّب مرة أخرى.');
+  }
+  exportBtn.disabled = false;
+  exportBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg> تصدير الغلاف (2560×1440)`;
+});
+
+resetDesignBtn.addEventListener('click', ()=>{
+  bgMode = 'color'; bgImageDataUrl = null; logoDataUrl = null;
+  bgModeChips.forEach(c=>c.classList.remove('active'));
+  bgModeChips[0].classList.add('active');
+  bgColorRow.style.display = 'flex'; bgGradientRow.style.display = 'none'; bgImageRow.style.display = 'none';
+  bgColor1.value = '#4F3FF0';
+  updateBackground();
+  channelText.value = 'اسم القناة';
+  textColor.value = '#ffffff';
+  fontSize.value = 5;
+  updateText();
+  logoLayer.style.display = 'none'; logoImgEl.src = ''; removeLogoBtn.style.display = 'none';
+  textLayer.style.top = '45%'; textLayer.style.left = '30%';
+  logoLayer.style.top = '20%'; logoLayer.style.left = '10%'; logoLayer.style.width = '14%'; logoLayer.style.height = '14%';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تغيير حجم الصور أونلاين مجانًا | فورا.tools</title>
+<meta content="غيّر حجم الصور والأبعاد بالبكسل أونلاين مجانًا مع الحفاظ على نسبة العرض إلى الارتفاع." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/image-resizer.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/tools/image-resizer.html" property="og:url"/>
+<meta content="تغيير حجم الصور مجانًا | فورا.tools" property="og:title"/>
+<meta content="غيّر أبعاد أي صورة لمقاس مخصص أو مقاسات جاهزة لمنصات التواصل والمدونات، مباشرة داخل متصفحك." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="تغيير حجم الصور مجانًا | فورا.tools" name="twitter:title"/>
+<meta content="غيّر أبعاد أي صورة لمقاس مخصص أو مقاسات جاهزة لمنصات التواصل والمدونات، مباشرة داخل متصفحك." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link href="../assets/style.css" rel="stylesheet"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "تغيير حجم الصور أونلاين",
+  "url": "https://fawran.tools/tools/image-resizer.html",
+  "description": "غيّر حجم الصور والأبعاد بالبكسل أونلاين مجانًا مع الحفاظ على نسبة العرض إلى الارتفاع.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "فورا.tools",
+    "url": "https://fawran.tools/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الأدوات",
+      "item": "https://fawran.tools/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "أدوات الصور",
+      "item": "https://fawran.tools/index.html#images"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "تغيير حجم الصور مجانًا",
+      "item": "https://fawran.tools/tools/image-resizer.html"
+    }
+  ],
+  "name": "تغيير حجم الصور أونلاين",
+  "description": "غيّر حجم الصور والأبعاد بالبكسل أونلاين مجانًا مع الحفاظ على نسبة العرض إلى الارتفاع."
+}</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="تغيير حجم الصور أونلاين, Image Resizer, أدوات أونلاين, free online tools, SEO tools" name="keywords"/>
+<link href="https://fawran.tools/tools/image-resizer.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/image-resizer.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/image-resizer.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../index.html">الأدوات</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../index.html">الأدوات</a> / أدوات الصور / تغيير حجم الصور</div>
+<h1>تغيير حجم الصور</h1>
+<p class="tool-lede">
+    غيّر أبعاد صورك لأي مقاس تختاره، أو اختر مقاسًا جاهزًا لمنصات التواصل والمدونات — بنفس صيغة الصورة الأصلية.
+  </p>
+<div class="tool-card-shell">
+<div class="dropzone" id="dropzone">
+<input accept="image/*" id="fileInput" multiple="" type="file"/>
+<div class="dz-icon">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M9 21H3v-6"></path><path d="M21 3l-7 7"></path><path d="M3 21l7-7"></path></svg>
+</div>
+<div class="dz-title">اسحب صورك هنا أو <b>اضغط للاختيار</b></div>
+<div class="dz-sub">يمكنك رفع عدة صور دفعة واحدة — لا حفظ ولا رفع لأي خادم</div>
+<div class="dz-formats">
+<span class="chip">JPG</span><span class="chip">PNG</span><span class="chip">WEBP</span><span class="chip">GIF</span><span class="chip">BMP</span>
+</div>
+</div>
+<div class="settings">
+<div class="field">
+<label style="margin-bottom:14px;">مقاس جاهز</label>
+<select id="presetSelect" style="width:100%;padding:11px 12px;border-radius:9px;border:1px solid var(--line);font-family:'Tajawal',sans-serif;font-size:13.5px;background:var(--surface);">
+<option value="custom">مخصص</option>
+<option value="1080x1080">مربع انستقرام — 1080×1080</option>
+<option value="1080x1350">بورتريه انستقرام — 1080×1350</option>
+<option value="1200x630">صورة مشاركة فيسبوك/تويتر — 1200×630</option>
+<option value="1600x900">غلاف يوتيوب مصغّر — 1600×900</option>
+<option value="700x1600">غلاف بلوجر — 700×1600</option>
+<option value="1920x1080">خلفية شاشة Full HD — 1920×1080</option>
+</select>
+<div class="dims-row" style="margin-top:14px;">
+<input id="wField" min="16" style="width:90px" type="number" value="1080"/>
+<span class="x">×</span>
+<input id="hField" min="16" style="width:90px" type="number" value="1080"/>
+<label style="display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted);cursor:pointer;">
+<input id="lockRatio" style="width:15px;height:15px;" type="checkbox"/>
+            حافظ على النسبة
+          </label>
+</div>
+</div>
+<div class="field">
+<label>وضع التغيير</label>
+<select id="fitMode" style="width:100%;padding:11px 12px;border-radius:9px;border:1px solid var(--line);font-family:'Tajawal',sans-serif;font-size:13.5px;background:var(--surface);">
+<option value="cover">تعبئة وقص (Cover)</option>
+<option value="contain">احتواء كامل (Contain)</option>
+<option value="stretch">تمديد للمقاس (Stretch)</option>
+</select>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" disabled="" id="convertBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M9 21H3v-6"></path><path d="M21 3l-7 7"></path><path d="M3 21l7-7"></path></svg>
+        تغيير الحجم
+      </button>
+<button class="btn btn-dark" disabled="" id="zipBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+        تحميل الكل (ZIP)
+      </button>
+<button class="btn btn-ghost" disabled="" id="clearBtn">مسح الكل</button>
+</div>
+</div>
+<div class="tool-card-shell" id="resultsCard" style="display:none;">
+<div class="section-title"><span class="dot"></span>النتائج</div>
+<div class="summary" id="summary" style="display:none;"></div>
+<div class="results" id="results"></div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+    كل عملية تغيير حجم تتم محليًا في متصفحك — صورك لا تغادر جهازك أبدًا
+  </div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../blog/image-resize-guide.html" style="color:var(--indigo-deep);font-weight:700;">اقرأ الدليل الكامل: جدول مقاسات كل المنصات وأوضاع التعبئة</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script>
+<script>
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+const presetSelect = document.getElementById('presetSelect');
+const wField = document.getElementById('wField');
+const hField = document.getElementById('hField');
+const lockRatio = document.getElementById('lockRatio');
+const fitMode = document.getElementById('fitMode');
+const convertBtn = document.getElementById('convertBtn');
+const zipBtn = document.getElementById('zipBtn');
+const clearBtn = document.getElementById('clearBtn');
+const resultsCard = document.getElementById('resultsCard');
+const resultsEl = document.getElementById('results');
+const summaryEl = document.getElementById('summary');
+
+let queue = [];
+let ratio = 1;
+
+presetSelect.addEventListener('change', ()=>{
+  if(presetSelect.value === 'custom') return;
+  const [w,h] = presetSelect.value.split('x').map(Number);
+  wField.value = w; hField.value = h;
+  ratio = w / h;
+});
+wField.addEventListener('input', ()=>{
+  if(lockRatio.checked && ratio){ hField.value = Math.round(parseInt(wField.value||0) / ratio); }
+  presetSelect.value = 'custom';
+});
+hField.addEventListener('input', ()=>{
+  if(lockRatio.checked && ratio){ wField.value = Math.round(parseInt(hField.value||0) * ratio); }
+  presetSelect.value = 'custom';
+});
+lockRatio.addEventListener('change', ()=>{
+  if(lockRatio.checked) ratio = (parseInt(wField.value)||1) / (parseInt(hField.value)||1);
+});
+
+['dragenter','dragover'].forEach(ev=>{
+  dropzone.addEventListener(ev, e=>{ e.preventDefault(); dropzone.classList.add('drag'); });
+});
+['dragleave','drop'].forEach(ev=>{
+  dropzone.addEventListener(ev, e=>{ e.preventDefault(); dropzone.classList.remove('drag'); });
+});
+dropzone.addEventListener('drop', e=> handleFiles(e.dataTransfer.files));
+dropzone.addEventListener('click', ()=> fileInput.click());
+fileInput.addEventListener('change', e=> handleFiles(e.target.files));
+
+function handleFiles(fileList){
+  const files = Array.from(fileList).filter(f=> f.type.startsWith('image/'));
+  if(!files.length) return;
+  files.forEach(file=>{
+    const id = 'f' + Math.random().toString(36).slice(2,9);
+    const thumbUrl = URL.createObjectURL(file);
+    queue.push({id, file, status:'pending', origSize:file.size, newSize:0, blob:null, url:null, thumbUrl, mime:file.type});
+  });
+  renderQueue();
+  convertBtn.disabled = false;
+  clearBtn.disabled = false;
+  fileInput.value = '';
+}
+
+function fmtBytes(bytes){
+  if(bytes < 1024) return bytes + ' B';
+  if(bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/1024/1024).toFixed(2) + ' MB';
+}
+function extFor(mime){
+  const map = {'image/png':'.png','image/webp':'.webp','image/gif':'.png','image/bmp':'.png'};
+  return map[mime] || '.jpg';
+}
+
+function renderQueue(){
+  if(!queue.length){ resultsCard.style.display = 'none'; return; }
+  resultsCard.style.display = 'block';
+  resultsEl.innerHTML = '';
+  queue.forEach(item=>{
+    const row = document.createElement('div');
+    row.className = 'result-item';
+    const outMime = item.mime === 'image/jpeg' || item.mime === 'image/webp' ? item.mime : 'image/png';
+    const outName = item.file.name.replace(/\.[^.]+$/, '') + extFor(outMime);
+
+    row.innerHTML = `
+      <img class="thumb" src="${item.thumbUrl}" alt="">
+      <div class="r-info">
+        <div class="r-name">${outName}</div>
+        <div class="r-meta">
+          ${item.status === 'done' ? `
+            <span class="old">${fmtBytes(item.origSize)}</span>
+            <span class="arrow">←</span>
+            <span class="new">${fmtBytes(item.newSize)}</span>
+          ` : item.status === 'processing' ? `<span>جارٍ التغيير...</span>`
+            : item.status === 'error' ? `<span class="err-text">⚠ ${item.errorMsg || 'تعذّر تغيير الحجم'}</span>`
+            : `<span>${fmtBytes(item.origSize)} — بانتظار المعالجة</span>`}
+        </div>
+        ${item.status === 'processing' ? `<div class="progress-bar"><div style="width:60%"></div></div>` : ''}
+      </div>
+      <div class="r-actions">
+        ${item.status === 'done' ? `
+          <button class="icon-btn dl" data-dl="${item.id}" title="تحميل هذه الصورة">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            تحميل
+          </button>` : ''}
+        ${item.status === 'error' ? `
+          <button class="icon-btn retry" data-retry="${item.id}" title="إعادة المحاولة">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+            إعادة
+          </button>` : ''}
+        <button class="icon-btn del" data-remove="${item.id}" title="حذف من القائمة">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+          حذف
+        </button>
+      </div>
+    `;
+    resultsEl.appendChild(row);
+  });
+
+  resultsEl.querySelectorAll('[data-dl]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const item = queue.find(q=>q.id === btn.dataset.dl);
+      downloadItem(item);
+    });
+  });
+  resultsEl.querySelectorAll('[data-retry]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const item = queue.find(q=>q.id === btn.dataset.retry);
+      if(item){ item.status = 'pending'; convertOne(item); }
+    });
+  });
+  resultsEl.querySelectorAll('[data-remove]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      queue = queue.filter(q=>q.id !== btn.dataset.remove);
+      renderQueue();
+      updateSummary();
+      if(!queue.length){ convertBtn.disabled = true; zipBtn.disabled = true; clearBtn.disabled = true; }
+    });
+  });
+
+  updateSummary();
+}
+
+function updateSummary(){
+  const done = queue.filter(q=>q.status === 'done');
+  if(!done.length){ summaryEl.style.display = 'none'; return; }
+  const origTotal = done.reduce((s,q)=>s+q.origSize,0);
+  const newTotal = done.reduce((s,q)=>s+q.newSize,0);
+  summaryEl.style.display = 'flex';
+  summaryEl.innerHTML = `
+    <div class="stat"><div class="n">${done.length}</div><div class="l">صورة تم تغيير حجمها</div></div>
+    <div class="stat"><div class="n">${fmtBytes(origTotal)}</div><div class="l">الحجم الأصلي</div></div>
+    <div class="stat"><div class="n">${fmtBytes(newTotal)}</div><div class="l">الحجم بعد المعالجة</div></div>
+    <div class="stat"><div class="n">${wField.value}×${hField.value}</div><div class="l">المقاس الجديد</div></div>
+  `;
+  zipBtn.disabled = done.length === 0;
+}
+
+function downloadItem(item){
+  const a = document.createElement('a');
+  a.href = item.url;
+  const outMime = item.mime === 'image/jpeg' || item.mime === 'image/webp' ? item.mime : 'image/png';
+  a.download = item.file.name.replace(/\.[^.]+$/, '') + extFor(outMime);
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
+function loadImage(file){
+  return new Promise((resolve, reject)=>{
+    const img = new Image();
+    img.onload = ()=> resolve(img);
+    img.onerror = ()=> reject(new Error('تعذّر فتح هذه الصورة — الصيغة غير مدعومة أو الملف تالف'));
+    img.src = URL.createObjectURL(file);
+  });
+}
+
+async function convertOne(item){
+  item.status = 'processing';
+  item.errorMsg = null;
+  renderQueue();
+  try{
+    const img = await loadImage(item.file);
+    if(!img.naturalWidth || !img.naturalHeight) throw new Error('لا يمكن قراءة أبعاد هذه الصورة');
+
+    let targetW = parseInt(wField.value);
+    let targetH = parseInt(hField.value);
+    if(!targetW || targetW < 1) targetW = img.naturalWidth;
+    if(!targetH || targetH < 1) targetH = img.naturalHeight;
+    const mode = fitMode.value;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = targetW; canvas.height = targetH;
+    const ctx = canvas.getContext('2d');
+    if(!ctx) throw new Error('تعذّر إنشاء لوحة الرسم في هذا المتصفح');
+
+    const outMime = item.mime === 'image/jpeg' || item.mime === 'image/webp' ? item.mime : 'image/png';
+    if(outMime === 'image/jpeg'){ ctx.fillStyle = '#FFFFFF'; ctx.fillRect(0,0,targetW,targetH); }
+
+    if(mode === 'stretch'){
+      ctx.drawImage(img, 0, 0, targetW, targetH);
+    } else {
+      const srcRatio = img.naturalWidth / img.naturalHeight;
+      const dstRatio = targetW / targetH;
+      if(mode === 'cover'){
+        let sx, sy, sw, sh;
+        if(srcRatio > dstRatio){ sh = img.naturalHeight; sw = sh * dstRatio; sx = (img.naturalWidth - sw) / 2; sy = 0; }
+        else{ sw = img.naturalWidth; sh = sw / dstRatio; sy = (img.naturalHeight - sh) / 2; sx = 0; }
+        ctx.drawImage(img, sx, sy, sw, sh, 0, 0, targetW, targetH);
+      } else {
+        let dw, dh, dx, dy;
+        if(srcRatio > dstRatio){ dw = targetW; dh = dw / srcRatio; dx = 0; dy = (targetH - dh) / 2; }
+        else{ dh = targetH; dw = dh * srcRatio; dy = 0; dx = (targetW - dw) / 2; }
+        ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, dx, dy, dw, dh);
+      }
+    }
+
+    const blob = await new Promise((resolve, reject)=>{
+      canvas.toBlob(b=>{ if(b) resolve(b); else reject(new Error('فشل إنشاء الصورة الجديدة')); }, outMime, 0.92);
+    });
+
+    item.blob = blob; item.url = URL.createObjectURL(blob); item.newSize = blob.size; item.status = 'done';
+  } catch(err){
+    console.error(err);
+    item.status = 'error';
+    item.errorMsg = (err && err.message) ? err.message : 'حدث خطأ غير متوقع أثناء المعالجة';
+  }
+  renderQueue();
+}
+
+convertBtn.addEventListener('click', async ()=>{
+  convertBtn.disabled = true;
+  const pending = queue.filter(q=> q.status === 'pending' || q.status === 'error');
+  for(const item of pending){ await convertOne(item); }
+  convertBtn.disabled = false;
+});
+
+zipBtn.addEventListener('click', async ()=>{
+  const done = queue.filter(q=>q.status === 'done');
+  if(!done.length) return;
+  zipBtn.disabled = true;
+  const zip = new JSZip();
+  done.forEach(item=>{
+    const outMime = item.mime === 'image/jpeg' || item.mime === 'image/webp' ? item.mime : 'image/png';
+    zip.file(item.file.name.replace(/\.[^.]+$/, '') + extFor(outMime), item.blob);
+  });
+  const content = await zip.generateAsync({type:'blob'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(content); a.download = 'fawran-resized-images.zip';
+  document.body.appendChild(a); a.click(); a.remove();
+  zipBtn.disabled = false;
+});
+
+clearBtn.addEventListener('click', ()=>{
+  queue = [];
+  renderQueue();
+  convertBtn.disabled = true; zipBtn.disabled = true; clearBtn.disabled = true;
+});
+</script>
+</body>
+</html>
