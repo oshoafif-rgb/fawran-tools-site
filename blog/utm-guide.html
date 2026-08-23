@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ما هي روابط UTM ولماذا تحتاجها لقياس حملاتك 2026 | فورا.tools</title>
+<meta name="description" content="دليل شامل لفهم معاملات UTM الخمسة، كيف تعرف بالضبط مصدر كل زيارة لموقعك، وكيف تبني رابط تتبع صحيح لأي حملة تسويقية.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#4F3FF0">
+<link rel="canonical" href="https://fawran.tools/blog/utm-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fawran.tools/blog/utm-guide.html">
+<meta property="og:title" content="ما هي روابط UTM ولماذا تحتاجها لقياس حملاتك 2026 | فورا.tools">
+<meta property="og:description" content="دليل شامل لفهم معاملات UTM الخمسة وكيف تعرف بالضبط مصدر كل زيارة لموقعك.">
+<meta property="og:site_name" content="فورا.tools">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ما هي روابط UTM ولماذا تحتاجها لقياس حملاتك 2026 | فورا.tools">
+<meta name="twitter:description" content="دليل شامل لفهم معاملات UTM الخمسة.">
+<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+  .size-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+  .size-table th, .size-table td{padding:9px 12px;border:1px solid var(--line);text-align:right;}
+  .size-table th{background:var(--surface-sunk);font-weight:800;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"ما هي روابط UTM ولماذا تحتاجها لقياس حملاتك","description":"دليل شامل لفهم معاملات UTM الخمسة، كيف تعرف بالضبط مصدر كل زيارة لموقعك، وكيف تبني رابط تتبع صحيح لأي حملة تسويقية.","url":"https://fawran.tools/blog/utm-guide.html","datePublished":"2026-08-23","dateModified":"2026-08-23","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/utm-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ما المعاملات الإلزامية لبناء رابط UTM صحيح؟","acceptedAnswer":{"@type":"Answer","text":"ثلاثة معاملات إلزامية عمليًا: source (المصدر)، medium (الوسيلة)، وcampaign (اسم الحملة). أما term وcontent فاختياريان ويُستخدمان لتفاصيل إضافية."}},{"@type":"Question","name":"هل روابط UTM تؤثر على تجربة المستخدم أو سرعة الصفحة؟","acceptedAnswer":{"@type":"Answer","text":"لا، المعاملات مجرد نص إضافي في نهاية الرابط لا يؤثر على محتوى الصفحة أو سرعة تحميلها بأي شكل."}},{"@type":"Question","name":"هل يجب استخدام أحرف كبيرة أو صغيرة في قيم المعاملات؟","acceptedAnswer":{"@type":"Answer","text":"يُفضّل الالتزام بحالة أحرف واحدة ثابتة (عادة صغيرة) عبر كل حملاتك، لأن أدوات التحليل مثل جوجل أناليتكس تعتبر \"Facebook\" و\"facebook\" مصدرين مختلفين تمامًا."}},{"@type":"Question","name":"أين أرى نتائج تتبع روابط UTM بعد إنشائها؟","acceptedAnswer":{"@type":"Answer","text":"في تقارير \"الاستحواذ\" أو \"Acquisition\" داخل أدوات تحليل الموقع مثل Google Analytics، حيث تظهر الزيارات مقسّمة حسب قيم UTM المستخدمة."}}]}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="../index.html">الأدوات</a>
+        <a href="index.html" class="active">المدونة</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../contact.html">تواصل معنا</a>
+      </nav>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="page-head">
+    <div class="article-meta"><span class="tag">أدوات المواقع والمدونات</span><span>7 دقائق قراءة</span></div>
+    <h1>ما هي روابط UTM ولماذا تحتاجها لقياس حملاتك</h1>
+  </div>
+
+  <div class="content-card">
+
+    <svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="320" rx="16" fill="#14131F"/>
+      <rect x="80" y="140" width="240" height="40" rx="20" fill="#1A1826"/>
+      <text x="200" y="166" font-family="IBM Plex Mono, monospace" font-size="13" fill="#8B89A3" text-anchor="middle">example.com/page</text>
+      <path d="M340 160 L400 160 M375 140 L400 160 L375 180" stroke="#F0A93B" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="430" y="130" width="290" height="60" rx="10" fill="#4F3FF0"/>
+      <text x="575" y="155" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fff" text-anchor="middle">?utm_source=facebook</text>
+      <text x="575" y="172" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fff" text-anchor="middle">&amp;utm_medium=cpc</text>
+    </svg>
+
+    <div class="toc">
+      <h2>محتوى المقال</h2>
+      <ul>
+        <li><a href="#why">لماذا تحتاج رابط UTM أصلًا؟</a></li>
+        <li><a href="#params">المعاملات الخمسة وماذا تعني</a></li>
+        <li><a href="#howto">كيف تبني رابط UTM خطوة بخطوة؟</a></li>
+        <li><a href="#consistency">الحفاظ على الاتساق عبر الحملات</a></li>
+        <li><a href="#faq">أسئلة شائعة</a></li>
+      </ul>
+    </div>
+
+    <p>
+      شاركت رابط موقعك على فيسبوك وإنستغرام وواتساب، وزادت زياراتك — لكن ما تعرفش بالظبط أي منصة
+      جابت أكتر زوار؟ روابط UTM هي الحل. رابط بسيط بمعاملات إضافية بيخلّي أدوات التحليل زي Google
+      Analytics تعرف بالظبط مصدر كل زيارة. في هذا الدليل هنشرح كل حاجة عنها.
+    </p>
+
+    <h2 id="why">لماذا تحتاج رابط UTM أصلًا؟</h2>
+    <p>
+      من غير UTM، أدوات التحليل بتعرف إن الزيارة جاية من "مصدر خارجي" بس، من غير تفاصيل دقيقة.
+      لو بتنشر نفس الرابط في عدة أماكن — بوست فيسبوك، ستوري إنستغرام، نشرة بريدية، إعلان مدفوع —
+      مفيش طريقة تفرّق بين مصادرهم من غير UTM. برابط UTM، كل نسخة من الرابط بتحمل معلومات واضحة عن
+      مصدرها، فتقدر تشوف بالظبط أي قناة تسويقية بتجيب أعلى نتيجة فعليًا.
+    </p>
+
+    <h2 id="params">المعاملات الخمسة وماذا تعني</h2>
+    <table class="size-table">
+      <tr><th>المعامل</th><th>الوصف</th><th>مثال</th></tr>
+      <tr><td>utm_source</td><td>المصدر (الموقع/المنصة)</td><td>facebook</td></tr>
+      <tr><td>utm_medium</td><td>الوسيلة (نوع القناة)</td><td>cpc, social, email</td></tr>
+      <tr><td>utm_campaign</td><td>اسم الحملة</td><td>summer_sale</td></tr>
+      <tr><td>utm_term</td><td>الكلمة المفتاحية (اختياري)</td><td>ضغط_صور</td></tr>
+      <tr><td>utm_content</td><td>تمييز نسخة إعلانية معينة (اختياري)</td><td>banner_a</td></tr>
+    </table>
+
+    <h2 id="howto">كيف تبني رابط UTM خطوة بخطوة؟</h2>
+    <p>
+      باستخدام <a href="../tools/utm-link-builder.html" style="color:var(--indigo-deep);font-weight:700;">أداة بناء روابط UTM</a> على فورا.tools:
+    </p>
+    <ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+      <li>الصق رابط الصفحة المستهدفة (URL) في الخانة الأولى.</li>
+      <li>املأ المصدر والوسيلة واسم الحملة — الحقول الأساسية الإلزامية.</li>
+      <li>أضف الكلمة المفتاحية والمحتوى لو محتاج تفاصيل إضافية.</li>
+      <li>الرابط النهائي يتولّد تلقائيًا أسفل النموذج — انسخه واستخدمه في حملتك.</li>
+      <li>راجع سجل آخر 15 رابط أنشأته لإعادة استخدامها بسرعة لاحقًا.</li>
+    </ol>
+
+    <h2 id="consistency">الحفاظ على الاتساق عبر الحملات</h2>
+    <p>
+      أكبر خطأ شائع هو عدم الاتساق في تسمية القيم — مرة "Facebook" ومرة "facebook" ومرة "FB". أدوات
+      التحليل بتعامل معاهم كمصادر مختلفة تمامًا، وده بيشتت بياناتك ويخليها صعبة القراءة. حدد نظام
+      تسمية ثابت من البداية (كل الحروف صغيرة، بدون مسافات) والتزم بيه في كل حملاتك المستقبلية.
+    </p>
+
+    <h2 id="faq">أسئلة شائعة</h2>
+    <div class="faq-item">
+      <h3>ما المعاملات الإلزامية لبناء رابط UTM صحيح؟</h3>
+      <p style="font-size:13.5px;">ثلاثة معاملات إلزامية عمليًا: source، medium، وcampaign. أما term وcontent فاختياريان.</p>
+    </div>
+    <div class="faq-item">
+      <h3>هل روابط UTM تؤثر على تجربة المستخدم أو سرعة الصفحة؟</h3>
+      <p style="font-size:13.5px;">لا، المعاملات مجرد نص إضافي في نهاية الرابط لا يؤثر على محتوى الصفحة أو سرعة تحميلها.</p>
+    </div>
+    <div class="faq-item">
+      <h3>هل يجب استخدام أحرف كبيرة أو صغيرة في قيم المعاملات؟</h3>
+      <p style="font-size:13.5px;">يُفضّل الالتزام بحالة أحرف واحدة ثابتة عبر كل حملاتك، لأن أدوات التحليل تعتبر "Facebook" و"facebook" مصدرين مختلفين.</p>
+    </div>
+    <div class="faq-item">
+      <h3>أين أرى نتائج تتبع روابط UTM بعد إنشائها؟</h3>
+      <p style="font-size:13.5px;">في تقارير "الاستحواذ" داخل أدوات تحليل الموقع مثل Google Analytics.</p>
+    </div>
+
+    <div class="tool-cta">
+      <div>
+        <div class="txt">جرّب أداة بناء روابط UTM الآن</div>
+        <div class="sub">رابط جاهز فورًا، مع سجل آخر 15 رابط أنشأته</div>
+      </div>
+      <a class="btn btn-primary" href="../tools/utm-link-builder.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        افتح الأداة
+      </a>
+    </div>
+
+    <p>
+      بعد إنشاء روابطك، ممكن تحتاج
+      <a href="../tools/redirect-generator.html" style="color:var(--indigo-deep);font-weight:700;">قواعد إعادة توجيه</a>
+      لإدارة روابط قديمة أو مختصرة تشير لنفس الصفحات.
+    </p>
+
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ad-slot ad-slot-leaderboard">
+    <span class="ad-label">إعلان · Advertisement</span>
+    <div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+    </div>
+    <div class="footer-col">
+      <h4>الموقع</h4>
+      <a href="../index.html">الصفحة الرئيسية</a>
+      <a href="index.html">المدونة</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="../privacy.html">سياسة الخصوصية</a>
+      <a href="../terms.html">شروط الاستخدام</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

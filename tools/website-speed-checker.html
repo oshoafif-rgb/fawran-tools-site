@@ -37,23 +37,35 @@
   [data-theme="dark"] .url-input-row input{background:#211F34;}
   .url-input-row input:focus{outline:none;border-color:var(--indigo);}
 
-  .strategy-chips{display:flex;gap:8px;margin-top:12px;}
+  .strategy-chips{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
   .strategy-chip{font-size:12.5px;font-weight:700;padding:8px 15px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer;}
   [data-theme="dark"] .strategy-chip{background:var(--surface-sunk);}
   .strategy-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+  .cat-chip{font-size:12px;font-weight:700;padding:7px 13px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer;opacity:.55;}
+  [data-theme="dark"] .cat-chip{background:var(--surface-sunk);}
+  .cat-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);opacity:1;}
+
+  .adv-toggle{margin-top:14px;font-size:12.5px;font-weight:700;color:var(--indigo-deep);cursor:pointer;display:inline-flex;align-items:center;gap:5px;}
+  .adv-panel{display:none;margin-top:12px;padding:14px 16px;background:var(--surface-sunk);border-radius:12px;}
+  .adv-panel.open{display:block;}
+  .adv-panel label{font-size:12px;font-weight:700;display:block;margin-bottom:6px;}
+  .adv-panel input{width:100%;font-family:'IBM Plex Mono',monospace;font-size:13px;padding:10px 12px;border-radius:9px;border:1.5px solid var(--line);background:#FDFCFA;direction:ltr;text-align:left;}
+  [data-theme="dark"] .adv-panel input{background:#211F34;}
+  .adv-panel .note{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.8;}
+  .adv-panel .note a{color:var(--indigo-deep);font-weight:700;}
 
   .loading-row{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;margin-top:18px;}
   .spinner{width:16px;height:16px;border-radius:50%;border:2.5px solid var(--line);border-top-color:var(--indigo);animation:spin .7s linear infinite;}
   @keyframes spin{to{transform:rotate(360deg);}}
 
-  .score-hero{display:flex;align-items:center;gap:20px;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;margin-top:22px;flex-wrap:wrap;}
-  .score-ring-big{position:relative;width:100px;height:100px;flex:0 0 auto;}
+  .scores-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:22px;}
+  .score-hero{display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 16px;background:var(--surface);border:1px solid var(--line);border-radius:16px;flex:1 1 150px;text-align:center;}
+  .score-ring-big{position:relative;width:84px;height:84px;flex:0 0 auto;}
   .score-ring-big svg{transform:rotate(-90deg);}
-  .score-ring-big .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:30px;}
-  .score-hero .t{font-weight:800;font-size:15px;}
-  .score-hero .s{font-size:12.5px;color:var(--muted);margin-top:4px;}
+  .score-ring-big .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:24px;}
+  .score-hero .t{font-weight:800;font-size:13px;}
 
-  .metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:18px;}
+  .metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:22px;}
   .metric-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;}
   .metric-box .n{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:19px;}
   .metric-box .l{font-size:11px;color:var(--muted);margin-top:4px;}
@@ -61,10 +73,17 @@
   .metric-box.average .n{color:var(--gold-deep);}
   .metric-box.poor .n{color:var(--danger);}
 
-  .opportunities{margin-top:22px;}
+  .screenshot-box{margin-top:22px;text-align:center;}
+  .screenshot-box img{max-width:220px;border-radius:12px;border:1px solid var(--line);}
+  .screenshot-box .cap{font-size:11.5px;color:var(--muted);margin-top:8px;}
+
+  .section-h{font-weight:800;font-size:14px;margin:26px 0 4px;display:flex;align-items:center;gap:8px;}
   .opp-item{padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-bottom:8px;font-size:13px;}
   .opp-item .t{font-weight:700;}
   .opp-item .save{font-family:'IBM Plex Mono',monospace;color:var(--gold-deep);font-size:11.5px;margin-top:3px;}
+  .opp-item .desc{font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.8;}
+
+  .copy-report-btn{margin-top:18px;}
 </style>
 <script type="application/ld+json">
 {
@@ -135,41 +154,70 @@
       <span class="strategy-chip active" data-strategy="mobile">📱 الجوال</span>
       <span class="strategy-chip" data-strategy="desktop">💻 الكمبيوتر</span>
     </div>
+    <div class="strategy-chips">
+      <span class="cat-chip active" data-cat="performance">الأداء</span>
+      <span class="cat-chip" data-cat="seo">SEO</span>
+      <span class="cat-chip" data-cat="accessibility">إمكانية الوصول</span>
+      <span class="cat-chip" data-cat="best-practices">أفضل الممارسات</span>
+    </div>
+
+    <div class="adv-toggle" id="advToggle">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      إعدادات متقدمة (مفتاح API خاص بك)
+    </div>
+    <div class="adv-panel" id="advPanel">
+      <label for="apiKeyInput">مفتاح Google PageSpeed API (اختياري)</label>
+      <input type="text" id="apiKeyInput" placeholder="AIzaSy...">
+      <p class="note">
+        الأداة بتستخدم واجهة جوجل العامة افتراضيًا، وهي بتشارك حد استخدام صغير جدًا بين كل زوار
+        الإنترنت في نفس الوقت — فممكن تواجه رسالة "الخدمة مزدحمة" بسهولة. لو حطيت مفتاحك المجاني
+        الخاص هنا، هتحصل على حد استخدام أعلى بكتير (آلاف الفحوصات يوميًا) بدل الاعتماد على الحد
+        المشترك. المفتاح بيتحفظ في متصفحك بس، ومش بيتبعت لأي حد غير جوجل مباشرة.
+        <a href="https://developers.google.com/speed/docs/insights/v5/get-started" target="_blank" rel="noopener">احصل على مفتاح مجاني من هنا ↗</a>
+      </p>
+    </div>
 
     <div id="loadingRow" class="loading-row" style="display:none;">
       <div class="spinner"></div>
-      <span>جارٍ التحليل... قد يستغرق 15-30 ثانية</span>
+      <span id="loadingText">جارٍ التحليل... قد يستغرق 15-30 ثانية</span>
     </div>
     <p id="errMsg" style="display:none;color:var(--danger);font-size:13px;margin-top:16px;line-height:1.8;"></p>
 
     <div id="resultsWrap" style="display:none;">
-      <div class="score-hero">
-        <div class="score-ring-big">
-          <svg width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="42" fill="none" stroke="var(--surface-sunk)" stroke-width="10"/>
-            <circle cx="50" cy="50" r="42" fill="none" id="scoreCircleBig" stroke="var(--indigo)" stroke-width="10" stroke-dasharray="264" stroke-dashoffset="264" stroke-linecap="round"/>
-          </svg>
-          <div class="num" id="scoreNumBig">0</div>
-        </div>
-        <div>
-          <div class="t" id="scoreTitleBig">نقاط الأداء</div>
-          <div class="s" id="scoreSubBig">من 100</div>
-        </div>
-      </div>
+      <div class="scores-row" id="scoresRow"></div>
 
       <div class="metrics-grid" id="metricsGrid"></div>
 
-      <div class="opportunities" id="opportunities" style="display:none;">
-        <div class="section-title"><span class="dot"></span>أهم فرص التحسين</div>
+      <div class="screenshot-box" id="screenshotBox" style="display:none;">
+        <img id="screenshotImg" alt="لقطة نهائية لصفحة الموقع أثناء الفحص">
+        <div class="cap">لقطة الصفحة عند انتهاء التحميل</div>
+      </div>
+
+      <div id="opportunitiesSection" style="display:none;">
+        <div class="section-h">🚀 أهم فرص التحسين</div>
         <div id="oppList"></div>
       </div>
+
+      <div id="diagnosticsSection" style="display:none;">
+        <div class="section-h">🔍 تشخيصات إضافية</div>
+        <div id="diagList"></div>
+      </div>
+
+      <button class="btn btn-primary copy-report-btn" id="copyReportBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        نسخ ملخص التقرير كنص
+      </button>
     </div>
   </div>
 
   <div class="footer-note">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    التحليل يعتمد على واجهة Google PageSpeed Insights العامة — قد تحدث فترات ازدحام في خدمة جوجل نفسها، وفي هذه الحالة أعد المحاولة بعد دقيقة
+    التحليل يعتمد على واجهة Google PageSpeed Insights الرسمية — لو واجهت ازدحام في الخدمة العامة، أضف مفتاح API مجاني خاص بك من الإعدادات المتقدمة أعلاه
   </div>
+
+  <p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../blog/website-speed-guide.html" style="color:var(--indigo-deep);font-weight:700;">اقرأ الدليل الكامل: شرح مبسّط لمؤشرات Core Web Vitals</a>
+  </p>
 </div>
 
 <div class="wrap">
@@ -204,27 +252,62 @@
   </div>
 </footer>
 
-<script src="../assets/main.js"></script>
 <script>
 const siteUrl = document.getElementById('siteUrl');
 const checkBtn = document.getElementById('checkBtn');
 const strategyChips = document.querySelectorAll('.strategy-chip');
+const catChips = document.querySelectorAll('.cat-chip');
+const advToggle = document.getElementById('advToggle');
+const advPanel = document.getElementById('advPanel');
+const apiKeyInput = document.getElementById('apiKeyInput');
 const loadingRow = document.getElementById('loadingRow');
+const loadingText = document.getElementById('loadingText');
 const errMsg = document.getElementById('errMsg');
 const resultsWrap = document.getElementById('resultsWrap');
-const scoreCircleBig = document.getElementById('scoreCircleBig');
-const scoreNumBig = document.getElementById('scoreNumBig');
-const scoreTitleBig = document.getElementById('scoreTitleBig');
+const scoresRow = document.getElementById('scoresRow');
 const metricsGrid = document.getElementById('metricsGrid');
-const opportunities = document.getElementById('opportunities');
+const screenshotBox = document.getElementById('screenshotBox');
+const screenshotImg = document.getElementById('screenshotImg');
+const opportunitiesSection = document.getElementById('opportunitiesSection');
 const oppList = document.getElementById('oppList');
+const diagnosticsSection = document.getElementById('diagnosticsSection');
+const diagList = document.getElementById('diagList');
+const copyReportBtn = document.getElementById('copyReportBtn');
 
 let strategy = 'mobile';
+let selectedCats = new Set(['performance']);
+let lastReportText = '';
+
+// Restore saved API key
+try{
+  const savedKey = localStorage.getItem('fawran-pagespeed-key');
+  if(savedKey) apiKeyInput.value = savedKey;
+}catch(e){}
+
+advToggle.addEventListener('click', ()=> advPanel.classList.toggle('open'));
+apiKeyInput.addEventListener('input', ()=>{
+  try{ localStorage.setItem('fawran-pagespeed-key', apiKeyInput.value.trim()); }catch(e){}
+});
+
 strategyChips.forEach(chip=>{
   chip.addEventListener('click', ()=>{
     strategyChips.forEach(c=>c.classList.remove('active'));
     chip.classList.add('active');
     strategy = chip.dataset.strategy;
+  });
+});
+
+catChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    const cat = chip.dataset.cat;
+    if(cat === 'performance') return; // performance always required
+    if(selectedCats.has(cat)){
+      selectedCats.delete(cat);
+      chip.classList.remove('active');
+    } else {
+      selectedCats.add(cat);
+      chip.classList.add('active');
+    }
   });
 });
 
@@ -234,10 +317,26 @@ function normalizeUrl(u){
   return u;
 }
 
-function metricClass(value, goodMax, poorMin){
-  if(value <= goodMax) return 'good';
-  if(value >= poorMin) return 'poor';
-  return 'average';
+const CAT_LABELS = {
+  performance: 'الأداء',
+  seo: 'SEO',
+  accessibility: 'إمكانية الوصول',
+  'best-practices': 'أفضل الممارسات'
+};
+
+function scoreColor(score){
+  return score >= 90 ? 'var(--good)' : score >= 50 ? 'var(--gold-deep)' : 'var(--danger)';
+}
+
+async function fetchWithRetry(apiUrl, attempt){
+  attempt = attempt || 1;
+  const res = await fetch(apiUrl);
+  if(res.status === 429 && attempt < 2){
+    loadingText.textContent = 'الخدمة مزدحمة، جارٍ إعادة المحاولة تلقائيًا...';
+    await new Promise(r => setTimeout(r, 3000));
+    return fetchWithRetry(apiUrl, attempt + 1);
+  }
+  return res;
 }
 
 async function runCheck(){
@@ -250,68 +349,117 @@ async function runCheck(){
 
   errMsg.style.display = 'none';
   resultsWrap.style.display = 'none';
+  loadingText.textContent = 'جارٍ التحليل... قد يستغرق 15-30 ثانية';
   loadingRow.style.display = 'flex';
   checkBtn.disabled = true;
 
   const target = normalizeUrl(url);
-  const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(target)}&strategy=${strategy}&category=performance`;
+  const key = apiKeyInput.value.trim();
+  const cats = Array.from(selectedCats).map(c => `&category=${c}`).join('');
+  const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(target)}&strategy=${strategy}${cats}${key ? `&key=${encodeURIComponent(key)}` : ''}`;
 
   try{
-    const res = await fetch(apiUrl);
+    const res = await fetchWithRetry(apiUrl);
     if(!res.ok){
-      throw new Error(res.status === 429 ? 'RATE_LIMIT' : 'API_ERROR');
+      throw new Error(res.status === 429 ? 'RATE_LIMIT' : res.status === 400 ? 'BAD_URL' : 'API_ERROR');
     }
     const data = await res.json();
 
     const lr = data.lighthouseResult;
     if(!lr) throw new Error('NO_RESULT');
-
-    const perfScore = Math.round((lr.categories.performance.score || 0) * 100);
     const audits = lr.audits;
 
-    scoreNumBig.textContent = perfScore;
-    const circumference = 264;
-    scoreCircleBig.style.strokeDashoffset = circumference - (circumference*perfScore/100);
-    scoreCircleBig.style.stroke = perfScore >= 90 ? 'var(--good)' : perfScore >= 50 ? 'var(--gold-deep)' : 'var(--danger)';
-    scoreTitleBig.textContent = perfScore >= 90 ? 'أداء ممتاز 🎉' : perfScore >= 50 ? 'أداء متوسط' : 'أداء ضعيف — يحتاج تحسين';
-
-    const metrics = [
-      { key:'first-contentful-paint', label:'أول عرض للمحتوى (FCP)' },
-      { key:'largest-contentful-paint', label:'أكبر عنصر معروض (LCP)' },
-      { key:'speed-index', label:'مؤشر السرعة' },
-      { key:'total-blocking-time', label:'وقت الحظر الكلي (TBT)' },
-      { key:'cumulative-layout-shift', label:'ثبات التخطيط (CLS)' },
-    ];
-    metricsGrid.innerHTML = metrics.map(m=>{
-      const audit = audits[m.key];
-      if(!audit) return '';
-      const displayVal = audit.displayValue || '—';
-      const score = audit.score;
-      const cls = score === null ? '' : score >= 0.9 ? 'good' : score >= 0.5 ? 'average' : 'poor';
-      return `<div class="metric-box ${cls}"><div class="n">${displayVal}</div><div class="l">${m.label}</div></div>`;
+    // ---- Score rings for every requested category ----
+    scoresRow.innerHTML = Object.keys(lr.categories).map(catKey=>{
+      const cat = lr.categories[catKey];
+      const score = Math.round((cat.score || 0) * 100);
+      const circumference = 226; // 2*PI*36
+      const offset = circumference - (circumference*score/100);
+      return `
+        <div class="score-hero">
+          <div class="score-ring-big" style="width:78px;height:78px;">
+            <svg width="78" height="78" viewBox="0 0 78 78">
+              <circle cx="39" cy="39" r="34" fill="none" stroke="var(--surface-sunk)" stroke-width="8"/>
+              <circle cx="39" cy="39" r="34" fill="none" stroke="${scoreColor(score)}" stroke-width="8" stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" stroke-linecap="round"/>
+            </svg>
+            <div class="num" style="font-size:20px;">${score}</div>
+          </div>
+          <div class="t">${CAT_LABELS[catKey] || cat.title}</div>
+        </div>`;
     }).join('');
 
-    // Opportunities (audits with potential savings)
-    const oppKeys = Object.keys(audits).filter(k=>
-      audits[k].details && audits[k].details.type === 'opportunity' && audits[k].score !== null && audits[k].score < 0.9
-    );
-    if(oppKeys.length){
-      opportunities.style.display = 'block';
-      oppList.innerHTML = oppKeys.slice(0,6).map(k=>{
-        const a = audits[k];
+    // ---- Core Web Vitals metrics (performance only) ----
+    if(lr.categories.performance){
+      const metrics = [
+        { key:'first-contentful-paint', label:'أول عرض للمحتوى (FCP)' },
+        { key:'largest-contentful-paint', label:'أكبر عنصر معروض (LCP)' },
+        { key:'speed-index', label:'مؤشر السرعة' },
+        { key:'total-blocking-time', label:'وقت الحظر الكلي (TBT)' },
+        { key:'cumulative-layout-shift', label:'ثبات التخطيط (CLS)' },
+        { key:'interactive', label:'وقت التفاعل (TTI)' },
+        { key:'server-response-time', label:'استجابة الخادم (TTFB)' },
+      ];
+      metricsGrid.innerHTML = metrics.map(m=>{
+        const audit = audits[m.key];
+        if(!audit) return '';
+        const displayVal = audit.displayValue || '—';
+        const score = audit.score;
+        const cls = score === null ? '' : score >= 0.9 ? 'good' : score >= 0.5 ? 'average' : 'poor';
+        return `<div class="metric-box ${cls}"><div class="n">${displayVal}</div><div class="l">${m.label}</div></div>`;
+      }).join('');
+    } else {
+      metricsGrid.innerHTML = '';
+    }
+
+    // ---- Final screenshot ----
+    const shot = audits['final-screenshot'];
+    if(shot && shot.details && shot.details.data){
+      screenshotImg.src = shot.details.data;
+      screenshotBox.style.display = 'block';
+    } else {
+      screenshotBox.style.display = 'none';
+    }
+
+    // ---- Opportunities & Diagnostics (grouped via auditRefs) ----
+    const perfRefs = (lr.categories.performance && lr.categories.performance.auditRefs) || [];
+    const oppRefs = perfRefs.filter(r => r.group === 'load-opportunities' && audits[r.id] && audits[r.id].score !== null && audits[r.id].score < 0.9);
+    const diagRefs = perfRefs.filter(r => r.group === 'diagnostics' && audits[r.id] && audits[r.id].score !== null && audits[r.id].score < 0.9);
+
+    if(oppRefs.length){
+      opportunitiesSection.style.display = 'block';
+      oppList.innerHTML = oppRefs.slice(0,6).map(r=>{
+        const a = audits[r.id];
         return `<div class="opp-item"><div class="t">${a.title}</div>${a.displayValue ? `<div class="save">توفير محتمل: ${a.displayValue}</div>` : ''}</div>`;
       }).join('');
     } else {
-      opportunities.style.display = 'none';
+      opportunitiesSection.style.display = 'none';
     }
+
+    if(diagRefs.length){
+      diagnosticsSection.style.display = 'block';
+      diagList.innerHTML = diagRefs.slice(0,6).map(r=>{
+        const a = audits[r.id];
+        return `<div class="opp-item"><div class="t">${a.title}</div>${a.description ? `<div class="desc">${a.description.replace(/\[([^\]]+)\]\([^)]+\)/g,'$1')}</div>` : ''}</div>`;
+      }).join('');
+    } else {
+      diagnosticsSection.style.display = 'none';
+    }
+
+    // ---- Build copyable text report ----
+    const scoreLines = Object.keys(lr.categories).map(k => `${CAT_LABELS[k] || k}: ${Math.round((lr.categories[k].score||0)*100)}/100`).join(' | ');
+    lastReportText = `تقرير سرعة الموقع — ${target} (${strategy === 'mobile' ? 'الجوال' : 'الكمبيوتر'})\n${scoreLines}\n\nتم إنشاؤه عبر فورا.tools`;
 
     resultsWrap.style.display = 'block';
   } catch(err){
     console.error(err);
     if(err.message === 'RATE_LIMIT'){
-      errMsg.textContent = 'خدمة جوجل مزدحمة حاليًا (حد الاستخدام العام تم الوصول له). جرّب بعد دقيقة أو دقيقتين.';
+      errMsg.textContent = apiKeyInput.value.trim()
+        ? 'تعذّر الاتصال رغم استخدام مفتاحك — تأكد إن المفتاح صحيح ومفعّل لواجهة PageSpeed Insights API، ثم أعد المحاولة.'
+        : 'خدمة جوجل مزدحمة حاليًا (حد الاستخدام العام تم الوصول له). أضف مفتاح API مجاني خاص بك من الإعدادات المتقدمة أعلاه لتفادي هذا مستقبلًا، أو أعد المحاولة بعد دقيقة.';
+    } else if(err.message === 'BAD_URL'){
+      errMsg.textContent = 'تعذّر تحليل هذا الرابط. تأكد من كتابته صح وإنه متاح للعامة (وليس محميًا بكلمة مرور أو خلف شبكة داخلية).';
     } else {
-      errMsg.textContent = 'تعذّر تحليل هذا الموقع. تأكد من صحة الرابط وإنه متاح للعامة، ثم أعد المحاولة.';
+      errMsg.textContent = 'حصل خطأ غير متوقع أثناء الفحص. تأكد من اتصالك بالإنترنت وأعد المحاولة.';
     }
     errMsg.style.display = 'block';
   }
@@ -319,6 +467,15 @@ async function runCheck(){
   loadingRow.style.display = 'none';
   checkBtn.disabled = false;
 }
+
+copyReportBtn.addEventListener('click', async ()=>{
+  try{
+    await navigator.clipboard.writeText(lastReportText);
+    const orig = copyReportBtn.innerHTML;
+    copyReportBtn.innerHTML = '✓ تم النسخ';
+    setTimeout(()=> copyReportBtn.innerHTML = orig, 1800);
+  }catch(e){}
+});
 
 checkBtn.addEventListener('click', runCheck);
 siteUrl.addEventListener('keydown', e=>{ if(e.key === 'Enter') runCheck(); });
