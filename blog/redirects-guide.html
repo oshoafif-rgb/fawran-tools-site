@@ -1,3 +1,215 @@
 <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>301 أم 302؟ دليل إعادة توجيه الروابط الصحيح لموقعك 2026 | فورا.tools</title>
+<meta name="description" content="دليل شامل لفهم الفرق بين إعادة التوجيه 301 و302، متى تستخدم كل نوع، وكيف تنشئ قواعد Apache وNginx صحيحة بدون أخطاء تضر SEO موقعك.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#4F3FF0">
+<link rel="canonical" href="https://fawran.tools/blog/redirects-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fawran.tools/blog/redirects-guide.html">
+<meta property="og:title" content="301 أم 302؟ دليل إعادة توجيه الروابط الصحيح لموقعك 2026 | فورا.tools">
+<meta property="og:description" content="دليل شامل لفهم الفرق بين إعادة التوجيه 301 و302، ومتى تستخدم كل نوع.">
+<meta property="og:site_name" content="فورا.tools">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="301 أم 302؟ دليل إعادة توجيه الروابط الصحيح لموقعك 2026 | فورا.tools">
+<meta name="twitter:description" content="دليل شامل لفهم الفرق بين إعادة التوجيه 301 و302.">
+<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"301 أم 302؟ دليل إعادة توجيه الروابط الصحيح لموقعك","description":"دليل شامل لفهم الفرق بين إعادة التوجيه 301 و302، متى تستخدم كل نوع، وكيف تنشئ قواعد Apache وNginx صحيحة.","url":"https://fawran.tools/blog/redirects-guide.html","datePublished":"2026-08-23","dateModified":"2026-08-23","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/redirects-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"متى أستخدم إعادة توجيه 301 بدلًا من 302؟","acceptedAnswer":{"@type":"Answer","text":"استخدم 301 عندما يكون النقل دائمًا (حذفت صفحة قديمة نهائيًا، غيّرت رابط دائم)، واستخدم 302 عندما يكون النقل مؤقتًا فقط (صيانة، اختبار مؤقت)."}},{"@type":"Question","name":"هل إعادة التوجيه تنقل قوة SEO للصفحة الجديدة؟","acceptedAnswer":{"@type":"Answer","text":"إعادة التوجيه 301 تنقل معظم قوة الترتيب من الصفحة القديمة للجديدة، بينما 302 لا تنقلها بنفس الكفاءة لأنها تشير لجوجل أن هذا النقل مؤقت وليس نهائيًا."}},{"@type":"Question","name":"ما الفرق بين ملف .htaccess وإعدادات Nginx؟","acceptedAnswer":{"@type":"Answer","text":"htaccess. هو ملف إعدادات خاص بخوادم Apache، بينما Nginx يستخدم صيغة إعدادات مختلفة تمامًا داخل ملفات التكوين الخاصة به. لكل خادم بنية أوامر مختلفة رغم تحقيق نفس الهدف."}},{"@type":"Question","name":"هل يمكن إعادة توجيه أكثر من رابط قديم دفعة واحدة؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يمكن إضافة عدة أزواج من الروابط القديمة والجديدة في نفس الوقت، والحصول على كل قواعد الإعادة التوجيه دفعة واحدة."}}]}
+</script>
+</head>
+<body>
 
-<html dir="ltr" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>301 Redirects Guide for Websites | Fawran Tools</title><meta content="Learn when to use permanent redirects and how Apache and Nginx rules differ." name="description"/><meta content="301 redirect generator, htaccess redirect, nginx redirect, Fawran Tools" name="keywords"/><meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><link href="https://fawran.tools/en/blog/redirects-guide.html" rel="canonical"/><link href="../../favicon.svg" rel="icon" type="image/svg+xml"/><link href="../../assets/style.css" rel="stylesheet"/><link href="../../manifest.webmanifest" rel="manifest"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "301 Redirects Guide for Websites", "description": "Learn when to use permanent redirects and how Apache and Nginx rules differ.", "mainEntityOfPage": "https://fawran.tools/en/blog/redirects-guide.html", "datePublished": "2026-08-23", "dateModified": "2026-08-23", "inLanguage": "en", "author": {"@type": "Organization", "name": "Fawran Tools"}, "publisher": {"@type": "Organization", "name": "Fawran Tools", "logo": {"@type": "ImageObject", "url": "https://fawran.tools/favicon.svg"}}}</script><link href="https://fawran.tools/blog/redirects-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/redirects-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/redirects-guide.html" hreflang="x-default" rel="alternate"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the main benefit of 301 redirect generator, htaccess redirect, nginx redirect?", "acceptedAnswer": {"@type": "Answer", "text": "The main benefit is a faster, repeatable workflow for 301 redirect generator, htaccess redirect, nginx redirect."}}, {"@type": "Question", "name": "Can I use this workflow for commercial content?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Always review the final output and make sure you have the right to use the source content."}}, {"@type": "Question", "name": "Does Fawran Tools require an account?", "acceptedAnswer": {"@type": "Answer", "text": "No account is required for the free browser-based tools."}}]}</script></head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a><nav class="nav"><a href="../index.html">Tools</a><a class="active" href="index.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav><a class="lang-switch" href="../../blog/redirects-guide.html">AR</a></div></header><main class="wrap"><div class="page-head"><div class="eyebrow">SEO GUIDE</div><h1>301 Redirects Guide for Websites</h1><p class="hero-lede">Learn when to use permanent redirects and how Apache and Nginx rules differ.</p></div><article class="content-card"><p>Learn when to use permanent redirects and how Apache and Nginx rules differ. This guide focuses on practical steps, common mistakes and a workflow you can repeat.</p><h2>Why this matters</h2><p>Good results come from matching the tool or workflow to the actual task. Start with the final destination, choose the right format or settings, and verify the output before publishing or sharing it.</p><h2>Best practices</h2><ul><li>Map old URLs to the closest new URL.</li><li>Avoid redirect chains.</li><li>Use 301 for permanent moves.</li><li>Test important redirects.</li></ul><h2>Step-by-step workflow</h2><ol><li>Define the exact result you need and the platform where it will be used.</li><li>Prepare your source content and remove unnecessary elements.</li><li>Run the task with sensible settings rather than maximum compression or complexity.</li><li>Inspect the result on the device or platform where it will actually appear.</li><li>Save the final version with a clear filename and keep an original when appropriate.</li></ol><h2>Common mistakes to avoid</h2><p>Do not optimize for a single metric while ignoring usability. A smaller file is not always better if text becomes unreadable or an image loses important detail. Likewise, SEO tools should support useful content rather than replace it.</p><h2>Frequently asked questions</h2><div class="faq-item"><h3>What is the main benefit of 301 redirect generator, htaccess redirect, nginx redirect?</h3><p>The main benefit is a faster, repeatable workflow for 301 redirect generator, htaccess redirect, nginx redirect.</p></div><div class="faq-item"><h3>Can I use this workflow for commercial content?</h3><p>Yes. Always review the final output and make sure you have the right to use the source content.</p></div><div class="faq-item"><h3>Does Fawran Tools require an account?</h3><p>No account is required for the free browser-based tools.</p></div><div class="tool-cta"><div><div class="txt">Use the related Fawran tool</div><div class="sub">Complete this task directly in your browser.</div></div><a class="btn btn-primary" href="../../tools/redirect-generator.html">Open tool</a></div></article></main><footer><div class="footer-grid"><div><div class="footer-brand"><span class="mark">FW</span> Fawran Tools</div><p class="footer-desc">Practical guides for free online tools, SEO, websites and YouTube.</p></div><div class="footer-col"><h4>Website</h4><a href="../index.html">Tools</a><a href="index.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div><div class="footer-col"><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Use</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Fawran Tools</span><span>Practical browser-based tools.</span></div></footer><script src="../../assets/main.js"></script></body></html>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="../index.html">الأدوات</a>
+        <a href="index.html" class="active">المدونة</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../contact.html">تواصل معنا</a>
+      </nav>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="page-head">
+    <div class="article-meta"><span class="tag">أدوات المواقع والمدونات</span><span>7 دقائق قراءة</span></div>
+    <h1>301 أم 302؟ دليل إعادة توجيه الروابط الصحيح لموقعك</h1>
+  </div>
+
+  <div class="content-card">
+
+    <svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="320" rx="16" fill="#14131F"/>
+      <rect x="80" y="130" width="220" height="60" rx="10" fill="#332F4C"/>
+      <text x="190" y="167" font-family="IBM Plex Mono, monospace" font-size="14" fill="#8B89A3" text-anchor="middle">/old-page</text>
+      <path d="M320 160 L480 160 M450 140 L480 160 L450 180" stroke="#F0A93B" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="400" y="130" font-family="Arial" font-size="16" font-weight="900" fill="#F0A93B" text-anchor="middle">301</text>
+      <rect x="500" y="130" width="220" height="60" rx="10" fill="#4F3FF0"/>
+      <text x="610" y="167" font-family="IBM Plex Mono, monospace" font-size="14" fill="#fff" text-anchor="middle">/new-page</text>
+    </svg>
+
+    <div class="toc">
+      <h2>محتوى المقال</h2>
+      <ul>
+        <li><a href="#why">متى تحتاج إعادة توجيه أصلًا؟</a></li>
+        <li><a href="#301vs302">الفرق بين 301 و302</a></li>
+        <li><a href="#howto">كيف تنشئ قواعد إعادة التوجيه؟</a></li>
+        <li><a href="#mistakes">أخطاء شائعة تضر SEO</a></li>
+        <li><a href="#faq">أسئلة شائعة</a></li>
+      </ul>
+    </div>
+
+    <p>
+      غيّرت رابط صفحة مهمة على موقعك، أو حذفت مقال قديم؟ لو محدش وجّه الزوار القدامى للمكان الجديد،
+      هيوصلوا لصفحة "غير موجودة" (404) — وده تجربة سيئة للزوار وإشارة سلبية لجوجل. إعادة التوجيه
+      هي الحل، وفي هذا الدليل هنشرح إزاي تعملها صح.
+    </p>
+
+    <h2 id="why">متى تحتاج إعادة توجيه أصلًا؟</h2>
+    <ul>
+      <li><strong>تغيير هيكل الروابط:</strong> نقلت مقال من قسم لقسم تاني فتغيّر رابطه.</li>
+      <li><strong>حذف صفحة قديمة:</strong> منتج توقف، أو مقال قديم قررت حذفه لصالح مقال أشمل.</li>
+      <li><strong>دمج صفحتين في واحدة:</strong> جمعت محتوى مقالين متشابهين في صفحة واحدة أقوى.</li>
+      <li><strong>تغيير الدومين:</strong> انتقلت لدومين جديد ومحتاج توجّه كل الزوار القدامى تلقائيًا.</li>
+    </ul>
+
+    <h2 id="301vs302">الفرق بين 301 و302</h2>
+    <p>
+      <strong>301 (نقل دائم):</strong> يخبر المتصفح ومحرك البحث إن الصفحة انتقلت نهائيًا للعنوان
+      الجديد. جوجل بينقل معظم "قوة الترتيب" (Ranking Power) من الصفحة القديمة للجديدة، وده أهم فرق
+      عملي بينه وبين 302.
+    </p>
+    <p>
+      <strong>302 (نقل مؤقت):</strong> يخبر إن النقل مؤقت فقط — الصفحة الأصلية هترجع تشتغل قريبًا.
+      جوجل بيحتفظ بالصفحة الأصلية في فهرسته لأنه يتوقع رجوعها، ومينقلش نفس قوة الترتيب للصفحة الجديدة.
+      استخدمه فقط لو النقل فعلًا مؤقت (صيانة، اختبار A/B مؤقت).
+    </p>
+
+    <h2 id="howto">كيف تنشئ قواعد إعادة التوجيه؟</h2>
+    <p>
+      باستخدام <a href="../tools/redirect-generator.html" style="color:var(--indigo-deep);font-weight:700;">مولّد قواعد إعادة التوجيه</a> على فورا.tools:
+    </p>
+    <ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+      <li>أضف صف لكل عملية إعادة توجيه: الرابط القديم والرابط الجديد.</li>
+      <li>اختر نوع إعادة التوجيه (301 أو 302) لكل صف حسب الحاجة.</li>
+      <li>اختر نوع الخادم: Apache (.htaccess) أو Nginx.</li>
+      <li>انسخ الكود الناتج والصقه في ملف الإعدادات المناسب لخادمك.</li>
+    </ol>
+
+    <h2 id="mistakes">أخطاء شائعة تضر SEO</h2>
+    <p>
+      أشهر خطأ هو استخدام 302 لنقل دائم بالغلط — النتيجة إنك بتخسر قوة ترتيب الصفحة القديمة بدون
+      داعي. خطأ تاني: سلاسل إعادة توجيه طويلة (صفحة أ بتوجّه لـب، وب بتوجّه لـج) بدل توجيه مباشر من
+      أ لـج — السلاسل الطويلة بتبطّئ تحميل الصفحة وأحيانًا بتربك محركات البحث. دايمًا وجّه مباشرة
+      من الرابط القديم للرابط النهائي بدون محطات وسيطة.
+    </p>
+
+    <h2 id="faq">أسئلة شائعة</h2>
+    <div class="faq-item">
+      <h3>متى أستخدم إعادة توجيه 301 بدلًا من 302؟</h3>
+      <p style="font-size:13.5px;">استخدم 301 عندما يكون النقل دائمًا، واستخدم 302 عندما يكون النقل مؤقتًا فقط.</p>
+    </div>
+    <div class="faq-item">
+      <h3>هل إعادة التوجيه تنقل قوة SEO للصفحة الجديدة؟</h3>
+      <p style="font-size:13.5px;">إعادة التوجيه 301 تنقل معظم قوة الترتيب، بينما 302 لا تنقلها بنفس الكفاءة لأنها تشير أن النقل مؤقت.</p>
+    </div>
+    <div class="faq-item">
+      <h3>ما الفرق بين ملف .htaccess وإعدادات Nginx؟</h3>
+      <p style="font-size:13.5px;">.htaccess خاص بخوادم Apache، بينما Nginx يستخدم صيغة إعدادات مختلفة تمامًا داخل ملفات التكوين الخاصة به.</p>
+    </div>
+    <div class="faq-item">
+      <h3>هل يمكن إعادة توجيه أكثر من رابط قديم دفعة واحدة؟</h3>
+      <p style="font-size:13.5px;">نعم، يمكن إضافة عدة أزواج من الروابط القديمة والجديدة والحصول على كل قواعد الإعادة التوجيه دفعة واحدة.</p>
+    </div>
+
+    <div class="tool-cta">
+      <div>
+        <div class="txt">جرّب مولّد قواعد إعادة التوجيه الآن</div>
+        <div class="sub">دعم 301 و302، لكل من Apache وNginx، لعدة روابط دفعة واحدة</div>
+      </div>
+      <a class="btn btn-primary" href="../tools/redirect-generator.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+        افتح الأداة
+      </a>
+    </div>
+
+    <p>
+      بعد إعداد إعادة التوجيه، تأكد من تحديث
+      <a href="../tools/sitemap-generator.html" style="color:var(--indigo-deep);font-weight:700;">خريطة موقعك</a>
+      بالروابط الجديدة، وراجع <a href="../tools/robots-generator.html" style="color:var(--indigo-deep);font-weight:700;">ملف robots.txt</a> لو لزم الأمر.
+    </p>
+
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ad-slot ad-slot-leaderboard">
+    <span class="ad-label">إعلان · Advertisement</span>
+    <div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+    </div>
+    <div class="footer-col">
+      <h4>الموقع</h4>
+      <a href="../index.html">الصفحة الرئيسية</a>
+      <a href="index.html">المدونة</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="../privacy.html">سياسة الخصوصية</a>
+      <a href="../terms.html">شروط الاستخدام</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

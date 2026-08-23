@@ -482,9 +482,3 @@ input[type=range]::-webkit-slider-thumb{
 .tool-cta .txt{font-size:14px;font-weight:700;}
 .tool-cta .sub{font-size:12.5px;color:var(--muted);font-weight:400;margin-top:3px;}
 .tool-cta a.btn{white-space:nowrap;}
-
-
-/* Fawran Platform UX additions */
-.favorite-tool-btn{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font-weight:700;cursor:pointer}.favorite-tool-btn:hover{border-color:var(--indigo);color:var(--indigo)}
-.tools-hub{padding:48px 0}.hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.hub-card{display:block;padding:22px;border:1px solid var(--line);border-radius:20px;background:var(--surface);text-decoration:none;color:inherit;transition:.2s}.hub-card:hover{transform:translateY(-2px);border-color:var(--indigo);box-shadow:0 12px 30px rgba(20,19,31,.08)}.hub-card h2{margin:0 0 7px;font-size:20px}.hub-card p{margin:0;color:var(--ink-soft);line-height:1.7}.hub-badge{display:inline-block;margin-bottom:12px;padding:5px 9px;border-radius:999px;background:var(--indigo-soft);color:var(--indigo);font-size:12px;font-weight:800}
-.search-empty{display:none;padding:24px;text-align:center;color:var(--ink-soft)}

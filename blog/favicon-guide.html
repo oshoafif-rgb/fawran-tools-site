@@ -1,3 +1,231 @@
 <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ما هو Favicon ولماذا موقعك يحتاجه بكل المقاسات 2026 | فورا.tools</title>
+<meta name="description" content="دليل شامل لإنشاء أيقونة الموقع (Favicon) بكل المقاسات المطلوبة للمتصفحات والجوال، مع شرح كود HTML الصحيح لإضافتها لموقعك.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#4F3FF0">
+<link rel="canonical" href="https://fawran.tools/blog/favicon-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fawran.tools/blog/favicon-guide.html">
+<meta property="og:title" content="ما هو Favicon ولماذا موقعك يحتاجه بكل المقاسات 2026 | فورا.tools">
+<meta property="og:description" content="دليل شامل لإنشاء أيقونة الموقع بكل المقاسات المطلوبة للمتصفحات والجوال.">
+<meta property="og:site_name" content="فورا.tools">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ما هو Favicon ولماذا موقعك يحتاجه بكل المقاسات 2026 | فورا.tools">
+<meta name="twitter:description" content="دليل شامل لإنشاء أيقونة الموقع بكل المقاسات المطلوبة.">
+<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+  .size-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+  .size-table th, .size-table td{padding:9px 12px;border:1px solid var(--line);text-align:right;}
+  .size-table th{background:var(--surface-sunk);font-weight:800;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"ما هو Favicon ولماذا موقعك يحتاجه بكل المقاسات","description":"دليل شامل لإنشاء أيقونة الموقع بكل المقاسات المطلوبة للمتصفحات والجوال، مع شرح كود HTML الصحيح لإضافتها لموقعك.","url":"https://fawran.tools/blog/favicon-guide.html","datePublished":"2026-08-23","dateModified":"2026-08-23","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/favicon-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"لماذا أحتاج أكثر من مقاس لنفس الأيقونة؟","acceptedAnswer":{"@type":"Answer","text":"كل جهاز ومنصة يطلب مقاسًا مختلفًا: تبويب المتصفح يحتاج مقاسًا صغيرًا جدًا، بينما أيقونة إضافة الموقع على الشاشة الرئيسية للجوال تحتاج مقاسًا أكبر بكثير ليظهر واضحًا."}},{"@type":"Question","name":"ماذا يحدث إذا لم أضف Favicon لموقعي؟","acceptedAnswer":{"@type":"Answer","text":"سيظهر تبويب المتصفح بأيقونة افتراضية فارغة أو رمز صفحة عام، مما يعطي انطباعًا بأن الموقع غير مكتمل أو غير احترافي، ويصعّب على الزائر تمييز تبويبك بين عدة تبويبات مفتوحة."}},{"@type":"Question","name":"هل يمكن استخدام شعار معقد كـ Favicon؟","acceptedAnswer":{"@type":"Answer","text":"يُفضّل تبسيط الشعار قدر الإمكان، لأن الأيقونة تظهر بحجم صغير جدًا في أغلب الاستخدامات. حرف واحد بارز أو رمز بسيط يعمل بشكل أوضح بكثير من شعار مفصّل ومزدحم."}},{"@type":"Question","name":"أين أضع ملفات Favicon على موقعي؟","acceptedAnswer":{"@type":"Answer","text":"عادة توضع ملفات الأيقونة في المجلد الجذري لموقعك (نفس مستوى index.html)، مع إضافة أسطر وسم HTML المناسبة داخل قسم head في كل صفحة."}}]}
+</script>
+</head>
+<body>
 
-<html dir="ltr" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Favicon Guide: Sizes, HTML and Best Practices | Fawran Tools</title><meta content="Learn which favicon sizes are useful for browsers, mobile devices and modern web apps." name="description"/><meta content="favicon generator, website favicon, favicon sizes, Fawran Tools" name="keywords"/><meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><link href="https://fawran.tools/en/blog/favicon-guide.html" rel="canonical"/><link href="../../favicon.svg" rel="icon" type="image/svg+xml"/><link href="../../assets/style.css" rel="stylesheet"/><link href="../../manifest.webmanifest" rel="manifest"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Favicon Guide: Sizes, HTML and Best Practices", "description": "Learn which favicon sizes are useful for browsers, mobile devices and modern web apps.", "mainEntityOfPage": "https://fawran.tools/en/blog/favicon-guide.html", "datePublished": "2026-08-23", "dateModified": "2026-08-23", "inLanguage": "en", "author": {"@type": "Organization", "name": "Fawran Tools"}, "publisher": {"@type": "Organization", "name": "Fawran Tools", "logo": {"@type": "ImageObject", "url": "https://fawran.tools/favicon.svg"}}}</script><link href="https://fawran.tools/blog/favicon-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/favicon-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/favicon-guide.html" hreflang="x-default" rel="alternate"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the main benefit of favicon generator, website favicon, favicon sizes?", "acceptedAnswer": {"@type": "Answer", "text": "The main benefit is a faster, repeatable workflow for favicon generator, website favicon, favicon sizes."}}, {"@type": "Question", "name": "Can I use this workflow for commercial content?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Always review the final output and make sure you have the right to use the source content."}}, {"@type": "Question", "name": "Does Fawran Tools require an account?", "acceptedAnswer": {"@type": "Answer", "text": "No account is required for the free browser-based tools."}}]}</script></head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a><nav class="nav"><a href="../index.html">Tools</a><a class="active" href="index.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav><a class="lang-switch" href="../../blog/favicon-guide.html">AR</a></div></header><main class="wrap"><div class="page-head"><div class="eyebrow">SEO GUIDE</div><h1>Favicon Guide: Sizes, HTML and Best Practices</h1><p class="hero-lede">Learn which favicon sizes are useful for browsers, mobile devices and modern web apps.</p></div><article class="content-card"><p>Learn which favicon sizes are useful for browsers, mobile devices and modern web apps. This guide focuses on practical steps, common mistakes and a workflow you can repeat.</p><h2>Why this matters</h2><p>Good results come from matching the tool or workflow to the actual task. Start with the final destination, choose the right format or settings, and verify the output before publishing or sharing it.</p><h2>Best practices</h2><ul><li>Create multiple sizes.</li><li>Add the correct HTML links.</li><li>Use a simple recognizable mark.</li><li>Test browser and mobile display.</li></ul><h2>Step-by-step workflow</h2><ol><li>Define the exact result you need and the platform where it will be used.</li><li>Prepare your source content and remove unnecessary elements.</li><li>Run the task with sensible settings rather than maximum compression or complexity.</li><li>Inspect the result on the device or platform where it will actually appear.</li><li>Save the final version with a clear filename and keep an original when appropriate.</li></ol><h2>Common mistakes to avoid</h2><p>Do not optimize for a single metric while ignoring usability. A smaller file is not always better if text becomes unreadable or an image loses important detail. Likewise, SEO tools should support useful content rather than replace it.</p><h2>Frequently asked questions</h2><div class="faq-item"><h3>What is the main benefit of favicon generator, website favicon, favicon sizes?</h3><p>The main benefit is a faster, repeatable workflow for favicon generator, website favicon, favicon sizes.</p></div><div class="faq-item"><h3>Can I use this workflow for commercial content?</h3><p>Yes. Always review the final output and make sure you have the right to use the source content.</p></div><div class="faq-item"><h3>Does Fawran Tools require an account?</h3><p>No account is required for the free browser-based tools.</p></div><div class="tool-cta"><div><div class="txt">Use the related Fawran tool</div><div class="sub">Complete this task directly in your browser.</div></div><a class="btn btn-primary" href="../../tools/favicon-generator.html">Open tool</a></div></article></main><footer><div class="footer-grid"><div><div class="footer-brand"><span class="mark">FW</span> Fawran Tools</div><p class="footer-desc">Practical guides for free online tools, SEO, websites and YouTube.</p></div><div class="footer-col"><h4>Website</h4><a href="../index.html">Tools</a><a href="index.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div><div class="footer-col"><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Use</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Fawran Tools</span><span>Practical browser-based tools.</span></div></footer><script src="../../assets/main.js"></script></body></html>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="../index.html">الأدوات</a>
+        <a href="index.html" class="active">المدونة</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../contact.html">تواصل معنا</a>
+      </nav>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="page-head">
+    <div class="article-meta"><span class="tag">أدوات المواقع والمدونات</span><span>6 دقائق قراءة</span></div>
+    <h1>ما هو Favicon ولماذا موقعك يحتاجه بكل المقاسات</h1>
+  </div>
+
+  <div class="content-card">
+
+    <svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="320" rx="16" fill="#14131F"/>
+      <rect x="100" y="90" width="200" height="140" rx="14" fill="#4F3FF0"/>
+      <text x="200" y="175" font-family="Arial" font-size="60" font-weight="900" fill="#fff" text-anchor="middle">F</text>
+      <rect x="400" y="100" width="60" height="60" rx="12" fill="#F0A93B"/>
+      <text x="430" y="140" font-family="Arial" font-size="24" font-weight="900" fill="#3A2600" text-anchor="middle">F</text>
+      <circle cx="580" cy="130" r="22" fill="#8B7FFF"/>
+      <text x="580" y="138" font-family="Arial" font-size="18" font-weight="900" fill="#fff" text-anchor="middle">F</text>
+      <rect x="660" y="115" width="16" height="16" rx="3" fill="#F0A93B"/>
+    </svg>
+
+    <div class="toc">
+      <h2>محتوى المقال</h2>
+      <ul>
+        <li><a href="#what">ما هو Favicon ولماذا هو مهم؟</a></li>
+        <li><a href="#sizes">جدول المقاسات المطلوبة ولماذا كل هذا العدد؟</a></li>
+        <li><a href="#howto">كيف تصمم وتصدّر أيقونتك؟</a></li>
+        <li><a href="#code">إضافة الكود الصحيح لموقعك</a></li>
+        <li><a href="#tips">نصائح تصميم لأيقونة واضحة</a></li>
+        <li><a href="#faq">أسئلة شائعة</a></li>
+      </ul>
+    </div>
+
+    <p>
+      فتحت تبويبات كتير في المتصفح ولاحظت إن بعض المواقع سهل تميّزها فورًا من الأيقونة الصغيرة جنب
+      اسم الصفحة، وبعضها بيبان بأيقونة فارغة أو عامة؟ الأيقونة دي اسمها Favicon، وهي تفصيلة صغيرة لكن
+      بتأثر فعليًا على احترافية موقعك في نظر الزائر. في هذا الدليل هنشرح كل حاجة عن Favicon: أهميته،
+      المقاسات المطلوبة، وإزاي تضيفه صح لموقعك.
+    </p>
+
+    <h2 id="what">ما هو Favicon ولماذا هو مهم؟</h2>
+    <p>
+      Favicon هي أيقونة صغيرة مرتبطة بموقعك، بتظهر في أماكن كتيرة: تبويب المتصفح، قائمة المفضلة
+      (Bookmarks)، نتائج البحث على الجوال، وأيقونة إضافة الموقع للشاشة الرئيسية. غياب Favicon واضح
+      بيدي انطباع إن الموقع غير مكتمل أو غير احترافي، وبيصعّب على الزائر يميّز تبويبك وسط عشرة
+      تبويبات مفتوحة تانية.
+    </p>
+
+    <h2 id="sizes">جدول المقاسات المطلوبة ولماذا كل هذا العدد؟</h2>
+    <table class="size-table">
+      <tr><th>المقاس</th><th>الاستخدام</th></tr>
+      <tr><td>16×16</td><td>تبويب المتصفح على سطح المكتب</td></tr>
+      <tr><td>32×32</td><td>شريط المهام وقائمة المفضلة</td></tr>
+      <tr><td>180×180</td><td>أيقونة إضافة الموقع لشاشة آيفون الرئيسية (Apple Touch Icon)</td></tr>
+      <tr><td>192×192</td><td>أيقونة تطبيقات أندرويد التقدمية (PWA)</td></tr>
+      <tr><td>512×512</td><td>شاشة البداية عند تشغيل الموقع كتطبيق (PWA)</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--muted);">
+      السبب في تعدد المقاسات: كل جهاز أو سياق استخدام يعرض الأيقونة بحجم مختلف، واستخدام نفس الملف
+      الصغير في كل مكان يجعله يبدو ضبابيًا في السياقات الأكبر.
+    </p>
+
+    <h2 id="howto">كيف تصمم وتصدّر أيقونتك؟</h2>
+    <p>
+      باستخدام <a href="../tools/favicon-generator.html" style="color:var(--indigo-deep);font-weight:700;">مولّد أيقونة الموقع</a> على فورا.tools:
+    </p>
+    <ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+      <li>اختر خلفية بلون واحد أو تدرّج يعكس هوية موقعك.</li>
+      <li>اختر شكل الأيقونة: حواف دائرية، مربع، أو دائرة كاملة.</li>
+      <li>اكتب حرفًا أو حرفين يمثلان اسم موقعك، أو ارفع شعارًا جاهزًا بدلًا من ذلك.</li>
+      <li>راقب المعاينة الحية بالمقاسات المختلفة (16، 32، 180) للتأكد من وضوحها في كل حجم.</li>
+      <li>اضغط "تحميل كل المقاسات (ZIP)" للحصول على كل الملفات الخمسة دفعة واحدة، مع كود HTML جاهز.</li>
+    </ol>
+
+    <h2 id="code">إضافة الكود الصحيح لموقعك</h2>
+    <p>
+      بعد تحميل الملفات، ارفعها لجذر موقعك (نفس مجلد ملف index.html الرئيسي)، وأضف أسطر HTML التالية
+      داخل قسم <code>&lt;head&gt;</code> في كل صفحة من صفحات موقعك — الأداة توفر لك هذا الكود جاهزًا
+      للنسخ مباشرة بدون حاجة لكتابته يدويًا.
+    </p>
+
+    <h2 id="tips">نصائح تصميم لأيقونة واضحة</h2>
+    <p>
+      بما إن الأيقونة بتظهر بحجم صغير جدًا في أغلب الاستخدامات، البساطة هي المفتاح. حرف واحد بارز أو
+      رمز بسيط بيعمل أوضح بكثير من شعار معقد بتفاصيل كتيرة، لأن التفاصيل الدقيقة بتختفي أو تتحول
+      لبقعة غير واضحة في المقاس الصغير جدًا (16×16). استخدم لون خلفية متباين بشدة مع لون النص أو
+      الشعار لضمان الوضوح حتى في أصغر مقاس.
+    </p>
+
+    <h2 id="faq">أسئلة شائعة</h2>
+    <div class="faq-item">
+      <h3>لماذا أحتاج أكثر من مقاس لنفس الأيقونة؟</h3>
+      <p style="font-size:13.5px;">كل جهاز ومنصة يطلب مقاسًا مختلفًا: تبويب المتصفح يحتاج مقاسًا صغيرًا جدًا، بينما أيقونة إضافة الموقع على الشاشة الرئيسية للجوال تحتاج مقاسًا أكبر بكثير.</p>
+    </div>
+    <div class="faq-item">
+      <h3>ماذا يحدث إذا لم أضف Favicon لموقعي؟</h3>
+      <p style="font-size:13.5px;">سيظهر تبويب المتصفح بأيقونة افتراضية فارغة، مما يعطي انطباعًا بأن الموقع غير مكتمل، ويصعّب على الزائر تمييز تبويبك بين عدة تبويبات.</p>
+    </div>
+    <div class="faq-item">
+      <h3>هل يمكن استخدام شعار معقد كـ Favicon؟</h3>
+      <p style="font-size:13.5px;">يُفضّل تبسيط الشعار قدر الإمكان، لأن الأيقونة تظهر بحجم صغير جدًا. حرف واحد بارز يعمل بشكل أوضح بكثير من شعار مفصّل.</p>
+    </div>
+    <div class="faq-item">
+      <h3>أين أضع ملفات Favicon على موقعي؟</h3>
+      <p style="font-size:13.5px;">عادة توضع في المجلد الجذري لموقعك، مع إضافة أسطر وسم HTML المناسبة داخل قسم head في كل صفحة.</p>
+    </div>
+
+    <div class="tool-cta">
+      <div>
+        <div class="txt">جرّب مولّد أيقونة الموقع الآن</div>
+        <div class="sub">كل المقاسات الخمسة دفعة واحدة، مع كود HTML جاهز للصق</div>
+      </div>
+      <a class="btn btn-primary" href="../tools/favicon-generator.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12h8M12 8v8"/></svg>
+        افتح الأداة
+      </a>
+    </div>
+
+    <p>
+      بعد إضافة الأيقونة، اهتم كمان بشكل موقعك عند المشاركة عبر
+      <a href="../tools/og-image-maker.html" style="color:var(--indigo-deep);font-weight:700;">صانع صورة المشاركة (OG Image)</a>،
+      وتأكد من إضافة <a href="../tools/schema-generator.html" style="color:var(--indigo-deep);font-weight:700;">بيانات منظّمة</a> لصفحاتك المهمة.
+    </p>
+
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ad-slot ad-slot-leaderboard">
+    <span class="ad-label">إعلان · Advertisement</span>
+    <div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+    </div>
+    <div class="footer-col">
+      <h4>الموقع</h4>
+      <a href="../index.html">الصفحة الرئيسية</a>
+      <a href="index.html">المدونة</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="../privacy.html">سياسة الخصوصية</a>
+      <a href="../terms.html">شروط الاستخدام</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>
