@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YouTube Title Analyzer | Fawran Tools</title>
+<meta content="Analyze a YouTube title for length, clarity, keywords and click appeal with instant improvement tips." name="description"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/youtube-title-analyzer.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/en/tools/youtube-title-analyzer.html" property="og:url"/>
+<meta content="YouTube Title Analyzer | Fawran Tools" property="og:title"/>
+<meta content="Analyze a YouTube title for length, clarity, keywords and click appeal with instant improvement tips." property="og:description"/>
+<meta content="Fawran Tools" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="YouTube Title Analyzer | Fawran Tools" name="twitter:title"/>
+<meta content="Analyze a YouTube title for length, clarity, keywords and click appeal with instant improvement tips." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<style>
+  .title-input{
+    width:100%;font-family:'Tajawal',sans-serif;font-size:17px;font-weight:700;padding:16px 18px;
+    border-radius:12px;border:1.5px solid var(--line);background:#FDFCFA;color:var(--ink);
+  }
+  [data-theme="dark"] .title-input{background:#211F34;}
+  .title-input:focus{outline:none;border-color:var(--indigo);}
+
+  .len-bar-wrap{margin-top:10px;}
+  .len-bar{height:8px;border-radius:99px;background:var(--surface-sunk);overflow:hidden;}
+  .len-bar .fill{height:100%;border-radius:99px;transition:width .2s, background-color .2s;}
+  .len-label{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:6px;font-family:'IBM Plex Mono',monospace;}
+
+  .score-ring-wrap{display:flex;align-items:center;gap:20px;margin:26px 0;flex-wrap:wrap;}
+  .score-ring{position:relative;width:100px;height:100px;flex:0 0 auto;}
+  .score-ring svg{transform:rotate(-90deg);}
+  .score-ring .num{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:24px;
+  }
+  .score-summary .title{font-weight:800;font-size:15px;}
+  .score-summary .sub{font-size:13px;color:var(--muted);margin-top:4px;}
+
+  .check-list{display:flex;flex-direction:column;gap:9px;}
+  .check-item{
+    display:flex;align-items:flex-start;gap:10px;padding:11px 13px;border-radius:10px;
+    background:var(--surface);border:1px solid var(--line);font-size:13px;
+  }
+  .check-item .ic{flex:0 0 auto;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+  .check-item .ic svg{width:11px;height:11px;}
+  .check-item.pass .ic{background:rgba(47,125,83,.15);color:var(--good);}
+  .check-item.fail .ic{background:rgba(180,35,44,.12);color:var(--danger);}
+  .check-item.info .ic{background:var(--indigo-soft);color:var(--indigo-deep);}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "YouTube Title Analyzer",
+  "url": "https://fawran.tools/en/tools/youtube-title-analyzer.html",
+  "description": "Analyze a YouTube title for length, clarity, keywords and click appeal with instant improvement tips.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fawran Tools",
+    "url": "https://fawran.tools/en/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "YouTube Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Analyzer title Textvideo",
+      "item": "https://fawran.tools/en/tools/youtube-title-analyzer.html"
+    }
+  ],
+  "name": "Analyzer title YouTube",
+  "description": "Analyze title video YouTube from Text TextandText andText andTextandTextandText Text Text Text."
+}</script>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="youtube title analyzer, youtube title checker, video title" name="keywords"/>
+<link href="https://fawran.tools/tools/youtube-title-analyzer.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/youtube-title-analyzer.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/youtube-title-analyzer.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../../en/index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../../en/index.html">Tools</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../../tools/youtube-title-analyzer.html" title="View in Arabic">AR</a>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../../en/index.html">Tools</a>/   /  Title</div>
+<h1>YouTube Title Analyzer</h1>
+<p class="tool-lede">Analyze a YouTube title for length, clarity, keywords and click appeal with instant improvement tips.</p>
+<div class="tool-card-shell">
+<input class="title-input" id="titleInput" maxlength="150" placeholder="Text title Textvideo Text..." type="text"/>
+<div class="len-bar-wrap">
+<div class="len-bar"><div class="fill" id="lenFill"></div></div>
+<div class="len-label"><span id="lenCount"></span><span>Ideal: 40–70 characters</span></div>
+</div>
+<div class="score-ring-wrap">
+<div class="score-ring">
+<svg height="100" viewbox="0 0 100 100" width="100">
+<circle cx="50" cy="50" fill="none" r="42" stroke="var(--surface-sunk)" stroke-width="10"></circle>
+<circle cx="50" cy="50" fill="none" id="scoreCircle" r="42" stroke="var(--indigo)" stroke-dasharray="264" stroke-dashoffset="264" stroke-linecap="round" stroke-width="10"></circle>
+</svg>
+<div class="num" id="scoreNum">0</div>
+</div>
+<div class="score-summary">
+<div class="title" id="scoreTitle"></div>
+<div class="sub" id="scoreSub"></div>
+</div>
+</div>
+<div class="check-list" id="checkList"></div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>—</div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../../en/blog/youtube-title-guide.html" style="color:var(--indigo-deep);font-weight:700;">: 6</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">Ad · Advertisement</span>
+<div class="ad-slot-inner">Advertisement AdSense</div>
+</div>
+</div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Use the controls below to process your content quickly in your browser.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../../en/index.html">Page</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../../en/privacy.html">Privacy Policy</a>
+<a href="../../en/terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Made with care for internet users</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script>
+<script>
+const titleInput = document.getElementById('titleInput');
+const lenFill = document.getElementById('lenFill');
+const lenCount = document.getElementById('lenCount');
+const scoreCircle = document.getElementById('scoreCircle');
+const scoreNum = document.getElementById('scoreNum');
+const scoreTitle = document.getElementById('scoreTitle');
+const scoreSub = document.getElementById('scoreSub');
+const checkList = document.getElementById('checkList');
+
+const POWER_WORDS = ['Best','free','fast','Text','New','Text','Text','Text','secret','TextsecretText','how','Text','Text','step by step','TextandText','Text','Text','Text'];
+const CLICKBAIT_WORDS = ['Text','Text Text','Text Text','Text'];
+
+function analyze(){
+  const title = titleInput.value;
+  const len = title.length;
+
+  lenCount.textContent = len + ' FreeText';
+  let lenColor = 'var(--danger)';
+  let lenPct = Math.min(100, (len/70)*100);
+  if(len >= 40 && len <= 70){ lenColor = 'var(--good)'; }
+  else if(len >= 25 && len < 40){ lenColor = 'var(--gold-deep)'; }
+  else if(len > 70 && len <= 100){ lenColor = 'var(--gold-deep)'; }
+  lenFill.style.width = lenPct + '%';
+  lenFill.style.background = lenColor;
+
+  if(!title.trim()){
+    scoreNum.textContent = '0';
+    scoreCircle.style.strokeDashoffset = 264;
+    scoreTitle.textContent = 'Text titleText Text';
+    scoreSub.textContent = 'Text Text Text Text';
+    checkList.innerHTML = '';
+    return;
+  }
+
+  const checks = [];
+  let score = 0;
+  const maxScore = 6;
+
+  // 1. Length check
+  if(len >= 40 && len <= 70){
+    checks.push({pass:true, text:`TextandText Title Text (${len} FreeText) — Textfrom Text Text 40–70.`});
+    score++;
+  } else if(len < 40){
+    checks.push({pass:false, text:`Title Text (${len} FreeText) — TextandText TextandText for40–70 FreeText Text Text results.`});
+  } else {
+    checks.push({pass:false, text:`Title TextandText (${len} FreeText) — Text Text Text Text search andText.`});
+  }
+
+  // 2. Power/attention words
+  const hasPower = POWER_WORDS.some(w => title.includes(w));
+  if(hasPower){
+    checks.push({pass:true, text:'TextandText Text Text Text Text (Text "Best"Text "secret"Text "step by step").'});
+    score++;
+  } else {
+    checks.push({pass:false, text:'Text TextandText Text Text andText — Text Add Text Text "Best" or "how" or "free".'});
+  }
+
+  // 3. Numbers
+  if(/\d/.test(title)){
+    checks.push({pass:true, text:'TextandText Text Text — Text TextandText Text Text Text (Text "5 Text" or "2026").'});
+    score++;
+  } else {
+    checks.push({pass:false, text:'Text TextandText Text — Text Text Text (Text Text Text Text) Textand fromText Textyour content.', soft:true});
+  }
+
+  // 4. Capitalization pattern (relevant mainly for English, but check for ALL CAPS spam)
+  const upperRatio = (title.match(/[A-Z]/g) || []).length / (title.match(/[A-Za-z]/g) || [1]).length;
+  if(title.match(/[A-Za-z]/) && upperRatio > 0.7){
+    checks.push({pass:false, text:'Text Title TextFreeText Text (CAPS) — YouTube Text Text Text andTextReduce TextandText.'});
+  } else {
+    checks.push({pass:true, text:'Text letters Text/TextnotText Text andnot Text Text.'});
+    score++;
+  }
+
+  // 5. Clickbait extreme phrases
+  const hasClickbait = CLICKBAIT_WORDS.some(w=> title.includes(w));
+  if(hasClickbait){
+    checks.push({pass:false, text:'TextandText Text Text Text TextandText Text (Clickbait) — Text Text Text Text andTextandText Text TextandText Text.'});
+  } else {
+    checks.push({pass:true, text:'Text from Text Text Text — title Text Text Best Text TextandText.'});
+    score++;
+  }
+
+  // 6. Brackets/year usage (common high-CTR pattern)
+  if(/[\(\[].*[\)\]]/.test(title) || /202[4-9]/.test(title)){
+    checks.push({pass:true, text:'Text TextandText or Text — Text TextandText Text Text Text Text search.', info:true});
+    score++;
+  } else {
+    checks.push({pass:false, text:'Text Text Text or Text TextandText Text TextandText Text "(Text 2026)" — optional Text Text.', soft:true});
+  }
+
+  const pct = Math.round((score/maxScore)*100);
+  const circumference = 264;
+  scoreCircle.style.strokeDashoffset = circumference - (circumference * pct/100);
+  scoreCircle.style.stroke = pct >= 70 ? 'var(--good)' : pct >= 40 ? 'var(--gold-deep)' : 'var(--danger)';
+  scoreNum.textContent = pct;
+
+  if(pct >= 80){ scoreTitle.textContent = 'title TextandText Text 🎉'; scoreSub.textContent = 'Text Text Text TextandText Text.'; }
+  else if(pct >= 50){ scoreTitle.textContent = 'title Text Text Text Text'; scoreSub.textContent = 'Text Text Text Text Text Textdown.'; }
+  else { scoreTitle.textContent = 'Title Text Text'; scoreSub.textContent = 'Text textText Textdown TextandText Title.'; }
+
+  checkList.innerHTML = checks.map(c=>`
+    <div class="check-item ${c.info ? 'info' : (c.pass ? 'pass' : 'fail')}">
+      <span class="ic">
+        ${c.pass || c.info
+          ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'
+          : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>'}
+      </span>
+      <span>${c.text}</span>
+    </div>
+  `).join('');
+}
+
+titleInput.addEventListener('input', analyze);
+analyze();
+</script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مولد وصف يوتيوب مجانًا | فورا.tools</title>
+<meta content="أنشئ وصف فيديو YouTube منظمًا بقوالب للروابط والفصول والهاشتاجات." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/youtube-description-generator.html" rel="canonical"/>
+
+
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/tools/youtube-description-generator.html" property="og:url"/>
+<meta content="مولّد وصف فيديو يوتيوب بالقوالب مجانًا | فورا.tools" property="og:title"/>
+<meta content="ابنِ وصف فيديو يوتيوب منظم بأقسام جاهزة: مقدمة، فصول، روابط تواصل، وهاشتاجات — مع حفظ روابطك الثابتة لإعادة استخدامها في كل فيديو." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="مولّد وصف فيديو يوتيوب بالقوالب مجانًا | فورا.tools" name="twitter:title"/>
+<meta content="ابنِ وصف فيديو يوتيوب منظم بأقسام جاهزة: مقدمة، فصول، روابط تواصل، وهاشتاجات — مع حفظ روابطك الثابتة لإعادة استخدامها في كل فيديو." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .builder-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  @media(max-width:900px){.builder-layout{grid-template-columns:1fr;}}
+
+  .section-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px;
+  }
+  .section-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+  .section-card-head h3{font-size:13.5px;font-weight:800;display:flex;align-items:center;gap:8px;margin:0;}
+  .section-card-head h3 .icn{width:24px;height:24px;border-radius:7px;background:var(--indigo-soft);color:var(--indigo-deep);display:flex;align-items:center;justify-content:center;}
+  .section-card-head h3 .icn svg{width:13px;height:13px;}
+
+  .toggle-mini{position:relative;width:38px;height:22px;flex:0 0 auto;}
+  .toggle-mini input{opacity:0;width:0;height:0;}
+  .toggle-mini .sw{position:absolute;inset:0;background:var(--surface-sunk);border-radius:99px;cursor:pointer;transition:.2s;}
+  .toggle-mini .sw::before{content:"";position:absolute;width:16px;height:16px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.25);}
+  .toggle-mini input:checked + .sw{background:var(--indigo-deep);}
+  .toggle-mini input:checked + .sw::before{transform:translateX(-16px);}
+
+  .section-card textarea, .section-card input[type=text]{
+    width:100%;font-family:'Tajawal',sans-serif;font-size:13.5px;padding:10px 12px;
+    border-radius:9px;border:1px solid var(--line);background:#FDFCFA;color:var(--ink);
+  }
+  [data-theme="dark"] .section-card textarea, [data-theme="dark"] .section-card input[type=text]{background:#211F34;}
+  .section-card textarea{resize:vertical;min-height:70px;line-height:1.7;}
+  .section-card textarea:focus, .section-card input:focus{outline:none;border-color:var(--indigo);}
+
+  .link-row{display:grid;grid-template-columns:1fr 1.4fr auto;gap:8px;margin-bottom:8px;}
+  .link-row input{font-size:12.5px;}
+  .link-row .del{
+    width:36px;height:36px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--danger);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;flex:0 0 auto;
+  }
+  [data-theme="dark"] .link-row .del{background:var(--surface-sunk);}
+  .link-row .del svg{width:14px;height:14px;}
+
+  .hashtag-input-row{display:flex;gap:8px;}
+  .hashtag-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+  .hashtag-chip{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;
+    background:var(--indigo-soft);color:var(--indigo-deep);display:flex;align-items:center;gap:6px;
+  }
+  .hashtag-chip button{background:none;border:none;color:inherit;cursor:pointer;padding:0;display:flex;}
+  .hashtag-chip button svg{width:10px;height:10px;}
+  .hashtag-count{font-size:11px;color:var(--muted);margin-top:8px;font-family:'IBM Plex Mono',monospace;}
+  .hashtag-count.warn{color:var(--danger);font-weight:700;}
+
+  .save-hint{font-size:11px;color:var(--muted);margin-top:8px;display:flex;align-items:center;gap:5px;}
+  .save-hint svg{width:12px;height:12px;}
+
+  .code-out{
+    background:var(--ink);color:#E8E6F5;border-radius:12px;padding:18px;
+    font-family:'Tajawal',sans-serif;font-size:13.5px;line-height:2;
+    white-space:pre-wrap;word-break:break-word;
+    max-height:520px;overflow:auto;
+  }
+  .out-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px;color:var(--muted);font-family:'IBM Plex Mono',monospace;}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "مولد وصف يوتيوب",
+  "url": "https://fawran.tools/tools/youtube-description-generator.html",
+  "description": "أنشئ وصف فيديو YouTube منظمًا بقوالب للروابط والفصول والهاشتاجات.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (يعمل داخل المتصفح)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "فورا.tools",
+    "url": "https://fawran.tools/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الأدوات",
+      "item": "https://fawran.tools/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "أدوات يوتيوب",
+      "item": "https://fawran.tools/index.html#youtube"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "مولّد وصف الفيديو بالقوالب",
+      "item": "https://fawran.tools/tools/youtube-description-generator.html"
+    }
+  ],
+  "name": "مولد وصف يوتيوب",
+  "description": "أنشئ وصف فيديو YouTube منظمًا بقوالب للروابط والفصول والهاشتاجات."
+}</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="مولد وصف يوتيوب, YouTube Description Generator, أدوات أونلاين, free online tools, SEO tools" name="keywords"/>
+<link href="https://fawran.tools/tools/youtube-description-generator.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/youtube-description-generator.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/youtube-description-generator.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../index.html">الأدوات</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/tools/youtube-description-generator.html" title="View in English">EN</a>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../index.html">الأدوات</a> / أدوات يوتيوب / مولّد وصف الفيديو</div>
+<h1>مولّد وصف الفيديو بالقوالب</h1>
+<p class="tool-lede">
+    ابنِ وصف فيديو منظم من أقسام جاهزة، واحفظ روابطك الثابتة (قنوات التواصل، موقعك) عشان تلاقيها
+    جاهزة في كل مرة تفتح فيها الأداة بدل ما تكتبها من الأول كل مرة.
+  </p>
+<div class="tool-card-shell">
+<div class="builder-layout">
+<div>
+<div class="section-card">
+<div class="section-card-head">
+<h3><span class="icn"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 7V4h16v3"></path><path d="M9 20h6"></path><path d="M12 4v16"></path></svg></span>المقدمة</h3>
+<label class="toggle-mini"><input checked="" id="tgIntro" type="checkbox"/><span class="sw"></span></label>
+</div>
+<textarea id="introText" placeholder="جملة أو جملتين تلخّص محتوى الفيديو وتشجّع على المشاهدة...">في هذا الفيديو نتعرّف على...</textarea>
+</div>
+<div class="section-card">
+<div class="section-card-head">
+<h3><span class="icn"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></span>الفصول (Chapters)</h3>
+<label class="toggle-mini"><input id="tgChapters" type="checkbox"/><span class="sw"></span></label>
+</div>
+<textarea id="chaptersText" placeholder="00:00 المقدمة
+01:30 الجزء الأول
+05:00 الخاتمة"></textarea>
+<div class="save-hint">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg>
+            محتاج تنسّق الفصول أول؟ جرّب <a href="youtube-chapters-generator.html" style="color:var(--indigo-deep);font-weight:700;">مولّد الفصول</a>
+</div>
+</div>
+<div class="section-card">
+<div class="section-card-head">
+<h3><span class="icn"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></span>الروابط</h3>
+<label class="toggle-mini"><input checked="" id="tgLinks" type="checkbox"/><span class="sw"></span></label>
+</div>
+<div id="linksList"></div>
+<button class="btn btn-ghost" id="addLinkBtn" style="width:100%;font-size:12.5px;padding:9px;margin-top:4px;">+ إضافة رابط</button>
+<div class="save-hint">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><path d="M17 21v-8H7v8"></path></svg>
+            روابطك محفوظة تلقائيًا في هذا المتصفح — هتلاقيها جاهزة في المرة الجاية
+          </div>
+</div>
+<div class="section-card">
+<div class="section-card-head">
+<h3><span class="icn"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 9h16M4 15h16M10 3L8 21M16 3l-2 18"></path></svg></span>الهاشتاجات</h3>
+<label class="toggle-mini"><input checked="" id="tgHashtags" type="checkbox"/><span class="sw"></span></label>
+</div>
+<div class="hashtag-input-row">
+<input id="hashtagInput" placeholder="اكتب كلمة واضغط Enter (بدون #)" type="text"/>
+</div>
+<div class="hashtag-chips" id="hashtagChips"></div>
+<div class="hashtag-count" id="hashtagCount">0 / 15 هاشتاج (حد يوتيوب الأقصى)</div>
+</div>
+<div class="section-card">
+<div class="section-card-head">
+<h3><span class="icn"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 9v4M12 17h.01"></path><circle cx="12" cy="12" r="9"></circle></svg></span>خاتمة / إخلاء مسؤولية</h3>
+<label class="toggle-mini"><input id="tgOutro" type="checkbox"/><span class="sw"></span></label>
+</div>
+<textarea id="outroText" placeholder="مثال: هذا الفيديو لأغراض تعليمية فقط. اشترك في القناة عشان توصلك أحدث الفيديوهات!"></textarea>
+</div>
+</div>
+<div>
+<div class="section-card" style="position:sticky;top:90px;">
+<div class="out-meta">
+<span id="outCharCount">0 حرف</span>
+<span id="outLineCount">0 سطر</span>
+</div>
+<div class="code-out" id="codeOut"></div>
+<div class="actions" style="margin-top:14px;">
+<button class="btn btn-primary" id="copyBtn" style="flex:1;justify-content:center;">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              نسخ الوصف كامل
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+    كل شيء يتم محليًا في متصفحك — روابطك ونصوصك لا تُرسل لأي خادم
+  </div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../blog/youtube-description-guide.html" style="color:var(--indigo-deep);font-weight:700;">اقرأ الدليل الكامل: هيكل وصف منظم مثالي وأهمية أول سطرين</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
+</div>
+</div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script>
+<script>
+const STORAGE_LINKS = 'fawran-yt-desc-links';
+const STORAGE_HASHTAGS_DEFAULT = 'fawran-yt-desc-hashtags';
+
+const tgIntro = document.getElementById('tgIntro');
+const tgChapters = document.getElementById('tgChapters');
+const tgLinks = document.getElementById('tgLinks');
+const tgHashtags = document.getElementById('tgHashtags');
+const tgOutro = document.getElementById('tgOutro');
+
+const introText = document.getElementById('introText');
+const chaptersText = document.getElementById('chaptersText');
+const outroText = document.getElementById('outroText');
+
+const linksList = document.getElementById('linksList');
+const addLinkBtn = document.getElementById('addLinkBtn');
+
+const hashtagInput = document.getElementById('hashtagInput');
+const hashtagChips = document.getElementById('hashtagChips');
+const hashtagCount = document.getElementById('hashtagCount');
+
+const codeOut = document.getElementById('codeOut');
+const outCharCount = document.getElementById('outCharCount');
+const outLineCount = document.getElementById('outLineCount');
+const copyBtn = document.getElementById('copyBtn');
+
+let links = [];
+let hashtags = [];
+let linkCounter = 0;
+
+// ---------- Links (persisted) ----------
+function loadLinks(){
+  try{
+    const saved = JSON.parse(localStorage.getItem(STORAGE_LINKS) || '[]');
+    if(saved.length){
+      links = saved.map(l=>{ linkCounter++; return {...l, id:'lk'+linkCounter}; });
+    } else {
+      addLink('القناة على يوتيوب', '');
+      addLink('حسابي على إنستغرام', '');
+    }
+  }catch(e){
+    addLink('القناة على يوتيوب', '');
+  }
+  renderLinks();
+}
+function saveLinks(){
+  try{
+    localStorage.setItem(STORAGE_LINKS, JSON.stringify(links.map(({id, ...rest})=>rest)));
+  }catch(e){}
+}
+function addLink(name, url){
+  linkCounter++;
+  links.push({id:'lk'+linkCounter, name: name||'', url: url||''});
+}
+function renderLinks(){
+  linksList.innerHTML = '';
+  links.forEach(link=>{
+    const row = document.createElement('div');
+    row.className = 'link-row';
+    row.innerHTML = `
+      <input type="text" data-id="${link.id}" data-field="name" value="${link.name}" placeholder="اسم الرابط">
+      <input type="text" data-id="${link.id}" data-field="url" value="${link.url}" placeholder="https://...">
+      <button class="del" data-remove="${link.id}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    `;
+    linksList.appendChild(row);
+  });
+  linksList.querySelectorAll('input').forEach(inp=>{
+    inp.addEventListener('input', ()=>{
+      const link = links.find(l=>l.id === inp.dataset.id);
+      if(link) link[inp.dataset.field] = inp.value;
+      saveLinks();
+      updateOutput();
+    });
+  });
+  linksList.querySelectorAll('[data-remove]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      links = links.filter(l=>l.id !== btn.dataset.remove);
+      renderLinks(); saveLinks(); updateOutput();
+    });
+  });
+}
+addLinkBtn.addEventListener('click', ()=>{ addLink('', ''); renderLinks(); saveLinks(); });
+
+// ---------- Hashtags ----------
+function renderHashtags(){
+  hashtagChips.innerHTML = '';
+  hashtags.forEach(tag=>{
+    const chip = document.createElement('span');
+    chip.className = 'hashtag-chip';
+    chip.innerHTML = `#${tag} <button data-tag="${tag}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>`;
+    hashtagChips.appendChild(chip);
+  });
+  hashtagChips.querySelectorAll('button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      hashtags = hashtags.filter(t=>t !== btn.dataset.tag);
+      renderHashtags(); updateOutput();
+    });
+  });
+  hashtagCount.textContent = `${hashtags.length} / 15 هاشتاج (حد يوتيوب الأقصى)`;
+  hashtagCount.classList.toggle('warn', hashtags.length > 15);
+}
+hashtagInput.addEventListener('keydown', e=>{
+  if(e.key === 'Enter'){
+    e.preventDefault();
+    const val = hashtagInput.value.trim().replace(/^#/,'').replace(/\s+/g,'');
+    if(val && !hashtags.includes(val)){
+      hashtags.push(val);
+      renderHashtags();
+      updateOutput();
+    }
+    hashtagInput.value = '';
+  }
+});
+
+// ---------- Output assembly ----------
+function updateOutput(){
+  const parts = [];
+
+  if(tgIntro.checked && introText.value.trim()){
+    parts.push(introText.value.trim());
+  }
+  if(tgChapters.checked && chaptersText.value.trim()){
+    parts.push(chaptersText.value.trim());
+  }
+  if(tgLinks.checked){
+    const validLinks = links.filter(l=> l.name.trim() && l.url.trim());
+    if(validLinks.length){
+      parts.push(validLinks.map(l=> `${l.name.trim()}: ${l.url.trim()}`).join('\n'));
+    }
+  }
+  if(tgOutro.checked && outroText.value.trim()){
+    parts.push(outroText.value.trim());
+  }
+  if(tgHashtags.checked && hashtags.length){
+    parts.push(hashtags.map(t=>'#'+t).join(' '));
+  }
+
+  const finalText = parts.join('\n\n');
+  codeOut.textContent = finalText || 'ابدأ بتعبئة الأقسام على اليسار وشاهد الوصف يتجمّع هنا تلقائيًا...';
+  outCharCount.textContent = finalText.length + ' حرف';
+  outLineCount.textContent = (finalText ? finalText.split('\n').length : 0) + ' سطر';
+}
+
+[tgIntro, tgChapters, tgLinks, tgHashtags, tgOutro].forEach(t=> t.addEventListener('change', updateOutput));
+[introText, chaptersText, outroText].forEach(t=> t.addEventListener('input', updateOutput));
+
+copyBtn.addEventListener('click', async ()=>{
+  try{
+    await navigator.clipboard.writeText(codeOut.textContent);
+    const original = copyBtn.innerHTML;
+    copyBtn.innerHTML = 'تم النسخ ✓';
+    setTimeout(()=> copyBtn.innerHTML = original, 1500);
+  }catch(e){ console.error(e); }
+});
+
+loadLinks();
+renderHashtags();
+updateOutput();
+</script>
+</body>
+</html>

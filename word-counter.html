@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Word Counter | Fawran Tools</title>
+<meta content="Count words, characters, lines and spaces online while writing, then convert text case instantly." name="description"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/word-counter.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/en/tools/word-counter.html" property="og:url"/>
+<meta content="Word Counter | Fawran Tools" property="og:title"/>
+<meta content="Count words, characters, lines and spaces online while writing, then convert text case instantly." property="og:description"/>
+<meta content="Fawran Tools" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Word Counter | Fawran Tools" name="twitter:title"/>
+<meta content="Count words, characters, lines and spaces online while writing, then convert text case instantly." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<style>
+  .wc-layout{display:grid;grid-template-columns:1fr 260px;gap:20px;}
+  @media(max-width:800px){.wc-layout{grid-template-columns:1fr;}}
+  textarea#textInput{
+    width:100%;min-height:340px;resize:vertical;font-family:'Tajawal',sans-serif;font-size:15.5px;
+    line-height:1.9;padding:18px;border-radius:14px;border:1.5px solid var(--line);
+    background:#FDFCFA;color:var(--ink);
+  }
+  textarea#textInput:focus{outline:none;border-color:var(--indigo);}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .stat-box{
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;
+  }
+  .stat-box .n{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:22px;color:var(--indigo-deep);}
+  .stat-box .l{font-size:11.5px;color:var(--muted);margin-top:4px;}
+  .case-actions{display:flex;flex-direction:column;gap:8px;margin-top:16px;}
+  .case-btn{
+    text-align:right;padding:11px 14px;border-radius:10px;border:1px solid var(--line);
+    background:var(--surface);font-family:'Tajawal',sans-serif;font-weight:700;font-size:13.5px;cursor:pointer;
+    transition:.15s;
+  }
+  .case-btn:hover{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+  .toolbar{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Word Counter",
+  "url": "https://fawran.tools/en/tools/word-counter.html",
+  "description": "Count words, characters, lines and spaces online while writing, then convert text case instantly.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fawran Tools",
+    "url": "https://fawran.tools/en/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "text Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Word Counter & Case Converter",
+      "item": "https://fawran.tools/en/tools/word-counter.html"
+    }
+  ],
+  "name": "Text words andcharacters",
+  "description": "Calculate words andcharacters andlines andConvert Text letters TextsecretText."
+}</script>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="word counter, character counter, word count, case converter" name="keywords"/>
+<link href="https://fawran.tools/tools/word-counter.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/word-counter.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/word-counter.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../../en/index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../../en/index.html">Tools</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../../en/index.html">Tools</a>/  text /</div>
+<h1>Word Counter</h1>
+<p class="tool-lede">Count words, characters, lines and spaces online while writing, then convert text case instantly.</p>
+<div class="tool-card-shell">
+<div class="wc-layout">
+<div>
+<textarea id="textInput" placeholder="Text or Text Text Text..."></textarea>
+<div class="toolbar">
+<button class="btn btn-primary" id="copyBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>Run tool</button>
+<button class="btn btn-ghost" id="clearTextBtn">Clear text</button>
+</div>
+</div>
+<div>
+<div class="stat-grid">
+<div class="stat-box"><div class="n" id="wordCount">0</div><div class="l"></div></div>
+<div class="stat-box"><div class="n" id="charCount">0</div><div class="l">Free</div></div>
+<div class="stat-box"><div class="n" id="charNoSpace">0</div><div class="l">Free</div></div>
+<div class="stat-box"><div class="n" id="sentenceCount">0</div><div class="l"></div></div>
+<div class="stat-box"><div class="n" id="paraCount">0</div><div class="l"></div></div>
+<div class="stat-box"><div class="n" id="readTime">0</div><div class="l"></div></div>
+</div>
+<div class="case-actions">
+<button class="case-btn" data-case="upper">UPPERCASE</button>
+<button class="case-btn" data-case="lower">lowercase</button>
+<button class="case-btn" data-case="title">Title Case</button>
+<button class="case-btn" data-case="sentence">Sentence case</button>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>—</div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../../en/blog/word-counter-guide.html" style="color:var(--indigo-deep);font-weight:700;">:     Free</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">Ad · Advertisement</span>
+<div class="ad-slot-inner">
+Advertisement AdSense    :
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Use the controls below to process your content quickly in your browser.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../../en/index.html">Page</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../../en/privacy.html">Privacy Policy</a>
+<a href="../../en/terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Made with care for internet users</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script>
+<script>
+const textInput = document.getElementById('textInput');
+const wordCount = document.getElementById('wordCount');
+const charCount = document.getElementById('charCount');
+const charNoSpace = document.getElementById('charNoSpace');
+const sentenceCount = document.getElementById('sentenceCount');
+const paraCount = document.getElementById('paraCount');
+const readTime = document.getElementById('readTime');
+const copyBtn = document.getElementById('copyBtn');
+const clearTextBtn = document.getElementById('clearTextBtn');
+
+function updateStats(){
+  const text = textInput.value;
+  const trimmed = text.trim();
+
+  const words = trimmed.length ? trimmed.split(/\s+/).filter(Boolean) : [];
+  wordCount.textContent = words.length.toLocaleString('ar');
+
+  charCount.textContent = text.length.toLocaleString('ar');
+  charNoSpace.textContent = text.replace(/\s/g,'').length.toLocaleString('ar');
+
+  const sentences = trimmed.length ? trimmed.split(/[.!Text?]+/).map(s=>s.trim()).filter(Boolean) : [];
+  sentenceCount.textContent = sentences.length.toLocaleString('ar');
+
+  const paras = trimmed.length ? trimmed.split(/\n+/).map(p=>p.trim()).filter(Boolean) : [];
+  paraCount.textContent = paras.length.toLocaleString('ar');
+
+  const minutes = Math.max(0, Math.ceil(words.length / 200));
+  readTime.textContent = minutes.toLocaleString('ar');
+}
+
+textInput.addEventListener('input', updateStats);
+updateStats();
+
+document.querySelectorAll('.case-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const mode = btn.dataset.case;
+    let text = textInput.value;
+    if(mode === 'upper') text = text.toUpperCase();
+    else if(mode === 'lower') text = text.toLowerCase();
+    else if(mode === 'title') text = text.replace(/\w\S*/g, w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
+    else if(mode === 'sentence') text = text.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase());
+    textInput.value = text;
+    updateStats();
+  });
+});
+
+copyBtn.addEventListener('click', async ()=>{
+  try{
+    await navigator.clipboard.writetext(textInput.value);
+    const original = copyBtn.innerHTML;
+    copyBtn.innerHTML = 'Copied ✓';
+    setTimeout(()=> copyBtn.innerHTML = original, 1500);
+  }catch(e){
+    console.error(e);
+  }
+});
+
+clearTextBtn.addEventListener('click', ()=>{
+  textInput.value = '';
+  updateStats();
+});
+</script>
+</body>
+</html>
