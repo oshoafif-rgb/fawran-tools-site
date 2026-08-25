@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YouTube Banner Maker | Fawran Tools</title>
+<meta content="Create a YouTube channel banner at 2560×1440 with safe-area guidance and export-ready artwork." name="description"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/youtube-banner-maker.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/en/tools/youtube-banner-maker.html" property="og:url"/>
+<meta content="YouTube Banner Maker | Fawran Tools" property="og:title"/>
+<meta content="Create a YouTube channel banner at 2560×1440 with safe-area guidance and export-ready artwork." property="og:description"/>
+<meta content="Fawran Tools" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="YouTube Banner Maker | Fawran Tools" name="twitter:title"/>
+<meta content="Create a YouTube channel banner at 2560×1440 with safe-area guidance and export-ready artwork." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<style>
+  .editor-layout{display:grid;grid-template-columns:1fr 300px;gap:20px;}
+  @media(max-width:900px){.editor-layout{grid-template-columns:1fr;}}
+
+  .stage-wrap{
+    background:#111;border-radius:14px;overflow:hidden;position:relative;
+    aspect-ratio:2560/1440;width:100%;
+  }
+  .stage-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
+  .safe-zone{
+    position:absolute;border:2px dashed rgba(255,255,255,.55);pointer-events:none;
+    top:50%;left:50%;transform:translate(-50%,-50%);
+    width:60.39%;height:29.375%; /* 1546/2560, 423/1440 */
+  }
+  .safe-zone::before{
+    content:"TextfromText TextfromText — Text Text Text Text";
+    position:absolute;top:-26px;right:0;font-size:11px;color:#fff;
+    font-family:'IBM Plex Mono',monospace;background:rgba(0,0,0,.5);padding:2px 8px;border-radius:5px;
+  }
+  .layer{
+    position:absolute;cursor:move;user-select:none;display:flex;align-items:center;justify-content:center;
+    border:1.5px dashed transparent;
+  }
+  .layer.selected{border-color:var(--indigo);}
+  .layer .handle-rs{
+    position:absolute;bottom:-8px;left:-8px;width:15px;height:15px;border-radius:50%;
+    background:#fff;border:2px solid var(--indigo);cursor:nesw-resize;display:none;
+  }
+  .layer.selected .handle-rs{display:block;}
+  .layer.text-layer{white-space:nowrap;font-weight:800;}
+  .layer.img-layer img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;}
+
+  .panel-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;
+  }
+  .panel-card h3{margin:0 0 12px;font-size:13px;font-weight:800;}
+  .panel-row{margin-bottom:12px;}
+  .panel-row label{display:block;font-size:12px;font-weight:700;margin-bottom:6px;color:var(--ink-soft);}
+  .panel-row input[type=text]{
+    width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--line);
+    font-family:'Tajawal',sans-serif;font-size:13.5px;background:#FDFCFA;color:var(--ink);
+  }
+  [data-theme="dark"] .panel-row input[type=text]{background:#211F34;}
+  .swatch-row{display:flex;gap:8px;align-items:center;}
+  .swatch-row input[type=color]{width:38px;height:34px;border-radius:8px;border:1px solid var(--line);cursor:pointer;padding:2px;}
+  .bg-mode-chips{display:flex;gap:6px;flex-wrap:wrap;}
+  .bg-mode-chip{
+    font-size:11.5px;font-weight:700;padding:6px 11px;border-radius:999px;border:1px solid var(--line);
+    background:#fff;cursor:pointer;
+  }
+  .bg-mode-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+  .upload-mini{
+    display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;border:1.5px dashed var(--line);
+    border-radius:9px;cursor:pointer;font-size:12.5px;font-weight:700;color:var(--ink-soft);
+  }
+  .upload-mini:hover{border-color:var(--indigo);color:var(--indigo-deep);}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "YouTube Banner Maker",
+  "url": "https://fawran.tools/en/tools/youtube-banner-maker.html",
+  "description": "Create a YouTube channel banner at 2560×1440 with safe-area guidance and export-ready artwork.",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fawran Tools",
+    "url": "https://fawran.tools/en/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "YouTube Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "YouTube Banner Maker",
+      "item": "https://fawran.tools/en/tools/youtube-banner-maker.html"
+    }
+  ],
+  "name": "Maker banner YouTube",
+  "description": "Design banner Text YouTube Text Text 2560×1440 Text TextfromText TextfromText."
+}</script>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="youtube banner maker, youtube channel art, youtube banner" name="keywords"/>
+<link href="https://fawran.tools/tools/youtube-banner-maker.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/youtube-banner-maker.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/youtube-banner-maker.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../../en/index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../../en/index.html">Tools</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../../tools/youtube-banner-maker.html" title="View in Arabic">AR</a>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../../en/index.html">Tools</a>/   /</div>
+<h1>YouTube Banner Maker</h1>
+<p class="tool-lede">Create a YouTube channel banner at 2560×1440 with safe-area guidance and export-ready artwork.</p>
+<div class="tool-card-shell">
+<div class="editor-layout">
+<div>
+<div class="stage-wrap" id="stageWrap">
+<div class="stage-bg" id="stageBg" style="background-color:#4F3FF0;"></div>
+<div class="safe-zone" id="safeZone"></div>
+<div class="layer text-layer" id="textLayer" style="top:45%;left:30%;color:#ffffff;font-size:5%;">Channel name</div>
+<div class="layer img-layer" id="logoLayer" style="display:none;top:20%;left:10%;width:14%;height:14%;"></div>
+</div>
+<div class="actions" style="margin-top:18px;">
+<button class="btn btn-primary" id="exportBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+            Export banner (2560×1440)
+          </button>
+<button class="btn btn-ghost" id="resetDesignBtn">Reset</button>
+</div>
+</div>
+<div>
+<div class="panel-card">
+<h3>Background</h3>
+<div class="bg-mode-chips" style="margin-bottom:12px;">
+<span class="bg-mode-chip active" data-bg="color">Color</span>
+<span class="bg-mode-chip" data-bg="gradient">Gradient</span>
+<span class="bg-mode-chip" data-bg="image">Image</span>
+</div>
+<div class="swatch-row" id="bgColorRow">
+<input id="bgColor1" type="color" value="#4F3FF0"/>
+</div>
+<div class="swatch-row" id="bgGradientRow" style="display:none;">
+<input id="bgColor2a" type="color" value="#4F3FF0"/>
+<input id="bgColor2b" type="color" value="#F0A93B"/>
+</div>
+<div id="bgImageRow" style="display:none;">
+<input accept="image/*" id="bgImgInput" style="display:none;" type="file"/>
+<label class="upload-mini" for="bgImgInput">
+<svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><path d="M12 3v12"></path><path d="M7 8l5-5 5 5"></path><path d="M5 21h14"></path></svg>Option</label>
+</div>
+</div>
+<div class="panel-card">
+<h3>text</h3>
+<div class="panel-row">
+<label>Channel name</label>
+<input id="channelText" type="text" value="Channel name"/>
+</div>
+<div class="panel-row">
+<label>text color</label>
+<div class="swatch-row"><input id="textColor" type="color" value="#ffffff"/></div>
+</div>
+<div class="panel-row">
+<label>Font size <span id="fontSizeVal">5%</span></label>
+<input id="fontSize" max="12" min="2" step="0.2" type="range" value="5"/>
+</div>
+</div>
+<div class="panel-card">
+<h3>Logo</h3>
+<input accept="image/*" id="logoInput" style="display:none;" type="file"/>
+<label class="upload-mini" for="logoInput">
+<svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><path d="M12 3v12"></path><path d="M7 8l5-5 5 5"></path><path d="M5 21h14"></path></svg>
+            Upload logo
+          </label>
+<button class="btn btn-ghost" id="removeLogoBtn" style="width:100%;margin-top:10px;font-size:12.5px;padding:9px;display:none;">Remove logo</button>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>—  images    Never</div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../../en/blog/youtube-banner-guide.html" style="color:var(--indigo-deep);font-weight:700;">:</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">Ad · Advertisement</span>
+<div class="ad-slot-inner">
+Advertisement AdSense
+</div>
+</div>
+</div>
+<div class="wrap"><div class="rating-widget" data-tool-slug="youtube-banner-maker">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Use the controls below to process your content quickly in your browser.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../../en/index.html">Page</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../../en/privacy.html">Privacy Policy</a>
+<a href="../../en/terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Made with care for internet users</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script><script src="../../assets/rating-widget.js"></script>
+<script>
+const stageWrap = document.getElementById('stageWrap');
+const stageBg = document.getElementById('stageBg');
+const textLayer = document.getElementById('textLayer');
+const logoLayer = document.getElementById('logoLayer');
+
+const bgModeChips = document.querySelectorAll('.bg-mode-chip');
+const bgColorRow = document.getElementById('bgColorRow');
+const bgGradientRow = document.getElementById('bgGradientRow');
+const bgImageRow = document.getElementById('bgImageRow');
+const bgColor1 = document.getElementById('bgColor1');
+const bgColor2a = document.getElementById('bgColor2a');
+const bgColor2b = document.getElementById('bgColor2b');
+const bgImgInput = document.getElementById('bgImgInput');
+
+const channelText = document.getElementById('channelText');
+const textColor = document.getElementById('textColor');
+const fontSize = document.getElementById('fontSize');
+const fontSizeVal = document.getElementById('fontSizeVal');
+
+const logoInput = document.getElementById('logoInput');
+const removeLogoBtn = document.getElementById('removeLogoBtn');
+const exportBtn = document.getElementById('exportBtn');
+const resetDesignBtn = document.getElementById('resetDesignBtn');
+
+let bgMode = 'color';
+let bgImageDataUrl = null;
+let logoDataUrl = null;
+
+// ---- Background mode switching ----
+bgModeChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    bgModeChips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    bgMode = chip.dataset.bg;
+    bgColorRow.style.display = bgMode === 'color' ? 'flex' : 'none';
+    bgGradientRow.style.display = bgMode === 'gradient' ? 'flex' : 'none';
+    bgImageRow.style.display = bgMode === 'image' ? 'block' : 'none';
+    updateBackground();
+  });
+});
+function updateBackground(){
+  if(bgMode === 'color'){
+    stageBg.style.background = bgColor1.value;
+  } else if(bgMode === 'gradient'){
+    stageBg.style.background = `linear-gradient(135deg, ${bgColor2a.value}, ${bgColor2b.value})`;
+  } else if(bgMode === 'image' && bgImageDataUrl){
+    stageBg.style.background = `url(${bgImageDataUrl}) center/cover no-repeat`;
+  }
+}
+bgColor1.addEventListener('input', updateBackground);
+bgColor2a.addEventListener('input', updateBackground);
+bgColor2b.addEventListener('input', updateBackground);
+bgImgInput.addEventListener('change', e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new fileReader();
+  reader.onload = ev=>{ bgImageDataUrl = ev.target.result; updateBackground(); };
+  reader.readAsDataURL(file);
+});
+
+// ---- text layer ----
+function updatetext(){
+  textLayer.textContent = channelText.value || 'Channel name';
+  textLayer.style.color = textColor.value;
+  const stageH = stageWrap.getBoundingClientRect().height;
+  textLayer.style.fontSize = (parseFloat(fontSize.value)/100 * stageH) + 'px';
+  fontSizeVal.textContent = fontSize.value + '%';
+}
+channelText.addEventListener('input', updatetext);
+textColor.addEventListener('input', updatetext);
+fontSize.addEventListener('input', updatetext);
+window.addEventListener('resize', updatetext);
+updatetext();
+
+// ---- Logo layer ----
+// Logo image element + resize handle (created once, never wiped by innerHTML)
+const logoImgEl = document.createElement('img');
+logoLayer.appendChild(logoImgEl);
+const rsHandle = document.createElement('div');
+rsHandle.className = 'handle-rs';
+logoLayer.appendChild(rsHandle);
+
+logoInput.addEventListener('change', e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new fileReader();
+  reader.onload = ev=>{
+    logoDataUrl = ev.target.result;
+    logoImgEl.src = logoDataUrl;
+    logoLayer.style.display = 'flex';
+    removeLogoBtn.style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+});
+removeLogoBtn.addEventListener('click', ()=>{
+  logoDataUrl = null;
+  logoLayer.style.display = 'none';
+  logoImgEl.src = '';
+  removeLogoBtn.style.display = 'none';
+});
+
+// ---- Drag & resize for layers ----
+function makeDraggable(el){
+  let mode = null, startX, startY, startLeft, startTop, startW, startH;
+
+  el.addEventListener('mousedown', e=>{
+    if(e.target.classList.contains('handle-rs')) return;
+    document.querySelectorAll('.layer').forEach(l=>l.classList.remove('selected'));
+    el.classList.add('selected');
+    mode = 'move';
+    const rect = stageWrap.getBoundingClientRect();
+    startX = e.clientX; startY = e.clientY;
+    startLeft = parseFloat(el.style.left);
+    startTop = parseFloat(el.style.top);
+    e.preventDefault();
+  });
+
+  const handle = el.querySelector('.handle-rs');
+  if(handle){
+    handle.addEventListener('mousedown', e=>{
+      mode = 'resize';
+      startX = e.clientX; startY = e.clientY;
+      startW = parseFloat(el.style.width);
+      startH = parseFloat(el.style.height);
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  }
+
+  document.addEventListener('mousemove', e=>{
+    if(!mode) return;
+    const rect = stageWrap.getBoundingClientRect();
+    const dxPct = ((e.clientX - startX) / rect.width) * 100;
+    const dyPct = ((e.clientY - startY) / rect.height) * 100;
+
+    if(mode === 'move'){
+      let nl = startLeft + dxPct, nt = startTop + dyPct;
+      nl = Math.max(0, Math.min(95, nl));
+      nt = Math.max(0, Math.min(95, nt));
+      el.style.left = nl + '%';
+      el.style.top = nt + '%';
+    } else if(mode === 'resize'){
+      let nw = Math.max(5, startW + dxPct);
+      let nh = Math.max(5, startH + dyPct);
+      el.style.width = nw + '%';
+      el.style.height = nh + '%';
+    }
+  });
+  document.addEventListener('mouseup', ()=>{ mode = null; });
+}
+
+makeDraggable(textLayer);
+makeDraggable(logoLayer);
+
+stageWrap.addEventListener('mousedown', e=>{
+  if(e.target === stageWrap || e.target === stageBg || e.target.id === 'safeZone'){
+    document.querySelectorAll('.layer').forEach(l=>l.classList.remove('selected'));
+  }
+});
+
+// ---- Export ----
+function loadImg(src){
+  return new Promise((resolve,reject)=>{
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = ()=>resolve(img);
+    img.onerror = reject;
+    img.src = src;
+  });
+}
+
+exportBtn.addEventListener('click', async ()=>{
+  exportBtn.disabled = true;
+  exportBtn.textContent = 'Processing Text...';
+  try{
+    const W = 2560, H = 1440;
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+
+    // Background
+    if(bgMode === 'color'){
+      ctx.fillStyle = bgColor1.value;
+      ctx.fillRect(0,0,W,H);
+    } else if(bgMode === 'gradient'){
+      const grad = ctx.createLinearGradient(0,0,W,H);
+      grad.addColorStop(0, bgColor2a.value);
+      grad.addColorStop(1, bgColor2b.value);
+      ctx.fillStyle = grad;
+      ctx.fillRect(0,0,W,H);
+    } else if(bgMode === 'image' && bgImageDataUrl){
+      const img = await loadImg(bgImageDataUrl);
+      const scale = Math.max(W/img.width, H/img.height);
+      const dw = img.width*scale, dh = img.height*scale;
+      ctx.drawImage(img, (W-dw)/2, (H-dh)/2, dw, dh);
+    } else {
+      ctx.fillStyle = '#4F3FF0'; ctx.fillRect(0,0,W,H);
+    }
+
+    // text layer
+    const tLeft = parseFloat(textLayer.style.left)/100 * W;
+    const tTop = parseFloat(textLayer.style.top)/100 * H;
+    const tSize = parseFloat(fontSize.value)/100 * H;
+    ctx.fillStyle = textColor.value;
+    ctx.font = `800 ${tSize}px Tajawal, Arial, sans-serif`;
+    ctx.textBaseline = 'middle';
+    ctx.filltext(channelText.value || 'Channel name', tLeft, tTop + tSize*0.15);
+
+    // Logo layer
+    if(logoDataUrl){
+      const logoImg = await loadImg(logoDataUrl);
+      const lLeft = parseFloat(logoLayer.style.left)/100 * W;
+      const lTop = parseFloat(logoLayer.style.top)/100 * H;
+      const lW = parseFloat(logoLayer.style.width)/100 * W;
+      const lH = parseFloat(logoLayer.style.height)/100 * H;
+      const scale = Math.min(lW/logoImg.width, lH/logoImg.height);
+      const dw = logoImg.width*scale, dh = logoImg.height*scale;
+      const dx = lLeft + (lW-dw)/2, dy = lTop + (lH-dh)/2;
+      ctx.drawImage(logoImg, dx, dy, dw, dh);
+    }
+
+    canvas.toBlob(blob=>{
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'youtube-channel-banner.png';
+      document.body.appendChild(a); a.click(); a.remove();
+    }, 'image/png');
+  } catch(err){
+    console.error(err);
+    alert('Text Text Text. Text Text Text.');
+  }
+  exportBtn.disabled = false;
+  exportBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg> Export banner (2560×1440)`;
+});
+
+resetDesignBtn.addEventListener('click', ()=>{
+  bgMode = 'color'; bgImageDataUrl = null; logoDataUrl = null;
+  bgModeChips.forEach(c=>c.classList.remove('active'));
+  bgModeChips[0].classList.add('active');
+  bgColorRow.style.display = 'flex'; bgGradientRow.style.display = 'none'; bgImageRow.style.display = 'none';
+  bgColor1.value = '#4F3FF0';
+  updateBackground();
+  channelText.value = 'Channel name';
+  textColor.value = '#ffffff';
+  fontSize.value = 5;
+  updatetext();
+  logoLayer.style.display = 'none'; logoImgEl.src = ''; removeLogoBtn.style.display = 'none';
+  textLayer.style.top = '45%'; textLayer.style.left = '30%';
+  logoLayer.style.top = '20%'; logoLayer.style.left = '10%'; logoLayer.style.width = '14%'; logoLayer.style.height = '14%';
+});
+</script>
+</body>
+</html>

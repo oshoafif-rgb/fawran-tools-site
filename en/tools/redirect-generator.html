@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>301 Redirect Generator | Fawran Tools</title>
+<meta content="Generate 301 redirect rules for Apache .htaccess and Nginx from old and new URLs." name="description"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/redirect-generator.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/en/tools/redirect-generator.html" property="og:url"/>
+<meta content="301 Redirect Generator | Fawran Tools" property="og:title"/>
+<meta content="Generate 301 redirect rules for Apache .htaccess and Nginx from old and new URLs." property="og:description"/>
+<meta content="Fawran Tools" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="301 Redirect Generator | Fawran Tools" name="twitter:title"/>
+<meta content="Generate 301 redirect rules for Apache .htaccess and Nginx from old and new URLs." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<style>
+  .redirect-row{display:grid;grid-template-columns:1fr 1fr auto auto;gap:8px;margin-bottom:8px;align-items:center;}
+  @media(max-width:700px){.redirect-row{grid-template-columns:1fr;}}
+  .redirect-row input{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;padding:10px 12px;border-radius:8px;
+    border:1px solid var(--line);background:#FDFCFA;color:var(--ink);direction:ltr;text-align:left;
+  }
+  [data-theme="dark"] .redirect-row input{background:#211F34;}
+  .redirect-row select{
+    padding:10px 8px;border-radius:8px;border:1px solid var(--line);font-family:'IBM Plex Mono',monospace;
+    font-size:12px;background:#fff;color:var(--ink);
+  }
+  [data-theme="dark"] .redirect-row select{background:var(--surface-sunk);}
+  .redirect-row .del{width:36px;height:36px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--danger);display:flex;align-items:center;justify-content:center;cursor:pointer;}
+  [data-theme="dark"] .redirect-row .del{background:var(--surface-sunk);}
+  .redirect-row .del svg{width:14px;height:14px;}
+
+  .format-chips{display:flex;gap:8px;margin:18px 0;}
+  .format-chip{font-size:12.5px;font-weight:700;padding:8px 15px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer;}
+  [data-theme="dark"] .format-chip{background:var(--surface-sunk);}
+  .format-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+
+  .code-out{
+    background:var(--ink);color:#E8E6F5;border-radius:12px;padding:18px;
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.8;
+    white-space:pre-wrap;word-break:break-all;direction:ltr;text-align:left;
+    max-height:340px;overflow:auto;margin-top:14px;
+  }
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "301 Redirect Generator",
+  "url": "https://fawran.tools/en/tools/redirect-generator.html",
+  "description": "Generate 301 redirect rules for Apache .htaccess and Nginx from old and new URLs.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fawran Tools",
+    "url": "https://fawran.tools/en/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Website Tools andTextandText",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Redirect Rules Generator",
+      "item": "https://fawran.tools/en/tools/redirect-generator.html"
+    }
+  ],
+  "name": "Generator Redirect 301 andNginx",
+  "description": "Create rules Reset TextandText 301 for Apache andNginx Text fromText for SEO."
+}</script>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="301 redirect generator, htaccess redirect, nginx redirect" name="keywords"/>
+<link href="https://fawran.tools/tools/redirect-generator.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/redirect-generator.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/redirect-generator.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../../en/index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../../en/index.html">Tools</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../../tools/redirect-generator.html" title="View in Arabic">AR</a>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../../en/index.html">Tools</a>/ Website Tools  /</div>
+<h1>301 Redirect Generator</h1>
+<p class="tool-lede">Generate 301 redirect rules for Apache .htaccess and Nginx from old and new URLs.</p>
+<div class="tool-card-shell">
+<div id="redirectsList"></div>
+<button class="btn btn-ghost" id="addRowBtn" style="width:100%;font-size:12.5px;padding:9px;">+ Add link</button>
+<div class="format-chips">
+<span class="format-chip active" data-format="htaccess">Apache (.htaccess)</span>
+<span class="format-chip" data-format="nginx">Nginx</span>
+</div>
+<div class="code-out" id="codeOut"></div>
+<div class="actions" style="margin-top:14px;">
+<button class="btn btn-primary" id="copyBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        Copy code
+      </button>
+</div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>— URLs</div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../../en/blog/redirects-guide.html" style="color:var(--indigo-deep);font-weight:700;">:   301 302    SEO</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">Ad · Advertisement</span>
+<div class="ad-slot-inner">Advertisement AdSense</div>
+</div>
+</div>
+<div class="wrap"><div class="rating-widget" data-tool-slug="redirect-generator">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Use the controls below to process your content quickly in your browser.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../../en/index.html">Page</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../../en/privacy.html">Privacy Policy</a>
+<a href="../../en/terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Made with care for internet users</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script><script src="../../assets/rating-widget.js"></script>
+<script>
+const redirectsList = document.getElementById('redirectsList');
+const addRowBtn = document.getElementById('addRowBtn');
+const formatChips = document.querySelectorAll('.format-chip');
+const codeOut = document.getElementById('codeOut');
+const copyBtn = document.getElementById('copyBtn');
+
+let redirects = [];
+let counter = 0;
+let format = 'htaccess';
+
+function addRedirect(from, to, code){
+  counter++;
+  redirects.push({id:'r'+counter, from: from||'', to: to||'', code: code||'301'});
+}
+
+function render(){
+  redirectsList.innerHTML = '';
+  redirects.forEach(r=>{
+    const row = document.createElement('div');
+    row.className = 'redirect-row';
+    row.innerHTML = `
+      <input type="text" data-id="${r.id}" data-field="from" value="${r.from}" placeholder="/old-page">
+      <input type="text" data-id="${r.id}" data-field="to" value="${r.to}" placeholder="/new-page">
+      <select data-id="${r.id}" data-field="code">
+        <option value="301" ${r.code==='301'?'selected':''}>301 Text</option>
+        <option value="302" ${r.code==='302'?'selected':''}>302 Text</option>
+      </select>
+      <button class="del" data-remove="${r.id}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    `;
+    redirectsList.appendChild(row);
+  });
+  redirectsList.querySelectorAll('input, select').forEach(inp=>{
+    inp.addEventListener('input', ()=>{
+      const r = redirects.find(x=>x.id === inp.dataset.id);
+      if(r) r[inp.dataset.field] = inp.value;
+      updateOutput();
+    });
+  });
+  redirectsList.querySelectorAll('[data-remove]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      redirects = redirects.filter(r=>r.id !== btn.dataset.remove);
+      render(); updateOutput();
+    });
+  });
+}
+
+addRowBtn.addEventListener('click', ()=>{ addRedirect('',''); render(); updateOutput(); });
+
+formatChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    formatChips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    format = chip.dataset.format;
+    updateOutput();
+  });
+});
+
+function updateOutput(){
+  const valid = redirects.filter(r=> r.from.trim() && r.to.trim());
+  if(!valid.length){
+    codeOut.textContent = format === 'htaccess'
+      ? '# Text URLs Text Text Textrules Text\nRewriteEngine On'
+      : '# Text URLs Text Text Textrules Text';
+    return;
+  }
+
+  if(format === 'htaccess'){
+    const lines = ['RewriteEngine On', ''];
+    valid.forEach(r=>{
+      lines.push(`Redirect ${r.code} ${r.from.trim()} ${r.to.trim()}`);
+    });
+    codeOut.textContent = lines.join('\n');
+  } else {
+    const lines = [];
+    valid.forEach(r=>{
+      const flag = r.code === '302' ? 'redirect' : 'permanent';
+      lines.push(`rewrite ^${r.from.trim()}$ ${r.to.trim()} ${flag};`);
+    });
+    codeOut.textContent = lines.join('\n');
+  }
+}
+
+copyBtn.addEventListener('click', async ()=>{
+  try{
+    await navigator.clipboard.writetext(codeOut.textContent);
+    const original = copyBtn.innerHTML;
+    copyBtn.innerHTML = 'Copied ✓';
+    setTimeout(()=> copyBtn.innerHTML = original, 1500);
+  }catch(e){ console.error(e); }
+});
+
+addRedirect('/old-page', '/new-page');
+addRedirect('/old-blog/post-1', '/blog/post-1');
+render();
+updateOutput();
+</script>
+</body>
+</html>

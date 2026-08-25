@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Remove Duplicate Lines | Fawran Tools</title>
+<meta content="Remove duplicate lines and repeated values from long text lists in seconds." name="description"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/remove-duplicate-lines.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/en/tools/remove-duplicate-lines.html" property="og:url"/>
+<meta content="Remove Duplicate Lines | Fawran Tools" property="og:title"/>
+<meta content="Remove duplicate lines and repeated values from long text lists in seconds." property="og:description"/>
+<meta content="Fawran Tools" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Remove Duplicate Lines | Fawran Tools" name="twitter:title"/>
+<meta content="Remove duplicate lines and repeated values from long text lists in seconds." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<style>
+  textarea.dl-input{
+    width:100%;min-height:300px;resize:vertical;font-family:'IBM Plex Mono',monospace;font-size:13.5px;
+    line-height:1.8;padding:16px;border-radius:12px;border:1.5px solid var(--line);
+    background:#FDFCFA;color:var(--ink);direction:ltr;text-align:left;
+  }
+  textarea.dl-input:focus{outline:none;border-color:var(--indigo);}
+  .opt-row{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0;}
+  .opt-row label{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;cursor:pointer;}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Remove Duplicate Lines",
+  "url": "https://fawran.tools/en/tools/remove-duplicate-lines.html",
+  "description": "Remove duplicate lines and repeated values from long text lists in seconds.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fawran Tools",
+    "url": "https://fawran.tools/en/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "text Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Remove duplicate lines Free",
+      "item": "https://fawran.tools/en/tools/remove-duplicate-lines.html"
+    }
+  ],
+  "name": "Remove duplicate lines",
+  "description": "TextDelete lines andText Text from TextandText andKeywords andLinks TextsecretText."
+}</script>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="remove duplicate lines, duplicate remover, deduplicate text" name="keywords"/>
+<link href="https://fawran.tools/tools/remove-duplicate-lines.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/remove-duplicate-lines.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/remove-duplicate-lines.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../../en/index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../../en/index.html">Tools</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../../en/index.html">Tools</a>/  text / Remove duplicate lines</div>
+<h1>Remove Duplicate Lines</h1>
+<p class="tool-lede">Remove duplicate lines and repeated values from long text lists in seconds.</p>
+<div class="tool-card-shell">
+<textarea class="dl-input" id="textInput" placeholder="Text Text Text Text Text Text..."></textarea>
+<div class="opt-row">
+<label><input id="ignoreCase" type="checkbox"/> Ignore case (Aa = aa)</label>
+<label><input checked="" id="trimLines" type="checkbox"/> Ignore extra spaces</label>
+<label><input checked="" id="removeEmpty" type="checkbox"/> Remove empty lines</label>
+<label><input id="sortLines" type="checkbox"/> Sort alphabetically</label>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="processBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+        Remove duplicates
+      </button>
+<button class="btn btn-dark" id="copyBtn">Run tool</button>
+<button class="btn btn-ghost" id="clearBtn">Clear all</button>
+</div>
+<div class="summary" id="summary" style="display:none;margin-top:20px;"></div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>—</div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../../en/blog/remove-duplicates-guide.html" style="color:var(--indigo-deep);font-weight:700;">:    Free</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">Ad · Advertisement</span>
+<div class="ad-slot-inner">
+Advertisement AdSense    :
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="rating-widget" data-tool-slug="remove-duplicate-lines">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Use the controls below to process your content quickly in your browser.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../../en/index.html">Page</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../../en/privacy.html">Privacy Policy</a>
+<a href="../../en/terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Made with care for internet users</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script><script src="../../assets/rating-widget.js"></script>
+<script>
+const textInput = document.getElementById('textInput');
+const ignoreCase = document.getElementById('ignoreCase');
+const trimLines = document.getElementById('trimLines');
+const removeEmpty = document.getElementById('removeEmpty');
+const sortLines = document.getElementById('sortLines');
+const processBtn = document.getElementById('processBtn');
+const copyBtn = document.getElementById('copyBtn');
+const clearBtn = document.getElementById('clearBtn');
+const summary = document.getElementById('summary');
+
+processBtn.addEventListener('click', ()=>{
+  let lines = textInput.value.split('\n');
+  const originalCount = lines.length;
+
+  if(trimLines.checked) lines = lines.map(l=>l.trim());
+  if(removeEmpty.checked) lines = lines.filter(l=>l.length>0);
+
+  const seen = new Set();
+  const result = [];
+  lines.forEach(line=>{
+    const key = ignoreCase.checked ? line.toLowerCase() : line;
+    if(!seen.has(key)){ seen.add(key); result.push(line); }
+  });
+
+  if(sortLines.checked) result.sort((a,b)=> a.localeCompare(b, 'ar'));
+
+  textInput.value = result.join('\n');
+  const removed = originalCount - result.length;
+  summary.style.display = 'flex';
+  summary.innerHTML = `
+    <div class="stat"><div class="n">${originalCount}</div><div class="l">Text Text</div></div>
+    <div class="stat"><div class="n" style="color:var(--good)">${result.length}</div><div class="l">Text After Text</div></div>
+    <div class="stat"><div class="n" style="color:var(--danger)">${removed}</div><div class="l">Text Text DeleteText</div></div>
+  `;
+});
+
+copyBtn.addEventListener('click', async ()=>{
+  try{
+    await navigator.clipboard.writetext(textInput.value);
+    const original = copyBtn.textContent;
+    copyBtn.textContent = 'Copied ✓';
+    setTimeout(()=> copyBtn.textContent = original, 1500);
+  }catch(e){ console.error(e); }
+});
+
+clearBtn.addEventListener('click', ()=>{
+  textInput.value = '';
+  summary.style.display = 'none';
+});
+</script>
+</body>
+</html>

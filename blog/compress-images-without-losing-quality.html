@@ -1,205 +1,240 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+<html dir="rtl" lang="ar">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>كيف تضغط صورك بدون فقدان ملحوظ في الجودة | فورا.tools</title>
-<meta name="description" content="الفرق بين الضغط بلا فقدان وبفقدان، ومتى تستخدم كل نوع، مع خطوات عملية لضغط صورك بأفضل نتيجة.">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="apple-touch-icon" href="../favicon.svg">
-<meta name="theme-color" content="#4F3FF0">
-<link rel="canonical" href="https://fawran.tools/blog/compress-images-without-losing-quality.html">
-<link rel="alternate" hreflang="ar" href="https://fawran.tools/blog/compress-images-without-losing-quality.html">
-<link rel="alternate" hreflang="en" href="https://fawran.tools/en/blog/compress-images-without-losing-quality.html">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://fawran.tools/blog/compress-images-without-losing-quality.html">
-<meta property="og:title" content="كيف تضغط صورك بدون فقدان ملحوظ في الجودة | فورا.tools">
-<meta property="og:description" content="الفرق بين الضغط بلا فقدان وبفقدان، ومتى تستخدم كل نوع، مع خطوات عملية لضغط صورك بأفضل نتيجة.">
-<meta property="og:site_name" content="فورا.tools">
-<meta property="og:locale" content="ar_AR">
-<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="كيف تضغط صورك بدون فقدان ملحوظ في الجودة | فورا.tools">
-<meta name="twitter:description" content="الفرق بين الضغط بلا فقدان وبفقدان، ومتى تستخدم كل نوع، مع خطوات عملية لضغط صورك بأفضل نتيجة.">
-<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css">
+<meta content="الفرق بين الضغط بلا فقدان وبفقدان، أيهما تختار، تأثير حجم الصورة على سرعة موقعك وSEO، مع خطوات عملية لضغط صورك بأفضل نتيجة." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/blog/compress-images-without-losing-quality.html" rel="canonical"/>
+
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/blog/compress-images-without-losing-quality.html" property="og:url"/>
+<meta content="كيف تضغط صورك بدون فقدان ملحوظ في الجودة | فورا.tools" property="og:title"/>
+<meta content="الفرق بين الضغط بلا فقدان وبفقدان، أيهما تختار، وتأثير حجم الصورة على سرعة موقعك وSEO." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="كيف تضغط صورك بدون فقدان ملحوظ في الجودة | فورا.tools" name="twitter:title"/>
+<meta content="الفرق بين الضغط بلا فقدان وبفقدان، وتأثير حجم الصورة على سرعة موقعك وSEO." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+</style>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "كيف تضغط صورك بدون فقدان ملحوظ في الجودة",
-  "description": "الفرق بين الضغط بلا فقدان وبفقدان، ومتى تستخدم كل نوع، مع خطوات عملية لضغط صورك بأفضل نتيجة.",
-  "url": "https://fawran.tools/blog/compress-images-without-losing-quality.html",
-  "datePublished": "2026-08-22",
-  "dateModified": "2026-08-22",
-  "author": {
-    "@type": "Organization",
-    "name": "فورا.tools"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "فورا.tools",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://fawran.tools/favicon.svg"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://fawran.tools/blog/compress-images-without-losing-quality.html"
-  }
-}
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"كيف تضغط صورك بدون فقدان ملحوظ في الجودة","description":"الفرق بين الضغط بلا فقدان وبفقدان، أيهما تختار، تأثير حجم الصورة على سرعة موقعك وSEO، مع خطوات عملية لضغط صورك بأفضل نتيجة.","url":"https://fawran.tools/blog/compress-images-without-losing-quality.html","datePublished":"2026-08-22","dateModified":"2026-08-25","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/compress-images-without-losing-quality.html"}}
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "المدونة",
-      "item": "https://fawran.tools/blog/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "كيف تضغط صورك بدون فقدان ملحوظ في الجودة",
-      "item": "https://fawran.tools/blog/compress-images-without-losing-quality.html"
-    }
-  ]
-}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"كيف تضغط صورك بدون فقدان ملحوظ في الجودة","item":"https://fawran.tools/blog/compress-images-without-losing-quality.html"}]}
 </script>
-</head>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل ضغط الصور يؤثر فعليًا على ترتيب موقعي في جوجل؟","acceptedAnswer":{"@type":"Answer","text":"نعم بشكل غير مباشر — سرعة تحميل الصفحة (المرتبطة بحجم الصور) عامل ترتيب رسمي معلن من جوجل ضمن Core Web Vitals، خصوصًا مؤشر LCP الذي غالبًا ما يتأثر مباشرة بحجم أكبر صورة في الصفحة."}},{"@type":"Question","name":"ما نسبة الجودة المثالية لضغط صور الويب؟","acceptedAnswer":{"@type":"Answer","text":"نسبة بين 70% و85% تعطي توازنًا ممتازًا بين الحجم والجودة المرئية لمعظم الصور، ونادرًا ما تحتاج جودة 100% لصور الويب العادية."}},{"@type":"Question","name":"هل ضغط صورة أكثر من مرة يضر جودتها بشكل تراكمي؟","acceptedAnswer":{"@type":"Answer","text":"نعم مع الضغط بفقدان (Lossy) تحديدًا — كل عملية ضغط جديدة على نفس الملف المضغوط سابقًا تضيف فقدانًا إضافيًا. يُفضّل دائمًا الضغط من النسخة الأصلية غير المضغوطة."}},{"@type":"Question","name":"هل هناك فرق بين ضغط الصورة وتغيير حجمها (Resize)؟","acceptedAnswer":{"@type":"Answer","text":"نعم، الضغط يقلل حجم الملف بالحفاظ على نفس الأبعاد (العرض والطول)، بينما تغيير الحجم يغيّر الأبعاد الفعلية للصورة. غالبًا ما يُستخدم الاثنان معًا للحصول على أفضل نتيجة."}}]}
+</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/compress-images-without-losing-quality.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/compress-images-without-losing-quality.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/compress-images-without-losing-quality.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-
 <header class="topbar">
-  <div class="topbar-inner">
-    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
-          <div class="nav-wrap">
-      <nav class="nav">
-      <a href="../index.html">الأدوات</a>
-      <a href="index.html" class="active">المدونة</a>
-      <a href="../about.html">من نحن</a>
-      <a href="../contact.html">تواصل معنا</a>
-    </nav>
-      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
-      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-      <a href="../en/blog/compress-images-without-losing-quality.html" class="lang-switch" title="View in English">EN</a>
-    </div>
-  </div>
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">الأدوات</a>
+<a class="active" href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/blog/compress-images-without-losing-quality.html" title="View in English">EN</a>
+</div>
+</div>
 </header>
-
 <div class="wrap">
-  <div class="page-head">
-    <div class="article-meta"><span class="tag">أدوات الصور</span><span>5 دقائق قراءة</span></div>
-    <h1>كيف تضغط صورك بدون فقدان ملحوظ في الجودة</h1>
-  </div>
+<div class="page-head">
+<div class="article-meta"><span class="tag">أدوات الصور</span><span>8 دقائق قراءة</span></div>
+<h1>كيف تضغط صورك بدون فقدان ملحوظ في الجودة</h1>
+</div>
 
-  <div class="content-card">
-    <p>
-      "ضغط الصورة" مصطلح يُستخدم بشكل عام، لكن فعليًا هناك نوعان مختلفان تمامًا من الضغط، وفهم الفرق
-      بينهما يوفر عليك الكثير من التجربة والخطأ.
-    </p>
+<div class="content-card">
 
-    <h2>النوع الأول: الضغط بلا فقدان (Lossless)</h2>
-    <p>
-      هذا النوع يعيد ترتيب بيانات الصورة بكفاءة أكبر دون حذف أي تفصيل بصري — الصورة الناتجة مطابقة
-      للأصل بكسل بكسل، لكن حجم الملف أصغر. صيغة PNG تستخدم هذا النوع من الضغط بطبيعتها، لذلك الهامش
-      المتاح لتصغيرها أكثر محدود جدًا.
-    </p>
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <rect x="90" y="70" width="280" height="180" rx="10" fill="#1A1826"/>
+  <rect x="120" y="100" width="220" height="120" rx="6" fill="#4F3FF0"/>
+  <text x="230" y="260" font-family="IBM Plex Mono, monospace" font-size="14" fill="#8B89A3" text-anchor="middle">4.2 MB</text>
+  <path d="M400 160 L470 160 M440 135 L470 160 L440 185" stroke="#F0A93B" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="510" y="90" width="200" height="160" rx="10" fill="#1A1826"/>
+  <rect x="535" y="112" width="150" height="116" rx="6" fill="#4F3FF0"/>
+  <text x="610" y="270" font-family="IBM Plex Mono, monospace" font-size="14" fill="#2F7D53" text-anchor="middle">480 KB</text>
+</svg>
 
-    <h2>النوع الثاني: الضغط بفقدان (Lossy)</h2>
-    <p>
-      هذا النوع يحذف تفاصيل بصرية دقيقة جدًا لا تلاحظها العين البشرية بسهولة، مقابل تقليل كبير في حجم
-      الملف. هذا هو أساس صيغة JPG، وهو سبب وجود "نسبة الجودة" في أي أداة ضغط — كل ما قللت النسبة، زاد
-      حذف التفاصيل وصغر الحجم.
-    </p>
+<p>
+  "ضغط الصورة" مصطلح يُستخدم بشكل عام، لكن فعليًا هناك نوعان مختلفان تمامًا من الضغط، وفهم الفرق
+  بينهما يوفر عليك الكثير من التجربة والخطأ.
+</p>
 
-    <blockquote>
-      قاعدة عملية: جودة بين 70% و85% تعطي توازنًا ممتازًا بين الحجم والجودة المرئية لمعظم الصور —
-      نادرًا ما تحتاج جودة 100% لصور الويب العادية.
-    </blockquote>
+<div class="toc">
+  <h2>محتوى المقال</h2>
+  <ul>
+    <li><a href="#why">لماذا حجم الصورة يهم فعليًا؟</a></li>
+    <li><a href="#lossless">النوع الأول: الضغط بلا فقدان (Lossless)</a></li>
+    <li><a href="#lossy">النوع الثاني: الضغط بفقدان (Lossy)</a></li>
+    <li><a href="#choose">أيهما تختار؟</a></li>
+    <li><a href="#steps">خطوات عملية لضغط صورك</a></li>
+    <li><a href="#mistakes">أخطاء شائعة عند ضغط الصور</a></li>
+    <li><a href="#faq">أسئلة شائعة</a></li>
+  </ul>
+</div>
 
-    <h2>أيهما تختار؟</h2>
-    <p>
-      لو الصورة فيها نص أو حواف حادة وخطوط دقيقة (مثل لقطة شاشة أو رسم بياني)، الضغط بلا فقدان أو
-      صيغة PNG غالبًا الخيار الأنسب. أما الصور الفوتوغرافية العادية — منتجات، أشخاص، مناظر — فتتحمل
-      ضغطًا بفقدان بجودة متوسطة إلى عالية دون أي فرق ملحوظ للعين المجردة.
-    </p>
+<h2 id="why">لماذا حجم الصورة يهم فعليًا؟</h2>
+<p>
+  الصور غالبًا أكبر عنصر في وزن أي صفحة ويب — أحيانًا بتشكّل أكتر من 60% من إجمالي حجم الصفحة.
+  ده معناه إن صورة واحدة كبيرة الحجم ممكن تبطّئ تحميل صفحتك بشكل ملحوظ، وده مش بس تجربة مستخدم
+  سيئة، لكنه كمان عامل ترتيب رسمي في جوجل ضمن مؤشرات Core Web Vitals — خصوصًا مؤشر LCP (أكبر عنصر
+  معروض) اللي غالبًا بيكون صورة. يعني ضغط صورك مش رفاهية تقنية، هو خطوة أساسية لتحسين محركات البحث
+  (SEO) وتجربة الزوار معًا.
+</p>
 
-    <h2>خطوات عملية لضغط صورك</h2>
-    <p>
-      ابدأ دائمًا بجودة حوالي 80%، وقارن الصورة الناتجة بالأصلية على نفس الشاشة. لو الفرق غير ملحوظ،
-      جرّب النزول لـ70% أو أقل لتوفير أكبر. لو بدأت تلاحظ تشويشًا (Artifacts) حول الحواف أو فقدانًا
-      واضحًا في التفاصيل، ارجع للجودة الأعلى.
-    </p>
+<h2 id="lossless">النوع الأول: الضغط بلا فقدان (Lossless)</h2>
+<p>
+  هذا النوع يعيد ترتيب بيانات الصورة بكفاءة أكبر دون حذف أي تفصيل بصري — الصورة الناتجة مطابقة
+  للأصل بكسل بكسل، لكن حجم الملف أصغر. صيغة PNG تستخدم هذا النوع من الضغط بطبيعتها، لذلك الهامش
+  المتاح لتصغيرها أكثر محدود جدًا.
+</p>
 
-    <div class="tool-cta">
-      <div>
-        <div class="txt">جرّب ضاغط الصور الآن</div>
-        <div class="sub">حافظ على نفس صيغة الصورة الأصلية (JPG تبقى JPG) مع تقليل الحجم</div>
-      </div>
-      <a class="btn btn-primary" href="../tools/image-compressor.html">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="M14 10l7-7"/><path d="M3 21l7-7"/></svg>
-        افتح الأداة
-      </a>
-    </div>
+<h2 id="lossy">النوع الثاني: الضغط بفقدان (Lossy)</h2>
+<p>
+  هذا النوع يحذف تفاصيل بصرية دقيقة جدًا لا تلاحظها العين البشرية بسهولة، مقابل تقليل كبير في حجم
+  الملف. هذا هو أساس صيغة JPG، وهو سبب وجود "نسبة الجودة" في أي أداة ضغط — كل ما قللت النسبة، زاد
+  حذف التفاصيل وصغر الحجم.
+</p>
+<blockquote>
+  قاعدة عملية: جودة بين 70% و85% تعطي توازنًا ممتازًا بين الحجم والجودة المرئية لمعظم الصور —
+  نادرًا ما تحتاج جودة 100% لصور الويب العادية.
+</blockquote>
 
-    <h2>خلاصة</h2>
-    <p>
-      لا يوجد رقم "صحيح" واحد للجودة يناسب كل الصور — لكن البدء من 75-80% ومقارنة النتيجة بعينك هو
-      أسرع طريق لإيجاد التوازن المثالي لصورك أنت.
-    </p>
-  </div>
+<h2 id="choose">أيهما تختار؟</h2>
+<p>
+  لو الصورة فيها نص أو حواف حادة وخطوط دقيقة (مثل لقطة شاشة أو رسم بياني)، الضغط بلا فقدان أو
+  صيغة PNG غالبًا الخيار الأنسب. أما الصور الفوتوغرافية العادية — منتجات، أشخاص، مناظر — فتتحمل
+  ضغطًا بفقدان بجودة متوسطة إلى عالية دون أي فرق ملحوظ للعين المجردة. لو عايز أفضل نتيجة ممكنة،
+  صيغة WebP الحديثة بتجمع مميزات الاتنين وبتدي حجم أصغر من JPG بنفس الجودة تقريبًا.
+</p>
+
+<h2 id="steps">خطوات عملية لضغط صورك</h2>
+<p>
+  ابدأ دائمًا بجودة حوالي 80%، وقارن الصورة الناتجة بالأصلية على نفس الشاشة. لو الفرق غير ملحوظ،
+  جرّب النزول لـ70% أو أقل لتوفير أكبر. لو بدأت تلاحظ تشويشًا (Artifacts) حول الحواف أو فقدانًا
+  واضحًا في التفاصيل، ارجع للجودة الأعلى.
+</p>
+
+<h2 id="mistakes">أخطاء شائعة عند ضغط الصور</h2>
+<p>
+  أشهر خطأ هو ضغط نفس الصورة أكتر من مرة — كل عملية ضغط بفقدان بتضيف فقدان جديد فوق اللي قبله،
+  فالنتيجة بعد كذا مرة تكون جودة سيئة واضحة حتى لو كل خطوة بمفردها كانت معقولة. الحل: احتفظ دائمًا
+  بالنسخة الأصلية غير المضغوطة، واضغط منها مباشرة كل مرة بدل الضغط فوق نسخة مضغوطة سابقًا. خطأ
+  تاني شائع: استخدام نفس نسبة الضغط لكل الصور من غير مراجعة بصرية — الصور المختلفة بتتحمل نسب ضغط
+  مختلفة حسب محتواها (تفاصيل كتيرة تتحمل أقل، ألوان مسطحة تتحمل أكتر).
+</p>
+
+<div class="tool-cta">
+<div>
+<div class="txt">جرّب ضاغط الصور الآن</div>
+<div class="sub">حافظ على نفس صيغة الصورة الأصلية (JPG تبقى JPG) مع تقليل الحجم</div>
+</div>
+<a class="btn btn-primary" href="../tools/image-compressor.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 14h6v6"></path><path d="M20 10h-6V4"></path><path d="M14 10l7-7"></path><path d="M3 21l7-7"></path></svg>
+    افتح الأداة
+  </a>
+</div>
+
+<h2 id="faq">أسئلة شائعة</h2>
+<div class="faq-item">
+  <h3>هل ضغط الصور يؤثر فعليًا على ترتيب موقعي في جوجل؟</h3>
+  <p style="font-size:13.5px;">نعم بشكل غير مباشر — سرعة تحميل الصفحة عامل ترتيب رسمي في جوجل ضمن Core Web Vitals، خصوصًا مؤشر LCP الذي غالبًا ما يتأثر مباشرة بحجم أكبر صورة في الصفحة.</p>
+</div>
+<div class="faq-item">
+  <h3>ما نسبة الجودة المثالية لضغط صور الويب؟</h3>
+  <p style="font-size:13.5px;">نسبة بين 70% و85% تعطي توازنًا ممتازًا بين الحجم والجودة المرئية لمعظم الصور، ونادرًا ما تحتاج جودة 100%.</p>
+</div>
+<div class="faq-item">
+  <h3>هل ضغط صورة أكثر من مرة يضر جودتها بشكل تراكمي؟</h3>
+  <p style="font-size:13.5px;">نعم مع الضغط بفقدان تحديدًا — كل عملية ضغط جديدة على ملف مضغوط سابقًا تضيف فقدانًا إضافيًا. يُفضّل الضغط دائمًا من النسخة الأصلية.</p>
+</div>
+<div class="faq-item">
+  <h3>هل هناك فرق بين ضغط الصورة وتغيير حجمها (Resize)؟</h3>
+  <p style="font-size:13.5px;">نعم، الضغط يقلل حجم الملف بالحفاظ على نفس الأبعاد، بينما تغيير الحجم يغيّر الأبعاد الفعلية للصورة. غالبًا يُستخدم الاثنان معًا لأفضل نتيجة.</p>
+</div>
+
+<h2>خلاصة</h2>
+<p>
+  لا يوجد رقم "صحيح" واحد للجودة يناسب كل الصور — لكن البدء من 75-80% ومقارنة النتيجة بعينك هو
+  أسرع طريق لإيجاد التوازن المثالي لصورك أنت، مع الأخذ في الاعتبار إن سرعة موقعك ونتائج بحثك بتستفيد
+  مباشرة من كل كيلوبايت توفّره.
+</p>
+
+</div>
 </div>
 
 <div class="wrap">
-  <div class="ad-slot ad-slot-leaderboard">
-    <span class="ad-label">إعلان · Advertisement</span>
-    <div class="ad-slot-inner">
-      <!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
-      <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-      <!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-    </div>
-  </div>
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
 </div>
-
+</div>
+</div>
 <footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
-      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
-    </div>
-    <div class="footer-col">
-      <h4>الموقع</h4>
-      <a href="../index.html">الصفحة الرئيسية</a>
-      <a href="index.html">المدونة</a>
-      <a href="../about.html">من نحن</a>
-      <a href="../contact.html">تواصل معنا</a>
-    </div>
-    <div class="footer-col">
-      <h4>قانوني</h4>
-      <a href="../privacy.html">سياسة الخصوصية</a>
-      <a href="../terms.html">شروط الاستخدام</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
-    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
-  </div>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a>
+<a href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
 </footer>
-
 <script src="../assets/main.js"></script>
 </body>
 </html>

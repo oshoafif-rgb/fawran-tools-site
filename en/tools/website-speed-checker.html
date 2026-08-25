@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Website Speed Test | Fawran Tools</title>
+<meta content="Check website performance and Core Web Vitals using Google PageSpeed Insights data." name="description"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/website-speed-checker.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/en/tools/website-speed-checker.html" property="og:url"/>
+<meta content="Website Speed Test | Fawran Tools" property="og:title"/>
+<meta content="Check website performance and Core Web Vitals using Google PageSpeed Insights data." property="og:description"/>
+<meta content="Fawran Tools" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Website Speed Test | Fawran Tools" name="twitter:title"/>
+<meta content="Check website performance and Core Web Vitals using Google PageSpeed Insights data." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<style>
+  .url-input-row{display:flex;gap:10px;flex-wrap:wrap;}
+  .url-input-row input{
+    flex:1;min-width:220px;font-family:'IBM Plex Mono',monospace;font-size:14px;padding:14px 16px;
+    border-radius:12px;border:1.5px solid var(--line);background:#FDFCFA;color:var(--ink);direction:ltr;text-align:left;
+  }
+  [data-theme="dark"] .url-input-row input{background:#211F34;}
+  .url-input-row input:focus{outline:none;border-color:var(--indigo);}
+
+  .strategy-chips{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
+  .strategy-chip{font-size:12.5px;font-weight:700;padding:8px 15px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer;}
+  [data-theme="dark"] .strategy-chip{background:var(--surface-sunk);}
+  .strategy-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+  .cat-chip{font-size:12px;font-weight:700;padding:7px 13px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer;opacity:.55;}
+  [data-theme="dark"] .cat-chip{background:var(--surface-sunk);}
+  .cat-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);opacity:1;}
+
+  .adv-toggle{margin-top:14px;font-size:12.5px;font-weight:700;color:var(--indigo-deep);cursor:pointer;display:inline-flex;align-items:center;gap:5px;}
+  .adv-panel{display:none;margin-top:12px;padding:14px 16px;background:var(--surface-sunk);border-radius:12px;}
+  .adv-panel.open{display:block;}
+  .adv-panel label{font-size:12px;font-weight:700;display:block;margin-bottom:6px;}
+  .adv-panel input{width:100%;font-family:'IBM Plex Mono',monospace;font-size:13px;padding:10px 12px;border-radius:9px;border:1.5px solid var(--line);background:#FDFCFA;direction:ltr;text-align:left;}
+  [data-theme="dark"] .adv-panel input{background:#211F34;}
+  .adv-panel .note{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.8;}
+  .adv-panel .note a{color:var(--indigo-deep);font-weight:700;}
+
+  .loading-row{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;margin-top:18px;}
+  .spinner{width:16px;height:16px;border-radius:50%;border:2.5px solid var(--line);border-top-color:var(--indigo);animation:spin .7s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .scores-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:22px;}
+  .score-hero{display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 16px;background:var(--surface);border:1px solid var(--line);border-radius:16px;flex:1 1 150px;text-align:center;}
+  .score-ring-big{position:relative;width:84px;height:84px;flex:0 0 auto;}
+  .score-ring-big svg{transform:rotate(-90deg);}
+  .score-ring-big .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:24px;}
+  .score-hero .t{font-weight:800;font-size:13px;}
+
+  .metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:22px;}
+  .metric-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;}
+  .metric-box .n{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:19px;}
+  .metric-box .l{font-size:11px;color:var(--muted);margin-top:4px;}
+  .metric-box.good .n{color:var(--good);}
+  .metric-box.average .n{color:var(--gold-deep);}
+  .metric-box.poor .n{color:var(--danger);}
+
+  .screenshot-box{margin-top:22px;text-align:center;}
+  .screenshot-box img{max-width:220px;border-radius:12px;border:1px solid var(--line);}
+  .screenshot-box .cap{font-size:11.5px;color:var(--muted);margin-top:8px;}
+
+  .section-h{font-weight:800;font-size:14px;margin:26px 0 4px;display:flex;align-items:center;gap:8px;}
+  .opp-item{padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-bottom:8px;font-size:13px;}
+  .opp-item .t{font-weight:700;}
+  .opp-item .save{font-family:'IBM Plex Mono',monospace;color:var(--gold-deep);font-size:11.5px;margin-top:3px;}
+  .opp-item .desc{font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.8;}
+
+  .copy-report-btn{margin-top:18px;}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Website Speed Test",
+  "url": "https://fawran.tools/en/tools/website-speed-checker.html",
+  "description": "Check website performance and Core Web Vitals using Google PageSpeed Insights data.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fawran Tools",
+    "url": "https://fawran.tools/en/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Website Tools andTextandText",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Checker secretText Website",
+      "item": "https://fawran.tools/en/tools/website-speed-checker.html"
+    }
+  ],
+  "name": "Text secretText Website",
+  "description": "Text secretText Website andText Core Web Vitals Text data PageSpeed Text."
+}</script>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="website speed test, pagespeed test, core web vitals" name="keywords"/>
+<link href="https://fawran.tools/tools/website-speed-checker.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/website-speed-checker.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/website-speed-checker.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../../en/index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../../en/index.html">Tools</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../../tools/website-speed-checker.html" title="View in Arabic">AR</a>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../../en/index.html">Tools</a>/ Website Tools  /</div>
+<h1>Website Speed Test</h1>
+<p class="tool-lede">Check website performance and Core Web Vitals using Google PageSpeed Insights data.</p>
+<div class="tool-card-shell">
+<div class="url-input-row">
+<input id="siteUrl" placeholder="https://example.com" type="text"/>
+<button class="btn btn-primary" id="checkBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+        Run speed test
+      </button>
+</div>
+<div class="strategy-chips">
+<span class="strategy-chip active" data-strategy="mobile">📱 Mobile</span>
+<span class="strategy-chip" data-strategy="desktop">💻 Desktop</span>
+</div>
+<div class="strategy-chips">
+<span class="cat-chip active" data-cat="performance">Performance</span>
+<span class="cat-chip" data-cat="seo">SEO</span>
+<span class="cat-chip" data-cat="accessibility">Accessibility</span>
+<span class="cat-chip" data-cat="best-practices">Best practices</span>
+</div>
+<div class="adv-toggle" id="advToggle">
+<svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>( API  )</div>
+<div class="adv-panel" id="advPanel">
+<label for="apiKeyInput">Option</label>
+<input id="apiKeyInput" placeholder="AIzaSy..." type="text"/>
+<p class="note">Use the controls below to process your content quickly in your browser.<a href="https://developers.google.com/speed/docs/insights/v5/get-started" rel="noopener" target="_blank">↗</a>
+</p>
+</div>
+<div class="loading-row" id="loadingRow" style="display:none;">
+<div class="spinner"></div>
+<span id="loadingText">Analyzing... this may take 15–30 seconds</span>
+</div>
+<p id="errMsg" style="display:none;color:var(--danger);font-size:13px;margin-top:16px;line-height:1.8;"></p>
+<div id="resultsWrap" style="display:none;">
+<div class="scores-row" id="scoresRow"></div>
+<div class="metrics-grid" id="metricsGrid"></div>
+<div class="screenshot-box" id="screenshotBox" style="display:none;">
+<img alt="Text Text Text Website Text Text" id="screenshotImg"/>
+<div class="cap">Page   Download</div>
+</div>
+<div id="opportunitiesSection" style="display:none;">
+<div class="section-h">🚀</div>
+<div id="oppList"></div>
+</div>
+<div id="diagnosticsSection" style="display:none;">
+<div class="section-h">🔍</div>
+<div id="diagList"></div>
+</div>
+<button class="btn btn-primary copy-report-btn" id="copyReportBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        Copy report summary as text
+      </button>
+</div>
+</div>
+<div class="footer-note">This tool sends the website URL to an external performance service to retrieve PageSpeed data. Do not enter private URLs unless you are comfortable sending them to that service.</div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../../en/blog/website-speed-guide.html" style="color:var(--indigo-deep);font-weight:700;">:    Core Web Vitals</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">Ad · Advertisement</span>
+<div class="ad-slot-inner">Advertisement AdSense</div>
+</div>
+</div>
+<div class="wrap"><div class="rating-widget" data-tool-slug="website-speed-checker">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Use the controls below to process your content quickly in your browser.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../../en/index.html">Page</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../../en/privacy.html">Privacy Policy</a>
+<a href="../../en/terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Made with care for internet users</span>
+</div>
+</footer>
+<script>
+const siteUrl = document.getElementById('siteUrl');
+const checkBtn = document.getElementById('checkBtn');
+const strategyChips = document.querySelectorAll('.strategy-chip');
+const catChips = document.querySelectorAll('.cat-chip');
+const advToggle = document.getElementById('advToggle');
+const advPanel = document.getElementById('advPanel');
+const apiKeyInput = document.getElementById('apiKeyInput');
+const loadingRow = document.getElementById('loadingRow');
+const loadingText = document.getElementById('loadingText');
+const errMsg = document.getElementById('errMsg');
+const resultsWrap = document.getElementById('resultsWrap');
+const scoresRow = document.getElementById('scoresRow');
+const metricsGrid = document.getElementById('metricsGrid');
+const screenshotBox = document.getElementById('screenshotBox');
+const screenshotImg = document.getElementById('screenshotImg');
+const opportunitiesSection = document.getElementById('opportunitiesSection');
+const oppList = document.getElementById('oppList');
+const diagnosticsSection = document.getElementById('diagnosticsSection');
+const diagList = document.getElementById('diagList');
+const copyReportBtn = document.getElementById('copyReportBtn');
+
+let strategy = 'mobile';
+let selectedCats = new Set(['performance']);
+let lastReporttext = '';
+
+// Restore saved API key
+try{
+  const savedKey = localStorage.getItem('fawran-pagespeed-key');
+  if(savedKey) apiKeyInput.value = savedKey;
+}catch(e){}
+
+advToggle.addEventListener('click', ()=> advPanel.classList.toggle('open'));
+apiKeyInput.addEventListener('input', ()=>{
+  try{ localStorage.setItem('fawran-pagespeed-key', apiKeyInput.value.trim()); }catch(e){}
+});
+
+strategyChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    strategyChips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    strategy = chip.dataset.strategy;
+  });
+});
+
+catChips.forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    const cat = chip.dataset.cat;
+    if(cat === 'performance') return; // performance always required
+    if(selectedCats.has(cat)){
+      selectedCats.delete(cat);
+      chip.classList.remove('active');
+    } else {
+      selectedCats.add(cat);
+      chip.classList.add('active');
+    }
+  });
+});
+
+function normalizeUrl(u){
+  u = u.trim();
+  if(!/^https?:\/\//i.test(u)) u = 'https://' + u;
+  return u;
+}
+
+const CAT_LABELS = {
+  performance: 'Performance',
+  seo: 'SEO',
+  accessibility: 'Accessibility',
+  'best-practices': 'Best practices'
+};
+
+function scoreColor(score){
+  return score >= 90 ? 'var(--good)' : score >= 50 ? 'var(--gold-deep)' : 'var(--danger)';
+}
+
+async function fetchWithRetry(apiUrl, attempt){
+  attempt = attempt || 1;
+  const res = await fetch(apiUrl);
+  if(res.status === 429 && attempt < 2){
+    loadingText.textContent = 'Text Text Processing Retry Text...';
+    await new Promise(r => setTimeout(r, 3000));
+    return fetchWithRetry(apiUrl, attempt + 1);
+  }
+  return res;
+}
+
+async function runCheck(){
+  const url = siteUrl.value.trim();
+  if(!url){
+    errMsg.textContent = 'Text URL Website orText.';
+    errMsg.style.display = 'block';
+    return;
+  }
+
+  errMsg.style.display = 'none';
+  resultsWrap.style.display = 'none';
+  loadingText.textContent = 'Analyzing... this may take 15–30 seconds';
+  loadingRow.style.display = 'flex';
+  checkBtn.disabled = true;
+
+  const target = normalizeUrl(url);
+  const key = apiKeyInput.value.trim();
+  const cats = Array.from(selectedCats).map(c => `&category=${c}`).join('');
+  const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(target)}&strategy=${strategy}${cats}${key ? `&key=${encodeURIComponent(key)}` : ''}`;
+
+  try{
+    const res = await fetchWithRetry(apiUrl);
+    if(!res.ok){
+      throw new Error(res.status === 429 ? 'RATE_LIMIT' : res.status === 400 ? 'BAD_URL' : 'API_ERROR');
+    }
+    const data = await res.json();
+
+    const lr = data.lighthouseresult;
+    if(!lr) throw new Error('NO_RESULT');
+    const audits = lr.audits;
+
+    // ---- Score rings for every requested category ----
+    scoresRow.innerHTML = Object.keys(lr.categories).map(catKey=>{
+      const cat = lr.categories[catKey];
+      const score = Math.round((cat.score || 0) * 100);
+      const circumference = 226; // 2*PI*36
+      const offset = circumference - (circumference*score/100);
+      return `
+        <div class="score-hero">
+          <div class="score-ring-big" style="width:78px;height:78px;">
+            <svg width="78" height="78" viewBox="0 0 78 78">
+              <circle cx="39" cy="39" r="34" fill="none" stroke="var(--surface-sunk)" stroke-width="8"/>
+              <circle cx="39" cy="39" r="34" fill="none" stroke="${scoreColor(score)}" stroke-width="8" stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" stroke-linecap="round"/>
+            </svg>
+            <div class="num" style="font-size:20px;">${score}</div>
+          </div>
+          <div class="t">${CAT_LABELS[catKey] || cat.title}</div>
+        </div>`;
+    }).join('');
+
+    // ---- Core Web Vitals metrics (performance only) ----
+    if(lr.categories.performance){
+      const metrics = [
+        { key:'first-contentful-paint', label:'orText Text TextandText (FCP)' },
+        { key:'largest-contentful-paint', label:'Text Text TextandText (LCP)' },
+        { key:'speed-index', label:'Text TextsecretText' },
+        { key:'total-blocking-time', label:'andText Text AllText (TBT)' },
+        { key:'cumulative-layout-shift', label:'Text Text (CLS)' },
+        { key:'interactive', label:'andText Text (TTI)' },
+        { key:'server-response-time', label:'Text Textserver (TTFB)' },
+      ];
+      metricsGrid.innerHTML = metrics.map(m=>{
+        const audit = audits[m.key];
+        if(!audit) return '';
+        const displayVal = audit.displayValue || '—';
+        const score = audit.score;
+        const cls = score === null ? '' : score >= 0.9 ? 'good' : score >= 0.5 ? 'average' : 'poor';
+        return `<div class="metric-box ${cls}"><div class="n">${displayVal}</div><div class="l">${m.label}</div></div>`;
+      }).join('');
+    } else {
+      metricsGrid.innerHTML = '';
+    }
+
+    // ---- Final screenshot ----
+    const shot = audits['final-screenshot'];
+    if(shot && shot.details && shot.details.data){
+      screenshotImg.src = shot.details.data;
+      screenshotBox.style.display = 'block';
+    } else {
+      screenshotBox.style.display = 'none';
+    }
+
+    // ---- Opportunities & Diagnostics (grouped via auditRefs) ----
+    const perfRefs = (lr.categories.performance && lr.categories.performance.auditRefs) || [];
+    const oppRefs = perfRefs.filter(r => r.group === 'load-opportunities' && audits[r.id] && audits[r.id].score !== null && audits[r.id].score < 0.9);
+    const diagRefs = perfRefs.filter(r => r.group === 'diagnostics' && audits[r.id] && audits[r.id].score !== null && audits[r.id].score < 0.9);
+
+    if(oppRefs.length){
+      opportunitiesSection.style.display = 'block';
+      oppList.innerHTML = oppRefs.slice(0,6).map(r=>{
+        const a = audits[r.id];
+        return `<div class="opp-item"><div class="t">${a.title}</div>${a.displayValue ? `<div class="save">Savings Text: ${a.displayValue}</div>` : ''}</div>`;
+      }).join('');
+    } else {
+      opportunitiesSection.style.display = 'none';
+    }
+
+    if(diagRefs.length){
+      diagnosticsSection.style.display = 'block';
+      diagList.innerHTML = diagRefs.slice(0,6).map(r=>{
+        const a = audits[r.id];
+        return `<div class="opp-item"><div class="t">${a.title}</div>${a.description ? `<div class="desc">${a.description.replace(/\[([^\]]+)\]\([^)]+\)/g,'$1')}</div>` : ''}</div>`;
+      }).join('');
+    } else {
+      diagnosticsSection.style.display = 'none';
+    }
+
+    // ---- Build copyable text report ----
+    const scoreLines = Object.keys(lr.categories).map(k => `${CAT_LABELS[k] || k}: ${Math.round((lr.categories[k].score||0)*100)}/100`).join(' | ');
+    lastReporttext = `Text secretText Website — ${target} (${strategy === 'mobile' ? 'TextandText' : 'TextandText'})\n${scoreLines}\n\nText Text Text Fawran Tools`;
+
+    resultsWrap.style.display = 'block';
+  } catch(err){
+    console.error(err);
+    if(err.message === 'RATE_LIMIT'){
+      errMsg.textContent = apiKeyInput.value.trim()
+        ? 'Text Text Text Text Text — Text Text Text valid andText TextandText PageSpeed Insights APIText Text Text TextandText.'
+        : 'Text Google Text Text (Text Text Text Text TextandTextandText Text). Text Text API free Text Text from settings Text Text Text Text TextbeforeText or Text TextandText After Text.';
+    } else if(err.message === 'BAD_URL'){
+      errMsg.textContent = 'Text Text Text TextURL. Text from Text Text andText available Text (andText Text Text TextandText or Text Text Text).';
+    } else {
+      errMsg.textContent = 'Text error not TextandText Text Text. Text from Text Text andText TextandText.';
+    }
+    errMsg.style.display = 'block';
+  }
+
+  loadingRow.style.display = 'none';
+  checkBtn.disabled = false;
+}
+
+copyReportBtn.addEventListener('click', async ()=>{
+  try{
+    await navigator.clipboard.writetext(lastReporttext);
+    const orig = copyReportBtn.innerHTML;
+    copyReportBtn.innerHTML = '✓ Copied';
+    setTimeout(()=> copyReportBtn.innerHTML = orig, 1800);
+  }catch(e){}
+});
+
+checkBtn.addEventListener('click', runCheck);
+siteUrl.addEventListener('keydown', e=>{ if(e.key === 'Enter') runCheck(); });
+</script>
+<script src="../../assets/rating-widget.js"></script></body>
+</html>

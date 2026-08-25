@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Robots.txt Generator | Fawran Tools</title>
+<meta content="Generate a clean robots.txt file with allow, disallow and sitemap directives for search engines." name="description"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/robots-generator.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/en/tools/robots-generator.html" property="og:url"/>
+<meta content="Robots.txt Generator | Fawran Tools" property="og:title"/>
+<meta content="Generate a clean robots.txt file with allow, disallow and sitemap directives for search engines." property="og:description"/>
+<meta content="Fawran Tools" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Robots.txt Generator | Fawran Tools" name="twitter:title"/>
+<meta content="Generate a clean robots.txt file with allow, disallow and sitemap directives for search engines." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<style>
+  .rg-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  @media(max-width:860px){.rg-layout{grid-template-columns:1fr;}}
+  .form-field{margin-bottom:16px;}
+  .form-field label{display:block;font-size:13.5px;font-weight:700;margin-bottom:7px;}
+  .form-field input, .form-field textarea{
+    width:100%;font-family:'Tajawal',sans-serif;font-size:14px;padding:11px 13px;
+    border-radius:9px;border:1px solid var(--line);background:#FDFCFA;color:var(--ink);
+  }
+  .form-field input:focus, .form-field textarea:focus{outline:none;border-color:var(--indigo);}
+  .form-field textarea{resize:vertical;min-height:80px;font-family:'IBM Plex Mono',monospace;font-size:13px;direction:ltr;text-align:left;}
+  .form-hint{font-size:11.5px;color:var(--muted);margin-top:5px;}
+  .bot-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 12px;border:1px solid var(--line);border-radius:9px;margin-bottom:8px;background:var(--surface);
+  }
+  .bot-row .name{font-size:13.5px;font-weight:700;}
+  .bot-row .name .mono{font-size:11px;color:var(--muted);display:block;margin-top:1px;}
+  .code-out{
+    background:var(--ink);color:#E8E6F5;border-radius:12px;padding:18px;
+    font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.9;
+    white-space:pre-wrap;word-break:break-all;direction:ltr;text-align:left;
+    max-height:400px;overflow:auto;
+  }
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Robots.txt Generator",
+  "url": "https://fawran.tools/en/tools/robots-generator.html",
+  "description": "Generate a clean robots.txt file with allow, disallow and sitemap directives for search engines.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fawran Tools",
+    "url": "https://fawran.tools/en/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "SEO Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Robots.txt Generator Free",
+      "item": "https://fawran.tools/en/tools/robots-generator.html"
+    }
+  ],
+  "name": "Generator robots.txt",
+  "description": "Create file robots.txt validText Textsearch engines Text Sitemap andrules Allow andDisallow."
+}</script>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="robots.txt generator, robots generator, seo robots txt" name="keywords"/>
+<link href="https://fawran.tools/tools/robots-generator.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/robots-generator.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/robots-generator.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../../en/index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../../en/index.html">Tools</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../../en/index.html">Tools</a> / SEO Tools / Robots.txt Generator</div>
+<h1>Robots.txt Generator</h1>
+<p class="tool-lede">Generate a clean robots.txt file with allow, disallow and sitemap directives for search engines.</p>
+<div class="tool-card-shell">
+<div class="rg-layout">
+<div>
+<div class="form-field">
+<label>Sitemap URL</label>
+<input id="fSitemap" placeholder="https://example.com/sitemap.xml" type="text"/>
+</div>
+<div class="form-field">
+<label>Disallowed paths (one per line)</label>
+<textarea id="fDisallow" placeholder="/admin/
+/cart/
+/search"></textarea>
+<div class="form-hint">: /wp-admin/  /checkout —</div>
+</div>
+<div class="form-field">
+<label>Explicitly allowed paths (optional)</label>
+<textarea id="fAllow" placeholder="/wp-admin/admin-ajax.php"></textarea>
+</div>
+<div class="form-field">
+<label>Search engines to block completely</label>
+<div class="bot-row"><span class="name">GPTBot <span class="mono">OpenAI</span></span><input id="botGPT" type="checkbox"/></div>
+<div class="bot-row"><span class="name">CCBot <span class="mono">Common Crawl</span></span><input id="botCC" type="checkbox"/></div>
+<div class="bot-row"><span class="name">AhrefsBot <span class="mono">Ahrefs SEO</span></span><input id="botAhrefs" type="checkbox"/></div>
+<div class="bot-row"><span class="name">SemrushBot <span class="mono">Semrush SEO</span></span><input id="botSemrush" type="checkbox"/></div>
+</div>
+</div>
+<div>
+<div class="section-title" style="margin-bottom:10px;"><span class="dot"></span>file</div>
+<div class="code-out" id="codeOut"></div>
+<button class="btn btn-primary" id="copyBtn" style="width:100%;justify-content:center;margin-top:14px;">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Copy code
+        </button>
+<button class="btn btn-dark" id="downloadBtn" style="width:100%;justify-content:center;margin-top:10px;">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+          Download robots.txt
+        </button>
+</div>
+</div>
+</div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../../en/blog/robots-txt-guide.html" style="color:var(--indigo-deep);font-weight:700;">:   file</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">Ad · Advertisement</span>
+<div class="ad-slot-inner">
+Advertisement AdSense    :
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="rating-widget" data-tool-slug="robots-generator">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Use the controls below to process your content quickly in your browser.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../../en/index.html">Page</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../../en/privacy.html">Privacy Policy</a>
+<a href="../../en/terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Made with care for internet users</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script><script src="../../assets/rating-widget.js"></script>
+<script>
+const fSitemap = document.getElementById('fSitemap');
+const fDisallow = document.getElementById('fDisallow');
+const fAllow = document.getElementById('fAllow');
+const botGPT = document.getElementById('botGPT');
+const botCC = document.getElementById('botCC');
+const botAhrefs = document.getElementById('botAhrefs');
+const botSemrush = document.getElementById('botSemrush');
+const codeOut = document.getElementById('codeOut');
+const copyBtn = document.getElementById('copyBtn');
+const downloadBtn = document.getElementById('downloadBtn');
+
+function buildRobots(){
+  const lines = [];
+  lines.push('User-agent: *');
+  const disallowLines = fDisallow.value.split('\n').map(s=>s.trim()).filter(Boolean);
+  const allowLines = fAllow.value.split('\n').map(s=>s.trim()).filter(Boolean);
+
+  if(!disallowLines.length){
+    lines.push('Allow: /');
+  } else {
+    allowLines.forEach(p => lines.push(`Allow: ${p}`));
+    disallowLines.forEach(p => lines.push(`Disallow: ${p}`));
+  }
+
+  const excludedBots = [];
+  if(botGPT.checked) excludedBots.push('GPTBot');
+  if(botCC.checked) excludedBots.push('CCBot');
+  if(botAhrefs.checked) excludedBots.push('AhrefsBot');
+  if(botSemrush.checked) excludedBots.push('SemrushBot');
+
+  excludedBots.forEach(bot=>{
+    lines.push('');
+    lines.push(`User-agent: ${bot}`);
+    lines.push('Disallow: /');
+  });
+
+  if(fSitemap.value.trim()){
+    lines.push('');
+    lines.push(`Sitemap: ${fSitemap.value.trim()}`);
+  }
+
+  return lines.join('\n');
+}
+
+function update(){
+  codeOut.textContent = buildRobots();
+}
+
+[fSitemap, fDisallow, fAllow, botGPT, botCC, botAhrefs, botSemrush].forEach(el=>{
+  el.addEventListener('input', update);
+  el.addEventListener('change', update);
+});
+update();
+
+copyBtn.addEventListener('click', async ()=>{
+  try{
+    await navigator.clipboard.writetext(codeOut.textContent);
+    const original = copyBtn.innerHTML;
+    copyBtn.innerHTML = 'Copied ✓';
+    setTimeout(()=> copyBtn.innerHTML = original, 1500);
+  }catch(e){ console.error(e); }
+});
+
+downloadBtn.addEventListener('click', ()=>{
+  const blob = new Blob([codeOut.textContent], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'robots.txt';
+  document.body.appendChild(a); a.click(); a.remove();
+});
+</script>
+</body>
+</html>

@@ -1,207 +1,246 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+<html dir="rtl" lang="ar">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>لماذا يجب تحويل صور مدونتك إلى WebP قبل النشر | فورا.tools</title>
-<meta name="description" content="دليل مختصر لفهم صيغة WebP، وكيف تقلل حجم صفحتك وتحسّن سرعة تحميل موقعك دون التضحية بالجودة.">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="apple-touch-icon" href="../favicon.svg">
-<meta name="theme-color" content="#4F3FF0">
-<link rel="canonical" href="https://fawran.tools/blog/webp-cover-images-guide.html">
-<link rel="alternate" hreflang="ar" href="https://fawran.tools/blog/webp-cover-images-guide.html">
-<link rel="alternate" hreflang="en" href="https://fawran.tools/en/blog/webp-cover-images-guide.html">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://fawran.tools/blog/webp-cover-images-guide.html">
-<meta property="og:title" content="لماذا يجب تحويل صور مدونتك إلى WebP قبل النشر | فورا.tools">
-<meta property="og:description" content="دليل مختصر لفهم صيغة WebP، وكيف تقلل حجم صفحتك وتحسّن سرعة تحميل موقعك دون التضحية بالجودة.">
-<meta property="og:site_name" content="فورا.tools">
-<meta property="og:locale" content="ar_AR">
-<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="لماذا يجب تحويل صور مدونتك إلى WebP قبل النشر | فورا.tools">
-<meta name="twitter:description" content="دليل مختصر لفهم صيغة WebP، وكيف تقلل حجم صفحتك وتحسّن سرعة تحميل موقعك دون التضحية بالجودة.">
-<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css">
+<meta content="دليل شامل لفهم صيغة WebP، مقارنتها بـJPG وPNG، تأثيرها على Core Web Vitals وترتيب SEO، وكيف تحوّل صورك بسهولة دون التضحية بالجودة." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/blog/webp-cover-images-guide.html" rel="canonical"/>
+
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/blog/webp-cover-images-guide.html" property="og:url"/>
+<meta content="لماذا يجب تحويل صور مدونتك إلى WebP قبل النشر | فورا.tools" property="og:title"/>
+<meta content="دليل شامل لفهم صيغة WebP، مقارنتها بـJPG وPNG، وتأثيرها على Core Web Vitals وترتيب SEO." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="لماذا يجب تحويل صور مدونتك إلى WebP قبل النشر | فورا.tools" name="twitter:title"/>
+<meta content="دليل شامل لفهم صيغة WebP، مقارنتها بـJPG وPNG، وتأثيرها على Core Web Vitals وترتيب SEO." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+  .size-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+  .size-table th, .size-table td{padding:9px 12px;border:1px solid var(--line);text-align:right;}
+  .size-table th{background:var(--surface-sunk);font-weight:800;}
+</style>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "لماذا يجب تحويل صور مدونتك إلى WebP قبل النشر",
-  "description": "دليل مختصر لفهم صيغة WebP، وكيف تقلل حجم صفحتك وتحسّن سرعة تحميل موقعك دون التضحية بالجودة.",
-  "url": "https://fawran.tools/blog/webp-cover-images-guide.html",
-  "datePublished": "2026-08-22",
-  "dateModified": "2026-08-22",
-  "author": {
-    "@type": "Organization",
-    "name": "فورا.tools"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "فورا.tools",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://fawran.tools/favicon.svg"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://fawran.tools/blog/webp-cover-images-guide.html"
-  }
-}
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"لماذا يجب تحويل صور مدونتك إلى WebP قبل النشر","description":"دليل شامل لفهم صيغة WebP، مقارنتها بـJPG وPNG، تأثيرها على Core Web Vitals وترتيب SEO، وكيف تحوّل صورك بسهولة.","url":"https://fawran.tools/blog/webp-cover-images-guide.html","datePublished":"2026-08-22","dateModified":"2026-08-25","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/webp-cover-images-guide.html"}}
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "المدونة",
-      "item": "https://fawran.tools/blog/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "لماذا يجب تحويل صور مدونتك إلى WebP قبل النشر",
-      "item": "https://fawran.tools/blog/webp-cover-images-guide.html"
-    }
-  ]
-}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"لماذا يجب تحويل صور مدونتك إلى WebP قبل النشر","item":"https://fawran.tools/blog/webp-cover-images-guide.html"}]}
 </script>
-</head>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل كل المتصفحات الحديثة تدعم صيغة WebP؟","acceptedAnswer":{"@type":"Answer","text":"نعم، كل المتصفحات الرئيسية الحديثة (كروم، فايرفوكس، سفاري، إيدج) تدعم WebP بالكامل منذ سنوات، ونسبة استخدامها عالميًا تفوق 95% من المستخدمين."}},{"@type":"Question","name":"هل WebP بيأثر فعليًا على ترتيب موقعي في نتائج بحث جوجل؟","acceptedAnswer":{"@type":"Answer","text":"بشكل غير مباشر نعم — جوجل تعتبر سرعة تحميل الصفحة (المرتبطة مباشرة بحجم الصور) عامل ترتيب رسمي ضمن Core Web Vitals، وWebP يساهم بشكل مباشر في تحسين هذا المؤشر."}},{"@type":"Question","name":"هل أفقد جودة الصورة عند التحويل إلى WebP؟","acceptedAnswer":{"@type":"Answer","text":"لا فرق مرئي ملحوظ عند استخدام إعدادات جودة معقولة (80% فأعلى) — WebP مصممة لتعطي نفس الجودة البصرية تقريبًا لـJPG لكن بحجم أصغر بشكل كبير."}},{"@type":"Question","name":"هل يجب الاحتفاظ بنسخة أصلية JPG أو PNG بجانب WebP؟","acceptedAnswer":{"@type":"Answer","text":"يُفضّل الاحتفاظ بنسخة أصلية غير مضغوطة في أرشيفك الشخصي (للطباعة أو التعديل لاحقًا)، لكن للنشر على الموقع نفسه، نسخة WebP وحدها كافية تمامًا لمعظم الحالات."}}]}
+</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/webp-cover-images-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/webp-cover-images-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/webp-cover-images-guide.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-
 <header class="topbar">
-  <div class="topbar-inner">
-    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
-          <div class="nav-wrap">
-      <nav class="nav">
-      <a href="../index.html">الأدوات</a>
-      <a href="index.html" class="active">المدونة</a>
-      <a href="../about.html">من نحن</a>
-      <a href="../contact.html">تواصل معنا</a>
-    </nav>
-      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
-      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-      <a href="../en/blog/webp-cover-images-guide.html" class="lang-switch" title="View in English">EN</a>
-    </div>
-  </div>
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">الأدوات</a>
+<a class="active" href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/blog/webp-cover-images-guide.html" title="View in English">EN</a>
+</div>
+</div>
 </header>
-
 <div class="wrap">
-  <div class="page-head">
-    <div class="article-meta"><span class="tag">أدوات الصور</span><span>6 دقائق قراءة</span></div>
-    <h1>لماذا يجب تحويل صور مدونتك إلى WebP قبل النشر</h1>
-  </div>
+<div class="page-head">
+<div class="article-meta"><span class="tag">أدوات الصور</span><span>8 دقائق قراءة</span></div>
+<h1>لماذا يجب تحويل صور مدونتك إلى WebP قبل النشر</h1>
+</div>
 
-  <div class="content-card">
-    <p>
-      لو تدير مدونة أو متجرًا إلكترونيًا، غالبًا صورك هي أكبر عبء على سرعة موقعك. كل صورة JPG أو PNG
-      تضيفها تزيد من حجم الصفحة، وحجم الصفحة الأكبر يعني تحميلًا أبطأ — وسرعة الموقع عامل مباشر في ترتيبك
-      على جوجل وفي تجربة الزائر.
-    </p>
+<div class="content-card">
 
-    <h2>ما هي صيغة WebP؟</h2>
-    <p>
-      WebP صيغة صور طوّرتها جوجل خصيصًا للويب. الفكرة الأساسية بسيطة: نفس الجودة البصرية تقريبًا التي
-      تحصل عليها من JPG أو PNG، لكن بحجم ملف أصغر بشكل ملحوظ — غالبًا أصغر بنسبة 25 إلى 35% من JPG
-      بنفس الجودة المرئية.
-    </p>
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <text x="180" y="90" font-family="Arial" font-size="16" font-weight="900" fill="#8B89A3" text-anchor="middle">JPG</text>
+  <rect x="90" y="110" width="180" height="24" rx="6" fill="#332F4C"/>
+  <rect x="90" y="110" width="180" height="24" rx="6" fill="#B4232C"/>
+  <text x="180" y="160" font-family="IBM Plex Mono, monospace" font-size="13" fill="#E88" text-anchor="middle">210 KB</text>
+  <text x="400" y="90" font-family="Arial" font-size="16" font-weight="900" fill="#8B89A3" text-anchor="middle">PNG</text>
+  <rect x="310" y="110" width="180" height="24" rx="6" fill="#332F4C"/>
+  <rect x="310" y="110" width="180" height="24" rx="6" fill="#F0A93B"/>
+  <text x="400" y="160" font-family="IBM Plex Mono, monospace" font-size="13" fill="#F0A93B" text-anchor="middle">480 KB</text>
+  <text x="620" y="90" font-family="Arial" font-size="16" font-weight="900" fill="#8B89A3" text-anchor="middle">WebP</text>
+  <rect x="530" y="110" width="180" height="24" rx="6" fill="#332F4C"/>
+  <rect x="530" y="110" width="80" height="24" rx="6" fill="#2F7D53"/>
+  <text x="620" y="160" font-family="IBM Plex Mono, monospace" font-size="13" fill="#2F7D53" text-anchor="middle">140 KB</text>
+</svg>
 
-    <h2>ليه الفرق ده مهم فعليًا؟</h2>
-    <p>
-      تخيل مقالًا فيه 10 صور، كل واحدة بحجم 200 كيلوبايت كـ JPG. هذا يعني 2 ميجابايت إضافية يحمّلها
-      متصفح الزائر بس عشان الصور. لو حوّلت نفس الصور إلى WebP بنفس الجودة تقريبًا، ممكن تنزل لأقل من
-      1.5 ميجابايت — توفير حقيقي يظهر في سرعة تحميل الصفحة، خصوصًا على الجوال وشبكات الإنترنت البطيئة.
-    </p>
+<p>
+  لو تدير مدونة أو متجرًا إلكترونيًا، غالبًا صورك هي أكبر عبء على سرعة موقعك. كل صورة JPG أو PNG
+  تضيفها تزيد من حجم الصفحة، وحجم الصفحة الأكبر يعني تحميلًا أبطأ — وسرعة الموقع عامل مباشر في ترتيبك
+  على جوجل وفي تجربة الزائر.
+</p>
 
-    <blockquote>
-      جوجل نفسها توصي باستخدام صيغ صور حديثة مثل WebP كجزء من معايير Core Web Vitals التي تؤثر على
-      ترتيب الموقع في نتائج البحث.
-    </blockquote>
+<div class="toc">
+  <h2>محتوى المقال</h2>
+  <ul>
+    <li><a href="#what">ما هي صيغة WebP؟</a></li>
+    <li><a href="#why">ليه الفرق ده مهم فعليًا؟</a></li>
+    <li><a href="#compare">WebP مقابل JPG وPNG: مقارنة سريعة</a></li>
+    <li><a href="#when">متى تستخدم WebP ومتى لا؟</a></li>
+    <li><a href="#howto">كيف تحوّل صورك إلى WebP بسهولة؟</a></li>
+    <li><a href="#seo">تأثير WebP على تحسين محركات البحث</a></li>
+    <li><a href="#faq">أسئلة شائعة</a></li>
+  </ul>
+</div>
 
-    <h2>متى تستخدم WebP ومتى لا؟</h2>
-    <p>
-      WebP مناسبة تقريبًا لكل استخدامات الويب: صور المقالات، صور المنتجات، الصور المصغّرة، وحتى صور
-      الغلاف. الاستثناء الوحيد هو لو احتجت التوافق مع متصفحات قديمة جدًا لم تعد مستخدمة تقريبًا اليوم،
-      أو لو كنت بحاجة الاحتفاظ بالصورة الأصلية بصيغتها للطباعة أو التعديل لاحقًا — في هذه الحالة احتفظ
-      بنسخة أصلية وانشر نسخة WebP فقط.
-    </p>
+<h2 id="what">ما هي صيغة WebP؟</h2>
+<p>
+  WebP صيغة صور طوّرتها جوجل خصيصًا للويب. الفكرة الأساسية بسيطة: نفس الجودة البصرية تقريبًا التي
+  تحصل عليها من JPG أو PNG، لكن بحجم ملف أصغر بشكل ملحوظ — غالبًا أصغر بنسبة 25 إلى 35% من JPG
+  بنفس الجودة المرئية، وأصغر بكثير من PNG للصور اللي فيها شفافية.
+</p>
 
-    <h2>كيف تحوّل صورك إلى WebP بسهولة؟</h2>
-    <p>
-      لا تحتاج برنامج تعديل صور معقد أو خبرة تقنية. الطريقة الأسهل هي رفع الصور إلى أداة تحويل أونلاين
-      تعالجها مباشرة في متصفحك، مع إمكانية ضبط الجودة وتغيير المقاس في نفس الوقت — مثالي لو تنشر على
-      منصة مثل بلوجر وتحتاج مقاس غلاف محدد.
-    </p>
+<h2 id="why">ليه الفرق ده مهم فعليًا؟</h2>
+<p>
+  تخيل مقالًا فيه 10 صور، كل واحدة بحجم 200 كيلوبايت كـ JPG. هذا يعني 2 ميجابايت إضافية يحمّلها
+  متصفح الزائر بس عشان الصور. لو حوّلت نفس الصور إلى WebP بنفس الجودة تقريبًا، ممكن تنزل لأقل من
+  1.5 ميجابايت — توفير حقيقي يظهر في سرعة تحميل الصفحة، خصوصًا على الجوال وشبكات الإنترنت البطيئة.
+</p>
+<blockquote>
+  جوجل نفسها توصي باستخدام صيغ صور حديثة مثل WebP كجزء من معايير Core Web Vitals التي تؤثر على
+  ترتيب الموقع في نتائج البحث.
+</blockquote>
 
-    <div class="tool-cta">
-      <div>
-        <div class="txt">جرّب محوّل WebP الآن</div>
-        <div class="sub">تحويل وضغط وتغيير مقاس في أداة واحدة — مجانًا وبدون رفع صورك لأي خادم</div>
-      </div>
-      <a class="btn btn-primary" href="../tools/webp-converter.html">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
-        افتح الأداة
-      </a>
-    </div>
+<h2 id="compare">WebP مقابل JPG وPNG: مقارنة سريعة</h2>
+<table class="size-table">
+  <tr><th>الصيغة</th><th>الشفافية</th><th>حجم الملف التقريبي</th><th>الاستخدام الأمثل</th></tr>
+  <tr><td>JPG</td><td>لا</td><td>متوسط</td><td>صور فوتوغرافية عامة</td></tr>
+  <tr><td>PNG</td><td>نعم</td><td>كبير</td><td>شعارات ورسومات بخلفية شفافة</td></tr>
+  <tr><td>WebP</td><td>نعم</td><td>الأصغر</td><td>كل استخدامات الويب تقريبًا</td></tr>
+</table>
 
-    <h2>خلاصة</h2>
-    <p>
-      تحويل صورك إلى WebP خطوة بسيطة تأخذ دقائق، لكن أثرها على سرعة موقعك وتجربة زوارك حقيقي وملموس.
-      لو لسه بتنشر صور JPG أو PNG بدون تحويل، دي أسهل تحسينة تقدر تعملها اليوم.
-    </p>
-  </div>
+<h2 id="when">متى تستخدم WebP ومتى لا؟</h2>
+<p>
+  WebP مناسبة تقريبًا لكل استخدامات الويب: صور المقالات، صور المنتجات، الصور المصغّرة، وحتى صور
+  الغلاف. الاستثناء الوحيد هو لو احتجت التوافق مع متصفحات قديمة جدًا لم تعد مستخدمة تقريبًا اليوم،
+  أو لو كنت بحاجة الاحتفاظ بالصورة الأصلية بصيغتها للطباعة أو التعديل لاحقًا — في هذه الحالة احتفظ
+  بنسخة أصلية وانشر نسخة WebP فقط.
+</p>
+
+<h2 id="howto">كيف تحوّل صورك إلى WebP بسهولة؟</h2>
+<p>
+  لا تحتاج برنامج تعديل صور معقد أو خبرة تقنية. الطريقة الأسهل هي رفع الصور إلى أداة تحويل أونلاين
+  تعالجها مباشرة في متصفحك، مع إمكانية ضبط الجودة وتغيير المقاس في نفس الوقت — مثالي لو تنشر على
+  منصة مثل بلوجر وتحتاج مقاس غلاف محدد.
+</p>
+
+<h2 id="seo">تأثير WebP على تحسين محركات البحث</h2>
+<p>
+  تحسين محركات البحث (SEO) بيعتمد على عشرات العوامل، لكن سرعة الموقع من أهمها وأكترها تأثيرًا
+  مباشرًا وقابلية للقياس. أدوات زي Google PageSpeed Insights بتوصي صراحة باستخدام صيغ صور حديثة زي
+  WebP كأول خطوة لتحسين نتيجة الأداء. بالإضافة لتأثيرها على ترتيب البحث، الصفحة الأسرع بتقلل معدل
+  خروج الزوار المبكر (Bounce Rate)، وهو إشارة تانية غير مباشرة بتفيد ترتيبك على المدى الطويل.
+</p>
+
+<div class="tool-cta">
+<div>
+<div class="txt">جرّب محوّل WebP الآن</div>
+<div class="sub">تحويل وضغط وتغيير مقاس في أداة واحدة — مجانًا وبدون رفع صورك لأي خادم</div>
+</div>
+<a class="btn btn-primary" href="../tools/webp-converter.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v6h-6"></path></svg>
+    افتح الأداة
+  </a>
+</div>
+
+<h2 id="faq">أسئلة شائعة</h2>
+<div class="faq-item">
+  <h3>هل كل المتصفحات الحديثة تدعم صيغة WebP؟</h3>
+  <p style="font-size:13.5px;">نعم، كل المتصفحات الرئيسية الحديثة تدعم WebP بالكامل منذ سنوات، ونسبة استخدامها عالميًا تفوق 95% من المستخدمين.</p>
+</div>
+<div class="faq-item">
+  <h3>هل WebP بيأثر فعليًا على ترتيب موقعي في نتائج بحث جوجل؟</h3>
+  <p style="font-size:13.5px;">بشكل غير مباشر نعم — جوجل تعتبر سرعة تحميل الصفحة عامل ترتيب رسمي ضمن Core Web Vitals، وWebP يساهم مباشرة في تحسين هذا المؤشر.</p>
+</div>
+<div class="faq-item">
+  <h3>هل أفقد جودة الصورة عند التحويل إلى WebP؟</h3>
+  <p style="font-size:13.5px;">لا فرق مرئي ملحوظ عند استخدام إعدادات جودة معقولة (80% فأعلى) — WebP تعطي نفس الجودة تقريبًا بحجم أصغر بكثير.</p>
+</div>
+<div class="faq-item">
+  <h3>هل يجب الاحتفاظ بنسخة أصلية JPG أو PNG بجانب WebP؟</h3>
+  <p style="font-size:13.5px;">يُفضّل الاحتفاظ بنسخة أصلية في أرشيفك الشخصي، لكن للنشر على الموقع نفسه نسخة WebP وحدها كافية تمامًا لمعظم الحالات.</p>
+</div>
+
+<h2>خلاصة</h2>
+<p>
+  تحويل صورك إلى WebP خطوة بسيطة تأخذ دقائق، لكن أثرها على سرعة موقعك، ترتيبك في نتائج البحث،
+  وتجربة زوارك حقيقي وملموس. لو لسه بتنشر صور JPG أو PNG بدون تحويل، دي أسهل تحسينة تقدر تعملها اليوم.
+</p>
+
+</div>
 </div>
 
 <div class="wrap">
-  <div class="ad-slot ad-slot-leaderboard">
-    <span class="ad-label">إعلان · Advertisement</span>
-    <div class="ad-slot-inner">
-      <!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
-      <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-      <!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-    </div>
-  </div>
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
 </div>
-
+</div>
+</div>
 <footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
-      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
-    </div>
-    <div class="footer-col">
-      <h4>الموقع</h4>
-      <a href="../index.html">الصفحة الرئيسية</a>
-      <a href="index.html">المدونة</a>
-      <a href="../about.html">من نحن</a>
-      <a href="../contact.html">تواصل معنا</a>
-    </div>
-    <div class="footer-col">
-      <h4>قانوني</h4>
-      <a href="../privacy.html">سياسة الخصوصية</a>
-      <a href="../terms.html">شروط الاستخدام</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
-    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
-  </div>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a>
+<a href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
 </footer>
-
 <script src="../assets/main.js"></script>
 </body>
 </html>

@@ -1,137 +1,225 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+<html dir="rtl" lang="ar">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>سياسة الخصوصية | فورا.tools</title>
-<meta name="description" content="سياسة الخصوصية الخاصة بموقع فورا.tools: كيف نتعامل مع بياناتك وملفاتك، واستخدام ملفات تعريف الارتباط والإعلانات.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="favicon.svg">
-<meta name="theme-color" content="#4F3FF0">
-<link rel="canonical" href="https://fawran.tools/privacy.html">
-<link rel="alternate" hreflang="ar" href="https://fawran.tools/privacy.html">
-<link rel="alternate" hreflang="en" href="https://fawran.tools/en/privacy.html">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://fawran.tools/privacy.html">
-<meta property="og:title" content="سياسة الخصوصية | فورا.tools">
-<meta property="og:description" content="سياسة الخصوصية الخاصة بموقع فورا.tools: كيف نتعامل مع بياناتك وملفاتك، واستخدام ملفات تعريف الارتباط والإعلانات.">
-<meta property="og:site_name" content="فورا.tools">
-<meta property="og:locale" content="ar_AR">
-<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="سياسة الخصوصية | فورا.tools">
-<meta name="twitter:description" content="سياسة الخصوصية الخاصة بموقع فورا.tools: كيف نتعامل مع بياناتك وملفاتك، واستخدام ملفات تعريف الارتباط والإعلانات.">
-<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<meta content="سياسة خصوصية فورا.tools — كيف نتعامل مع ملفاتك، بيانات التصفح، التخزين المحلي، والخدمات الخارجية المستخدمة." name="description"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/privacy.html" rel="canonical"/>
+
+
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/privacy.html" property="og:url"/>
+<meta content="سياسة الخصوصية | فورا.tools" property="og:title"/>
+<meta content="سياسة خصوصية فورا.tools وكيفية تعاملنا مع بياناتك." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="سياسة الخصوصية | فورا.tools" name="twitter:title"/>
+<meta content="سياسة خصوصية فورا.tools وكيفية تعاملنا مع بياناتك." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="assets/style.css" rel="stylesheet"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/privacy.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/privacy.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/privacy.html" hreflang="x-default" rel="alternate"/>
+<style>
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;columns:2;}
+  .toc li{margin-bottom:6px;break-inside:avoid;}
+  .toc a{color:var(--indigo-deep);font-weight:700;text-decoration:none;}
+  .content-card h2{scroll-margin-top:90px;}
+  .content-card ul{padding-inline-start:22px;line-height:1.9;}
+  .content-card li{margin-bottom:6px;}
+  .data-table{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0;}
+  .data-table th,.data-table td{padding:9px 12px;border:1px solid var(--line);text-align:right;vertical-align:top;}
+  .data-table th{background:var(--surface-sunk);font-weight:800;}
+  @media (max-width:640px){.toc ul{columns:1;}.data-table{font-size:12px;}}
+</style>
 </head>
 <body>
-
 <header class="topbar">
-  <div class="topbar-inner">
-    <a href="index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
-          <div class="nav-wrap">
-      <nav class="nav">
-      <a href="index.html">الأدوات</a>
-      <a href="blog/index.html">المدونة</a>
-      <a href="about.html">من نحن</a>
-      <a href="contact.html">تواصل معنا</a>
-    </nav>
-      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
-      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-      <a href="en/privacy.html" class="lang-switch" title="View in English">EN</a>
-    </div>
-  </div>
+<div class="topbar-inner">
+<a class="brand" href="index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="index.html">الأدوات</a>
+<a href="blog/index.html">المدونة</a>
+<a href="about.html">من نحن</a>
+<a href="contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="en/privacy.html" title="View in English">EN</a>
+</div>
+</div>
 </header>
-
 <div class="wrap">
-  <div class="page-head">
-    <h1>سياسة الخصوصية</h1>
-    <p>آخر تحديث: أغسطس 2026</p>
-  </div>
+<div class="page-head">
+<h1>سياسة الخصوصية</h1>
+<p>آخر تحديث: أغسطس 2026</p>
+</div>
 
-  <div class="content-card">
-    <h2>معالجة الملفات والصور</h2>
-    <p>
-      جميع أدوات فورا.tools التي تتعامل مع صور أو ملفات (مثل محوّل WebP وضاغط الصور) تعالج هذه الملفات
-      محليًا داخل متصفحك عبر تقنيات الويب القياسية. نحن لا نرفع صورك أو ملفاتك إلى خوادمنا ولا نحتفظ بنسخة
-      منها في أي وقت — تبقى المعالجة بالكامل على جهازك.
-    </p>
+<div class="toc">
+  <h2>محتوى الصفحة</h2>
+  <ul>
+    <li><a href="#overview">١. نظرة عامة</a></li>
+    <li><a href="#files">٢. معالجة الملفات والصور</a></li>
+    <li><a href="#collected-data">٣. البيانات التي قد نجمعها</a></li>
+    <li><a href="#local-storage">٤. التخزين المحلي في متصفحك</a></li>
+    <li><a href="#ratings-data">٥. بيانات نظام التقييمات</a></li>
+    <li><a href="#third-party-services">٦. الخدمات الخارجية المستخدمة</a></li>
+    <li><a href="#ads-cookies">٧. الإعلانات وملفات تعريف الارتباط</a></li>
+    <li><a href="#contact-form">٨. نموذج التواصل</a></li>
+    <li><a href="#sharing">٩. مشاركة البيانات</a></li>
+    <li><a href="#retention">١٠. مدة الاحتفاظ بالبيانات</a></li>
+    <li><a href="#rights">١١. حقوقك</a></li>
+    <li><a href="#children">١٢. خصوصية الأطفال</a></li>
+    <li><a href="#security">١٣. أمان البيانات</a></li>
+    <li><a href="#external-links">١٤. روابط لمواقع أخرى</a></li>
+    <li><a href="#changes">١٥. تعديلات على هذه السياسة</a></li>
+    <li><a href="#contact">١٦. التواصل معنا</a></li>
+  </ul>
+</div>
 
-    <h2>البيانات التي قد نجمعها</h2>
-    <p>
-      قد نجمع بيانات استخدام عامة وغير شخصية (مثل نوع المتصفح، الصفحات الأكثر زيارة، والمدة التقريبية للزيارة)
-      باستخدام أدوات تحليل مثل Google Analytics، بهدف فهم كيفية استخدام الموقع وتحسينه. هذه البيانات
-      مجمّعة ولا تُستخدم للتعرف على هويتك الشخصية.
-    </p>
+<div class="content-card">
 
-    <h2>الإعلانات وملفات تعريف الارتباط</h2>
-    <p>
-      قد يعرض الموقع إعلانات عبر شبكة Google AdSense. تستخدم Google ومعلنون خارجيون ملفات تعريف الارتباط
-      (Cookies) لعرض إعلانات مناسبة بناءً على زياراتك لهذا الموقع ومواقع أخرى. يمكنك تعطيل الإعلانات
-      المخصصة عبر
-      <a href="https://adssettings.google.com" target="_blank" rel="noopener" style="color:var(--indigo);font-weight:700;">إعدادات إعلانات Google</a>.
-    </p>
+<h2 id="overview">١. نظرة عامة</h2>
+<p>خصوصيتك مهمة جدًا بالنسبة لنا، وصممنا فورا.tools من الأساس بحيث تتم معظم عمليات معالجة الملفات محليًا داخل متصفحك، دون الحاجة لرفعها على أي خادم. هذه الصفحة توضّح بالتفصيل ما هي البيانات التي قد نجمعها، ولماذا، وكيف نستخدمها، حتى تكون على دراية كاملة قبل استخدام أي أداة من أدواتنا.</p>
 
-    <h2>روابط لمواقع أخرى</h2>
-    <p>
-      قد يحتوي الموقع على روابط لمواقع خارجية. لسنا مسؤولين عن سياسات الخصوصية أو محتوى تلك المواقع،
-      وننصح بمراجعة سياسة الخصوصية الخاصة بأي موقع خارجي تزوره.
-    </p>
+<h2 id="files">٢. معالجة الملفات والصور</h2>
+<p>جميع أدوات فورا.tools التي تتعامل مع صور أو ملفات (مثل محوّل WebP، ضاغط الصور، أدوات دمج وتقسيم PDF) تعالج هذه الملفات محليًا داخل متصفحك عبر تقنيات الويب القياسية (مثل JavaScript وWebAssembly). نحن لا نرفع صورك أو ملفاتك إلى خوادمنا ولا نحتفظ بنسخة منها في أي وقت — تبقى المعالجة بالكامل على جهازك، ويُحذف الملف من ذاكرة المتصفح بمجرد إغلاق الصفحة أو تحديثها.</p>
+<p>الاستثناء الوحيد هو الأدوات التي تعتمد صراحة على خدمة خارجية لأداء وظيفتها (مثل فحص سرعة موقع، أو جلب بيانات فيديو يوتيوب) — في هذه الحالة، الرابط الذي تُدخله (وليس ملفًا يخصك) هو ما يُرسل لتلك الخدمة، كما هو موضّح في القسم السادس أدناه.</p>
 
-    <h2>تواصل معنا</h2>
-    <p>
-      لأي استفسار يخص هذه السياسة، يمكنك التواصل معنا عبر
-      <a href="contact.html" style="color:var(--indigo);font-weight:700;">صفحة اتصل بنا</a>.
-    </p>
-  </div>
+<h2 id="collected-data">٣. البيانات التي قد نجمعها</h2>
+<p>قد نجمع بيانات استخدام عامة وغير شخصية باستخدام أدوات تحليل مثل Google Analytics، بهدف فهم كيفية استخدام الموقع وتحسينه. من أمثلة هذه البيانات:</p>
+<table class="data-table">
+  <tr><th>نوع البيانات</th><th>مثال</th></tr>
+  <tr><td>معلومات المتصفح والجهاز</td><td>نوع المتصفح، نظام التشغيل، حجم الشاشة</td></tr>
+  <tr><td>سلوك التصفح</td><td>الصفحات الأكثر زيارة، مدة الزيارة التقريبية، مصدر الزيارة</td></tr>
+  <tr><td>الموقع الجغرافي التقريبي</td><td>الدولة أو المدينة (مشتق من عنوان IP، وليس موقعًا دقيقًا)</td></tr>
+</table>
+<p>هذه البيانات مجمّعة وإحصائية بطبيعتها، ولا نستخدمها للتعرف على هويتك الشخصية.</p>
+
+<h2 id="local-storage">٤. التخزين المحلي في متصفحك</h2>
+<p>يستخدم الموقع خاصية التخزين المحلي (Local Storage) المدمجة في متصفحك لحفظ بعض التفضيلات، من بينها:</p>
+<ul>
+  <li>تفضيل الوضع الليلي أو النهاري للموقع.</li>
+  <li>قائمة الأدوات "المفضلة" أو "المستخدمة مؤخرًا" إن وجدت هذه الميزة.</li>
+  <li>مؤشر يوضح إذا كنت قد قيّمت أداة معينة من قبل (لمنع التصويت المتكرر).</li>
+  <li>مفتاح API اختياري خاص بك تُدخله بنفسك في بعض الأدوات (مثل فاحص سرعة الموقع)، إن اخترت استخدام هذه الميزة.</li>
+  <li>سجل بآخر الروابط التي أنشأتها في بعض الأدوات (مثل أداة بناء روابط UTM)، لتسهيل إعادة استخدامها.</li>
+</ul>
+<p>هذه البيانات تبقى محفوظة على جهازك فقط، ولا تُرسل لخوادمنا، ويمكنك حذفها في أي وقت عبر مسح بيانات التصفح من إعدادات متصفحك.</p>
+
+<h2 id="ratings-data">٥. بيانات نظام التقييمات</h2>
+<p>عند تقييمك لأداة عبر نظام النجوم، يُرسل رقم تقييمك (من 1 إلى 5) إلى خادمنا ليُضاف إلى المتوسط العام المعروض للأداة. لا نربط هذا الرقم باسمك أو بريدك الإلكتروني أو أي معرّف شخصي — يُخزَّن فقط كجزء من إحصائية إجمالية (مجموع التقييمات وعددها) لكل أداة. قد يُسجَّل عنوان IP الخاص بك بشكل تلقائي ومؤقت من قِبل مزوّد الاستضافة كجزء طبيعي من أي طلب شبكي، دون أن نستخدمه نحن لأي غرض آخر غير منع محاولات التلاعب الواضحة بالتقييمات.</p>
+
+<h2 id="third-party-services">٦. الخدمات الخارجية المستخدمة</h2>
+<p>تعتمد بعض أدواتنا على خدمات وواجهات برمجية تابعة لجهات خارجية لتقديم وظيفتها بشكل صحيح:</p>
+<table class="data-table">
+  <tr><th>الخدمة</th><th>تُستخدم في</th><th>ما الذي يُرسل إليها</th></tr>
+  <tr><td>Google PageSpeed Insights</td><td>فاحص سرعة الموقع</td><td>رابط الموقع الذي تدخله للفحص</td></tr>
+  <tr><td>YouTube oEmbed</td><td>أدوات يوتيوب (رابط بتوقيت، تحميل صورة مصغرة)</td><td>رابط الفيديو الذي تدخله</td></tr>
+  <tr><td>Google Fonts</td><td>عرض خطوط الموقع</td><td>لا بيانات شخصية، فقط طلب تحميل ملف خط</td></tr>
+  <tr><td>Netlify (استضافة الموقع)</td><td>تشغيل الموقع وخدمة التقييمات</td><td>بيانات الطلب المعتادة لأي زيارة ويب</td></tr>
+</table>
+<p>كل من هذه الخدمات لديها سياسة خصوصية منفصلة خاصة بها، وننصحك بمراجعتها إذا كانت لديك مخاوف محددة بشأن كيفية تعاملها مع البيانات.</p>
+
+<h2 id="ads-cookies">٧. الإعلانات وملفات تعريف الارتباط</h2>
+<p>قد يعرض الموقع إعلانات عبر شبكة Google AdSense كمصدر لتمويل تشغيل الأدوات مجانًا. تستخدم Google ومعلنون خارجيون ملفات تعريف الارتباط (Cookies) لعرض إعلانات مناسبة بناءً على زياراتك لهذا الموقع ومواقع أخرى. يمكنك تعطيل الإعلانات المخصصة عبر <a href="https://adssettings.google.com/" rel="noopener" target="_blank">إعدادات إعلانات Google</a>، أو عبر إضافات حجب الإعلانات في متصفحك.</p>
+
+<h2 id="contact-form">٨. نموذج التواصل</h2>
+<p>إذا تواصلت معنا عبر <a href="contact.html">صفحة اتصل بنا</a>، فإننا نجمع الاسم والبريد الإلكتروني ومحتوى رسالتك فقط بهدف الرد على استفسارك. لا نستخدم هذه البيانات لأي غرض تسويقي دون موافقتك الصريحة، ولا نشاركها مع أي طرف ثالث.</p>
+
+<h2 id="sharing">٩. مشاركة البيانات</h2>
+<p>لا نبيع بياناتك الشخصية لأي طرف ثالث. قد تتم مشاركة بيانات محدودة فقط في الحالات التالية:</p>
+<ul>
+  <li>مع مزوّدي الخدمات الخارجية المذكورين في القسم السادس، فقط بالقدر اللازم لتشغيل الأداة التي تستخدمها.</li>
+  <li>إذا طُلب منا ذلك بموجب أمر قانوني ملزم من جهة رسمية مختصة.</li>
+  <li>لحماية حقوقنا القانونية أو أمان الموقع في حالات الاشتباه بإساءة استخدام واضحة.</li>
+</ul>
+
+<h2 id="retention">١٠. مدة الاحتفاظ بالبيانات</h2>
+<p>بيانات التخزين المحلي (Local Storage) تبقى على جهازك حتى تقوم بمسحها بنفسك. بيانات التقييمات الإجمالية (المتوسط والعدد لكل أداة) تُحفظ بشكل دائم كجزء من إحصائيات الموقع العامة. رسائل التواصل تُحفظ للمدة اللازمة للرد على استفسارك ومتابعته فقط.</p>
+
+<h2 id="rights">١١. حقوقك</h2>
+<p>يمكنك في أي وقت:</p>
+<ul>
+  <li>مسح كل بيانات التخزين المحلي الخاصة بالموقع عبر إعدادات متصفحك مباشرة.</li>
+  <li>طلب معرفة أو حذف أي بيانات شخصية أرسلتها لنا عبر نموذج التواصل، بمراسلتنا عبر <a href="contact.html">صفحة اتصل بنا</a>.</li>
+  <li>تعطيل ملفات تعريف الارتباط الخاصة بالإعلانات عبر إعدادات متصفحك أو رابط إعدادات إعلانات Google المذكور أعلاه.</li>
+</ul>
+
+<h2 id="children">١٢. خصوصية الأطفال</h2>
+<p>الموقع غير موجّه بشكل خاص للأطفال دون سن 13 عامًا، ولا نجمع عن قصد أي بيانات شخصية من الأطفال في هذه الفئة العمرية. إذا كنت وليّ أمر وتعتقد أن طفلك قد شاركنا بيانات شخصية، تواصل معنا فورًا لحذفها.</p>
+
+<h2 id="security">١٣. أمان البيانات</h2>
+<p>نتخذ إجراءات معقولة لحماية أي بيانات نجمعها من الوصول غير المصرّح به أو الفقد أو سوء الاستخدام، بما في ذلك استخدام اتصال آمن (HTTPS) في جميع صفحات الموقع. مع ذلك، لا يمكن لأي نظام نقل بيانات عبر الإنترنت أن يكون آمنًا بنسبة 100%، ولا نستطيع ضمان الأمان المطلق التام.</p>
+
+<h2 id="external-links">١٤. روابط لمواقع أخرى</h2>
+<p>قد يحتوي الموقع على روابط لمواقع خارجية (مثل مصادر داخل مقالات المدونة، أو خدمات نشير إليها ضمن الأدوات). لسنا مسؤولين عن سياسات الخصوصية أو المحتوى الخاص بتلك المواقع، وننصح بمراجعة سياسة الخصوصية الخاصة بأي موقع خارجي تزوره.</p>
+
+<h2 id="changes">١٥. تعديلات على هذه السياسة</h2>
+<p>قد نحدّث سياسة الخصوصية هذه من وقت لآخر لتعكس تغييرات في ممارساتنا أو لأسباب قانونية. سيظهر تاريخ آخر تحديث دائمًا أعلى الصفحة، وننصح بمراجعتها بشكل دوري.</p>
+
+<h2 id="contact">١٦. التواصل معنا</h2>
+<p>لأي استفسار يخص هذه السياسة أو بياناتك، يمكنك التواصل معنا عبر <a href="contact.html">صفحة اتصل بنا</a>.</p>
+
+</div>
 </div>
 
 <div class="wrap">
-  <div class="ad-slot ad-slot-leaderboard">
-    <span class="ad-label">إعلان · Advertisement</span>
-    <div class="ad-slot-inner">
-      <!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
-      <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-      <!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-    </div>
-  </div>
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
 </div>
 
 <footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
-      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
-    </div>
-    <div class="footer-col">
-      <h4>الموقع</h4>
-      <a href="index.html">الصفحة الرئيسية</a>
-      <a href="blog/index.html">المدونة</a>
-      <a href="about.html">من نحن</a>
-      <a href="contact.html">تواصل معنا</a>
-    </div>
-    <div class="footer-col">
-      <h4>قانوني</h4>
-      <a href="privacy.html">سياسة الخصوصية</a>
-      <a href="terms.html">شروط الاستخدام</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
-    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
-  </div>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="index.html">الصفحة الرئيسية</a>
+<a href="blog/index.html">المدونة</a>
+<a href="about.html">من نحن</a>
+<a href="contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="privacy.html">سياسة الخصوصية</a>
+<a href="terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
 </footer>
-
 <script src="assets/main.js"></script>
 </body>
 </html>

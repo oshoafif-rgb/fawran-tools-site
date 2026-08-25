@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YouTube Chapters Generator | Fawran Tools</title>
+<meta content="Create correctly formatted YouTube chapters and timestamps ready to paste into a video description." name="description"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/youtube-chapters-generator.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/en/tools/youtube-chapters-generator.html" property="og:url"/>
+<meta content="YouTube Chapters Generator | Fawran Tools" property="og:title"/>
+<meta content="Create correctly formatted YouTube chapters and timestamps ready to paste into a video description." property="og:description"/>
+<meta content="Fawran Tools" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="YouTube Chapters Generator | Fawran Tools" name="twitter:title"/>
+<meta content="Create correctly formatted YouTube chapters and timestamps ready to paste into a video description." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<style>
+  .chapter-row{
+    display:grid;grid-template-columns:110px 1fr auto;gap:10px;align-items:center;
+    padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-bottom:8px;
+  }
+  .chapter-row input[type=text]{
+    padding:9px 11px;border-radius:8px;border:1px solid var(--line);
+    font-family:'Tajawal',sans-serif;font-size:13.5px;background:#FDFCFA;color:var(--ink);
+  }
+  [data-theme="dark"] .chapter-row input[type=text]{background:#211F34;}
+  .chapter-row input.time-input{font-family:'IBM Plex Mono',monospace;text-align:center;direction:ltr;}
+  .chapter-row .order-num{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);
+    position:absolute;
+  }
+  .row-actions{display:flex;gap:6px;}
+  .code-out{
+    background:var(--ink);color:#E8E6F5;border-radius:12px;padding:18px;
+    font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:2;
+    white-space:pre-wrap;word-break:break-all;direction:ltr;text-align:left;
+    max-height:340px;overflow:auto;margin-top:18px;
+  }
+  .hint-box{
+    background:var(--gold-soft);border:1px solid rgba(240,169,59,.3);border-radius:10px;
+    padding:12px 14px;font-size:12.5px;color:var(--ink-soft);margin-bottom:18px;line-height:1.8;
+  }
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "YouTube Chapters Generator",
+  "url": "https://fawran.tools/en/tools/youtube-chapters-generator.html",
+  "description": "Create correctly formatted YouTube chapters and timestamps ready to paste into a video description.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fawran Tools",
+    "url": "https://fawran.tools/en/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "YouTube Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "YouTube Chapters & Timestamps Generator",
+      "item": "https://fawran.tools/en/tools/youtube-chapters-generator.html"
+    }
+  ],
+  "name": "YouTube Chapters Generator",
+  "description": "Create TextandText andTextandText YouTube Text TextCopy Text description Textvideo."
+}</script>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="youtube chapters generator, youtube timestamps, video chapters" name="keywords"/>
+<link href="https://fawran.tools/tools/youtube-chapters-generator.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/youtube-chapters-generator.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/youtube-chapters-generator.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../../en/index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../../en/index.html">Tools</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../../tools/youtube-chapters-generator.html" title="View in Arabic">AR</a>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../../en/index.html">Tools</a>/   /</div>
+<h1>YouTube Chapters Generator</h1>
+<p class="tool-lede">Create correctly formatted YouTube chapters and timestamps ready to paste into a video description.</p>
+<div class="tool-card-shell">
+<div class="hint-box">
+<b>:</b>00:00    3    (   10 Seconds  )        .</div>
+<div id="chaptersList"></div>
+<div class="actions">
+<button class="btn btn-primary" id="addChapterBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 7V4h16v3"></path><path d="M9 20h6"></path><path d="M12 4v16"></path></svg>
+        Add chapter
+      </button>
+<button class="btn btn-dark" id="copyBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        Copy chapters
+      </button>
+<button class="btn btn-ghost" id="clearAllBtn">Clear all</button>
+</div>
+<p id="validationMsg" style="display:none;color:var(--danger);font-size:12.5px;margin-top:12px;"></p>
+<div class="code-out" id="codeOut"></div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>—       URL</div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../../en/blog/youtube-chapters-guide.html" style="color:var(--indigo-deep);font-weight:700;">:</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">Ad · Advertisement</span>
+<div class="ad-slot-inner">Advertisement AdSense</div>
+</div>
+</div>
+<div class="wrap"><div class="rating-widget" data-tool-slug="youtube-chapters-generator">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Use the controls below to process your content quickly in your browser.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../../en/index.html">Page</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../../en/privacy.html">Privacy Policy</a>
+<a href="../../en/terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Made with care for internet users</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script><script src="../../assets/rating-widget.js"></script>
+<script>
+const chaptersList = document.getElementById('chaptersList');
+const addChapterBtn = document.getElementById('addChapterBtn');
+const copyBtn = document.getElementById('copyBtn');
+const clearAllBtn = document.getElementById('clearAllBtn');
+const codeOut = document.getElementById('codeOut');
+const validationMsg = document.getElementById('validationMsg');
+
+let chapters = [];
+let counter = 0;
+
+function addChapter(time, title){
+  counter++;
+  chapters.push({ id: 'c'+counter, time: time || '', title: title || '' });
+  render();
+}
+
+function timeToSeconds(t){
+  const parts = t.split(':').map(p=>parseInt(p,10));
+  if(parts.some(isNaN)) return null;
+  if(parts.length === 2) return parts[0]*60 + parts[1];
+  if(parts.length === 3) return parts[0]*3600 + parts[1]*60 + parts[2];
+  return null;
+}
+
+function render(){
+  chaptersList.innerHTML = '';
+  chapters.forEach((ch, idx)=>{
+    const row = document.createElement('div');
+    row.className = 'chapter-row';
+    row.innerHTML = `
+      <input type="text" class="time-input" data-id="${ch.id}" data-field="time" value="${ch.time}" placeholder="00:00">
+      <input type="text" data-id="${ch.id}" data-field="title" value="${ch.title}" placeholder="title Text Text from Textvideo">
+      <div class="row-actions">
+        <button class="icon-btn" data-up="${ch.id}" ${idx===0?'disabled':''} title="Texthighest">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+        </button>
+        <button class="icon-btn" data-down="${ch.id}" ${idx===chapters.length-1?'disabled':''} title="Text">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <button class="icon-btn del" data-remove="${ch.id}" title="Delete">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+        </button>
+      </div>
+    `;
+    chaptersList.appendChild(row);
+  });
+
+  chaptersList.querySelectorAll('input').forEach(inp=>{
+    inp.addEventListener('input', ()=>{
+      const ch = chapters.find(c=>c.id === inp.dataset.id);
+      if(ch) ch[inp.dataset.field] = inp.value;
+      updateOutput();
+    });
+  });
+  chaptersList.querySelectorAll('[data-up]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const i = chapters.findIndex(c=>c.id === btn.dataset.up);
+      if(i>0){ [chapters[i-1],chapters[i]] = [chapters[i],chapters[i-1]]; render(); }
+    });
+  });
+  chaptersList.querySelectorAll('[data-down]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const i = chapters.findIndex(c=>c.id === btn.dataset.down);
+      if(i<chapters.length-1){ [chapters[i+1],chapters[i]] = [chapters[i],chapters[i+1]]; render(); }
+    });
+  });
+  chaptersList.querySelectorAll('[data-remove]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      chapters = chapters.filter(c=>c.id !== btn.dataset.remove);
+      render(); updateOutput();
+    });
+  });
+
+  updateOutput();
+}
+
+function updateOutput(){
+  const lines = chapters
+    .filter(c=> c.time.trim() && c.title.trim())
+    .map(c=> `${c.time.trim()} ${c.title.trim()}`);
+  codeOut.textContent = lines.join('\n');
+
+  // Validation
+  let msg = '';
+  const withTime = chapters.filter(c=>c.time.trim());
+  if(withTime.length && withTime[0].time.trim() !== '0:00' && withTime[0].time.trim() !== '00:00'){
+    msg = 'Text: orText Text Text Text from 00:00 Text YouTube Text TextandText.';
+  } else if(chapters.filter(c=>c.time.trim() && c.title.trim()).length < 3 && chapters.length > 0){
+    msg = 'Text: YouTube Text 3 TextandText Text Text (Texttitle andTextandText) Text Text Text TextandText.';
+  }
+  validationMsg.textContent = msg;
+  validationMsg.style.display = msg ? 'block' : 'none';
+}
+
+addChapterBtn.addEventListener('click', ()=>{
+  if(!chapters.length) addChapter('00:00', 'Intro');
+  else addChapter('', '');
+});
+
+copyBtn.addEventListener('click', async ()=>{
+  try{
+    await navigator.clipboard.writetext(codeOut.textContent);
+    const original = copyBtn.innerHTML;
+    copyBtn.innerHTML = 'Copied ✓';
+    setTimeout(()=> copyBtn.innerHTML = original, 1500);
+  }catch(e){ console.error(e); }
+});
+
+clearAllBtn.addEventListener('click', ()=>{
+  chapters = [];
+  render();
+});
+
+// Seed with a starting example
+addChapter('00:00', 'Intro');
+addChapter('01:30', 'Part 1');
+addChapter('05:00', 'Conclusion');
+</script>
+</body>
+</html>

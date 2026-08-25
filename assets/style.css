@@ -79,6 +79,10 @@
 .lang-switch:hover{background:var(--surface-sunk);color:var(--indigo-deep);border-color:rgba(79,63,240,.3);}
 .nav-controls{display:flex;align-items:center;gap:8px;}
 
+/* ---------- Rendering performance ---------- */
+/* Defer painting of long below-the-fold tool groups without changing their layout. */
+.category{content-visibility:auto;contain-intrinsic-size:1px 520px;}
+
 /* ---------- Ad slots ---------- */
 .ad-slot{
   margin:28px 0;padding:14px;border:1px dashed var(--line);border-radius:12px;
@@ -221,6 +225,26 @@ h1.hero-title .hl{color:var(--indigo);}
   position:absolute;right:20px;top:50%;transform:translateY(-50%);
   width:20px;height:20px;color:var(--muted);pointer-events:none;
 }
+.search-results{
+  position:absolute;top:calc(100% + 8px);right:0;left:0;z-index:60;
+  background:var(--surface);border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 20px 45px rgba(20,19,31,.14);overflow:hidden;max-height:400px;overflow-y:auto;
+}
+.search-result{
+  display:flex;align-items:flex-start;gap:12px;padding:13px 16px;text-decoration:none;color:inherit;
+  border-bottom:1px solid var(--line);
+}
+.search-result:last-child{border-bottom:none;}
+.search-result:hover,.search-result.active{background:var(--indigo-soft);}
+.sr-cat{
+  flex:0 0 auto;font-size:10.5px;font-weight:800;color:var(--indigo-deep);background:var(--indigo-soft);
+  padding:3px 8px;border-radius:999px;margin-top:2px;white-space:nowrap;
+}
+.search-result:hover .sr-cat,.search-result.active .sr-cat{background:var(--surface);}
+.sr-body{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.sr-title{font-weight:800;font-size:14px;}
+.sr-desc{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.search-empty{padding:18px 16px;font-size:13.5px;color:var(--muted);text-align:center;}
 .quick-chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
 .quick-chip{
   font-size:13px;font-weight:700;color:var(--ink-soft);
@@ -235,6 +259,7 @@ h1.hero-title .hl{color:var(--indigo);}
   display:flex;align-items:baseline;justify-content:space-between;gap:16px;
   margin-bottom:22px;flex-wrap:wrap;
 }
+.category-more{font-size:13px;font-weight:800;color:var(--indigo);white-space:nowrap;padding:7px 10px;border:1px solid rgba(79,63,240,.18);background:var(--indigo-soft);border-radius:999px;transition:.15s}.category-more:hover{border-color:var(--indigo);background:rgba(79,63,240,.13)}
 .category-title{
   display:flex;align-items:center;gap:12px;font-size:22px;font-weight:900;
 }
@@ -337,6 +362,15 @@ footer{background:#14131F;color:#DDDBEA;margin-top:20px;}
 }
 .tool-page h1{font-size:clamp(24px,3.6vw,34px);font-weight:900;margin:0 0 10px;}
 .tool-page .tool-lede{color:var(--muted);font-size:15px;max-width:620px;margin:0 0 28px;}
+
+.devbox h1,.toolbox h1{font-size:clamp(24px,3.6vw,34px);font-weight:900;margin:0 0 10px;}
+.devbox .tool-lede{color:var(--muted);font-size:15px;max-width:620px;margin:0 0 28px;}
+.toolbox>a:first-child{display:inline-block;margin-bottom:14px;font-size:13.5px;font-weight:700;color:var(--muted);text-decoration:none;}
+.toolbox>a:first-child:hover{color:var(--indigo-deep);}
+.toolbox .card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);padding:28px;margin-bottom:22px;
+}
 
 .dropzone{
   position:relative;border:2px dashed #CBC7DA;border-radius:14px;
@@ -447,6 +481,22 @@ input[type=range]::-webkit-slider-thumb{
 .summary .stat .l{font-size:11.5px;color:var(--muted);}
 
 .footer-note{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--muted);font-size:12.5px;margin-top:24px;}
+
+/* Real tool ratings (star widget) */
+.rating-widget{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0;padding:14px 18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;}
+.rating-stars{display:inline-flex;gap:2px;direction:ltr;}
+.rating-stars button{background:none;border:none;padding:2px;cursor:pointer;line-height:0;color:var(--line);transition:transform .1s;}
+.rating-stars button:hover{transform:scale(1.15);}
+.rating-stars button svg{width:22px;height:22px;fill:currentColor;}
+.rating-stars button.filled{color:#F0A93B;}
+.rating-widget.rated .rating-stars button{cursor:default;}
+.rating-widget.rated .rating-stars button:hover{transform:none;}
+.rating-summary{font-size:13px;color:var(--muted);font-weight:700;}
+.rating-summary .avg{color:var(--ink);font-family:'IBM Plex Mono',monospace;}
+.rating-thanks{font-size:12.5px;color:var(--good);font-weight:700;display:none;}
+.rating-widget.rated .rating-thanks{display:inline;}
+.rating-widget.rated .rating-prompt{display:none;}
+.rating-prompt{font-size:12.5px;color:var(--muted);}
 .footer-note svg{width:15px;height:15px;color:var(--indigo-deep);}
 
 .section-title{font-weight:800;font-size:14px;margin-bottom:14px;display:flex;align-items:center;gap:8px;color:var(--ink);}
@@ -482,3 +532,13 @@ input[type=range]::-webkit-slider-thumb{
 .tool-cta .txt{font-size:14px;font-weight:700;}
 .tool-cta .sub{font-size:12.5px;color:var(--muted);font-weight:400;margin-top:3px;}
 .tool-cta a.btn{white-space:nowrap;}
+
+
+/* Fawran Platform UX additions */
+.favorite-tool-btn{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font-weight:700;cursor:pointer}.favorite-tool-btn:hover{border-color:var(--indigo);color:var(--indigo)}
+.tools-hub{padding:48px 0}
+.tools-hub>.wrap>a:first-child{display:inline-block;margin-bottom:18px;font-size:13.5px;font-weight:700;color:var(--muted);}
+.tools-hub>.wrap>a:first-child:hover{color:var(--indigo-deep);}
+.tools-hub h1{font-size:clamp(26px,3.6vw,36px);font-weight:900;margin:0 0 10px;line-height:1.25;}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.hub-card{display:block;padding:22px;border:1px solid var(--line);border-radius:20px;background:var(--surface);text-decoration:none;color:inherit;transition:.2s}.hub-card:hover{transform:translateY(-2px);border-color:var(--indigo);box-shadow:0 12px 30px rgba(20,19,31,.08)}.hub-card h2{margin:0 0 7px;font-size:20px}.hub-card p{margin:0;color:var(--ink-soft);line-height:1.7}.hub-badge{display:inline-block;margin-bottom:12px;padding:5px 9px;border-radius:999px;background:var(--indigo-soft);color:var(--indigo);font-size:12px;font-weight:800}
+.search-empty{display:none;padding:24px;text-align:center;color:var(--ink-soft)}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>text Compare | Fawran Tools</title>
+<meta content="Compare two text blocks online and quickly identify additions, deletions and differences." name="description"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/text-compare.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/en/tools/text-compare.html" property="og:url"/>
+<meta content="text Compare | Fawran Tools" property="og:title"/>
+<meta content="Compare two text blocks online and quickly identify additions, deletions and differences." property="og:description"/>
+<meta content="Fawran Tools" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="text Compare | Fawran Tools" name="twitter:title"/>
+<meta content="Compare two text blocks online and quickly identify additions, deletions and differences." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<style>
+  .tc-layout{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:800px){.tc-layout{grid-template-columns:1fr;}}
+  .tc-col label{display:block;font-size:13.5px;font-weight:700;margin-bottom:8px;}
+  textarea.tc-input{
+    width:100%;min-height:220px;resize:vertical;font-family:'Tajawal',sans-serif;font-size:14.5px;
+    line-height:1.8;padding:14px;border-radius:12px;border:1.5px solid var(--line);
+    background:#FDFCFA;color:var(--ink);
+  }
+  textarea.tc-input:focus{outline:none;border-color:var(--indigo);}
+  .diff-out{
+    margin-top:24px;padding:20px;border-radius:14px;border:1px solid var(--line);background:var(--surface);
+    font-size:15px;line-height:2.1;white-space:pre-wrap;word-wrap:break-word;
+  }
+  .diff-out ins{background:rgba(47,125,83,.18);color:#1E5E3A;text-decoration:none;border-radius:3px;padding:0 2px;}
+  .diff-out del{background:rgba(180,35,44,.14);color:#8C1B22;text-decoration:line-through;border-radius:3px;padding:0 2px;}
+  .legend{display:flex;gap:18px;margin-top:14px;font-size:12.5px;color:var(--muted);}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend .box{width:12px;height:12px;border-radius:3px;}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "text Compare",
+  "url": "https://fawran.tools/en/tools/text-compare.html",
+  "description": "Compare two text blocks online and quickly identify additions, deletions and differences.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fawran Tools",
+    "url": "https://fawran.tools/en/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "text Tools",
+      "item": "https://fawran.tools/en/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "text comparison Free",
+      "item": "https://fawran.tools/en/tools/text-compare.html"
+    }
+  ],
+  "name": "text comparison",
+  "description": "Compare Text andFind Text andTextDelete andText TextsecretText."
+}</script>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="text compare, diff checker, compare text, text difference" name="keywords"/>
+<link href="https://fawran.tools/tools/text-compare.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/text-compare.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/text-compare.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../../en/index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../../en/index.html">Tools</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</header>
+<div class="wrap tool-page">
+<div class="crumb"><a href="../../en/index.html">Tools</a>/  text /  text</div>
+<h1>text Compare</h1>
+<p class="tool-lede">Compare two text blocks online and quickly identify additions, deletions and differences.</p>
+<div class="tool-card-shell">
+<div class="tc-layout">
+<div class="tc-col">
+<label>Original text</label>
+<textarea class="tc-input" id="textA" placeholder="Text text TextorText Text..."></textarea>
+</div>
+<div class="tc-col">
+<label>New text</label>
+<textarea class="tc-input" id="textB" placeholder="Text text Text Text..."></textarea>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="compareBtn">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M8 3v18M16 3v18"></path><path d="M3 8h5M16 8h5M3 16h5M16 16h5"></path></svg>
+        Compare text
+      </button>
+<button class="btn btn-ghost" id="clearBtn">Clear all</button>
+</div>
+<div class="diff-out" id="diffOut" style="display:none;"></div>
+<div class="legend" id="legend" style="display:none;">
+<span><span class="box" style="background:rgba(47,125,83,.35);"></span> Add</span>
+<span><span class="box" style="background:rgba(180,35,44,.28);"></span> Delete</span>
+</div>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>—</div>
+<p style="text-align:center;font-size:13px;margin-top:18px;">
+    📖 <a href="../../en/blog/text-compare-guide.html" style="color:var(--indigo-deep);font-weight:700;">:</a>
+</p>
+</div>
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">Ad · Advertisement</span>
+<div class="ad-slot-inner">
+Advertisement AdSense    :
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="rating-widget" data-tool-slug="text-compare">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Use the controls below to process your content quickly in your browser.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../../en/index.html">Page</a>
+<a href="../../en/blog/index.html">Blog</a>
+<a href="../../en/about.html">About</a>
+<a href="../../en/contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../../en/privacy.html">Privacy Policy</a>
+<a href="../../en/terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Made with care for internet users</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script><script src="../../assets/rating-widget.js"></script>
+<script>
+const textA = document.getElementById('textA');
+const textB = document.getElementById('textB');
+const compareBtn = document.getElementById('compareBtn');
+const clearBtn = document.getElementById('clearBtn');
+const diffOut = document.getElementById('diffOut');
+const legend = document.getElementById('legend');
+
+function esc(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// Word-level LCS diff
+function diffWords(a, b){
+  const aw = a.split(/(\s+)/);
+  const bw = b.split(/(\s+)/);
+  const m = aw.length, n = bw.length;
+  const dp = Array.from({length:m+1}, ()=> new Array(n+1).fill(0));
+  for(let i=m-1;i>=0;i--){
+    for(let j=n-1;j>=0;j--){
+      dp[i][j] = aw[i] === bw[j] ? dp[i+1][j+1]+1 : Math.max(dp[i+1][j], dp[i][j+1]);
+    }
+  }
+  let i=0, j=0;
+  const out = [];
+  while(i<m && j<n){
+    if(aw[i] === bw[j]){ out.push({type:'same', text:aw[i]}); i++; j++; }
+    else if(dp[i+1][j] >= dp[i][j+1]){ out.push({type:'del', text:aw[i]}); i++; }
+    else { out.push({type:'ins', text:bw[j]}); j++; }
+  }
+  while(i<m){ out.push({type:'del', text:aw[i]}); i++; }
+  while(j<n){ out.push({type:'ins', text:bw[j]}); j++; }
+  return out;
+}
+
+compareBtn.addEventListener('click', ()=>{
+  const a = textA.value;
+  const b = textB.value;
+  if(!a.trim() && !b.trim()){ diffOut.style.display='none'; legend.style.display='none'; return; }
+
+  const parts = diffWords(a, b);
+  let html = '';
+  parts.forEach(p=>{
+    if(p.type === 'same') html += esc(p.text);
+    else if(p.type === 'ins') html += `<ins>${esc(p.text)}</ins>`;
+    else html += `<del>${esc(p.text)}</del>`;
+  });
+  diffOut.innerHTML = html;
+  diffOut.style.display = 'block';
+  legend.style.display = 'flex';
+});
+
+clearBtn.addEventListener('click', ()=>{
+  textA.value = ''; textB.value = '';
+  diffOut.style.display = 'none';
+  legend.style.display = 'none';
+});
+</script>
+</body>
+</html>

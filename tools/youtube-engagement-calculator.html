@@ -1,33 +1,35 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+<html dir="rtl" lang="ar">
 <head>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>حاسبة نسبة التفاعل ليوتيوب (Engagement Rate) | فورا.tools</title>
-<meta name="description" content="احسب نسبة التفاعل الفعلية لفيديوهاتك على يوتيوب من المشاهدات والإعجابات والتعليقات، مع تقييم فوري ومقارنة بمعايير الصناعة.">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="apple-touch-icon" href="../favicon.svg">
-<meta name="theme-color" content="#4F3FF0">
-<link rel="canonical" href="https://fawran.tools/tools/youtube-engagement-calculator.html">
-<link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/youtube-engagement-calculator.html">
-<link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/youtube-engagement-calculator.html">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://fawran.tools/tools/youtube-engagement-calculator.html">
-<meta property="og:title" content="حاسبة نسبة التفاعل ليوتيوب (Engagement Rate) | فورا.tools">
-<meta property="og:description" content="احسب نسبة التفاعل الفعلية لفيديوهاتك على يوتيوب من المشاهدات والإعجابات والتعليقات، مع تقييم فوري ومقارنة بمعايير الصناعة.">
-<meta property="og:site_name" content="فورا.tools">
-<meta property="og:locale" content="ar_AR">
-<meta property="og:image" content="https://fawran.tools/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="حاسبة نسبة التفاعل ليوتيوب (Engagement Rate) | فورا.tools">
-<meta name="twitter:description" content="احسب نسبة التفاعل الفعلية لفيديوهاتك على يوتيوب من المشاهدات والإعجابات والتعليقات، مع تقييم فوري ومقارنة بمعايير الصناعة.">
-<meta name="twitter:image" content="https://fawran.tools/assets/og-image.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حاسبة تفاعل يوتيوب مجانًا | فورا.tools</title>
+<meta content="احسب معدل التفاعل في YouTube من الإعجابات والتعليقات والمشاركات والمشاهدات." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/youtube-engagement-calculator.html" rel="canonical"/>
+
+
+<meta content="website" property="og:type"/>
+<meta content="https://fawran.tools/tools/youtube-engagement-calculator.html" property="og:url"/>
+<meta content="حاسبة نسبة التفاعل ليوتيوب (Engagement Rate) | فورا.tools" property="og:title"/>
+<meta content="احسب نسبة التفاعل الفعلية لفيديوهاتك على يوتيوب من المشاهدات والإعجابات والتعليقات، مع تقييم فوري ومقارنة بمعايير الصناعة." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="حاسبة نسبة التفاعل ليوتيوب (Engagement Rate) | فورا.tools" name="twitter:title"/>
+<meta content="احسب نسبة التفاعل الفعلية لفيديوهاتك على يوتيوب من المشاهدات والإعجابات والتعليقات، مع تقييم فوري ومقارنة بمعايير الصناعة." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
 <style>
   .calc-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
   @media(max-width:800px){.calc-layout{grid-template-columns:1fr;}}
@@ -58,156 +60,172 @@
   .breakdown-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px;}
   .breakdown-row:last-child{border-bottom:none;}
 </style>
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "حاسبة نسبة التفاعل ليوتيوب",
+  "name": "حاسبة تفاعل يوتيوب",
   "url": "https://fawran.tools/tools/youtube-engagement-calculator.html",
-  "description": "احسب نسبة التفاعل الفعلية لفيديوهاتك على يوتيوب من المشاهدات والإعجابات والتعليقات، مع تقييم فوري ومقارنة بمعايير الصناعة.",
+  "description": "احسب معدل التفاعل في YouTube من الإعجابات والتعليقات والمشاركات والمشاهدات.",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any (يعمل داخل المتصفح)",
-  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-  "publisher": {"@type": "Organization", "name": "فورا.tools", "url": "https://fawran.tools/index.html"}
-}
-</script>
-<script type="application/ld+json">
-{
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "فورا.tools",
+    "url": "https://fawran.tools/index.html"
+  }
+}</script>
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "الأدوات", "item": "https://fawran.tools/index.html"},
-    {"@type": "ListItem", "position": 2, "name": "أدوات يوتيوب", "item": "https://fawran.tools/index.html#youtube"},
-    {"@type": "ListItem", "position": 3, "name": "حاسبة نسبة التفاعل", "item": "https://fawran.tools/tools/youtube-engagement-calculator.html"}
-  ]
-}
-</script>
-</head>
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الأدوات",
+      "item": "https://fawran.tools/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "أدوات يوتيوب",
+      "item": "https://fawran.tools/index.html#youtube"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "حاسبة نسبة التفاعل",
+      "item": "https://fawran.tools/tools/youtube-engagement-calculator.html"
+    }
+  ],
+  "name": "حاسبة تفاعل يوتيوب",
+  "description": "احسب معدل التفاعل في YouTube من الإعجابات والتعليقات والمشاركات والمشاهدات."
+}</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="حاسبة تفاعل يوتيوب, YouTube Engagement Rate Calculator, أدوات أونلاين, free online tools, SEO tools" name="keywords"/>
+<link href="https://fawran.tools/tools/youtube-engagement-calculator.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/youtube-engagement-calculator.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/youtube-engagement-calculator.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-
 <header class="topbar">
-  <div class="topbar-inner">
-    <a href="../index.html" class="brand"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
-    <div class="nav-wrap">
-      <nav class="nav">
-        <a href="../index.html" class="active">الأدوات</a>
-        <a href="../blog/index.html">المدونة</a>
-        <a href="../about.html">من نحن</a>
-        <a href="../contact.html">تواصل معنا</a>
-      </nav>
-      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
-      <button class="theme-toggle" aria-label="تبديل الوضع الليلي" id="themeToggle">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-      <a href="../en/tools/youtube-engagement-calculator.html" class="lang-switch" title="View in English">EN</a>
-    </div>
-  </div>
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a class="active" href="../index.html">الأدوات</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/tools/youtube-engagement-calculator.html" title="View in English">EN</a>
+</div>
+</div>
 </header>
-
 <div class="wrap tool-page">
-  <div class="crumb"><a href="../index.html">الأدوات</a> / أدوات يوتيوب / حاسبة نسبة التفاعل</div>
-  <h1>حاسبة نسبة التفاعل (Engagement Rate)</h1>
-  <p class="tool-lede">
+<div class="crumb"><a href="../index.html">الأدوات</a> / أدوات يوتيوب / حاسبة نسبة التفاعل</div>
+<h1>حاسبة نسبة التفاعل (Engagement Rate)</h1>
+<p class="tool-lede">
     عدد المشاهدات وحده ما يحكيش القصة كاملة — نسبة التفاعل بتوريك فعليًا هل جمهورك متفاعل مع المحتوى
     ولا بس بيشوفه ويمشي.
   </p>
-
-  <div class="tool-card-shell">
-    <div class="calc-layout">
-      <div>
-        <div class="form-field">
-          <label>عدد المشاهدات (Views)</label>
-          <input type="number" id="views" placeholder="10000" min="0">
-        </div>
-        <div class="form-field">
-          <label>عدد الإعجابات (Likes)</label>
-          <input type="number" id="likes" placeholder="500" min="0">
-        </div>
-        <div class="form-field">
-          <label>عدد التعليقات (Comments)</label>
-          <input type="number" id="comments" placeholder="80" min="0">
-        </div>
-        <div class="form-field">
-          <label>عدد المشاركات (Shares) — اختياري</label>
-          <input type="number" id="shares" placeholder="30" min="0">
-        </div>
-      </div>
-
-      <div class="result-card">
-        <div class="big-num" id="resultRate">0%</div>
-        <div class="label">نسبة التفاعل</div>
-        <div class="rating-badge" id="ratingBadge">أدخل الأرقام</div>
-
-        <div class="rating-bar-wrap">
-          <div class="rating-bar"><div class="fill" id="ratingFill"></div><div class="marker" id="ratingMarker" style="left:0%;"></div></div>
-          <div class="scale-labels"><span>0%</span><span>2%</span><span>4%</span><span>6%+</span></div>
-        </div>
-
-        <div style="margin-top:22px;text-align:right;">
-          <div class="breakdown-row"><span>إجمالي التفاعلات</span><span id="bdTotal" class="mono">0</span></div>
-          <div class="breakdown-row"><span>نسبة الإعجاب من المشاهدات</span><span id="bdLikes" class="mono">0%</span></div>
-          <div class="breakdown-row"><span>نسبة التعليق من المشاهدات</span><span id="bdComments" class="mono">0%</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tool-card-shell">
-    <div class="section-title"><span class="dot"></span>كيف تُقرأ النتيجة؟</div>
-    <p style="font-size:13.5px;color:var(--ink-soft);line-height:1.9;">
+<div class="tool-card-shell">
+<div class="calc-layout">
+<div>
+<div class="form-field">
+<label>عدد المشاهدات (Views)</label>
+<input id="views" min="0" placeholder="10000" type="number"/>
+</div>
+<div class="form-field">
+<label>عدد الإعجابات (Likes)</label>
+<input id="likes" min="0" placeholder="500" type="number"/>
+</div>
+<div class="form-field">
+<label>عدد التعليقات (Comments)</label>
+<input id="comments" min="0" placeholder="80" type="number"/>
+</div>
+<div class="form-field">
+<label>عدد المشاركات (Shares) — اختياري</label>
+<input id="shares" min="0" placeholder="30" type="number"/>
+</div>
+</div>
+<div class="result-card">
+<div class="big-num" id="resultRate">0%</div>
+<div class="label">نسبة التفاعل</div>
+<div class="rating-badge" id="ratingBadge">أدخل الأرقام</div>
+<div class="rating-bar-wrap">
+<div class="rating-bar"><div class="fill" id="ratingFill"></div><div class="marker" id="ratingMarker" style="left:0%;"></div></div>
+<div class="scale-labels"><span>0%</span><span>2%</span><span>4%</span><span>6%+</span></div>
+</div>
+<div style="margin-top:22px;text-align:right;">
+<div class="breakdown-row"><span>إجمالي التفاعلات</span><span class="mono" id="bdTotal">0</span></div>
+<div class="breakdown-row"><span>نسبة الإعجاب من المشاهدات</span><span class="mono" id="bdLikes">0%</span></div>
+<div class="breakdown-row"><span>نسبة التعليق من المشاهدات</span><span class="mono" id="bdComments">0%</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tool-card-shell">
+<div class="section-title"><span class="dot"></span>كيف تُقرأ النتيجة؟</div>
+<p style="font-size:13.5px;color:var(--ink-soft);line-height:1.9;">
       نسبة التفاعل = (الإعجابات + التعليقات + المشاركات) ÷ المشاهدات × 100. كمعيار عام تقريبي:
       أقل من 1% ضعيفة، من 1% إلى 3% متوسطة وطبيعية لمعظم القنوات، من 3% إلى 6% جيدة، وأكثر من 6%
       ممتازة. الأرقام دي تقريبية وبتختلف حسب حجم القناة والنيتش — قناة صغيرة بجمهور مخلص غالبًا
       نسبتها أعلى من قناة ضخمة.
     </p>
-  </div>
-
-  <div class="footer-note">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+</div>
+<div class="footer-note">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
     كل الحسابات تتم محليًا في متصفحك — أرقامك لا تُرسل لأي خادم
   </div>
-
-  <p style="text-align:center;font-size:13px;margin-top:18px;">
+<p style="text-align:center;font-size:13px;margin-top:18px;">
     📖 <a href="../blog/youtube-engagement-guide.html" style="color:var(--indigo-deep);font-weight:700;">اقرأ الدليل الكامل: معايير تقريبية للتقييم وكيف تزيد نسبة التفاعل</a>
-  </p>
+</p>
 </div>
-
 <div class="wrap">
-  <div class="ad-slot ad-slot-leaderboard">
-    <span class="ad-label">إعلان · Advertisement</span>
-    <div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
-  </div>
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
 </div>
-
+</div>
+<div class="wrap"><div class="rating-widget" data-tool-slug="youtube-engagement-calculator">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
 <footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
-      <p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
-    </div>
-    <div class="footer-col">
-      <h4>الموقع</h4>
-      <a href="../index.html">الصفحة الرئيسية</a>
-      <a href="../blog/index.html">المدونة</a>
-      <a href="../about.html">من نحن</a>
-      <a href="../contact.html">تواصل معنا</a>
-    </div>
-    <div class="footer-col">
-      <h4>قانوني</h4>
-      <a href="../privacy.html">سياسة الخصوصية</a>
-      <a href="../terms.html">شروط الاستخدام</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
-    <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
-  </div>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
 </footer>
-
-<script src="../assets/main.js"></script>
+<script src="../assets/main.js"></script><script src="../assets/rating-widget.js"></script>
 <script>
 const views = document.getElementById('views');
 const likes = document.getElementById('likes');
