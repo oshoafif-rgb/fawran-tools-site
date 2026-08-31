@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hash: إيه هو وليه بيُستخدم لحماية كلمات المرور | فورا.tools</title>
+<meta content="دليل عملي لفهم دوال التجزئة (Hash)، الفرق بينها وبين التشفير، وليه SHA-256 بالتحديد معيار أساسي في أمان البيانات." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/blog/hash-generator-guide.html" rel="canonical"/>
+
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/blog/hash-generator-guide.html" property="og:url"/>
+<meta content="Hash: إيه هو وليه بيُستخدم لحماية كلمات المرور | فورا.tools" property="og:title"/>
+<meta content="دليل عملي لفهم دوال التجزئة والفرق بينها وبين التشفير." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Hash: إيه هو وليه بيُستخدم لحماية كلمات المرور | فورا.tools" name="twitter:title"/>
+<meta content="دليل عملي لفهم دوال التجزئة." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Hash: إيه هو وليه بيُستخدم لحماية كلمات المرور","description":"دليل عملي لفهم دوال التجزئة، والفرق بينها وبين التشفير، وليه SHA-256 معيار أساسي في أمان البيانات.","url":"https://fawran.tools/blog/hash-generator-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/hash-generator-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"Hash: إيه هو وليه بيُستخدم لحماية كلمات المرور","item":"https://fawran.tools/blog/hash-generator-guide.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل ممكن فك تشفير نتيجة Hash للوصول للنص الأصلي؟","acceptedAnswer":{"@type":"Answer","text":"لا، دوال التجزئة عملية باتجاه واحد فقط (One-Way) بالتصميم — مستحيل حسابيًا استرجاع النص الأصلي من نتيجة الـHash نفسها مباشرة."}},{"@type":"Question","name":"ليه فيه أنواع مختلفة زي SHA-256 وSHA-512؟","acceptedAnswer":{"@type":"Answer","text":"الأرقام (256، 384، 512) بتشير لطول النتيجة النهائية بالبت. كل ما زاد الرقم، زادت مساحة النتائج الممكنة نظريًا، وهو ما يقلل احتمال (رغم ندرته) تصادم نصين مختلفين في نفس نتيجة الـHash."}},{"@type":"Question","name":"هل نفس النص بيدّي نفس نتيجة الـHash دايمًا؟","acceptedAnswer":{"@type":"Answer","text":"نعم، هذه من الخصائص الأساسية لدوال التجزئة — نفس المُدخل بالضبط (حرفًا بحرف) هيديك نفس النتيجة كل مرة، وأي تغيير بسيط في المُدخل هيغيّر النتيجة بالكامل."}},{"@type":"Question","name":"هل Hash مناسب لحماية كلمات المرور مباشرة؟","acceptedAnswer":{"@type":"Answer","text":"دوال التجزئة أساس حماية كلمات المرور فعليًا، لكن الأنظمة الاحترافية بتضيف خطوات إضافية (زي Salt) قبل التجزئة لحماية أقوى ضد هجمات القواميس الجاهزة."}}]}
+</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/hash-generator-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/hash-generator-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/hash-generator-guide.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">الأدوات</a>
+<a class="active" href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/blog/hash-generator-guide.html" title="View in English">EN</a>
+</div>
+</div>
+</header>
+<div class="wrap">
+<div class="page-head">
+<div class="article-meta"><span class="tag">أدوات المطورين</span><span>6 دقائق قراءة</span></div>
+<h1>Hash: إيه هو وليه بيُستخدم لحماية كلمات المرور</h1>
+</div>
+
+<div class="content-card">
+
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <rect x="90" y="130" width="220" height="60" rx="10" fill="#1A1826"/>
+  <text x="200" y="167" font-family="IBM Plex Mono, monospace" font-size="16" fill="#8B89A3" text-anchor="middle">password123</text>
+  <path d="M340 160 L460 160 M420 135 L460 160 L420 185" stroke="#F0A93B" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="490" y="110" width="220" height="100" rx="10" fill="#4F3FF0"/>
+  <text x="600" y="155" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fff" text-anchor="middle">ef92b778bafe...</text>
+  <text x="600" y="175" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fff" text-anchor="middle">42f9d0b2f9...</text>
+  <path d="M710 170 L740 170 M726 156 L740 170 L726 184" stroke="#B4232C" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+</svg>
+
+<p>
+  لما موقع بيقول "احنا مش بنشوف كلمة مرورك"، بيكون قاصد إنه بيخزّن نتيجة Hash بس، مش الكلمة الأصلية.
+  دوال التجزئة دي أساس أمان البيانات على الإنترنت، وفهمها بسيط أكتر مما تتخيلي.
+</p>
+
+<div class="toc">
+  <h2>محتوى المقال</h2>
+  <ul>
+    <li><a href="#what">إيه هي دالة التجزئة (Hash)؟</a></li>
+    <li><a href="#one-way">خاصية أساسية: عملية باتجاه واحد</a></li>
+    <li><a href="#not-encryption">Hash مش تشفير — إيه الفرق؟</a></li>
+    <li><a href="#usecases">استخدامات حقيقية شائعة</a></li>
+    <li><a href="#howto">كيف تنشئي Hash لنص بسهولة؟</a></li>
+    <li><a href="#faq">أسئلة شائعة</a></li>
+  </ul>
+</div>
+
+<h2 id="what">إيه هي دالة التجزئة (Hash)؟</h2>
+<p>
+  دالة التجزئة بتاخد أي مُدخل (نص، ملف، أي بيانات) وتحوّله لسلسلة حروف وأرقام بطول ثابت، بغض النظر
+  عن طول المُدخل الأصلي. نفس المُدخل بالظبط هيدّي نفس النتيجة كل مرة، لكن أي تغيير بسيط جدًا في
+  المُدخل (حتى حرف واحد) هيغيّر النتيجة بالكامل بشكل غير متوقع.
+</p>
+
+<h2 id="one-way">خاصية أساسية: عملية باتجاه واحد</h2>
+<p>
+  دي أهم خاصية في دوال التجزئة الآمنة: العملية باتجاه واحد بس (One-Way) — يعني تقدري تحوّل نص
+  لنتيجة Hash بسهولة، لكن مستحيل حسابيًا تعكسي العملية وترجعي للنص الأصلي من نتيجة الـHash نفسها
+  مباشرة. ده بالظبط سبب استخدامها لحماية كلمات المرور.
+</p>
+
+<h2 id="not-encryption">Hash مش تشفير — إيه الفرق؟</h2>
+<p>
+  التشفير عملية قابلة للعكس (تقدري تفكّي التشفير بمفتاح صحيح وترجعي للنص الأصلي)، بينما التجزئة
+  عملية باتجاه واحد نهائي بدون أي مفتاح يسمح بالعكس. عشان كده لما موقع بيتعرض لاختراق وبياناته
+  مخزّنة كـHash، المخترق بيلاقي نتائج Hash بس، مش كلمات المرور الفعلية.
+</p>
+
+<h2 id="usecases">استخدامات حقيقية شائعة</h2>
+<ul>
+  <li><strong>حماية كلمات المرور:</strong> تخزين نتيجة Hash بدل النص الفعلي في قواعد البيانات.</li>
+  <li><strong>التحقق من سلامة الملفات:</strong> مقارنة Hash ملف قبل وبعد التنزيل للتأكد إنه ما اتغيّرش.</li>
+  <li><strong>بصمات رقمية للبيانات:</strong> تحديد نسخة فريدة من ملف أو نص بدون تخزين المحتوى كامل.</li>
+  <li><strong>أنظمة التوقيع الرقمي:</strong> جزء أساسي من آليات التحقق من هوية المُرسل في البلوك تشين والتوقيعات الرقمية.</li>
+</ul>
+
+<h2 id="howto">كيف تنشئي Hash لنص بسهولة؟</h2>
+<p>
+  باستخدام <a href="../tools/hash-generator.html" style="color:var(--indigo-deep);font-weight:700;">مولّد Hash</a> على فورا.tools:
+</p>
+<ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+  <li>الصق النص اللي عايزة تحوّله.</li>
+  <li>اختر نوع الخوارزمية (SHA-256، SHA-384، أو SHA-512).</li>
+  <li>احصلي على نتيجة Hash فورًا، جاهزة للنسخ.</li>
+</ol>
+
+<div class="tool-cta">
+<div>
+<div class="txt">جرّبي مولّد Hash الآن</div>
+<div class="sub">SHA-256 وSHA-384 وSHA-512 محليًا داخل متصفحك</div>
+</div>
+<a class="btn btn-primary" href="../tools/hash-generator.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 9h16M4 15h16M10 3L8 21M16 3l-2 18"></path></svg>
+    افتح الأداة
+  </a>
+</div>
+
+<h2 id="faq">أسئلة شائعة</h2>
+<div class="faq-item">
+  <h3>هل ممكن فك تشفير نتيجة Hash للوصول للنص الأصلي؟</h3>
+  <p style="font-size:13.5px;">لا، دوال التجزئة عملية باتجاه واحد فقط بالتصميم — مستحيل حسابيًا استرجاع النص الأصلي من نتيجتها.</p>
+</div>
+<div class="faq-item">
+  <h3>ليه فيه أنواع مختلفة زي SHA-256 وSHA-512؟</h3>
+  <p style="font-size:13.5px;">الأرقام تشير لطول النتيجة بالبت. كل ما زاد الرقم، زادت مساحة النتائج الممكنة، وقلّ احتمال تصادم نصين مختلفين.</p>
+</div>
+<div class="faq-item">
+  <h3>هل نفس النص بيدّي نفس نتيجة الـHash دايمًا؟</h3>
+  <p style="font-size:13.5px;">نعم، نفس المُدخل بالضبط هيديكِ نفس النتيجة كل مرة، وأي تغيير بسيط في المُدخل هيغيّر النتيجة بالكامل.</p>
+</div>
+<div class="faq-item">
+  <h3>هل Hash مناسب لحماية كلمات المرور مباشرة؟</h3>
+  <p style="font-size:13.5px;">دوال التجزئة أساس حماية كلمات المرور، لكن الأنظمة الاحترافية بتضيف خطوات إضافية (Salt) لحماية أقوى.</p>
+</div>
+
+<h2>خلاصة</h2>
+<p>
+  دوال التجزئة أداة أساسية في أمان البيانات الحديث — من حماية كلمات المرور للتحقق من سلامة الملفات
+  — وفهم إنها عملية باتجاه واحد بيوضح ليه هي أمان فعلي، مش مجرد تشفير عادي قابل للعكس.
+</p>
+
+</div>
+</div>
+
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
+<a href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script>
+</body>
+</html>

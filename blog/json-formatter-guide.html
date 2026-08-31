@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ليه JSON غير المنسّق صعب القراءة، وإزاي تنظّميه في ثانية | فورا.tools</title>
+<meta content="دليل عملي لفهم بنية JSON، ليه التنسيق مهم لقراءة استجابات API، وإزاي تكتشفي أخطاء الصياغة بسرعة." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/blog/json-formatter-guide.html" rel="canonical"/>
+
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/blog/json-formatter-guide.html" property="og:url"/>
+<meta content="ليه JSON غير المنسّق صعب القراءة، وإزاي تنظّميه في ثانية | فورا.tools" property="og:title"/>
+<meta content="دليل عملي لفهم بنية JSON وليه التنسيق مهم لقراءة استجابات API." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="ليه JSON غير المنسّق صعب القراءة، وإزاي تنظّميه في ثانية | فورا.tools" name="twitter:title"/>
+<meta content="دليل عملي لفهم بنية JSON." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"ليه JSON غير المنسّق صعب القراءة، وإزاي تنظّميه في ثانية","description":"دليل عملي لفهم بنية JSON، وليه التنسيق مهم لقراءة استجابات API، وإزاي تكتشفي أخطاء الصياغة بسرعة.","url":"https://fawran.tools/blog/json-formatter-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/json-formatter-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"ليه JSON غير المنسّق صعب القراءة، وإزاي تنظّميه في ثانية","item":"https://fawran.tools/blog/json-formatter-guide.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل تنسيق JSON بيغيّر البيانات نفسها؟","acceptedAnswer":{"@type":"Answer","text":"لا، التنسيق بيضيف بس مسافات وأسطر جديدة لتحسين القراءة البصرية — البيانات والقيم نفسها بتفضل زي ما هي بالظبط بدون أي تغيير."}},{"@type":"Question","name":"إيه أشهر أخطاء الصياغة في JSON؟","acceptedAnswer":{"@type":"Answer","text":"أشهرها: فاصلة زيادة في آخر عنصر بقائمة، نسيان علامات اقتباس حوالين اسم مفتاح، أو قوس مفتوح من غير إغلاق مطابق."}},{"@type":"Question","name":"هل JSON نفس الشيء زي JavaScript Object؟","acceptedAnswer":{"@type":"Answer","text":"قريبين في الشكل لكن مش نفس الشيء تمامًا — JSON معيار بيانات مستقل عن أي لغة برمجة، وله قواعد أكثر صرامة (زي إلزامية علامات الاقتباس حوالين المفاتيح) مقارنة بكائنات JavaScript."}},{"@type":"Question","name":"ليه أغلب واجهات برمجة التطبيقات (API) بتستخدم JSON؟","acceptedAnswer":{"@type":"Answer","text":"لأنه خفيف، سهل القراءة نسبيًا، ومدعوم في كل لغات البرمجة تقريبًا، فبقى المعيار الفعلي لتبادل البيانات بين الأنظمة المختلفة على الإنترنت."}}]}
+</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/json-formatter-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/json-formatter-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/json-formatter-guide.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">الأدوات</a>
+<a class="active" href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/blog/json-formatter-guide.html" title="View in English">EN</a>
+</div>
+</div>
+</header>
+<div class="wrap">
+<div class="page-head">
+<div class="article-meta"><span class="tag">أدوات المطورين</span><span>6 دقائق قراءة</span></div>
+<h1>ليه JSON غير المنسّق صعب القراءة، وإزاي تنظّميه في ثانية</h1>
+</div>
+
+<div class="content-card">
+
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <rect x="90" y="130" width="280" height="60" rx="10" fill="#1A1826"/>
+  <text x="230" y="167" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8B89A3" text-anchor="middle">{"name":"Ali","age":30}</text>
+  <path d="M400 160 L470 160 M440 135 L470 160 L440 185" stroke="#F0A93B" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="500" y="90" width="220" height="160" rx="10" fill="#1A1826"/>
+  <text x="520" y="115" font-family="IBM Plex Mono, monospace" font-size="12" fill="#4F3FF0" text-anchor="start">{</text>
+  <text x="540" y="140" font-family="IBM Plex Mono, monospace" font-size="12" fill="#F0A93B" text-anchor="start">"name": "Ali",</text>
+  <text x="540" y="165" font-family="IBM Plex Mono, monospace" font-size="12" fill="#F0A93B" text-anchor="start">"age": 30</text>
+  <text x="520" y="190" font-family="IBM Plex Mono, monospace" font-size="12" fill="#4F3FF0" text-anchor="start">}</text>
+</svg>
+
+<p>
+  فتحتِ استجابة API ولقيتِ سطر واحد طويل مليان أقواس وفواصل من غير أي مسافة؟ ده JSON غير منسّق —
+  صحيح تقنيًا وقابل للقراءة للحاسوب، لكن شبه مستحيل للعين البشرية تتابعه.
+</p>
+
+<div class="toc">
+  <h2>محتوى المقال</h2>
+  <ul>
+    <li><a href="#what">إيه هو JSON أصلًا؟</a></li>
+    <li><a href="#why-format">ليه التنسيق مهم فعليًا؟</a></li>
+    <li><a href="#common-errors">أشهر أخطاء الصياغة</a></li>
+    <li><a href="#usecases">استخدامات شائعة</a></li>
+    <li><a href="#howto">كيف تنسّقي JSON بسهولة؟</a></li>
+    <li><a href="#faq">أسئلة شائعة</a></li>
+  </ul>
+</div>
+
+<h2 id="what">إيه هو JSON أصلًا؟</h2>
+<p>
+  JSON (اختصار JavaScript Object Notation) صيغة بسيطة لتمثيل البيانات المنظمة — أزواج من "مفتاح"
+  و"قيمة"، ممكن تتداخل جوه بعضها لتمثيل هياكل معقدة. بقى المعيار الفعلي لتبادل البيانات بين الخوادم
+  والتطبيقات على الإنترنت، من استجابات API لملفات الإعدادات.
+</p>
+
+<h2 id="why-format">ليه التنسيق مهم فعليًا؟</h2>
+<p>
+  البيانات المضغوطة (كل حاجة في سطر واحد من غير مسافات) خفيفة الحجم وأسرع في النقل عبر الشبكة، لكن
+  شبه مستحيل تقرأيها أو تتبعي بنيتها بالعين المجردة. التنسيق بيضيف مسافات بادئة (Indentation)
+  وأسطر جديدة تفصل كل عنصر، فتقدري تشاهد بوضوح مين جوه مين، وتتبعي البنية بسهولة.
+</p>
+
+<h2 id="common-errors">أشهر أخطاء الصياغة</h2>
+<p>
+  أشهر أخطاء JSON اللي بتظهر لما تحاولي تنسقي بيانات مكتوبة يدويًا: فاصلة زيادة بعد آخر عنصر في
+  قائمة أو كائن، نسيان علامات اقتباس حوالين اسم مفتاح، أو قوس مفتوح ({ أو [) من غير إغلاق مطابق.
+  أداة التنسيق الجيدة بتكتشف الأخطاء دي فورًا وبتوضحلك مكانها بالظبط.
+</p>
+
+<h2 id="usecases">استخدامات شائعة</h2>
+<ul>
+  <li><strong>مراجعة استجابات API:</strong> فهم بنية البيانات الراجعة من خدمة خارجية بوضوح.</li>
+  <li><strong>تصحيح ملفات إعدادات:</strong> مراجعة ملفات config.json أو package.json بسهولة.</li>
+  <li><strong>مشاركة أمثلة كود:</strong> إرسال بيانات JSON منظمة وواضحة لزميل أو في توثيق.</li>
+  <li><strong>تعلّم بنية بيانات جديدة:</strong> فهم شكل استجابة API غير مألوفة بشكل أسرع.</li>
+</ul>
+
+<h2 id="howto">كيف تنسّقي JSON بسهولة؟</h2>
+<p>
+  باستخدام <a href="../tools/json-formatter.html" style="color:var(--indigo-deep);font-weight:700;">منسّق JSON</a> على فورا.tools:
+</p>
+<ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+  <li>الصق بيانات JSON، منسّقة أو مضغوطة، مش فارقة.</li>
+  <li>اضغط "تنسيق" — النتيجة تظهر فورًا بمسافات بادئة واضحة.</li>
+  <li>لو فيه خطأ صياغة، هيتوضّح لك مكانه بالتحديد.</li>
+</ol>
+
+<div class="tool-cta">
+<div>
+<div class="txt">جرّبي منسّق JSON الآن</div>
+<div class="sub">تنسيق فوري مع كشف أخطاء الصياغة، محليًا داخل متصفحك</div>
+</div>
+<a class="btn btn-primary" href="../tools/json-formatter.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M8 3a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2"></path><path d="M16 3a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2"></path></svg>
+    افتح الأداة
+  </a>
+</div>
+
+<h2 id="faq">أسئلة شائعة</h2>
+<div class="faq-item">
+  <h3>هل تنسيق JSON بيغيّر البيانات نفسها؟</h3>
+  <p style="font-size:13.5px;">لا، التنسيق بيضيف بس مسافات وأسطر جديدة — البيانات والقيم نفسها بتفضل زي ما هي بالظبط.</p>
+</div>
+<div class="faq-item">
+  <h3>إيه أشهر أخطاء الصياغة في JSON؟</h3>
+  <p style="font-size:13.5px;">فاصلة زيادة في آخر عنصر، نسيان علامات اقتباس حوالين اسم مفتاح، أو قوس مفتوح من غير إغلاق مطابق.</p>
+</div>
+<div class="faq-item">
+  <h3>هل JSON نفس الشيء زي JavaScript Object؟</h3>
+  <p style="font-size:13.5px;">قريبين في الشكل لكن مش نفس الشيء — JSON معيار مستقل عن أي لغة، بقواعد أكثر صرامة زي إلزامية علامات الاقتباس.</p>
+</div>
+<div class="faq-item">
+  <h3>ليه أغلب واجهات API بتستخدم JSON؟</h3>
+  <p style="font-size:13.5px;">لأنه خفيف، سهل القراءة نسبيًا، ومدعوم في كل لغات البرمجة تقريبًا.</p>
+</div>
+
+<h2>خلاصة</h2>
+<p>
+  التنسيق مش بيغيّر بيانات JSON، بس بيخليها قابلة للقراءة والفهم بسرعة — خطوة بسيطة بتوفر عليكِ
+  وقت كبير في مراجعة أو تصحيح أي بيانات معقدة.
+</p>
+
+</div>
+</div>
+
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
+<a href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script>
+</body>
+</html>

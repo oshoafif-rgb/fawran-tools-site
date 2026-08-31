@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Why Your System Rejects a JSON File Even Though It Looks Correct | Fawran Tools</title>
+<meta content="A practical guide to understanding the difference between JSON formatting and structural validity, and the most common hidden errors that make a system reject a file that looks perfectly fine." name="description"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/blog/json-validator-guide.html" rel="canonical"/>
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/en/blog/json-validator-guide.html" property="og:url"/>
+<meta content="Why Your System Rejects a JSON File Even Though It Looks Correct | Fawran Tools" property="og:title"/>
+<meta content="A practical guide to the difference between JSON formatting and structural validity." property="og:description"/>
+<meta content="Fawran Tools" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Why Your System Rejects a JSON File Even Though It Looks Correct | Fawran Tools" name="twitter:title"/>
+<meta content="A practical guide to JSON structural validity." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Why Your System Rejects a JSON File Even Though It Looks Correct","description":"A practical guide to the difference between JSON formatting and structural validity, and the most common hidden errors.","url":"https://fawran.tools/en/blog/json-validator-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","inLanguage":"en","author":{"@type":"Organization","name":"Fawran Tools"},"publisher":{"@type":"Organization","name":"Fawran Tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/en/blog/json-validator-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://fawran.tools/en/blog/index.html"},{"@type":"ListItem","position":2,"name":"Why Your System Rejects a JSON File Even Though It Looks Correct","item":"https://fawran.tools/en/blog/json-validator-guide.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's the difference between formatting and validation?","acceptedAnswer":{"@type":"Answer","text":"Formatting only arranges the visual shape of the text, while validation checks that the structure itself fully complies with the official JSON standard rules — text can look beautifully formatted while still being structurally invalid at the same time."}},{"@type":"Question","name":"Why does JSON sometimes work in one tool but not another?","acceptedAnswer":{"@type":"Answer","text":"Some tools (like code editors) are more lenient with minor errors, while strict production systems reject any deviation from the official standard precisely."}},{"@type":"Question","name":"Do true and false values need to be lowercase?","acceptedAnswer":{"@type":"Answer","text":"Yes, the JSON standard requires true, false, and null to be written entirely lowercase — True or FALSE will be considered syntax errors even though they're accepted in some programming languages."}},{"@type":"Question","name":"Can I use comments inside a JSON file?","acceptedAnswer":{"@type":"Answer","text":"No, the official JSON standard doesn't support comments at all (neither // nor /* */), unlike some similar formats like JSON5 or JSONC that add this as a non-standard extension."}}]}
+</script>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/json-validator-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/json-validator-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/json-validator-guide.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">Tools</a>
+<a class="active" href="index.html">Blog</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../../blog/json-validator-guide.html" title="عرض بالعربي">AR</a>
+</div>
+</div>
+</header>
+<div class="wrap">
+<div class="page-head">
+<div class="article-meta"><span class="tag">Developer Tools</span><span>5 min read</span></div>
+<h1>Why Your System Rejects a JSON File Even Though It Looks Correct</h1>
+</div>
+
+<div class="content-card">
+
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <rect x="180" y="100" width="440" height="140" rx="10" fill="#1A1826"/>
+  <text x="210" y="135" font-family="IBM Plex Mono, monospace" font-size="14" fill="#8B89A3" text-anchor="start">{"name": "Ali",</text>
+  <text x="210" y="160" font-family="IBM Plex Mono, monospace" font-size="14" fill="#B4232C" text-anchor="start">"age": 30,}</text>
+  <circle cx="600" cy="155" r="14" fill="#B4232C"/>
+  <text x="600" y="161" font-family="Arial" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">!</text>
+  <text x="210" y="200" font-family="IBM Plex Mono, monospace" font-size="12" fill="#2F7D53" text-anchor="start">↑ trailing comma after last item</text>
+</svg>
+
+<p>
+  The file looks completely tidy and readable, but the system rejects it with a vague error like
+  "Unexpected token." The problem usually isn't visual — it's a small structural detail that
+  violates the official JSON standard.
+</p>
+
+<div class="toc">
+  <h2>On this page</h2>
+  <ul>
+    <li><a href="#format-vs-valid">The difference between "formatted" and "structurally valid"</a></li>
+    <li><a href="#hidden-errors">Common hidden errors that slip past the eye</a></li>
+    <li><a href="#strict-rules">Strict JSON rules people often forget</a></li>
+    <li><a href="#howto">How to validate JSON easily</a></li>
+    <li><a href="#faq">Frequently asked questions</a></li>
+  </ul>
+</div>
+
+<h2 id="format-vs-valid">The difference between "formatted" and "structurally valid"</h2>
+<p>
+  Formatting only arranges the visual shape of the text (spaces, new lines), while validation
+  checks that the structure itself fully complies with the official JSON standard rules. Text can
+  look beautifully formatted to the eye while being structurally invalid at the same time, and
+  will get rejected by any strict system.
+</p>
+
+<h2 id="hidden-errors">Common hidden errors that slip past the eye</h2>
+<p>
+  A trailing comma after the last item in a list or object is one of the most common errors, and
+  hard to spot with the naked eye especially in long files. Also, using single quotes (') instead
+  of double quotes (") around text, or writing a number in an unsupported format (like numbers
+  with leading zeros), causes the entire file to be rejected.
+</p>
+
+<h2 id="strict-rules">Strict JSON rules people often forget</h2>
+<p>
+  The official JSON standard requires: mandatory double quotes around every key and string (not
+  single quotes), boolean values must be entirely lowercase true or false (not True or FALSE), and
+  there's no support for comments at all (neither // nor /* */), even though comments are accepted
+  in many programming languages whose syntax draws from JSON.
+</p>
+
+<h2 id="howto">How to validate JSON easily</h2>
+<p>
+  Using the <a href="../../tools/json-validator.html" style="color:var(--indigo-deep);font-weight:700;">JSON Validator</a> on Fawran Tools:
+</p>
+<ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+  <li>Paste the JSON data you want to check.</li>
+  <li>Click "Validate" — the result appears instantly (valid or invalid).</li>
+  <li>If there's an error, its type and exact location will be pointed out.</li>
+</ol>
+
+<div class="tool-cta">
+<div>
+<div class="txt">Try the JSON Validator now</div>
+<div class="sub">Instant structural validation, with precise error location</div>
+</div>
+<a class="btn btn-primary" href="../../tools/json-validator.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+    Open the tool
+  </a>
+</div>
+
+<h2 id="faq">Frequently asked questions</h2>
+<div class="faq-item">
+  <h3>What's the difference between formatting and validation?</h3>
+  <p style="font-size:13.5px;">Formatting only arranges the visual shape, while validation checks the structure complies with the official standard.</p>
+</div>
+<div class="faq-item">
+  <h3>Why does JSON sometimes work in one tool but not another?</h3>
+  <p style="font-size:13.5px;">Some tools are more lenient with minor errors, while strict production systems reject any deviation from the standard.</p>
+</div>
+<div class="faq-item">
+  <h3>Do true and false values need to be lowercase?</h3>
+  <p style="font-size:13.5px;">Yes, the standard requires true, false, and null entirely lowercase — any other form is a syntax error.</p>
+</div>
+<div class="faq-item">
+  <h3>Can I use comments inside a JSON file?</h3>
+  <p style="font-size:13.5px;">No, the official standard doesn't support comments at all, unlike similar formats like JSON5 or JSONC.</p>
+</div>
+
+<h2>Conclusion</h2>
+<p>
+  A tidy appearance isn't a guarantee of data validity — structural validation is the real test,
+  and a quick validator tool saves you hours of manually searching for why a system rejected a
+  file that looks perfectly fine to the eye.
+</p>
+
+</div>
+</div>
+
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">Advertisement</span>
+<div class="ad-slot-inner">
+<!-- Place your responsive AdSense ad unit code here -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Free online tools for images, PDF files, text, and SEO — all running entirely in your browser without uploading your files to any server.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../index.html">Home</a><a href="../favorites.html">☆ Favorites</a>
+<a href="index.html">Blog</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools</span>
+<span>Built for practical everyday tasks.</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script><script src="../../assets/share-widget.js"></script>
+</body>
+</html>

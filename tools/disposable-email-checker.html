@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>كاشف الإيميلات المؤقتة مجانًا | فورا.tools</title>
+<meta content="تحقق إذا كان عنوان إيميل من دومين مؤقت أو مواقع إيميل مؤقتة معروفة، مفيد لحماية نماذج التسجيل من الحسابات الوهمية." name="description"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/disposable-email-checker.html" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<link href="https://fawran.tools/tools/disposable-email-checker.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/disposable-email-checker.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/disposable-email-checker.html" hreflang="x-default" rel="alternate"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"كاشف الإيميلات المؤقتة","url":"https://fawran.tools/tools/disposable-email-checker.html","description":"تحقق إذا كان عنوان إيميل من دومين مؤقت أو موقع إيميل وهمي معروف.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (يعمل داخل المتصفح)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+.toolbox{max-width:820px;margin:28px auto}
+.toolbox input,.toolbox textarea{padding:11px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:inherit;font:inherit;width:100%;box-sizing:border-box}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
+.status{margin-top:14px;font-weight:700}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:28px;margin-bottom:22px}
+.result-banner{display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:12px;font-weight:800;margin-top:16px;}
+.result-banner.temp{background:rgba(180,35,44,.1);color:var(--danger);}
+.result-banner.ok{background:rgba(47,125,83,.12);color:var(--good);}
+.check-row{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border:1px solid var(--line);border-radius:10px;margin-bottom:6px;font-family:'IBM Plex Mono',monospace;font-size:13.5px;direction:ltr;text-align:left}
+.badge-tag{font-family:'Tajawal',sans-serif;font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px}
+.badge-tag.temp{background:rgba(180,35,44,.12);color:var(--danger)}
+.badge-tag.ok{background:rgba(47,125,83,.15);color:var(--good)}
+</style>
+</head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a><nav class="nav"><a href="../index.html">الأدوات</a><a href="../blog/index.html">المدونة</a><a href="../about.html">من نحن</a><a href="../contact.html">تواصل معنا</a></nav><a class="lang-switch" href="https://fawran.tools/en/tools/disposable-email-checker.html">EN</a></div></header>
+
+<main><div class="wrap toolbox">
+<a href="email.html">← أدوات الإيميل</a>
+<h1>كاشف الإيميلات المؤقتة</h1>
+<p class="hero-lede">تحقق إذا كان إيميل واحد أو قائمة كاملة من دومينات مواقع الإيميل المؤقت المعروفة (زي Mailinator وGuerrilla Mail وغيرهم).</p>
+
+<section class="card">
+  <label style="font-size:13px;font-weight:700;display:block;margin-bottom:6px;">الصق إيميل واحد أو قائمة (سطر لكل عنوان)</label>
+  <textarea id="inputText" placeholder="name@gmail.com&#10;test@mailinator.com" style="min-height:150px;resize:vertical;font-family:'IBM Plex Mono',monospace;direction:ltr;text-align:left;"></textarea>
+  <div class="row">
+    <button class="btn btn-primary" id="checkBtn">فحص الآن</button>
+  </div>
+  <div class="status" id="status"></div>
+</section>
+
+<section class="card" id="resultsCard" style="display:none;">
+  <label style="font-size:13px;font-weight:700;display:block;margin-bottom:10px;">النتيجة</label>
+  <div id="resultsList"></div>
+</section>
+
+<div class="content-card" style="background:var(--surface-sunk);border-radius:12px;padding:16px 18px;font-size:13.5px;line-height:1.9;margin-top:18px;">
+  <strong>ملاحظة:</strong> القائمة بتغطي أكتر من 100 دومين مؤقت شائع، لكن مواقع الإيميل المؤقت بتظهر باستمرار بدومينات جديدة، فمفيش قائمة تقدر تكون شاملة 100%.
+</div>
+</div></main>
+
+<div class="wrap"><div class="rating-widget" data-tool-slug="disposable-email-checker">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer><div class="footer-grid"><div><div class="footer-brand"><span class="mark">FW</span> فورا.tools</div><p class="footer-desc">مجموعة أدوات أونلاين مجانية تعمل بالكامل داخل متصفحك.</p></div><div class="footer-col"><h4>الموقع</h4><a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a><a href="../blog/index.html">المدونة</a><a href="../about.html">من نحن</a><a href="../contact.html">تواصل معنا</a></div><div class="footer-col"><h4>قانوني</h4><a href="../privacy.html">سياسة الخصوصية</a><a href="../terms.html">شروط الاستخدام</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> فورا.tools</span></div></footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script><script src="../assets/rating-widget.js"></script>
+<script>
+const inputText=document.getElementById('inputText'),
+      checkBtn=document.getElementById('checkBtn'),
+      statusEl=document.getElementById('status'),
+      resultsCard=document.getElementById('resultsCard'),
+      resultsList=document.getElementById('resultsList');
+
+const DISPOSABLE_DOMAINS=new Set([
+'mailinator.com','guerrillamail.com','guerrillamail.info','guerrillamail.biz','guerrillamail.de','guerrillamail.net','guerrillamail.org',
+'10minutemail.com','20minutemail.com','tempmail.com','temp-mail.org','temp-mail.io','throwawaymail.com','yopmail.com','yopmail.fr','yopmail.net',
+'trashmail.com','trashmail.net','trashmailer.com','getnada.com','fakeinbox.com','sharklasers.com','dispostable.com','mailnesia.com',
+'mytemp.email','emailondeck.com','maildrop.cc','mohmal.com','moakt.com','spamgourmet.com','tempinbox.com','mintemail.com',
+'burnermail.io','sogetthis.com','spam4.me','grr.la','pokemail.net','spambog.com','spambog.de','spambog.ru','mailcatch.com',
+'tempail.com','discard.email','discardmail.com','mailnull.com','33mail.com','anonbox.net','deadaddress.com','e4ward.com',
+'emailsensei.com','fakemailgenerator.com','incognitomail.org','jetable.org','meltmail.com','mytrashmail.com','no-spam.ws',
+'nowmymail.com','objectmail.com','proxymail.eu','rcpt.at','sneakemail.com','spamex.com','spamfree24.org','spamhole.com',
+'spaml.com','tempemail.net','tempmailer.com','tempmailaddress.com','tyldd.com','wegwerfmail.de','wegwerfmail.net',
+'0-mail.com','1secmail.com','mailtemp.info','emailfake.com','fake-mail.net','mailtothis.com','tempr.email','moakt.ws',
+'harakirimail.com','luxusmail.org','armyspy.com','cuvox.de','dayrep.com','einrot.com','fleckens.hu','gustr.com',
+'jourrapide.com','rhyta.com','superrito.com','teleworm.us','mailforspam.com','crazymailing.com','tafmail.com',
+'inboxbear.com','mail-temporaire.fr','tempmail.net','minuteinbox.com','instant-mail.de','mailexpire.com'
+]);
+
+function extractDomain(email){
+  const m=email.trim().toLowerCase().match(/@([a-z0-9.-]+)$/);
+  return m?m[1]:null;
+}
+
+checkBtn.onclick=()=>{
+  const lines=inputText.value.split('\n').map(l=>l.trim()).filter(Boolean);
+  if(!lines.length){
+    statusEl.textContent='الصق إيميل واحد على الأقل.';
+    statusEl.style.color='var(--danger)';
+    return;
+  }
+
+  resultsList.innerHTML=lines.map(email=>{
+    const domain=extractDomain(email);
+    const isTemp=domain && DISPOSABLE_DOMAINS.has(domain);
+    return '<div class="check-row"><span>'+email.replace(/</g,'&lt;')+'</span><span class="badge-tag '+(isTemp?'temp':'ok')+'">'+(isTemp?'⚠ مؤقت':'✓ عادي')+'</span></div>';
+  }).join('');
+
+  resultsCard.style.display='block';
+  statusEl.textContent='';
+};
+</script>
+</body></html>

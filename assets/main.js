@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeBtn=$('#themeToggle');
   if(themeBtn) themeBtn.addEventListener('click',()=>{
     const dark=document.documentElement.getAttribute('data-theme')==='dark';
-    if(dark){document.documentElement.removeAttribute('data-theme');} else{document.documentElement.setAttribute('data-theme','dark');}
+    if(dark){document.documentElement.removeAttribute('data-theme');}
+    else{document.documentElement.setAttribute('data-theme','dark');}
     try{localStorage.setItem('fawran-theme',dark?'light':'dark')}catch(e){}
   });
 

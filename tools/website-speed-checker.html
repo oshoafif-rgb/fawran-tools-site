@@ -2,6 +2,9 @@
 
 <html dir="rtl" lang="ar">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -190,7 +193,7 @@
 <input id="apiKeyInput" placeholder="AIzaSy..." type="text"/>
 <p class="note">
         الأداة بتستخدم واجهة جوجل العامة افتراضيًا، وهي بتشارك حد استخدام صغير جدًا بين كل زوار
-        الإنترنت في نفس الوقت — فممكن تواجه رسالة "الخدمة مزدحمة" بسهولة. لو حطيت مفتاحك المجاني
+        الإنترنت في نفس الوقت — فممكن تواجه رسالة "الخدمة مزدحمة" بسهولة. لو حطت مفتاحك المجاني
         الخاص هنا، هتحصل على حد استخدام أعلى بكتير (آلاف الفحوصات يوميًا) بدل الاعتماد على الحد
         المشترك. المفتاح بيتحفظ في متصفحك بس، ومش بيتبعت لأي حد غير جوجل مباشرة.
         <a href="https://developers.google.com/speed/docs/insights/v5/get-started" rel="noopener" target="_blank">احصل على مفتاح مجاني من هنا ↗</a>
@@ -237,6 +240,7 @@
   <div class="rating-stars"></div>
   <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
 </div></div>
+<div class="wrap"><div class="share-widget"></div></div>
 <footer>
 <div class="footer-grid">
 <div>
@@ -245,7 +249,7 @@
 </div>
 <div class="footer-col">
 <h4>الموقع</h4>
-<a href="../index.html">الصفحة الرئيسية</a>
+<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
 <a href="../blog/index.html">المدونة</a>
 <a href="../about.html">من نحن</a>
 <a href="../contact.html">تواصل معنا</a>
@@ -489,5 +493,5 @@ copyReportBtn.addEventListener('click', async ()=>{
 checkBtn.addEventListener('click', runCheck);
 siteUrl.addEventListener('keydown', e=>{ if(e.key === 'Enter') runCheck(); });
 </script>
-<script src="../assets/rating-widget.js"></script></body>
+<script src="../assets/rating-widget.js"></script><script src="../assets/share-widget.js"></script></body>
 </html>

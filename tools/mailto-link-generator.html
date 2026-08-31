@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>مولّد رابط Mailto مجانًا | فورا.tools</title>
+<meta content="أنشئ رابط mailto جاهز بموضوع ونص وCC وBCC معبّأين مسبقًا، لاستخدامه في زر "تواصل معنا" أو أي حملة إيميل." name="description"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/mailto-link-generator.html" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<link href="https://fawran.tools/tools/mailto-link-generator.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/mailto-link-generator.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/mailto-link-generator.html" hreflang="x-default" rel="alternate"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"مولّد رابط Mailto","url":"https://fawran.tools/tools/mailto-link-generator.html","description":"أنشئ رابط mailto جاهز بموضوع ونص معبّأين مسبقًا.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (يعمل داخل المتصفح)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+.toolbox{max-width:820px;margin:28px auto}
+.toolbox input,.toolbox textarea{padding:11px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:inherit;font:inherit;width:100%;box-sizing:border-box}
+.field{margin-bottom:14px;}
+.field label{font-size:13px;font-weight:700;display:block;margin-bottom:6px;}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
+.status{margin-top:14px;font-weight:700}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:28px;margin-bottom:22px}
+#resultBox{width:100%;font-family:'IBM Plex Mono',monospace;direction:ltr;text-align:left;font-size:13px;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--surface-sunk);word-break:break-all;min-height:70px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:640px){.two-col{grid-template-columns:1fr;}}
+</style>
+</head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a><nav class="nav"><a href="../index.html">الأدوات</a><a href="../blog/index.html">المدونة</a><a href="../about.html">من نحن</a><a href="../contact.html">تواصل معنا</a></nav><a class="lang-switch" href="https://fawran.tools/en/tools/mailto-link-generator.html">EN</a></div></header>
+
+<main><div class="wrap toolbox">
+<a href="email.html">← أدوات الإيميل</a>
+<h1>مولّد رابط Mailto</h1>
+<p class="hero-lede">جهّزي رابط إيميل يفتح تلقائيًا ببرنامج البريد بموضوع ونص معبّأين مسبقًا — مثالي لأزرار "تواصل معنا" أو التوقيعات.</p>
+
+<section class="card">
+  <div class="field">
+    <label>إلى (To)</label>
+    <input id="toField" placeholder="name@example.com" style="direction:ltr;text-align:left;" type="text"/>
+  </div>
+  <div class="two-col">
+    <div class="field">
+      <label>نسخة كربونية (CC) — اختياري</label>
+      <input id="ccField" placeholder="cc@example.com" style="direction:ltr;text-align:left;" type="text"/>
+    </div>
+    <div class="field">
+      <label>نسخة مخفية (BCC) — اختياري</label>
+      <input id="bccField" placeholder="bcc@example.com" style="direction:ltr;text-align:left;" type="text"/>
+    </div>
+  </div>
+  <div class="field">
+    <label>الموضوع (Subject) — اختياري</label>
+    <input id="subjectField" placeholder="استفسار من موقعكم" type="text"/>
+  </div>
+  <div class="field">
+    <label>النص (Body) — اختياري</label>
+    <textarea id="bodyField" placeholder="اكتب النص الجاهز اللي هيبان في الرسالة..." style="min-height:100px;resize:vertical;"></textarea>
+  </div>
+
+  <button class="btn btn-primary" id="generateBtn">إنشاء الرابط</button>
+  <div class="status" id="status"></div>
+</section>
+
+<section class="card" id="resultsCard" style="display:none;">
+  <div class="row" style="margin-top:0;justify-content:space-between;">
+    <label style="font-size:13px;font-weight:700;">الرابط الجاهز</label>
+    <div class="row" style="margin:0;">
+      <button class="btn" id="copyBtn">نسخ الرابط</button>
+      <button class="btn" id="testBtn">جرّبيه</button>
+    </div>
+  </div>
+  <div id="resultBox"></div>
+  <p class="muted" style="font-size:12.5px;margin-top:10px;">كود HTML جاهز للصق:</p>
+  <div id="htmlCodeBox" style="font-family:'IBM Plex Mono',monospace;direction:ltr;text-align:left;font-size:12.5px;background:var(--surface-sunk);border-radius:10px;padding:12px;word-break:break-all;"></div>
+</section>
+</div></main>
+
+<div class="wrap"><div class="rating-widget" data-tool-slug="mailto-link-generator">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer><div class="footer-grid"><div><div class="footer-brand"><span class="mark">FW</span> فورا.tools</div><p class="footer-desc">مجموعة أدوات أونلاين مجانية تعمل بالكامل داخل متصفحك.</p></div><div class="footer-col"><h4>الموقع</h4><a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a><a href="../blog/index.html">المدونة</a><a href="../about.html">من نحن</a><a href="../contact.html">تواصل معنا</a></div><div class="footer-col"><h4>قانوني</h4><a href="../privacy.html">سياسة الخصوصية</a><a href="../terms.html">شروط الاستخدام</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> فورا.tools</span></div></footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script><script src="../assets/rating-widget.js"></script>
+<script>
+const toField=document.getElementById('toField'),
+      ccField=document.getElementById('ccField'),
+      bccField=document.getElementById('bccField'),
+      subjectField=document.getElementById('subjectField'),
+      bodyField=document.getElementById('bodyField'),
+      generateBtn=document.getElementById('generateBtn'),
+      statusEl=document.getElementById('status'),
+      resultsCard=document.getElementById('resultsCard'),
+      resultBox=document.getElementById('resultBox'),
+      htmlCodeBox=document.getElementById('htmlCodeBox'),
+      copyBtn=document.getElementById('copyBtn'),
+      testBtn=document.getElementById('testBtn');
+
+let currentLink='';
+
+generateBtn.onclick=()=>{
+  const to=toField.value.trim();
+  if(!to){
+    statusEl.textContent='اكتب إيميل المستلم الأول.';
+    statusEl.style.color='var(--danger)';
+    return;
+  }
+
+  const params=[];
+  if(ccField.value.trim()) params.push('cc='+encodeURIComponent(ccField.value.trim()));
+  if(bccField.value.trim()) params.push('bcc='+encodeURIComponent(bccField.value.trim()));
+  if(subjectField.value.trim()) params.push('subject='+encodeURIComponent(subjectField.value.trim()));
+  if(bodyField.value.trim()) params.push('body='+encodeURIComponent(bodyField.value.trim()));
+
+  currentLink='mailto:'+encodeURIComponent(to)+(params.length?'?'+params.join('&'):'');
+
+  resultBox.textContent=currentLink;
+  htmlCodeBox.textContent='<a href="'+currentLink+'">راسلنا</a>';
+  resultsCard.style.display='block';
+  statusEl.textContent='';
+};
+
+copyBtn.onclick=async()=>{
+  try{
+    await navigator.clipboard.writeText(currentLink);
+    const orig=copyBtn.textContent;
+    copyBtn.textContent='تم النسخ ✓';
+    setTimeout(()=>copyBtn.textContent=orig,1600);
+  }catch(e){}
+};
+
+testBtn.onclick=()=>{
+  if(currentLink) window.location.href=currentLink;
+};
+</script>
+</body></html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head><meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Free Online Quick Video &amp; Photo Editor | Fawran Tools</title>
+<meta content="Combine videos and photos into one clip, add audio, and choose aspect ratio and quality — all processing happens in your browser for free." name="description"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/quick-video-editor.html" rel="canonical"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<link href="https://fawran.tools/tools/quick-video-editor.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/quick-video-editor.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/quick-video-editor.html" hreflang="x-default" rel="alternate"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Quick Video Editor","url":"https://fawran.tools/en/tools/quick-video-editor.html","description":"Combine videos and photos into one clip and export it directly from your browser.","applicationCategory":"MultimediaApplication","operatingSystem":"Any (runs in your browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+.wb-shell{max-width:920px;margin:0 auto;}
+.wb-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:24px;margin-top:18px;}
+.edit-dropzone{padding:44px 20px;text-align:center;border:2px dashed #CBC7DA;border-radius:14px;cursor:pointer;background:var(--surface-sunk);}
+.edit-dropzone.drag{border-color:var(--indigo);background:#F1EFFE;}
+.edit-dropzone .big-icon{font-size:34px;margin-bottom:10px;}
+.edit-dropzone .t1{font-weight:900;font-size:16px;margin-bottom:5px;}
+.edit-dropzone .t2{font-size:13px;color:var(--muted);}
+.clip-strip{display:none;flex-wrap:wrap;gap:12px;}
+.edit-clip{position:relative;width:110px;height:78px;border-radius:10px;overflow:hidden;cursor:grab;background:var(--surface-sunk);border:1px solid var(--line);}
+.clip-thumb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:28px;}
+.clip-num{position:absolute;top:5px;left:5px;background:var(--indigo);color:#fff;font-size:10.5px;font-weight:800;padding:2px 6px;border-radius:999px;}
+.clip-remove{position:absolute;top:5px;right:5px;width:20px;height:20px;border-radius:50%;background:rgba(20,19,31,.65);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;border:none;}
+.clip-edited{position:absolute;bottom:22px;right:5px;width:18px;height:18px;border-radius:50%;background:var(--indigo);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;box-shadow:0 2px 6px rgba(0,0,0,.3);}
+.clip-dur{position:absolute;bottom:4px;right:5px;font-size:10px;background:rgba(20,19,31,.65);color:#fff;padding:1px 6px;border-radius:6px;font-family:'IBM Plex Mono',monospace;}
+.clip-add{width:110px;height:78px;border-radius:10px;border:2px dashed var(--line);display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--muted);cursor:pointer;background:var(--surface-sunk);}
+.audio-drop{margin-top:14px;padding:16px;border:1.5px dashed var(--line);border-radius:12px;text-align:center;cursor:pointer;font-weight:800;font-size:14px;background:var(--surface-sunk);}
+.audio-drop.has-file{color:var(--indigo-deep);border-color:var(--indigo);border-style:solid;}
+.seg-group{display:flex;flex-wrap:wrap;border-radius:12px;overflow:hidden;gap:2px;}
+.seg-btn{flex:1;min-width:70px;padding:12px 8px;text-align:center;font-weight:800;font-size:13px;background:var(--surface);border:1px solid var(--line);border-radius:8px;cursor:pointer;}
+.seg-btn.active{background:var(--indigo-soft);color:var(--indigo-deep);border-color:var(--indigo);}
+.wb-sub{font-size:12.5px;color:var(--muted);margin-top:8px;}
+.slider-field{margin-bottom:20px;}
+.slider-field .top-row{display:flex;justify-content:space-between;font-size:13.5px;font-weight:700;margin-bottom:8px;}
+.slider-field .val{color:var(--indigo-deep);font-family:'IBM Plex Mono',monospace;}
+.slider-field input[type=range]{width:100%;accent-color:var(--indigo);}
+.wb-check-row{display:flex;align-items:center;gap:10px;padding:12px 0;font-size:14px;font-weight:700;cursor:pointer;}
+.wb-check-row input{width:18px;height:18px;accent-color:var(--indigo);cursor:pointer;}
+.clip-selected{outline:3px solid var(--indigo);outline-offset:2px;}
+.extra-result-card{margin-top:16px;padding:16px;background:var(--surface-sunk);border-radius:12px;border:1px solid var(--line);}
+.extra-result-card .label{font-weight:800;font-size:13.5px;margin-bottom:10px;}
+.extra-result-card video{width:100%;max-width:280px;display:block;border-radius:10px;background:#000;margin-bottom:10px;}
+.extra-result-card .status{font-size:12.5px;color:var(--muted);font-weight:700;}
+.wb-preview-wrap{background:var(--surface-sunk);border-radius:14px;padding:18px;text-align:center;margin-top:18px;display:none;}
+.wb-preview-wrap canvas{max-width:100%;border-radius:10px;box-shadow:0 6px 20px rgba(20,19,31,.1);background:#000;}
+.wb-progress{margin-top:12px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.wb-progress-bar{height:100%;background:var(--indigo);width:0%;transition:width .1s linear;}
+.wb-status{font-size:13px;color:var(--muted);margin-top:8px;font-weight:700;}
+.trust-badge{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 4px;}
+.trust-badge span{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:800;color:var(--indigo-deep);background:var(--indigo-soft);padding:7px 13px;border-radius:999px;}
+</style>
+</head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a><nav class="nav"><a href="../index.html">Tools</a><a href="../blog/index.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav><a class="lang-switch" href="https://fawran.tools/tools/quick-video-editor.html">AR</a></div></header>
+
+<main><div class="wrap wb-shell" style="padding-top:30px;padding-bottom:60px;">
+<div class="crumb"><a href="../index.html">Tools</a> / Video Tools / Quick Video Editor</div>
+<h1>⚡ Quick Video Editor</h1>
+<p class="tool-lede">Upload videos or photos, then open the editor to trim, add audio, and export — all processing happens on your device.</p>
+<div class="trust-badge">
+  <span>🔒 No server upload</span>
+  <span>🚫 No account needed</span>
+  <span>♾️ No export limit</span>
+  <span>🎬 No watermark</span>
+</div>
+
+<div class="wb-card">
+  <div class="edit-dropzone" id="editDropzone">
+    <div class="big-icon">🎬</div>
+    <div class="t1">Choose videos or photos</div>
+    <div class="t2">Click to add one or more videos or images</div>
+  </div>
+  <div class="clip-strip" id="clipStrip"></div>
+  <input accept="video/*,image/*" id="editFileInput" multiple="" style="display:none;" type="file"/>
+</div>
+
+<div class="wb-card">
+  <div style="font-weight:900;font-size:16px;margin-bottom:14px;">🏷️ Ready-made intro &amp; outro (optional)</div>
+  <label class="wb-check-row"><input id="addIntro" type="checkbox"/> ➕ Add an intro card before the first clip</label>
+  <input id="introText" placeholder="e.g. Channel name or video title" style="width:100%;box-sizing:border-box;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface-sunk);color:var(--ink);font:inherit;margin-bottom:14px;" type="text"/>
+  <label class="wb-check-row"><input id="addOutro" type="checkbox"/> ➕ Add an outro card after the last clip</label>
+  <input id="outroText" placeholder="e.g. Thanks for watching! Follow for more" style="width:100%;box-sizing:border-box;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface-sunk);color:var(--ink);font:inherit;" type="text"/>
+</div>
+
+<div class="wb-card" id="clipEditor" style="display:none;">
+  <div style="font-weight:900;font-size:15px;margin-bottom:14px;" id="clipEditorTitle">Clip settings</div>
+  <div class="slider-field" id="clipTrimFields" style="display:none;">
+    <div class="top-row"><span>Trim start (s)</span><span class="val" id="clipTrimStartVal">0.0</span></div>
+    <input id="clipTrimStart" max="0" min="0" step="0.1" type="range" value="0"/>
+    <div class="top-row" style="margin-top:14px;"><span>Trim end (s)</span><span class="val" id="clipTrimEndVal">0.0</span></div>
+    <input id="clipTrimEnd" max="0" min="0" step="0.1" type="range" value="0"/>
+  </div>
+  <div class="slider-field" id="clipDurationField" style="display:none;">
+    <div class="top-row"><span>This image's display duration (s)</span><span class="val" id="clipDurVal">3.0</span></div>
+    <input id="clipDuration" max="10" min="1" step="0.5" type="range" value="3"/>
+  </div>
+  <div class="slider-field" id="clipVolumeField" style="display:none;">
+    <div class="top-row"><span>This clip's volume</span><span class="val" id="clipVolVal">100%</span></div>
+    <input id="clipVolume" max="200" min="0" step="10" type="range" value="100"/>
+  </div>
+  <label style="display:block;font-size:13.5px;font-weight:700;margin-bottom:8px;">Caption text over this clip (optional)</label>
+  <input id="clipCaption" placeholder="e.g. Video intro" style="width:100%;box-sizing:border-box;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface-sunk);color:var(--ink);font:inherit;" type="text"/>
+  <button class="btn btn-ghost" id="closeClipEditor" style="margin-top:14px;">Close</button>
+</div>
+
+<div class="wb-card">
+  <div style="font-weight:900;font-size:16px;margin-bottom:14px;">🎵 Background audio (optional)</div>
+  <div class="audio-drop" id="editAudioDrop">Choose an audio file</div>
+  <input accept="audio/*" id="editAudioInput" style="display:none;" type="file"/>
+  <p class="wb-sub">MP3 / WAV / M4A — will be mixed with the videos' original audio.</p>
+  <div class="slider-field" id="musicVolumeField" style="display:none;margin-top:14px;">
+    <div class="top-row"><span>Music volume</span><span class="val" id="musicVolVal">100%</span></div>
+    <input id="musicVolume" max="200" min="0" step="10" type="range" value="100"/>
+  </div>
+</div>
+
+<div class="wb-card">
+  <div style="font-weight:900;font-size:16px;margin-bottom:14px;">Output quality</div>
+  <div class="seg-group" id="editQualityGroup">
+    <div class="seg-btn" data-val="1080">1080p</div>
+    <div class="seg-btn active" data-val="720">720p</div>
+    <div class="seg-btn" data-val="480">480p</div>
+  </div>
+
+  <div style="font-weight:900;font-size:16px;margin:22px 0 14px;">Video aspect ratio</div>
+  <div class="seg-group" id="editRatioGroup">
+    <div class="seg-btn" data-val="2:1">2:1</div>
+    <div class="seg-btn" data-val="3:4">3:4</div>
+    <div class="seg-btn" data-val="21:9">21:9</div>
+    <div class="seg-btn" data-val="4:5">4:5</div>
+    <div class="seg-btn" data-val="9:16">9:16</div>
+    <div class="seg-btn" data-val="1:1">1:1</div>
+    <div class="seg-btn" data-val="16:9">16:9</div>
+    <div class="seg-btn active" data-val="auto">Auto</div>
+  </div>
+  <p class="wb-sub">Choosing "Auto" keeps the exact dimensions of the first clip.</p>
+  <div style="font-weight:800;font-size:13.5px;margin-top:16px;">📦 Batch-export additional dimensions (optional)</div>
+  <label class="wb-check-row"><input id="extraRatio916" type="checkbox"/> Also export a 9:16 📱 version</label>
+  <label class="wb-check-row"><input id="extraRatio169" type="checkbox"/> Also export a 16:9 🖥️ version</label>
+  <p class="wb-sub" style="margin-top:0;">Any ratio matching your primary selection above will be skipped automatically.</p>
+
+  <div style="font-weight:900;font-size:16px;margin:22px 0 14px;">Transition between clips</div>
+  <div class="seg-group" id="transitionGroup">
+    <div class="seg-btn active" data-val="cut">✂️ Hard cut</div>
+    <div class="seg-btn" data-val="fade">⚫ Fade to black</div>
+    <div class="seg-btn" data-val="dissolve">🌫️ Dissolve</div>
+  </div>
+
+  <label class="wb-check-row"><input checked="" id="kenBurns" type="checkbox"/> 🎥 Slow camera motion for still images (Ken Burns)</label>
+
+  <div class="adv-toggle" id="colorAdvToggle" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:14px 0;">
+    <div><div style="font-weight:800;font-size:14.5px;">🎨 Color adjustments</div><div class="wb-sub" style="margin:2px 0 0;">Optional — applied equally to all clips</div></div>
+    <span id="colorAdvArrow">▾</span>
+  </div>
+  <div id="colorAdvBody" style="display:none;">
+    <div class="slider-field"><div class="top-row"><span>Brightness</span><span class="val" id="brightnessVal">100%</span></div><input id="brightness" max="150" min="50" step="5" type="range" value="100"/></div>
+    <div class="slider-field"><div class="top-row"><span>Contrast</span><span class="val" id="contrastVal">100%</span></div><input id="contrast" max="150" min="50" step="5" type="range" value="100"/></div>
+    <div class="slider-field"><div class="top-row"><span>Saturation</span><span class="val" id="saturationVal">100%</span></div><input id="saturation" max="200" min="0" step="5" type="range" value="100"/></div>
+  </div>
+
+  <div class="wb-preview-wrap" id="editPreviewWrap">
+    <canvas id="editCanvas"></canvas>
+    <video controls id="editResultVideo" style="display:none;max-width:100%;border-radius:10px;background:#000;"></video>
+    <div class="wb-progress"><div class="wb-progress-bar" id="editProgressBar"></div></div>
+    <div class="wb-status" id="editStatus"></div>
+  </div>
+
+  <button class="btn btn-primary" id="exportBtn" style="width:100%;margin-top:20px;font-size:15px;padding:15px;">🎬 Open the editor</button>
+  <a download="" id="editDownloadLink" style="display:none;width:100%;margin-top:12px;" class="btn btn-primary"></a>
+  <div id="extraResultsWrap"></div>
+</div>
+
+<div class="tool-info" style="margin-top:34px;">
+<h2>How to use the quick editor</h2>
+<ol>
+<li>Click the box and choose one or more videos — you can add photos to the same strip too.</li>
+<li>Pick output quality and aspect ratio (16:9 for platforms, 9:16 for reels and shorts), then open the editor.</li>
+<li>Drag to reorder clips, or delete anything you don't want.</li>
+<li>Add music or a voice-over if you'd like, then click "Export video" and wait for it to finish.</li>
+</ol>
+<h2>Privacy</h2>
+<p>Your videos or photos are never uploaded to any server; all trimming, merging, and export happens locally in your browser.</p>
+</div>
+
+<div class="wb-card" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+<div>
+<div style="font-weight:900;font-size:16px;">✍️ Whiteboard Video Maker</div>
+<div class="wb-sub" style="margin-top:4px;">Add one or more images, adjust the settings, then create the video — all processing happens on your device.</div>
+</div>
+<a class="btn btn-primary" href="whiteboard-video-maker.html">Open the tool →</a>
+</div>
+
+<div class="content-card" style="margin-top:24px;">
+<h2 style="font-size:18px;">Frequently asked questions</h2>
+<div class="faq-item"><h3>Are my videos uploaded to any server?</h3><p style="font-size:13.5px;">No, all processing happens locally in your browser from start to finish — files never leave your device.</p></div>
+<div class="faq-item"><h3>How many videos can I merge?</h3><p style="font-size:13.5px;">There's no fixed limit, but very large files may slow performance depending on your device.</p></div>
+<div class="faq-item"><h3>Can I add photos between clips?</h3><p style="font-size:13.5px;">Yes, you can mix videos and photos on the same strip in any order you want.</p></div>
+<div class="faq-item"><h3>What format is the output video?</h3><p style="font-size:13.5px;">Export is in WebM format, supported by every modern browser and most publishing platforms.</p></div>
+</div>
+
+</div></main>
+
+<div class="wrap"><div class="rating-widget" data-tool-slug="quick-video-editor">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<div class="wrap"><div class="share-widget"></div></div>
+
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Free online tools for images, PDF files, text, and SEO — all running entirely in your browser without uploading your files to any server.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../index.html">Home</a><a href="../favorites.html">☆ Favorites</a>
+<a href="../blog/index.html">Blog</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools</span>
+<span>Built for practical everyday tasks.</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script>
+<script src="../../assets/share-widget.js"></script>
+<script src="../../assets/rating-widget.js"></script>
+<script src="../../assets/quick-editor-engine.js"></script>
+</body></html>

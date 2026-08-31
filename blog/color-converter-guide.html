@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HEX أم RGB أم HSL: إيه الفرق ومتى تستخدمي كل صيغة | فورا.tools</title>
+<meta content="دليل عملي لفهم صيغ الألوان الثلاث الأساسية في تطوير الويب، الفرق بينهم، ومتى تختاري كل صيغة حسب احتياجك في CSS." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/blog/color-converter-guide.html" rel="canonical"/>
+
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/blog/color-converter-guide.html" property="og:url"/>
+<meta content="HEX أم RGB أم HSL: إيه الفرق ومتى تستخدمي كل صيغة | فورا.tools" property="og:title"/>
+<meta content="دليل عملي لفهم صيغ الألوان الثلاث الأساسية في تطوير الويب." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="HEX أم RGB أم HSL: إيه الفرق ومتى تستخدمي كل صيغة | فورا.tools" name="twitter:title"/>
+<meta content="دليل عملي لفهم صيغ الألوان الثلاث الأساسية." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+  .size-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+  .size-table th, .size-table td{padding:9px 12px;border:1px solid var(--line);text-align:right;}
+  .size-table th{background:var(--surface-sunk);font-weight:800;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"HEX أم RGB أم HSL: إيه الفرق ومتى تستخدمي كل صيغة","description":"دليل عملي لفهم صيغ الألوان الثلاث الأساسية في تطوير الويب، ومتى تختاري كل صيغة.","url":"https://fawran.tools/blog/color-converter-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/color-converter-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"HEX أم RGB أم HSL: إيه الفرق ومتى تستخدمي كل صيغة","item":"https://fawran.tools/blog/color-converter-guide.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"إيه أكتر صيغة شائعة الاستخدام في CSS؟","acceptedAnswer":{"@type":"Answer","text":"HEX هي الأكتر شيوعًا تاريخيًا وبتشاهدها في أغلب الأكواد الجاهزة وأدوات التصميم، لكن RGB وHSL بقوا مستخدمين أكتر مع الحاجة لتحكم في الشفافية أو تعديل السطوع بسهولة."}},{"@type":"Question","name":"هل ممكن أضيف شفافية للون بصيغة HEX؟","acceptedAnswer":{"@type":"Answer","text":"نعم، فيه صيغة HEX ممتدة بـ8 خانات (بدل 6) بتضيف قناة شفافية في الآخر، لكنها أقل شيوعًا ودعمها في المتصفحات القديمة محدود مقارنة بـRGBA."}},{"@type":"Question","name":"ليه HSL أسهل لتعديل درجة اللون يدويًا؟","acceptedAnswer":{"@type":"Answer","text":"لأن HSL بتفصل الخصائص لمكونات مفهومة بديهيًا: الصبغة (Hue) للون نفسه، التشبع (Saturation) لقوة اللون، والإضاءة (Lightness) للفتحة أو الغمقان — تعديل رقم واحد بيديكِ نتيجة متوقعة بسهولة."}},{"@type":"Question","name":"هل تحويل لون من صيغة لأخرى بيغيّر اللون الفعلي؟","acceptedAnswer":{"@type":"Answer","text":"لا، التحويل بين HEX وRGB وHSL هو نفس اللون بالضبط، بس ممثّل بطريقة رياضية مختلفة — مفيش أي فقدان أو تغيير في اللون النهائي المعروض."}}]}
+</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/color-converter-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/color-converter-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/color-converter-guide.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">الأدوات</a>
+<a class="active" href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/blog/color-converter-guide.html" title="View in English">EN</a>
+</div>
+</div>
+</header>
+<div class="wrap">
+<div class="page-head">
+<div class="article-meta"><span class="tag">أدوات المطورين</span><span>6 دقائق قراءة</span></div>
+<h1>HEX أم RGB أم HSL: إيه الفرق ومتى تستخدمي كل صيغة</h1>
+</div>
+
+<div class="content-card">
+
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <circle cx="220" cy="160" r="75" fill="#4F3FF0"/>
+  <text x="220" y="167" font-family="IBM Plex Mono, monospace" font-size="14" fill="#fff" text-anchor="middle">#4F3FF0</text>
+  <circle cx="400" cy="160" r="75" fill="#4F3FF0"/>
+  <text x="400" y="167" font-family="IBM Plex Mono, monospace" font-size="12" fill="#fff" text-anchor="middle">79,63,240</text>
+  <circle cx="580" cy="160" r="75" fill="#4F3FF0"/>
+  <text x="580" y="167" font-family="IBM Plex Mono, monospace" font-size="12" fill="#fff" text-anchor="middle">245°,84%,60%</text>
+</svg>
+
+<p>
+  نفس اللون بالظبط، ثلاث طرق مختلفة لكتابته. لو بتشتغلي بـCSS، هتقابلي الصيغ التلاتة دي باستمرار،
+  وفهم الفرق بينهم هيسهّل عليكِ تعديل الألوان وفهم كود مكتوب من مطور تاني.
+</p>
+
+<div class="toc">
+  <h2>محتوى المقال</h2>
+  <ul>
+    <li><a href="#hex">صيغة HEX</a></li>
+    <li><a href="#rgb">صيغة RGB وRGBA</a></li>
+    <li><a href="#hsl">صيغة HSL وHSLA</a></li>
+    <li><a href="#compare">مقارنة سريعة: أيهما تختاري؟</a></li>
+    <li><a href="#howto">كيف تحوّل بين الصيغ الثلاث بسهولة؟</a></li>
+    <li><a href="#faq">أسئلة شائعة</a></li>
+  </ul>
+</div>
+
+<h2 id="hex">صيغة HEX</h2>
+<p>
+  صيغة HEX (السداسية عشرية) بتمثل اللون بـ6 خانات بعد علامة "#"، كل زوج خانتين بيمثل قيمة الأحمر
+  والأخضر والأزرق (من 00 لـFF). هي الصيغة الأشهر تاريخيًا وبتشاهدها في أغلب أدوات التصميم وأكواد
+  المواقع الجاهزة، لكن صعبة القراءة والتعديل اليدوي البديهي.
+</p>
+
+<h2 id="rgb">صيغة RGB وRGBA</h2>
+<p>
+  صيغة RGB بتمثل نفس الفكرة (أحمر، أخضر، أزرق) لكن بأرقام عشرية عادية من 0 لـ255 بدل النظام
+  السداسي عشري، وده بيخليها أسهل قراءة للعين البشرية. صيغة RGBA بتضيف رقم رابع (Alpha) للتحكم في
+  شفافية اللون من 0 (شفاف تمامًا) لـ1 (معتم تمامًا).
+</p>
+
+<h2 id="hsl">صيغة HSL وHSLA</h2>
+<p>
+  صيغة HSL بتمثل اللون بطريقة مختلفة كليًا: الصبغة (Hue) كزاوية من 0 لـ360 درجة على عجلة الألوان،
+  التشبع (Saturation) كنسبة مئوية لقوة اللون، والإضاءة (Lightness) كنسبة مئوية للفتحة أو الغمقان.
+  الصيغة دي أسهل بكتير لو عايزة تعدّلي درجة لون موجود بدون ما تغيّري باقي خصائصه.
+</p>
+
+<h2 id="compare">مقارنة سريعة: أيهما تختاري؟</h2>
+<table class="size-table">
+  <tr><th>الصيغة</th><th>سهولة القراءة</th><th>دعم الشفافية</th><th>الأفضل لـ</th></tr>
+  <tr><td>HEX</td><td>متوسطة</td><td>محدود</td><td>نسخ ولصق سريع من أدوات التصميم</td></tr>
+  <tr><td>RGB/RGBA</td><td>جيدة</td><td>ممتاز (RGBA)</td><td>التحكم الدقيق بالشفافية</td></tr>
+  <tr><td>HSL/HSLA</td><td>ممتازة</td><td>ممتاز (HSLA)</td><td>تعديل درجات اللون يدويًا</td></tr>
+</table>
+
+<h2 id="howto">كيف تحوّل بين الصيغ الثلاث بسهولة؟</h2>
+<p>
+  باستخدام <a href="../tools/color-converter.html" style="color:var(--indigo-deep);font-weight:700;">محول الألوان</a> على فورا.tools:
+</p>
+<ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+  <li>الصق كود اللون بأي صيغة (HEX أو RGB أو HSL).</li>
+  <li>شاهد التحويل الفوري لباقي الصيغ الاتنين.</li>
+  <li>شاهد معاينة حية للون نفسه قبل النسخ.</li>
+</ol>
+
+<div class="tool-cta">
+<div>
+<div class="txt">جرّبي محول الألوان الآن</div>
+<div class="sub">تحويل فوري بين HEX وRGB وHSL مع معاينة مباشرة</div>
+</div>
+<a class="btn btn-primary" href="../tools/color-converter.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22a10 10 0 1 1 0-20 8 8 0 0 1 8 8c0 2-1 3-3 3h-2a2 2 0 0 0 0 4 2 2 0 0 1 0 4c-1 0-3-1-3 1z"></path></svg>
+    افتح الأداة
+  </a>
+</div>
+
+<h2 id="faq">أسئلة شائعة</h2>
+<div class="faq-item">
+  <h3>إيه أكتر صيغة شائعة الاستخدام في CSS؟</h3>
+  <p style="font-size:13.5px;">HEX هي الأكتر شيوعًا تاريخيًا، لكن RGB وHSL بقوا مستخدمين أكتر مع الحاجة للتحكم في الشفافية أو السطوع.</p>
+</div>
+<div class="faq-item">
+  <h3>هل ممكن أضيف شفافية للون بصيغة HEX؟</h3>
+  <p style="font-size:13.5px;">نعم، فيه صيغة HEX ممتدة بـ8 خانات، لكنها أقل شيوعًا ودعمها محدود مقارنة بـRGBA.</p>
+</div>
+<div class="faq-item">
+  <h3>ليه HSL أسهل لتعديل درجة اللون يدويًا؟</h3>
+  <p style="font-size:13.5px;">لأنها بتفصل الصبغة والتشبع والإضاءة كمكونات منفصلة — تعديل رقم واحد بيديكِ نتيجة متوقعة بسهولة.</p>
+</div>
+<div class="faq-item">
+  <h3>هل تحويل لون من صيغة لأخرى بيغيّر اللون الفعلي؟</h3>
+  <p style="font-size:13.5px;">لا، التحويل هو نفس اللون بالضبط بس ممثّل رياضيًا بطريقة مختلفة — مفيش أي فقدان في اللون النهائي.</p>
+</div>
+
+<h2>خلاصة</h2>
+<p>
+  الثلاث صيغ بيمثلوا نفس الألوان بالظبط، والاختيار بينهم بيرجع لاحتياجك الفعلي — HEX للسرعة، RGB
+  للشفافية، وHSL لتعديل درجات اللون بسهولة وبداهة.
+</p>
+
+</div>
+</div>
+
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
+<a href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script>
+</body>
+</html>

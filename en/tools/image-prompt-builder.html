@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head><meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Free Image Prompt Builder for Midjourney &amp; DALL-E | Fawran Tools</title>
+<meta content="Build a professional AI image-generation prompt using visual options for style, lighting, camera angle, and resolution — one click, entirely in your browser." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/image-prompt-builder.html" rel="canonical"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<link href="https://fawran.tools/tools/image-prompt-builder.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/image-prompt-builder.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/image-prompt-builder.html" hreflang="x-default" rel="alternate"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Prompt Builder","url":"https://fawran.tools/en/tools/image-prompt-builder.html","description":"Build a professional AI image-generation prompt using visual options.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (runs in your browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+.lib-shell{max-width:860px;margin:0 auto;}
+.wb-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:24px;margin-top:18px;}
+.field-label{font-weight:800;font-size:14px;margin:20px 0 10px;}
+.field-label:first-child{margin-top:0;}
+.field-sub{font-size:12px;color:var(--muted);margin:-6px 0 10px;}
+textarea#subjectInput{width:100%;box-sizing:border-box;min-height:80px;padding:14px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface-sunk);color:var(--ink);font:inherit;font-size:15px;resize:vertical;}
+input#extrasInput{width:100%;box-sizing:border-box;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface-sunk);color:var(--ink);font:inherit;}
+.chip-group{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;transition:.15s;}
+.chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+.result-box{background:var(--surface-sunk);border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:16px;white-space:pre-wrap;line-height:1.9;font-size:14px;font-family:'IBM Plex Mono',monospace;}
+.result-actions{display:flex;gap:10px;margin-top:14px;}
+</style>
+</head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a><nav class="nav"><a href="../index.html">Tools</a><a href="../blog/index.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav><a class="lang-switch" href="https://fawran.tools/tools/image-prompt-builder.html">AR</a></div></header>
+
+<main><div class="wrap lib-shell" style="padding-top:30px;padding-bottom:60px;">
+<div class="crumb"><a href="../index.html">Tools</a> / AI Tools / Image Prompt Builder</div>
+<h1>🎨 Image Prompt Builder</h1>
+<p class="tool-lede">Click to choose style, lighting, and camera angle, and the tool composes a professional prompt ready for Midjourney, DALL-E, or Stable Diffusion — in one click.</p>
+
+<div class="wb-card">
+  <div class="field-label">Image subject</div>
+  <textarea id="subjectInput" placeholder="e.g. an orange cat sitting on a windowsill"></textarea>
+
+  <div class="field-label">Art style</div>
+  <div class="chip-group" id="styleGroup">
+    <span class="chip" data-val="photorealistic, professional photography">Photorealistic</span>
+    <span class="chip" data-val="digital painting, concept art style">Digital painting</span>
+    <span class="chip" data-val="anime style, vibrant colors">Anime</span>
+    <span class="chip" data-val="watercolor painting, soft brushstrokes">Watercolor</span>
+    <span class="chip" data-val="3D render, octane render, unreal engine">3D render</span>
+    <span class="chip" data-val="oil painting, classical art style">Oil painting</span>
+    <span class="chip" data-val="cyberpunk aesthetic, neon accents">Cyberpunk</span>
+    <span class="chip" data-val="minimalist, flat design, simple shapes">Minimalist</span>
+  </div>
+
+  <div class="field-label">Lighting</div>
+  <div class="chip-group" id="lightingGroup">
+    <span class="chip" data-val="natural daylight">Natural daylight</span>
+    <span class="chip" data-val="golden hour lighting, warm glow">Golden hour</span>
+    <span class="chip" data-val="studio lighting, softbox">Studio lighting</span>
+    <span class="chip" data-val="dramatic moody lighting, high contrast">Dramatic</span>
+    <span class="chip" data-val="neon lighting, cyberpunk glow">Neon</span>
+    <span class="chip" data-val="soft diffused lighting">Soft diffused</span>
+  </div>
+
+  <div class="field-label">Camera angle</div>
+  <div class="chip-group" id="angleGroup">
+    <span class="chip" data-val="eye level shot">Eye level</span>
+    <span class="chip" data-val="low angle shot, looking up">Low angle</span>
+    <span class="chip" data-val="aerial view, bird's eye view">Aerial view</span>
+    <span class="chip" data-val="close-up shot, macro details">Close-up</span>
+    <span class="chip" data-val="wide angle shot">Wide angle</span>
+    <span class="chip" data-val="dutch angle, tilted frame">Dutch angle</span>
+  </div>
+
+  <div class="field-label">Color mood</div>
+  <div class="chip-group" id="moodGroup">
+    <span class="chip" data-val="vibrant saturated colors">Vibrant</span>
+    <span class="chip" data-val="muted pastel color palette">Muted pastel</span>
+    <span class="chip" data-val="black and white, monochrome">Black &amp; white</span>
+    <span class="chip" data-val="warm color tones">Warm tones</span>
+    <span class="chip" data-val="cool blue color tones">Cool tones</span>
+  </div>
+
+  <div class="field-label">Extra details (optional)</div>
+  <input id="extrasInput" placeholder="e.g. light rain in the background, ornate frame" type="text"/>
+
+  <div class="field-label">Resolution</div>
+  <div class="chip-group" id="resGroup">
+    <span class="chip" data-val="high quality">Standard</span>
+    <span class="chip" data-val="4k resolution, highly detailed">4K</span>
+    <span class="chip" data-val="8k resolution, ultra detailed, sharp focus">8K ultra detailed</span>
+  </div>
+
+  <button class="btn btn-primary" id="generateBtn" style="width:100%;margin-top:22px;font-size:15px;padding:15px;">🎨 Build the prompt</button>
+
+  <div id="resultWrap" style="display:none;">
+    <div class="field-label">Your ready prompt</div>
+    <div class="result-box" id="resultText"></div>
+    <div class="result-actions">
+      <button class="btn btn-primary" id="copyBtn"></button>
+      <button class="btn btn-ghost" id="downloadBtn"></button>
+    </div>
+  </div>
+</div>
+
+<div class="tool-info" style="margin-top:34px;">
+<h2>How this works</h2>
+<p>AI image tools (Midjourney, DALL-E, Stable Diffusion) respond most accurately to prompts built from clear, specific descriptors. This tool lets you compose those descriptors visually instead of memorizing prompt syntax, then joins everything into one clean, comma-separated prompt ready to paste.</p>
+<h2>Privacy</h2>
+<p>The prompt is composed entirely locally in your browser by joining your selected options — nothing is ever sent to any external server.</p>
+</div>
+
+</div></main>
+
+<div class="wrap"><div class="rating-widget" data-tool-slug="image-prompt-builder">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<div class="wrap"><div class="share-widget"></div></div>
+
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Free online tools for images, PDF files, text, and SEO — all running entirely in your browser without uploading your files to any server.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../index.html">Home</a><a href="../favorites.html">☆ Favorites</a>
+<a href="../blog/index.html">Blog</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools</span>
+<span>Built for practical everyday tasks.</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script>
+<script src="../../assets/share-widget.js"></script>
+<script src="../../assets/rating-widget.js"></script>
+<script src="../../assets/image-prompt-builder-engine.js"></script>
+</body></html>

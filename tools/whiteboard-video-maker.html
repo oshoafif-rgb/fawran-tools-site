@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>محوّل الصور إلى فيديو سبورة (Whiteboard) مجانًا | فورا.tools</title>
+<meta content="حوّل أي مجموعة صور لفيديو رسم على سبورة بيد متحركة، مع مزامنة صوتية اختيارية، أبعاد وجودة قابلة للتخصيص، بالكامل داخل متصفحك." name="description"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/whiteboard-video-maker.html" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<link href="https://fawran.tools/tools/whiteboard-video-maker.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/whiteboard-video-maker.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/whiteboard-video-maker.html" hreflang="x-default" rel="alternate"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"محوّل الصور إلى فيديو سبورة","url":"https://fawran.tools/tools/whiteboard-video-maker.html","description":"حوّل أي مجموعة صور لفيديو رسم على سبورة بيد متحركة، بالكامل داخل متصفحك.","applicationCategory":"MultimediaApplication","operatingSystem":"Any (يعمل داخل المتصفح)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+.wb-shell{max-width:920px;margin:0 auto;}
+.thumb-row{display:flex;flex-wrap:wrap;gap:12px;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);}
+.thumb-item{position:relative;width:110px;height:78px;border-radius:10px;overflow:hidden;cursor:grab;border:2px solid transparent;flex-shrink:0;}
+.thumb-item.dragging{opacity:.4;}
+.thumb-item img{width:100%;height:100%;object-fit:cover;display:block;}
+.thumb-num{position:absolute;top:5px;right:5px;background:var(--indigo);color:#fff;font-size:10.5px;font-weight:800;padding:2px 6px;border-radius:999px;}
+.thumb-remove{position:absolute;top:5px;left:5px;width:20px;height:20px;border-radius:50%;background:rgba(20,19,31,.65);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;border:none;}
+.thumb-edited{position:absolute;bottom:5px;left:5px;width:20px;height:20px;border-radius:50%;background:var(--indigo);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;box-shadow:0 2px 6px rgba(0,0,0,.3);}
+.thumb-add{width:110px;height:78px;border-radius:10px;border:2px dashed var(--line);display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--muted);cursor:pointer;flex-shrink:0;background:var(--surface-sunk);}
+.thumb-add:hover{border-color:var(--indigo);color:var(--indigo);}
+.thumb-hint{font-size:12.5px;color:var(--muted);margin-top:12px;}
+.wb-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:24px;margin-top:18px;}
+.wb-row-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.wb-badge-new{background:var(--gold-soft);color:var(--gold-deep);font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;}
+.audio-drop{margin-top:14px;padding:16px;border:1.5px dashed var(--line);border-radius:12px;text-align:center;cursor:pointer;font-weight:800;font-size:14px;background:var(--surface-sunk);}
+.audio-drop:hover{border-color:var(--indigo);}
+.audio-drop.has-file{color:var(--indigo-deep);border-color:var(--indigo);border-style:solid;}
+.wb-sub{font-size:12.5px;color:var(--muted);margin-top:8px;}
+.seg-group{display:flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+.seg-btn{flex:1;padding:13px;text-align:center;font-weight:800;font-size:14px;background:var(--surface);cursor:pointer;border-inline-start:1px solid var(--line);}
+.seg-btn:first-child{border-inline-start:none;}
+.seg-btn.active{background:var(--indigo-soft);color:var(--indigo-deep);}
+.wb-check-row{display:flex;align-items:center;gap:10px;padding:12px 0;font-size:14px;font-weight:700;cursor:pointer;}
+.wb-check-row input{width:18px;height:18px;accent-color:var(--indigo);cursor:pointer;}
+.adv-toggle{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:14px 0;}
+.adv-toggle .lbl{font-weight:800;font-size:14.5px;}
+.adv-toggle .sub{font-size:12px;color:var(--muted);font-weight:500;}
+.adv-body{display:none;padding-top:6px;}
+.adv-body.open{display:block;}
+.slider-field{margin-bottom:20px;}
+.slider-field .top-row{display:flex;justify-content:space-between;font-size:13.5px;font-weight:700;margin-bottom:8px;}
+.slider-field .val{color:var(--indigo-deep);font-family:'IBM Plex Mono',monospace;}
+.slider-field input[type=range]{width:100%;accent-color:var(--indigo);}
+.wb-preview-wrap{background:var(--surface-sunk);border-radius:14px;padding:18px;text-align:center;margin-top:18px;}
+.wb-preview-wrap canvas{max-width:100%;border-radius:10px;box-shadow:0 6px 20px rgba(20,19,31,.1);background:#fff;}
+.wb-progress{margin-top:12px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.wb-progress-bar{height:100%;background:var(--indigo);width:0%;transition:width .1s linear;}
+.wb-status{font-size:13px;color:var(--muted);margin-top:8px;font-weight:700;}
+.trust-badge{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 4px;}
+.trust-badge span{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:800;color:var(--indigo-deep);background:var(--indigo-soft);padding:7px 13px;border-radius:999px;}
+.extra-result-card{margin-top:16px;padding:16px;background:var(--surface-sunk);border-radius:12px;border:1px solid var(--line);}
+.extra-result-card .label{font-weight:800;font-size:13.5px;margin-bottom:10px;}
+.extra-result-card video{width:100%;max-width:280px;display:block;border-radius:10px;background:#000;margin-bottom:10px;}
+.extra-result-card .status{font-size:12.5px;color:var(--muted);font-weight:700;}
+</style>
+</head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a><nav class="nav"><a href="../index.html">الأدوات</a><a href="../blog/index.html">المدونة</a><a href="../about.html">من نحن</a><a href="../contact.html">تواصل معنا</a></nav><a class="lang-switch" href="https://fawran.tools/en/tools/whiteboard-video-maker.html">EN</a></div></header>
+
+<main><div class="wrap wb-shell" style="padding-top:30px;padding-bottom:60px;">
+<div class="crumb"><a href="../index.html">الأدوات</a> / أدوات الفيديو / محوّل الصور إلى فيديو سبورة</div>
+<h1>محوّل الصور إلى فيديو سبورة (Whiteboard)</h1>
+<p class="tool-lede">أضف صورة أو أكتر، ااضبط الإعدادات، ثم أنشئي فيديو رسم على سبورة بيد متحركة — كل المعالجة تتم على جهازك.</p>
+<div class="trust-badge">
+  <span>🔒 لا رفع لأي سيرفر</span>
+  <span>🚫 بدون تسجيل حساب</span>
+  <span>♾️ بدون حد أقصى للتصدير</span>
+  <span>🎬 بدون علامة مائية</span>
+</div>
+
+<div class="thumb-row" id="thumbRow">
+  <div class="thumb-add" id="addImageBtn">+</div>
+</div>
+<input accept="image/*" id="imageInput" multiple="" style="display:none;" type="file"/>
+<p class="thumb-hint" id="countHint">عدد الصور: 0 — اضغط مطوّلًا على صورة ثم اسحبها لإعادة الترتيب، أو اضغط ضغطة عادية لتعديل مدتها وعنوانها</p>
+<button class="btn btn-ghost" id="reverseBtn" style="margin-top:10px;">
+  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" style="width:16px;height:16px;"><path d="M17 1l4 4-4 4"></path><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><path d="M7 23l-4-4 4-4"></path><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+  عكس ترتيب الصور
+</button>
+<button class="btn btn-ghost" id="bulkImportBtn" style="margin-top:10px;margin-inline-start:10px;">
+  📋 استيراد سيناريو دفعة واحدة
+</button>
+
+<div class="wb-card" id="bulkImportPanel" style="display:none;">
+  <div style="font-weight:900;font-size:15px;margin-bottom:10px;">📋 استيراد سيناريو دفعة واحدة</div>
+  <p class="wb-sub" style="margin-top:0;margin-bottom:12px;">الصق كل عنوان في سطر منفصل — كل سطر هيتحوّل تلقائيًا لعنوان الصورة اللي في نفس الترتيب، بدون رفع أي شيء لأي سيرفر.</p>
+  <textarea id="bulkImportText" placeholder="مثال:&#10;مبنى ناطحة سحاب في وسط المدينة&#10;منظر عام لواجهة المدينة&#10;لقطة قريبة للمدخل الرئيسي" style="width:100%;box-sizing:border-box;min-height:110px;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface-sunk);color:var(--ink);font:inherit;resize:vertical;"></textarea>
+  <div style="display:flex;gap:10px;margin-top:12px;">
+    <button class="btn btn-primary" id="applyBulkImport">تطبيق على الصور</button>
+    <button class="btn btn-ghost" id="closeBulkImport">إلغاء</button>
+  </div>
+</div>
+
+<div class="wb-card" id="sceneEditor" style="display:none;">
+  <div style="font-weight:900;font-size:15px;margin-bottom:14px;" id="sceneEditorTitle">إعدادات المشهد</div>
+  <div class="slider-field">
+    <div class="top-row"><span>مدة هذا المشهد (ث)</span><span class="val" id="sceneDurVal">تلقائي</span></div>
+    <input id="sceneDuration" max="15" min="1" step="0.5" type="range" value="0"/>
+    <p class="wb-sub" style="margin-top:6px;">اسحب لأقصى اليسار لاستخدام المدة التلقائية بدل تحديد مدة يدويًا.</p>
+  </div>
+  <label style="display:block;font-size:13.5px;font-weight:700;margin-bottom:8px;">عنوان نصي فوق هذا المشهد (اختياري)</label>
+  <input id="sceneCaption" placeholder="مثال: مبنى ناطحة سحاب في وسط المدينة" style="width:100%;box-sizing:border-box;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface-sunk);color:var(--ink);font:inherit;" type="text"/>
+  <button class="btn btn-ghost" id="closeSceneEditor" style="margin-top:14px;">إغلاق</button>
+</div>
+
+<div class="wb-card">
+  <div class="wb-row-head">
+    <div style="font-weight:900;font-size:16px;display:flex;align-items:center;gap:8px;">🎙️ أضف تعليقك الصوتي <span class="wb-badge-new">اختياري</span></div>
+  </div>
+  <p class="wb-sub" style="margin-top:0;">ارفع صوتك والموقع يزامن المشاهد معه تلقائيًا ويدمجه داخل الفيديو.</p>
+  <div class="audio-drop" id="audioDrop">🎵 اختر ملف صوت</div>
+  <input accept="audio/*" id="audioInput" style="display:none;" type="file"/>
+  <p class="wb-sub">الصيغ المدعومة: MP3 / WAV / M4A — اختياري، تقدري تكملي بدون صوت.</p>
+</div>
+
+<div class="wb-card">
+  <div style="font-weight:900;font-size:16px;margin-bottom:14px;">جودة الإخراج</div>
+  <div class="seg-group" id="qualityGroup">
+    <div class="seg-btn" data-val="1080">1080p</div>
+    <div class="seg-btn active" data-val="720">720p</div>
+    <div class="seg-btn" data-val="480">480p</div>
+  </div>
+
+  <div style="font-weight:900;font-size:16px;margin:22px 0 14px;">أبعاد الفيديو</div>
+  <div class="seg-group" id="ratioGroup">
+    <div class="seg-btn" data-val="9:16">9:16 📱</div>
+    <div class="seg-btn" data-val="16:9">16:9 🖥️</div>
+    <div class="seg-btn active" data-val="auto">تلقائي</div>
+  </div>
+  <div style="font-weight:800;font-size:13.5px;margin-top:16px;">📦 تصدير دفعة واحدة لأبعاد إضافية (اختياري)</div>
+  <label class="wb-check-row"><input id="extraRatio916" type="checkbox"/> صدّري نسخة إضافية بنسبة 9:16 📱</label>
+  <label class="wb-check-row"><input id="extraRatio169" type="checkbox"/> صدّري نسخة إضافية بنسبة 16:9 🖥️</label>
+  <p class="wb-sub" style="margin-top:0;">هيتم تجاهل أي نسبة تطابق الأبعاد الأساسية المختارة فوق.</p>
+
+  <div style="font-weight:900;font-size:16px;margin:22px 0 14px;">نمط الرسم</div>
+  <div class="seg-group" id="styleGroup">
+    <div class="seg-btn active" data-val="bw">⚪ أبيض وأسود</div>
+    <div class="seg-btn" data-val="blueChalk">🔵 طباشير أزرق</div>
+    <div class="seg-btn" data-val="blackboard">⚫ سبورة سوداء</div>
+  </div>
+
+  <label class="wb-check-row"><input checked="" id="syncAudio" type="checkbox"/> 🎯 مزامنة المشاهد مع الصوت</label>
+  <label class="wb-check-row"><input checked="" id="coloredEnding" type="checkbox"/> 🎨 نهاية ملوّنة</label>
+  <label class="wb-check-row"><input checked="" id="showHand" type="checkbox"/> ✍️ إظهار يد الرسم</label>
+  <label class="wb-check-row"><input checked="" id="kenBurns" type="checkbox"/> 🎥 حركة كاميرا بطيئة (Ken Burns)</label>
+
+  <div class="adv-toggle" id="advToggle">
+    <div><div class="lbl">⚙️ إعدادات متقدّمة</div><div class="sub">اختيارية — الإعدادات الافتراضية مناسبة لمعظم الحالات</div></div>
+    <span id="advArrow">▾</span>
+  </div>
+  <div class="adv-body" id="advBody">
+    <div class="slider-field"><div class="top-row"><span>السرعة</span><span class="val" id="speedVal">x1.0</span></div><input id="speed" max="2" min="0.5" step="0.1" type="range" value="1"/></div>
+    <div class="slider-field"><div class="top-row"><span>معدل الإطارات (fps)</span><span class="val" id="fpsVal">25</span></div><input id="fps" max="30" min="10" step="1" type="range" value="25"/></div>
+    <div class="slider-field"><div class="top-row"><span>سرعة تفاصيل الأجسام</span><span class="val" id="detailVal">6</span></div><input id="detailSpeed" max="10" min="1" step="1" type="range" value="6"/></div>
+    <div class="slider-field"><div class="top-row"><span>سرعة الخلفية</span><span class="val" id="bgVal">12</span></div><input id="bgSpeed" max="20" min="4" step="1" type="range" value="12"/></div>
+    <div class="slider-field"><div class="top-row"><span>دقة الخطوط</span><span class="val" id="qualVal">3</span></div><input id="lineQuality" max="6" min="1" step="1" type="range" value="3"/></div>
+    <div class="slider-field"><div class="top-row"><span>مدة الصورة النهائية (ث)</span><span class="val" id="holdVal">2.0 ث</span></div><input id="holdDuration" max="5" min="0.5" step="0.5" type="range" value="2"/></div>
+  </div>
+
+  <div class="wb-preview-wrap" id="previewWrap" style="display:none;">
+    <canvas id="wbCanvas"></canvas>
+    <video controls="" id="wbResultVideo" style="display:none;max-width:100%;border-radius:10px;background:#000;"></video>
+    <div class="wb-progress"><div class="wb-progress-bar" id="wbProgressBar"></div></div>
+    <div class="wb-status" id="wbStatus"></div>
+  </div>
+
+  <button class="btn btn-primary" id="renderBtn" style="width:100%;margin-top:20px;font-size:15px;padding:15px;">🎬 المونتاج والمزامنة</button>
+  <a download="" id="downloadLink" style="display:none;width:100%;margin-top:12px;" class="btn btn-primary"></a>
+  <div id="extraResultsWrap"></div>
+</div>
+
+<div class="tool-info" style="margin-top:34px;">
+<h2>طريقة الاستخدام</h2>
+<ol>
+<li>ارفع صورة أو أكثر (JPG أو PNG) — كل صورة تُصبح مشهدًا.</li>
+<li>أضف تعليقك الصوتي (اختياري)، واختر الجودة وأبعاد الفيديو (16:9 أو 9:16).</li>
+<li>اضغط "المونتاج والمزامنة" وانتظر حتى ينتهي — المدة الفعلية للتصدير تساوي تقريبًا مدة الفيديو الناتج.</li>
+<li>حمّل الفيديو الناتج بصيغة WebM، جاهز للمشاركة مباشرة.</li>
+</ol>
+<h2>الخصوصية</h2>
+<p>لا يتم رفع صورك أو صوتك إلى أي خادم؛ كل عملية الرسم والتصدير تتم محليًا داخل متصفحك من البداية للنهاية.</p>
+</div>
+
+</div></main>
+
+<div class="wrap"><div class="rating-widget" data-tool-slug="whiteboard-video-maker">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<div class="wrap"><div class="share-widget"></div></div>
+
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script>
+<script src="../assets/share-widget.js"></script>
+<script src="../assets/rating-widget.js"></script>
+<script src="../assets/whiteboard-engine.js"></script>
+</body></html>

@@ -1,4 +1,4 @@
-const CACHE = "fawran-v4";
+const CACHE = "fawran-v5";
 const CORE = [
   "/", "/index.html", "/en/index.html",
   "/assets/style.css", "/assets/main.js",

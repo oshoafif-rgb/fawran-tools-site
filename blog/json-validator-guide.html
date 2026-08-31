@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>لماذا يرفض النظام ملف JSON الخاص بك رغم أنه يبدو صحيحًا | فورا.tools</title>
+<meta content="دليل عملي لفهم الفرق بين تنسيق JSON وصحته البنيوية، وأشهر الأخطاء الخفية اللي بتخلي نظام يرفض ملف يبدو سليم للعين المجردة." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/blog/json-validator-guide.html" rel="canonical"/>
+
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/blog/json-validator-guide.html" property="og:url"/>
+<meta content="لماذا يرفض النظام ملف JSON الخاص بك رغم أنه يبدو صحيحًا | فورا.tools" property="og:title"/>
+<meta content="دليل عملي لفهم الفرق بين تنسيق JSON وصحته البنيوية." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="لماذا يرفض النظام ملف JSON الخاص بك رغم أنه يبدو صحيحًا | فورا.tools" name="twitter:title"/>
+<meta content="دليل عملي لفهم صحة بنية JSON." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"لماذا يرفض النظام ملف JSON الخاص بك رغم أنه يبدو صحيحًا","description":"دليل عملي لفهم الفرق بين تنسيق JSON وصحته البنيوية، وأشهر الأخطاء الخفية.","url":"https://fawran.tools/blog/json-validator-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/json-validator-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"لماذا يرفض النظام ملف JSON الخاص بك رغم أنه يبدو صحيحًا","item":"https://fawran.tools/blog/json-validator-guide.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"إيه الفرق بين التنسيق والتحقق من الصحة؟","acceptedAnswer":{"@type":"Answer","text":"التنسيق بيرتب شكل النص بصريًا بس، بينما التحقق من الصحة بيفحص إن البنية نفسها متوافقة مع قواعد معيار JSON الرسمية — ممكن نص يكون منسّق بشكل جميل لكنه غير صحيح بنيويًا في نفس الوقت."}},{"@type":"Question","name":"ليه أحيانًا JSON يشتغل في أداة وميشتغلش في أداة تانية؟","acceptedAnswer":{"@type":"Answer","text":"بعض الأدوات (زي محررات الأكواد) بتكون متسامحة أكتر مع أخطاء بسيطة، بينما أنظمة الإنتاج الصارمة بترفض أي انحراف عن المعيار الرسمي بدقة تامة."}},{"@type":"Question","name":"هل القيم بـtrue أو false لازم تكون بحروف صغيرة؟","acceptedAnswer":{"@type":"Answer","text":"نعم، معيار JSON بيتطلب كتابة true وfalse وnull بحروف صغيرة بالكامل — True أو FALSE هتُعتبر أخطاء صياغة رغم إنها مقبولة في بعض لغات البرمجة."}},{"@type":"Question","name":"هل ممكن أستخدم تعليقات داخل ملف JSON؟","acceptedAnswer":{"@type":"Answer","text":"لا، معيار JSON الرسمي مايدعمش التعليقات خالص (لا //  ولا /* */)، على عكس بعض الصيغ المشابهة زي JSON5 أو JSONC اللي بتضيف الدعم ده كامتداد غير قياسي."}}]}
+</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/json-validator-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/json-validator-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/json-validator-guide.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">الأدوات</a>
+<a class="active" href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/blog/json-validator-guide.html" title="View in English">EN</a>
+</div>
+</div>
+</header>
+<div class="wrap">
+<div class="page-head">
+<div class="article-meta"><span class="tag">أدوات المطورين</span><span>5 دقائق قراءة</span></div>
+<h1>لماذا يرفض النظام ملف JSON الخاص بك رغم أنه يبدو صحيحًا</h1>
+</div>
+
+<div class="content-card">
+
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <rect x="180" y="100" width="440" height="140" rx="10" fill="#1A1826"/>
+  <text x="210" y="135" font-family="IBM Plex Mono, monospace" font-size="14" fill="#8B89A3" text-anchor="start">{"name": "Ali",</text>
+  <text x="210" y="160" font-family="IBM Plex Mono, monospace" font-size="14" fill="#B4232C" text-anchor="start">"age": 30,}</text>
+  <circle cx="600" cy="155" r="14" fill="#B4232C"/>
+  <text x="600" y="161" font-family="Arial" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">!</text>
+  <text x="210" y="200" font-family="IBM Plex Mono, monospace" font-size="12" fill="#2F7D53" text-anchor="start">↑ فاصلة زيادة بعد آخر عنصر</text>
+</svg>
+
+<p>
+  الملف بيبان مرتب ومقروء تمامًا، لكن النظام بيرفضه برسالة خطأ غامضة زي "Unexpected token". المشكلة
+  غالبًا مش في الشكل، هي في تفصيلة بنيوية صغيرة مخالفة لمعيار JSON الرسمي.
+</p>
+
+<div class="toc">
+  <h2>محتوى المقال</h2>
+  <ul>
+    <li><a href="#format-vs-valid">الفرق بين "منسّق" و"صحيح بنيويًا"</a></li>
+    <li><a href="#hidden-errors">أشهر الأخطاء الخفية اللي بتفوّت على العين</a></li>
+    <li><a href="#strict-rules">قواعد JSON الصارمة اللي كتير بينساها</a></li>
+    <li><a href="#howto">كيف تتحققي من صحة JSON بسهولة؟</a></li>
+    <li><a href="#faq">أسئلة شائعة</a></li>
+  </ul>
+</div>
+
+<h2 id="format-vs-valid">الفرق بين "منسّق" و"صحيح بنيويًا"</h2>
+<p>
+  التنسيق بيرتب شكل النص بصريًا بس (مسافات، أسطر جديدة)، بينما التحقق من الصحة بيفحص إن البنية
+  نفسها متوافقة تمامًا مع قواعد معيار JSON الرسمية. ممكن نص يكون منسّق بشكل جميل جدًا للعين، لكنه
+  في نفس الوقت غير صحيح بنيويًا وهيترفض من أي نظام صارم.
+</p>
+
+<h2 id="hidden-errors">أشهر الأخطاء الخفية اللي بتفوّت على العين</h2>
+<p>
+  فاصلة زيادة بعد آخر عنصر في قائمة أو كائن من أشهر الأخطاء، وصعبة الاكتشاف بالعين المجردة خصوصًا
+  في ملفات طويلة. كمان استخدام علامة اقتباس مفردة (') بدل مزدوجة (") حوالين النصوص، أو كتابة قيمة
+  رقمية بصيغة غير مدعومة (زي أرقام بادئة بأصفار) بتسبب رفض كامل للملف.
+</p>
+
+<h2 id="strict-rules">قواعد JSON الصارمة اللي كتير بينساها</h2>
+<p>
+  معيار JSON الرسمي بيتطلب: علامات اقتباس مزدوجة إلزامية حوالين كل مفتاح ونص (مش مفردة)، القيم
+  المنطقية لازم تكون true أو false بحروف صغيرة بالكامل (مش True أو FALSE)، ومفيش دعم للتعليقات
+  خالص (لا // ولا /* */) رغم إنها مقبولة في لغات برمجة كتيرة بتستوحي صيغتها من JSON.
+</p>
+
+<h2 id="howto">كيف تتحققي من صحة JSON بسهولة؟</h2>
+<p>
+  باستخدام <a href="../tools/json-validator.html" style="color:var(--indigo-deep);font-weight:700;">مدقق JSON</a> على فورا.tools:
+</p>
+<ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+  <li>الصق بيانات JSON اللي عايزة تتأكدي من صحتها.</li>
+  <li>اضغط "تحقق" — النتيجة تظهر فورًا (صحيح أو غير صحيح).</li>
+  <li>لو فيه خطأ، هيتوضّح لك نوعه ومكانه بالتحديد.</li>
+</ol>
+
+<div class="tool-cta">
+<div>
+<div class="txt">جرّبي مدقق JSON الآن</div>
+<div class="sub">تحقق فوري من الصحة البنيوية، مع تحديد مكان الخطأ بدقة</div>
+</div>
+<a class="btn btn-primary" href="../tools/json-validator.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+    افتح الأداة
+  </a>
+</div>
+
+<h2 id="faq">أسئلة شائعة</h2>
+<div class="faq-item">
+  <h3>إيه الفرق بين التنسيق والتحقق من الصحة؟</h3>
+  <p style="font-size:13.5px;">التنسيق بيرتب الشكل بصريًا بس، بينما التحقق يفحص إن البنية متوافقة مع قواعد المعيار الرسمية.</p>
+</div>
+<div class="faq-item">
+  <h3>ليه أحيانًا JSON يشتغل في أداة وميشتغلش في أداة تانية؟</h3>
+  <p style="font-size:13.5px;">بعض الأدوات متسامحة أكتر مع أخطاء بسيطة، بينما أنظمة الإنتاج الصارمة بترفض أي انحراف عن المعيار.</p>
+</div>
+<div class="faq-item">
+  <h3>هل القيم بـtrue أو false لازم تكون بحروف صغيرة؟</h3>
+  <p style="font-size:13.5px;">نعم، المعيار بيتطلب true وfalse وnull بحروف صغيرة بالكامل — أي صيغة تانية هتُعتبر خطأ.</p>
+</div>
+<div class="faq-item">
+  <h3>هل ممكن أستخدم تعليقات داخل ملف JSON؟</h3>
+  <p style="font-size:13.5px;">لا، المعيار الرسمي مايدعمش التعليقات خالص، على عكس صيغ مشابهة زي JSON5 أو JSONC.</p>
+</div>
+
+<h2>خلاصة</h2>
+<p>
+  الشكل المرتب مش ضمان لصحة البيانات — التحقق البنيوي هو الفيصل الحقيقي، وأداة تحقق سريعة بتوفر
+  عليكِ ساعات من البحث اليدوي عن سبب رفض نظام لملف يبدو سليم تمامًا للعين.
+</p>
+
+</div>
+</div>
+
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
+<a href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script>
+</body>
+</html>

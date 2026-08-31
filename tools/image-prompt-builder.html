@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>منشئ برومبتات توليد الصور لـMidjourney وDALL-E | فورا.tools</title>
+<meta content="ركّب برومبت احترافي لتوليد الصور بالذكاء الاصطناعي عبر خيارات مرئية للأسلوب والإضاءة وزاوية الكاميرا والدقة — بضغطة زر، محليًا داخل متصفحك." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/image-prompt-builder.html" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<link href="https://fawran.tools/tools/image-prompt-builder.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/image-prompt-builder.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/image-prompt-builder.html" hreflang="x-default" rel="alternate"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"منشئ برومبتات توليد الصور","url":"https://fawran.tools/tools/image-prompt-builder.html","description":"ركّب برومبت احترافي لتوليد الصور عبر خيارات مرئية.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (يعمل داخل المتصفح)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+.lib-shell{max-width:860px;margin:0 auto;}
+.wb-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:24px;margin-top:18px;}
+.field-label{font-weight:800;font-size:14px;margin:20px 0 10px;}
+.field-label:first-child{margin-top:0;}
+.field-sub{font-size:12px;color:var(--muted);margin:-6px 0 10px;}
+textarea#subjectInput{width:100%;box-sizing:border-box;min-height:80px;padding:14px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface-sunk);color:var(--ink);font:inherit;font-size:15px;resize:vertical;}
+input#extrasInput{width:100%;box-sizing:border-box;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface-sunk);color:var(--ink);font:inherit;}
+.chip-group{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;transition:.15s;}
+.chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+.result-box{background:var(--surface-sunk);border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:16px;white-space:pre-wrap;line-height:1.9;font-size:14px;font-family:'IBM Plex Mono',monospace;direction:ltr;text-align:left;}
+.result-actions{display:flex;gap:10px;margin-top:14px;}
+</style>
+</head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a><nav class="nav"><a href="../index.html">الأدوات</a><a href="../blog/index.html">المدونة</a><a href="../about.html">من نحن</a><a href="../contact.html">تواصل معنا</a></nav><a class="lang-switch" href="https://fawran.tools/en/tools/image-prompt-builder.html">EN</a></div></header>
+
+<main><div class="wrap lib-shell" style="padding-top:30px;padding-bottom:60px;">
+<div class="crumb"><a href="../index.html">الأدوات</a> / أدوات الذكاء الاصطناعي / منشئ برومبتات الصور</div>
+<h1>🎨 منشئ برومبتات توليد الصور</h1>
+<p class="tool-lede">اختر الأسلوب والإضاءة وزاوية الكاميرا بالنقر، والأداة هتركّب برومبت احترافي جاهز لـMidjourney وDALL-E وStable Diffusion — بضغطة زر واحدة.</p>
+
+<div class="wb-card">
+  <div class="field-label">موضوع الصورة</div>
+  <textarea id="subjectInput" placeholder="مثال: قط برتقالي يجلس على حافة نافذة"></textarea>
+
+  <div class="field-label">الأسلوب الفني</div>
+  <div class="chip-group" id="styleGroup">
+    <span class="chip" data-val="photorealistic, professional photography">صورة واقعية</span>
+    <span class="chip" data-val="digital painting, concept art style">رسم رقمي</span>
+    <span class="chip" data-val="anime style, vibrant colors">أنمي</span>
+    <span class="chip" data-val="watercolor painting, soft brushstrokes">ألوان مائية</span>
+    <span class="chip" data-val="3D render, octane render, unreal engine">رندر ثلاثي الأبعاد</span>
+    <span class="chip" data-val="oil painting, classical art style">رسم زيتي</span>
+    <span class="chip" data-val="cyberpunk aesthetic, neon accents">سايبربانك</span>
+    <span class="chip" data-val="minimalist, flat design, simple shapes">مينيمال</span>
+  </div>
+
+  <div class="field-label">الإضاءة</div>
+  <div class="chip-group" id="lightingGroup">
+    <span class="chip" data-val="natural daylight">ضوء نهاري طبيعي</span>
+    <span class="chip" data-val="golden hour lighting, warm glow">ساعة ذهبية</span>
+    <span class="chip" data-val="studio lighting, softbox">إضاءة استوديو</span>
+    <span class="chip" data-val="dramatic moody lighting, high contrast">درامية</span>
+    <span class="chip" data-val="neon lighting, cyberpunk glow">نيون</span>
+    <span class="chip" data-val="soft diffused lighting">ناعمة منتشرة</span>
+  </div>
+
+  <div class="field-label">زاوية الكاميرا</div>
+  <div class="chip-group" id="angleGroup">
+    <span class="chip" data-val="eye level shot">مستوى العين</span>
+    <span class="chip" data-val="low angle shot, looking up">زاوية منخفضة</span>
+    <span class="chip" data-val="aerial view, bird's eye view">منظر علوي</span>
+    <span class="chip" data-val="close-up shot, macro details">لقطة قريبة</span>
+    <span class="chip" data-val="wide angle shot">زاوية واسعة</span>
+    <span class="chip" data-val="dutch angle, tilted frame">زاوية مائلة</span>
+  </div>
+
+  <div class="field-label">المزاج اللوني</div>
+  <div class="chip-group" id="moodGroup">
+    <span class="chip" data-val="vibrant saturated colors">ألوان زاهية</span>
+    <span class="chip" data-val="muted pastel color palette">باستيل هادئة</span>
+    <span class="chip" data-val="black and white, monochrome">أبيض وأسود</span>
+    <span class="chip" data-val="warm color tones">درجات دافئة</span>
+    <span class="chip" data-val="cool blue color tones">درجات باردة</span>
+  </div>
+
+  <div class="field-label">تفاصيل إضافية (اختياري)</div>
+  <input id="extrasInput" placeholder="مثال: مطر خفيف في الخلفية، إطار زخرفي" type="text"/>
+
+  <div class="field-label">جودة الدقة</div>
+  <div class="chip-group" id="resGroup">
+    <span class="chip" data-val="high quality">قياسية</span>
+    <span class="chip" data-val="4k resolution, highly detailed">4K</span>
+    <span class="chip" data-val="8k resolution, ultra detailed, sharp focus">8K فائقة الدقة</span>
+  </div>
+
+  <button class="btn btn-primary" id="generateBtn" style="width:100%;margin-top:22px;font-size:15px;padding:15px;">🎨 ركّب البرومبت</button>
+
+  <div id="resultWrap" style="display:none;">
+    <div class="field-label">البرومبت الجاهز</div>
+    <div class="result-box" id="resultText"></div>
+    <div class="result-actions">
+      <button class="btn btn-primary" id="copyBtn"></button>
+      <button class="btn btn-ghost" id="downloadBtn"></button>
+    </div>
+  </div>
+</div>
+
+<div class="tool-info" style="margin-top:34px;">
+<h2>ليه البرومبت مكتوب بالإنجليزي؟</h2>
+<p>أدوات توليد الصور بالذكاء الاصطناعي (Midjourney، DALL-E، Stable Diffusion) بتفهم البرومبتات الإنجليزية بدقة أعلى بكثير، فالأداة بتركّب المصطلحات التقنية بالإنجليزي تلقائيًا حتى لو كتبتِ وصف الموضوع بالعربي — تقدري تكتبي الموضوع بأي لغة وهيتضاف زي ما هو.</p>
+<h2>الخصوصية</h2>
+<p>تركيب البرومبت بيتم محليًا داخل متصفحك بضم الخيارات المختارة — مفيش أي بيانات بتتبعت لأي خادم خارجي.</p>
+</div>
+
+</div></main>
+
+<div class="wrap"><div class="rating-widget" data-tool-slug="image-prompt-builder">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<div class="wrap"><div class="share-widget"></div></div>
+
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
+<a href="../blog/index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script>
+<script src="../assets/share-widget.js"></script>
+<script src="../assets/rating-widget.js"></script>
+<script src="../assets/image-prompt-builder-engine.js"></script>
+</body></html>

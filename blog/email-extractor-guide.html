@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>كيف تستخرجي كل الإيميلات من نص طويل في ثانية | فورا.tools</title>
+<meta content="دليل عملي لاستخراج عناوين الإيميل من أي نص أو مستند طويل تلقائيًا، مع إزالة التكرار، لبناء قوائم تواصل أو مراجعة بيانات مستوردة بسرعة." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/blog/email-extractor-guide.html" rel="canonical"/>
+
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/blog/email-extractor-guide.html" property="og:url"/>
+<meta content="كيف تستخرجي كل الإيميلات من نص طويل في ثانية | فورا.tools" property="og:title"/>
+<meta content="دليل عملي لاستخراج عناوين الإيميل من أي نص أو مستند طويل تلقائيًا مع إزالة التكرار." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="كيف تستخرجي كل الإيميلات من نص طويل في ثانية | فورا.tools" name="twitter:title"/>
+<meta content="دليل عملي لاستخراج عناوين الإيميل من أي نص أو مستند طويل." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"كيف تستخرجي كل الإيميلات من نص طويل في ثانية","description":"دليل عملي لاستخراج عناوين الإيميل من أي نص أو مستند طويل تلقائيًا، مع إزالة التكرار.","url":"https://fawran.tools/blog/email-extractor-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/email-extractor-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"كيف تستخرجي كل الإيميلات من نص طويل في ثانية","item":"https://fawran.tools/blog/email-extractor-guide.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل الأداة بتفرّق بين حروف كبيرة وصغيرة عند إزالة التكرار؟","acceptedAnswer":{"@type":"Answer","text":"لا، الأداة بتعتبر Name@Example.com وname@example.com نفس العنوان عند فحص التكرار، لكن بتحتفظ بأول صيغة ظهرت في النص الأصلي."}},{"@type":"Question","name":"هل تقدر الأداة تستخرج إيميلات من ملف PDF مباشرة؟","acceptedAnswer":{"@type":"Answer","text":"لا، الأداة بتتعامل مع النص المُلصق مباشرة فقط. لاستخراج نص من ملف PDF الأول، تقدري تفتحي الملف وتانسخ محتواه، أو تستخدمي أداة تحويل PDF لنص متاحة أونلاين."}},{"@type":"Question","name":"هل فيه حد أقصى لحجم النص اللي ممكن ألصقه؟","acceptedAnswer":{"@type":"Answer","text":"مفيش حد مضروب مسبقًا، لكن النصوص الكبيرة جدًا (آلاف الأسطر) ممكن تاخد وقت أطول شوية في المعالجة حسب أداء جهازك، بما إن كل حاجة بتتم محليًا في المتصفح."}},{"@type":"Question","name":"هل الأداة بتتأكد إن الإيميل المستخرج شغّال فعليًا؟","acceptedAnswer":{"@type":"Answer","text":"لا، الأداة بتستخرج أي نص متطابق مع صيغة الإيميل القياسية، لكن ما بتتأكدش إن العنوان فعليًا موجود أو نشط — ده يتطلب أداة فحص صحة منفصلة."}}]}
+</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/email-extractor-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/email-extractor-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/email-extractor-guide.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">الأدوات</a>
+<a class="active" href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/blog/email-extractor-guide.html" title="View in English">EN</a>
+</div>
+</div>
+</header>
+<div class="wrap">
+<div class="page-head">
+<div class="article-meta"><span class="tag">أدوات الإيميل</span><span>6 دقائق قراءة</span></div>
+<h1>كيف تستخرجي كل الإيميلات من نص طويل في ثانية</h1>
+</div>
+
+<div class="content-card">
+
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <rect x="90" y="60" width="280" height="200" rx="10" fill="#1A1826"/>
+  <rect x="115" y="85" width="230" height="8" rx="3" fill="#332F4C"/>
+  <rect x="115" y="105" width="180" height="8" rx="3" fill="#332F4C"/>
+  <rect x="115" y="125" width="230" height="8" rx="3" fill="#F0A93B"/>
+  <rect x="115" y="145" width="150" height="8" rx="3" fill="#332F4C"/>
+  <rect x="115" y="165" width="230" height="8" rx="3" fill="#F0A93B"/>
+  <rect x="115" y="185" width="200" height="8" rx="3" fill="#332F4C"/>
+  <path d="M400 160 L470 160 M440 135 L470 160 L440 185" stroke="#4F3FF0" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="510" y="110" width="200" height="100" rx="10" fill="#4F3FF0"/>
+  <rect x="530" y="130" width="160" height="8" rx="3" fill="#fff"/>
+  <rect x="530" y="150" width="160" height="8" rx="3" fill="#fff"/>
+  <rect x="530" y="170" width="120" height="8" rx="3" fill="#fff"/>
+</svg>
+
+<p>
+  قصاصة نص طويلة، مستند مصدّر من نظام قديم، أو صفحة كاملة منسوخة، وفيها إيميلات متناثرة عايزة
+  تجمّعيها في قائمة واحدة نظيفة؟ البحث اليدوي عن كل عنوان يدويًا مضيعة وقت كبيرة، والحل الأسرع
+  أداة استخراج تلقائي.
+</p>
+
+<div class="toc">
+  <h2>محتوى المقال</h2>
+  <ul>
+    <li><a href="#why">ليه محتاجة أداة استخراج أصلًا؟</a></li>
+    <li><a href="#howworks">إزاي الاستخراج بيشتغل تقنيًا؟</a></li>
+    <li><a href="#usecases">استخدامات شائعة من الحياة العملية</a></li>
+    <li><a href="#howto">كيف تستخدمي الأداة خطوة بخطوة؟</a></li>
+    <li><a href="#tips">نصائح لنتيجة أدق</a></li>
+    <li><a href="#faq">أسئلة شائعة</a></li>
+  </ul>
+</div>
+
+<h2 id="why">ليه محتاجة أداة استخراج أصلًا؟</h2>
+<p>
+  تخيّلي عندك مستند فيه مئات الأسطر — تعليقات عملاء، بيانات مستوردة من نظام قديم، أو محتوى صفحة
+  ويب كاملة — وعايزة بس عناوين الإيميل اللي فيه. المراجعة اليدوية سطر بسطر هتاخد وقت طويل وعرضة
+  للأخطاء، خصوصًا لو النص فيه تنسيقات مختلفة أو إيميلات مكررة بصيغ متفاوتة (حروف كبيرة وصغيرة مثلًا).
+</p>
+
+<h2 id="howworks">إزاي الاستخراج بيشتغل تقنيًا؟</h2>
+<p>
+  الأداة بتفحص النص بالكامل بحثًا عن أي نمط متطابق مع الصيغة القياسية لعنوان الإيميل (اسم مستخدم،
+  علامة @، ودومين صحيح بامتداد). أي تطابق بيتلقط تلقائيًا، وبعدين بيتم تصفية النتائج من التكرار —
+  حتى لو نفس الإيميل ظهر بحالة أحرف مختلفة (زي Name@Example.com وname@example.com)، الأداة بتعتبرهم
+  نفس العنوان وتحتفظ بنسخة واحدة بس.
+</p>
+
+<h2 id="usecases">استخدامات شائعة من الحياة العملية</h2>
+<ul>
+  <li><strong>مراجعة بيانات مستوردة:</strong> تنظيف قوائم عملاء أو مشتركين من ملفات Excel محوّلة لنص.</li>
+  <li><strong>جمع بيانات تواصل:</strong> استخراج إيميلات من صفحة "اتصل بنا" أو دليل شركات منسوخ.</li>
+  <li><strong>مراجعة رسائل قديمة:</strong> تجميع كل العناوين اللي راسلتك من أرشيف بريد إلكتروني مصدّر كنص.</li>
+  <li><strong>تدقيق محتوى:</strong> التأكد من عدم وجود إيميلات حساسة منشورة بالخطأ في مستند عام.</li>
+</ul>
+
+<h2 id="howto">كيف تستخدمي الأداة خطوة بخطوة؟</h2>
+<p>
+  باستخدام <a href="../tools/email-extractor.html" style="color:var(--indigo-deep);font-weight:700;">أداة مستخرج الإيميلات</a> على فورا.tools:
+</p>
+<ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+  <li>الصق النص كامل في مربع الإدخال، بأي طول وبأي تنسيق.</li>
+  <li>فعّلي خيار "ترتيب أبجدي" لو عايزة القائمة النهائية مرتبة.</li>
+  <li>اضغط "استخراج الإيميلات" — النتيجة تظهر فورًا مع عدد الإيميلات الفريدة.</li>
+  <li>اانسخ القائمة كاملة، أو حمّلها كملف CSV جاهز للاستخدام في أي برنامج جداول بيانات.</li>
+</ol>
+
+<div class="tool-cta">
+<div>
+<div class="txt">جرّبي مستخرج الإيميلات الآن</div>
+<div class="sub">استخراج فوري مع إزالة تكرار تلقائية، وتحميل CSV مباشر</div>
+</div>
+<a class="btn btn-primary" href="../tools/email-extractor.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 7V4h16v3"></path><path d="M9 20h6"></path><path d="M12 4v16"></path><circle cx="19" cy="19" r="3"></circle><path d="M21 21l2 2"></path></svg>
+    افتح الأداة
+  </a>
+</div>
+
+<h2 id="tips">نصائح لنتيجة أدق</h2>
+<p>
+  لو النص فيه إيميلات مقصودة تظهر بشكل مموّه (زي "name AT example DOT com") لأغراض حماية من السبام،
+  الأداة مش هتلقطها لأنها مش بالصيغة القياسية — هتحتاجي تحويلها للصيغة العادية يدويًا الأول. كمان لو
+  عايزة تتأكدي من صحة صيغة كل عنوان مستخرج (مش بس وجوده)، استخدم
+  <a href="../tools/email-validator.html" style="color:var(--indigo-deep);font-weight:700;">فاحص صحة الإيميل</a> على القائمة الناتجة.
+</p>
+
+<h2 id="faq">أسئلة شائعة</h2>
+<div class="faq-item">
+  <h3>هل الأداة بتفرّق بين حروف كبيرة وصغيرة عند إزالة التكرار؟</h3>
+  <p style="font-size:13.5px;">لا، الأداة بتعتبر Name@Example.com وname@example.com نفس العنوان عند فحص التكرار، لكن بتحتفظ بأول صيغة ظهرت في النص الأصلي.</p>
+</div>
+<div class="faq-item">
+  <h3>هل تقدر الأداة تستخرج إيميلات من ملف PDF مباشرة؟</h3>
+  <p style="font-size:13.5px;">لا، الأداة بتتعامل مع النص المُلصق مباشرة فقط. لاستخراج نص من ملف PDF الأول، افتح الملف واانسخ محتواه أو استخدم أداة تحويل PDF لنص.</p>
+</div>
+<div class="faq-item">
+  <h3>هل فيه حد أقصى لحجم النص اللي ممكن ألصقه؟</h3>
+  <p style="font-size:13.5px;">مفيش حد مضروب مسبقًا، لكن النصوص الكبيرة جدًا ممكن تاخد وقت أطول شوية في المعالجة حسب أداء جهازك، بما إن كل حاجة بتتم محليًا.</p>
+</div>
+<div class="faq-item">
+  <h3>هل الأداة بتتأكد إن الإيميل المستخرج شغّال فعليًا؟</h3>
+  <p style="font-size:13.5px;">لا، الأداة بتستخرج أي نص متطابق مع صيغة الإيميل القياسية، لكن ما بتتأكدش إن العنوان فعليًا موجود أو نشط.</p>
+</div>
+
+<h2>خلاصة</h2>
+<p>
+  استخراج الإيميلات يدويًا من نص طويل مهمة ممكن تاخد دقائق أو ساعات حسب حجم النص — بينما الأداة
+  بتخلّصها في ثانية واحدة، مع ضمان عدم وجود أي تكرار في القائمة النهائية.
+</p>
+
+</div>
+</div>
+
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
+<a href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script>
+</body>
+</html>

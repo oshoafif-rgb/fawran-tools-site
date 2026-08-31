@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ليه رابط فيه %20 و%3D، وإزاي تفهمي ترميز الروابط | فورا.tools</title>
+<meta content="دليل عملي لفهم ليه بعض الحروف في الروابط بتتحول لرموز غريبة زي %20، وإزاي ده بيضمن وصول بيانات صحيحة عبر الإنترنت." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/blog/url-encoder-guide.html" rel="canonical"/>
+
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/blog/url-encoder-guide.html" property="og:url"/>
+<meta content="ليه رابط فيه %20 و%3D، وإزاي تفهمي ترميز الروابط | فورا.tools" property="og:title"/>
+<meta content="دليل عملي لفهم ليه بعض الحروف في الروابط بتتحول لرموز غريبة زي %20." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="ليه رابط فيه %20 و%3D، وإزاي تفهمي ترميز الروابط | فورا.tools" name="twitter:title"/>
+<meta content="دليل عملي لفهم ترميز الروابط (URL Encoding)." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+  .size-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+  .size-table th, .size-table td{padding:9px 12px;border:1px solid var(--line);text-align:right;}
+  .size-table th{background:var(--surface-sunk);font-weight:800;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"ليه رابط فيه %20 و%3D، وإزاي تفهمي ترميز الروابط","description":"دليل عملي لفهم ترميز الروابط (URL Encoding)، وليه بعض الحروف بتتحول لرموز غريبة.","url":"https://fawran.tools/blog/url-encoder-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/url-encoder-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"ليه رابط فيه %20 و%3D، وإزاي تفهمي ترميز الروابط","item":"https://fawran.tools/blog/url-encoder-guide.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ليه المسافة بتتحول لـ%20 تحديدًا؟","acceptedAnswer":{"@type":"Answer","text":"20 هو التمثيل السداسي عشري لرمز المسافة في جدول ASCII. علامة % بتشير إن اللي بعدها كود مُرمّز، ورمزي 20 بيمثلوا القيمة الفعلية للمسافة."}},{"@type":"Question","name":"هل كل الحروف العربية محتاجة ترميز في الروابط؟","acceptedAnswer":{"@type":"Answer","text":"نعم، أي حرف خارج نطاق الحروف الإنجليزية والأرقام والرموز الأساسية المسموحة في معيار URL محتاج ترميز، فالحروف العربية بتتحول لسلسلة طويلة من رموز % عند الترميز."}},{"@type":"Question","name":"هل ينفع أستخدم + بدل %20 للمسافة؟","acceptedAnswer":{"@type":"Answer","text":"في جزء الاستعلام (Query String) من الرابط بس، علامة + مقبولة كبديل للمسافة في بعض السياقات (زي نماذج HTML)، لكن %20 هي الطريقة القياسية الأدق والمقبولة في كل أجزاء الرابط."}},{"@type":"Question","name":"هل ترميز الرابط بيغيّر وجهته الفعلية؟","acceptedAnswer":{"@type":"Answer","text":"لا، الترميز مجرد تمثيل بديل آمن لنفس البيانات، والمتصفح أو الخادم بيفك الترميز تلقائيًا عشان يوصل لنفس الوجهة أو القيمة الأصلية بالظبط."}}]}
+</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/url-encoder-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/url-encoder-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/url-encoder-guide.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">الأدوات</a>
+<a class="active" href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/blog/url-encoder-guide.html" title="View in English">EN</a>
+</div>
+</div>
+</header>
+<div class="wrap">
+<div class="page-head">
+<div class="article-meta"><span class="tag">أدوات المطورين</span><span>5 دقائق قراءة</span></div>
+<h1>ليه رابط فيه %20 و%3D، وإزاي تفهمي ترميز الروابط</h1>
+</div>
+
+<div class="content-card">
+
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <rect x="70" y="130" width="280" height="60" rx="10" fill="#1A1826"/>
+  <text x="210" y="167" font-family="IBM Plex Mono, monospace" font-size="13" fill="#8B89A3" text-anchor="middle">Hello World?a=1</text>
+  <path d="M380 160 L460 160 M420 135 L460 160 L420 185" stroke="#F0A93B" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="490" y="130" width="260" height="60" rx="10" fill="#4F3FF0"/>
+  <text x="620" y="167" font-family="IBM Plex Mono, monospace" font-size="12" fill="#fff" text-anchor="middle">Hello%20World%3Fa%3D1</text>
+</svg>
+
+<p>
+  لاحظتِ رموز غريبة زي %20 أو %3D في روابط طويلة؟ دي مش أخطاء ولا حاجة معقدة — طريقة قياسية بسيطة
+  عشان أي بيانات توصل صح عبر الإنترنت من غير التباس مع رموز الرابط الأساسية.
+</p>
+
+<div class="toc">
+  <h2>محتوى المقال</h2>
+  <ul>
+    <li><a href="#why">ليه محتاجين ترميز الروابط أصلًا؟</a></li>
+    <li><a href="#how">إزاي الترميز بيشتغل؟</a></li>
+    <li><a href="#common-chars">أشهر الرموز اللي هتقابليها</a></li>
+    <li><a href="#usecases">استخدامات شائعة</a></li>
+    <li><a href="#howto">كيف تشفّري أو تفكّي ترميز رابط بسهولة؟</a></li>
+    <li><a href="#faq">أسئلة شائعة</a></li>
+  </ul>
+</div>
+
+<h2 id="why">ليه محتاجين ترميز الروابط أصلًا؟</h2>
+<p>
+  معيار الروابط (URL) بيحدد مجموعة رموز خاصة ليها معنى وظيفي محدد (زي & لفصل معطيات، و? لبداية
+  الاستعلام، والمسافة مش مسموحة خالص). لو بيانتك الفعلية (زي بحث المستخدم أو اسم ملف) فيها نفس
+  الرموز دي، لازم تترمّز الأول عشان ما تتلخبطش مع بنية الرابط نفسها.
+</p>
+
+<h2 id="how">إزاي الترميز بيشتغل؟</h2>
+<p>
+  كل حرف خاص أو غير مسموح بيتحول لعلامة % متبوعة برمزين سداسي عشري بيمثلوا القيمة الرقمية للحرف
+  في جدول ASCII. المسافة مثلًا بتتحول لـ%20 (لأن 20 هو التمثيل السداسي عشري لرمز المسافة)، وعلامة
+  = بتتحول لـ%3D.
+</p>
+
+<h2 id="common-chars">أشهر الرموز اللي هتقابليها</h2>
+<table class="size-table">
+  <tr><th>الحرف الأصلي</th><th>الشكل المُرمّز</th></tr>
+  <tr><td>مسافة</td><td>%20</td></tr>
+  <tr><td>&amp;</td><td>%26</td></tr>
+  <tr><td>=</td><td>%3D</td></tr>
+  <tr><td>?</td><td>%3F</td></tr>
+  <tr><td>/</td><td>%2F</td></tr>
+</table>
+
+<h2 id="usecases">استخدامات شائعة</h2>
+<ul>
+  <li><strong>معطيات البحث في الروابط:</strong> تمرير كلمة بحث فيها مسافات أو رموز خاصة كمعطى في رابط.</li>
+  <li><strong>بيانات نماذج HTML:</strong> إرسال بيانات نموذج بطريقة GET تلقائيًا بترمّز الحقول.</li>
+  <li><strong>مشاركة روابط تحتوي نصوص عربية:</strong> ضمان وصول الرابط صحيح عند نسخه لمنصات مختلفة.</li>
+  <li><strong>بناء طلبات API يدويًا:</strong> التأكد من ترميز أي معطى قبل إضافته لرابط طلب.</li>
+</ul>
+
+<h2 id="howto">كيف تشفّري أو تفكّي ترميز رابط بسهولة؟</h2>
+<p>
+  باستخدام <a href="../tools/url-encoder-decoder.html" style="color:var(--indigo-deep);font-weight:700;">أداة URL Encoder/Decoder</a> على فورا.tools:
+</p>
+<ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+  <li>الصق النص أو الرابط اللي عايزة تشفّريه أو تفكّي ترميزه.</li>
+  <li>اختر "تشفير" أو "فك ترميز" حسب اتجاه العملية.</li>
+  <li>احصلي على النتيجة فورًا، جاهزة للنسخ.</li>
+</ol>
+
+<div class="tool-cta">
+<div>
+<div class="txt">جرّبي أداة URL Encoder/Decoder الآن</div>
+<div class="sub">تشفير وفك ترميز فوري، محليًا داخل متصفحك</div>
+</div>
+<a class="btn btn-primary" href="../tools/url-encoder-decoder.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"></path></svg>
+    افتح الأداة
+  </a>
+</div>
+
+<h2 id="faq">أسئلة شائعة</h2>
+<div class="faq-item">
+  <h3>ليه المسافة بتتحول لـ%20 تحديدًا؟</h3>
+  <p style="font-size:13.5px;">20 هو التمثيل السداسي عشري لرمز المسافة في جدول ASCII، وعلامة % بتشير إن اللي بعدها كود مُرمّز.</p>
+</div>
+<div class="faq-item">
+  <h3>هل كل الحروف العربية محتاجة ترميز في الروابط؟</h3>
+  <p style="font-size:13.5px;">نعم، أي حرف خارج نطاق الأحرف الأساسية المسموحة محتاج ترميز، فالحروف العربية بتتحول لرموز % متعددة.</p>
+</div>
+<div class="faq-item">
+  <h3>هل ينفع أستخدم + بدل %20 للمسافة؟</h3>
+  <p style="font-size:13.5px;">في جزء الاستعلام بس، + مقبولة كبديل، لكن %20 هي الطريقة القياسية الأدق والمقبولة في كل أجزاء الرابط.</p>
+</div>
+<div class="faq-item">
+  <h3>هل ترميز الرابط بيغيّر وجهته الفعلية؟</h3>
+  <p style="font-size:13.5px;">لا، الترميز مجرد تمثيل بديل آمن، والمتصفح بيفك الترميز تلقائيًا للوصول لنفس الوجهة الأصلية.</p>
+</div>
+
+<h2>خلاصة</h2>
+<p>
+  ترميز الروابط آلية بسيطة لضمان وصول بياناتك صح من غير التباس مع بنية الرابط نفسها — مرة واحدة
+  تفهمي المنطق، هتبقي قادرة تقرأي أي رابط مُرمّز أو تبني واحد بنفسك بثقة كاملة.
+</p>
+
+</div>
+</div>
+
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
+<a href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script>
+</body>
+</html>

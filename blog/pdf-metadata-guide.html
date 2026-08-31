@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>البيانات الخفية في ملف PDF اللي ممكن تكشف عنك أكتر مما تتخيلي | فورا.tools</title>
+<meta content="دليل عملي لفهم البيانات الوصفية المخفية في ملفات PDF، إيه اللي بتكشفه فعليًا، وإزاي تشيليها قبل مشاركة أي ملف حساس." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/blog/pdf-metadata-guide.html" rel="canonical"/>
+
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/blog/pdf-metadata-guide.html" property="og:url"/>
+<meta content="البيانات الخفية في ملف PDF اللي ممكن تكشف عنك أكتر مما تتخيلي | فورا.tools" property="og:title"/>
+<meta content="دليل عملي لفهم البيانات الوصفية المخفية في ملفات PDF وإزاي تشيليها." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="البيانات الخفية في ملف PDF اللي ممكن تكشف عنك | فورا.tools" name="twitter:title"/>
+<meta content="دليل عملي لفهم بيانات PDF الوصفية." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+  .size-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+  .size-table th, .size-table td{padding:9px 12px;border:1px solid var(--line);text-align:right;}
+  .size-table th{background:var(--surface-sunk);font-weight:800;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"البيانات الخفية في ملف PDF اللي ممكن تكشف عنك أكتر مما تتخيلي","description":"دليل عملي لفهم البيانات الوصفية المخفية في ملفات PDF، وإزاي تشيليها قبل المشاركة.","url":"https://fawran.tools/blog/pdf-metadata-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/pdf-metadata-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"البيانات الخفية في ملف PDF اللي ممكن تكشف عنك أكتر مما تتخيلي","item":"https://fawran.tools/blog/pdf-metadata-guide.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل إزالة البيانات الوصفية بتأثر على محتوى الملف؟","acceptedAnswer":{"@type":"Answer","text":"لا، إزالة البيانات الوصفية بتشيل المعلومات الخفية بس (اسم المؤلف، البرنامج المستخدم، إلخ) ومفيهاش أي تأثير على النص أو الصور أو التنسيق الظاهر في الملف."}},{"@type":"Question","name":"إزاي أشوف البيانات الوصفية في ملف PDF عندي؟","acceptedAnswer":{"@type":"Answer","text":"في معظم قارئات PDF (زي Adobe Reader)، تقدري توصلي لها من قائمة 'خصائص المستند' أو 'Document Properties'. الأدوات المتخصصة بتعرضها بشكل أوضح وأشمل."}},{"@type":"Question","name":"هل كل برامج تحرير PDF بتترك نفس نوع البيانات؟","acceptedAnswer":{"@type":"Answer","text":"لأ، كل برنامج بيترك بصمة مختلفة — بعضها بيسجل اسم الشركة، وبعضها بيسجل مسار الملف الأصلي على جهازك، وبعضها بيحتفظ بتاريخ كل تعديل حصل على الملف."}},{"@type":"Question","name":"هل الشركات الكبيرة بتهتم بمسح البيانات الوصفية فعليًا؟","acceptedAnswer":{"@type":"Answer","text":"نعم، ده إجراء أمان قياسي في كتير من الشركات والمؤسسات القانونية قبل نشر أي مستند رسمي للجمهور، تحديدًا عشان تتجنب تسريب معلومات داخلية بالخطأ."}}]}
+</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/pdf-metadata-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/pdf-metadata-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/pdf-metadata-guide.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">الأدوات</a>
+<a class="active" href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/blog/pdf-metadata-guide.html" title="View in English">EN</a>
+</div>
+</div>
+</header>
+<div class="wrap">
+<div class="page-head">
+<div class="article-meta"><span class="tag">أدوات PDF</span><span>6 دقائق قراءة</span></div>
+<h1>البيانات الخفية في ملف PDF اللي ممكن تكشف عنك أكتر مما تتخيلي</h1>
+</div>
+
+<div class="content-card">
+
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <rect x="280" y="60" width="240" height="200" rx="10" fill="#1A1826"/>
+  <rect x="300" y="85" width="200" height="10" rx="3" fill="#332F4C"/>
+  <rect x="300" y="105" width="150" height="10" rx="3" fill="#332F4C"/>
+  <rect x="300" y="125" width="200" height="10" rx="3" fill="#332F4C"/>
+  <path d="M400 165 L400 195" stroke="#4F3FF0" stroke-width="3" stroke-dasharray="3 3"/>
+  <rect x="330" y="200" width="140" height="45" rx="8" fill="#B4232C" opacity="0.15" stroke="#B4232C" stroke-width="1.5"/>
+  <text x="400" y="227" font-family="IBM Plex Mono, monospace" font-size="11" fill="#B4232C" text-anchor="middle">Author: Ahmed</text>
+</svg>
+
+<p>
+  حذفتِ اسمك من محتوى ملف PDF قبل ما ترسليه، وفكّرتِ إن الملف بقى مجهول الهوية تمامًا؟ في الحقيقة،
+  ملفات PDF بتحتفظ ببيانات خفية عن مؤلف الملف والبرنامج المستخدم، حتى لو النص الظاهر ما فيهوش أي اسم.
+</p>
+
+<div class="toc">
+  <h2>محتوى المقال</h2>
+  <ul>
+    <li><a href="#what">إيه هي البيانات الوصفية أصلًا؟</a></li>
+    <li><a href="#reveals">إيه اللي ممكن تكشفه فعليًا؟</a></li>
+    <li><a href="#why-matters">ليه ده مهم قبل مشاركة أي ملف؟</a></li>
+    <li><a href="#usecases">حالات يجب فيها إزالة البيانات</a></li>
+    <li><a href="#howto">كيف تشيلي البيانات الوصفية بسهولة؟</a></li>
+    <li><a href="#faq">أسئلة شائعة</a></li>
+  </ul>
+</div>
+
+<h2 id="what">إيه هي البيانات الوصفية أصلًا؟</h2>
+<p>
+  كل ملف PDF بيحمل جوّه معلومات خفية مش ظاهرة في محتوى الصفحات نفسها، بتُسمى البيانات الوصفية
+  (Metadata). دي بتتسجل تلقائيًا من البرنامج اللي أنشأ الملف (Word، Adobe، أو غيرهم)، من غير ما
+  المستخدم يلاحظ في أغلب الأحيان.
+</p>
+
+<h2 id="reveals">إيه اللي ممكن تكشفه فعليًا؟</h2>
+<table class="size-table">
+  <tr><th>نوع البيانات</th><th>مثال</th></tr>
+  <tr><td>اسم المؤلف</td><td>اسم حساب المستخدم على الجهاز</td></tr>
+  <tr><td>البرنامج المستخدم</td><td>Microsoft Word 2021، Adobe Acrobat</td></tr>
+  <tr><td>تاريخ الإنشاء والتعديل</td><td>الطابع الزمني الدقيق لكل عملية</td></tr>
+  <tr><td>اسم الشركة</td><td>لو مسجّل في إعدادات البرنامج المستخدم</td></tr>
+</table>
+
+<h2 id="why-matters">ليه ده مهم قبل مشاركة أي ملف؟</h2>
+<p>
+  لو بتشاركي عقد عمل، تقرير داخلي، أو أي مستند حساس مع جهة خارجية، البيانات الوصفية ممكن تكشف
+  معلومات مقصود إخفاؤها — زي اسم موظف داخلي محدد، أو اسم شركة شريكة سرّي، أو حتى تسلسل تعديلات
+  بيوضح مين شارك فعليًا في صياغة المستند.
+</p>
+
+<h2 id="usecases">حالات يجب فيها إزالة البيانات</h2>
+<ul>
+  <li><strong>مشاركة مستندات قانونية:</strong> إخفاء هوية المحرر الفعلي أو تسلسل التعديلات.</li>
+  <li><strong>نشر تقارير عامة:</strong> إزالة أي إشارة لأسماء داخلية أو أقسام محددة في الشركة.</li>
+  <li><strong>إرسال سيرة ذاتية:</strong> التأكد من عدم وجود بيانات من نسخة قديمة أو صاحب عمل سابق.</li>
+  <li><strong>نشر أبحاث أو أوراق أكاديمية:</strong> إخفاء تفاصيل البرنامج أو الجهاز المستخدم في الإعداد.</li>
+</ul>
+
+<h2 id="howto">كيف تشيلي البيانات الوصفية بسهولة؟</h2>
+<p>
+  باستخدام <a href="../tools/pdf-metadata-remover.html" style="color:var(--indigo-deep);font-weight:700;">أداة إزالة بيانات PDF</a> على فورا.tools:
+</p>
+<ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+  <li>ارفع ملف PDF من جهازك.</li>
+  <li>اضغط زر الإزالة — الأداة بتشيل البيانات الوصفية الشائعة تلقائيًا.</li>
+  <li>حمّل الملف النظيف، جاهز للمشاركة بأمان.</li>
+</ol>
+
+<div class="tool-cta">
+<div>
+<div class="txt">جرّبي أداة إزالة بيانات PDF الآن</div>
+<div class="sub">إزالة فورية للبيانات الوصفية، محليًا داخل متصفحك بالكامل</div>
+</div>
+<a class="btn btn-primary" href="../tools/pdf-metadata-remover.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path></svg>
+    افتح الأداة
+  </a>
+</div>
+
+<h2 id="faq">أسئلة شائعة</h2>
+<div class="faq-item">
+  <h3>هل إزالة البيانات الوصفية بتأثر على محتوى الملف؟</h3>
+  <p style="font-size:13.5px;">لا، الإزالة بتشيل المعلومات الخفية بس ومفيهاش أي تأثير على النص أو الصور الظاهرة في الملف.</p>
+</div>
+<div class="faq-item">
+  <h3>إزاي أشوف البيانات الوصفية في ملف PDF عندي؟</h3>
+  <p style="font-size:13.5px;">في معظم قارئات PDF، تقدري توصلي لها من قائمة "خصائص المستند" أو "Document Properties".</p>
+</div>
+<div class="faq-item">
+  <h3>هل كل برامج تحرير PDF بتترك نفس نوع البيانات؟</h3>
+  <p style="font-size:13.5px;">لأ، كل برنامج بيترك بصمة مختلفة — بعضها بيسجل اسم الشركة، وبعضها مسار الملف الأصلي.</p>
+</div>
+<div class="faq-item">
+  <h3>هل الشركات الكبيرة بتهتم بمسح البيانات الوصفية فعليًا؟</h3>
+  <p style="font-size:13.5px;">نعم، إجراء أمان قياسي في كتير من الشركات قبل نشر أي مستند رسمي للجمهور.</p>
+</div>
+
+<h2>خلاصة</h2>
+<p>
+  البيانات الوصفية المخفية في ملفات PDF جزء غالبًا منسي من عملية المشاركة الآمنة — خطوة واحدة
+  بسيطة قبل إرسال أي ملف حساس بتحميكِ من تسريب معلومات كنتِ متأكدة إنها اتشالت من الملف تمامًا.
+</p>
+
+</div>
+</div>
+
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
+<a href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script>
+</body>
+</html>

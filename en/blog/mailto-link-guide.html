@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mailto Links: How to Make Your "Email Us" Button Open With a Ready Subject | Fawran Tools</title>
+<meta content="A practical guide to building a professional mailto link with a pre-filled subject, body, and CC, for use in a contact button or email signature." name="description"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/blog/mailto-link-guide.html" rel="canonical"/>
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/en/blog/mailto-link-guide.html" property="og:url"/>
+<meta content="Mailto Links: How to Make Your \"Email Us\" Button Open With a Ready Subject | Fawran Tools" property="og:title"/>
+<meta content="A practical guide to building a professional mailto link with a pre-filled subject and body." property="og:description"/>
+<meta content="Fawran Tools" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Mailto Links: How to Make Your \"Email Us\" Button Open With a Ready Subject | Fawran Tools" name="twitter:title"/>
+<meta content="A practical guide to building a professional mailto link." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Mailto Links: How to Make Your \"Email Us\" Button Open With a Ready Subject","description":"A practical guide to building a professional mailto link with a pre-filled subject, body, and CC.","url":"https://fawran.tools/en/blog/mailto-link-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","inLanguage":"en","author":{"@type":"Organization","name":"Fawran Tools"},"publisher":{"@type":"Organization","name":"Fawran Tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/en/blog/mailto-link-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://fawran.tools/en/blog/index.html"},{"@type":"ListItem","position":2,"name":"Mailto Links: How to Make Your \"Email Us\" Button Open With a Ready Subject","item":"https://fawran.tools/en/blog/mailto-link-guide.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What happens if the visitor doesn't have a mail app configured on their device?","acceptedAnswer":{"@type":"Answer","text":"A mailto link relies on a default mail app being configured on the device (like Outlook, Apple Mail, or even Gmail as a browser extension). If none is set up, the browser may show an error or do nothing at all."}},{"@type":"Question","name":"Can I add more than one recipient in the same link?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can separate multiple addresses in the 'To' field with a comma, and all of them will appear as primary recipients of the message."}},{"@type":"Question","name":"Is the pre-filled text editable by the recipient?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely — the text and subject are just default values shown ready-made, but the person sending the message can freely edit them before sending."}},{"@type":"Question","name":"Is a mailto link safe, with no security risk?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely safe, since it's just a link that opens the user's local mail app with pre-filled information, and doesn't send any data to an external server or collect anything about the visitor."}}]}
+</script>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/mailto-link-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/mailto-link-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/mailto-link-guide.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">Tools</a>
+<a class="active" href="index.html">Blog</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../../blog/mailto-link-guide.html" title="عرض بالعربي">AR</a>
+</div>
+</div>
+</header>
+<div class="wrap">
+<div class="page-head">
+<div class="article-meta"><span class="tag">Email Tools</span><span>5 min read</span></div>
+<h1>Mailto Links: How to Make Your "Email Us" Button Open With a Ready Subject</h1>
+</div>
+
+<div class="content-card">
+
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <rect x="220" y="90" width="360" height="50" rx="12" fill="#4F3FF0"/>
+  <text x="400" y="122" font-family="Arial" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">Email Us Now</text>
+  <path d="M400 160 L400 190" stroke="#F0A93B" stroke-width="4" stroke-dasharray="4 4"/>
+  <rect x="240" y="200" width="320" height="90" rx="10" fill="#1A1826"/>
+  <rect x="260" y="215" width="90" height="8" rx="3" fill="#8B89A3"/>
+  <rect x="360" y="215" width="180" height="8" rx="3" fill="#F0A93B"/>
+  <rect x="260" y="240" width="90" height="8" rx="3" fill="#8B89A3"/>
+  <rect x="360" y="240" width="180" height="8" rx="3" fill="#F0A93B"/>
+  <rect x="260" y="265" width="280" height="8" rx="3" fill="#332F4C"/>
+</svg>
+
+<p>
+  A "Contact us" button that opens the mail app directly, with the subject and body already
+  filled in, saves your website's visitors several steps. The technical solution behind that
+  button is remarkably simple and available to anyone, with no complex programming required.
+</p>
+
+<div class="toc">
+  <h2>On this page</h2>
+  <ul>
+    <li><a href="#what">What is a mailto link?</a></li>
+    <li><a href="#params">The parameters you can control</a></li>
+    <li><a href="#usecases">Common uses</a></li>
+    <li><a href="#howto">How to build one without writing code</a></li>
+    <li><a href="#limits">Limits of the link you should know</a></li>
+    <li><a href="#faq">Frequently asked questions</a></li>
+  </ul>
+</div>
+
+<h2 id="what">What is a mailto link?</h2>
+<p>
+  A mailto link is a special type of link that starts with "mailto:" instead of "https://", and
+  when clicked, opens the default mail app on the device (like Outlook or Apple Mail) instead of
+  a web page. You can add extra parameters to the link to automatically fill in message fields
+  before the user starts typing.
+</p>
+
+<h2 id="params">The parameters you can control</h2>
+<ul>
+  <li><strong>To:</strong> the primary recipient's address.</li>
+  <li><strong>CC:</strong> additional recipients visible to everyone.</li>
+  <li><strong>BCC:</strong> additional recipients hidden from other recipients.</li>
+  <li><strong>Subject:</strong> the message title, pre-filled.</li>
+  <li><strong>Body:</strong> the default message content, editable before sending.</li>
+</ul>
+
+<h2 id="usecases">Common uses</h2>
+<p>
+  The most common use is a "Contact us" button on an official website page, with the subject
+  pre-filled (like "Website inquiry") to make sorting incoming messages easier for you. Another
+  common use is a "Send this page to a friend" link in articles, or a support link with basic
+  system information pre-filled in the subject.
+</p>
+
+<h2 id="howto">How to build one without writing code</h2>
+<p>
+  Using the <a href="../../tools/mailto-link-generator.html" style="color:var(--indigo-deep);font-weight:700;">Mailto Link Generator</a> on Fawran Tools:
+</p>
+<ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+  <li>Fill in the recipient's email in the "To" field (required).</li>
+  <li>Add CC or BCC if you need additional recipients (optional).</li>
+  <li>Write the subject and body text you want to appear automatically.</li>
+  <li>Click "Generate link" — you'll get a ready link plus HTML code ready to paste directly into your site.</li>
+</ol>
+
+<div class="tool-cta">
+<div>
+<div class="txt">Try the Mailto Link Generator now</div>
+<div class="sub">Ready link + HTML code, no coding required</div>
+</div>
+<a class="btn btn-primary" href="../../tools/mailto-link-generator.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"></path></svg>
+    Open the tool
+  </a>
+</div>
+
+<h2 id="limits">Limits of the link you should know</h2>
+<p>
+  A mailto link relies entirely on the visitor having a mail app configured on their device. Users
+  who rely entirely on webmail (like opening Gmail from the browser with no dedicated app) might
+  find the link doesn't behave as expected, or opens a prompt to choose an app they don't actually
+  have installed.
+</p>
+
+<h2 id="faq">Frequently asked questions</h2>
+<div class="faq-item">
+  <h3>What happens if the visitor doesn't have a mail app configured?</h3>
+  <p style="font-size:13.5px;">A mailto link relies on a default mail app configured on the device. If none is set up, the browser may show an error or do nothing.</p>
+</div>
+<div class="faq-item">
+  <h3>Can I add more than one recipient in the same link?</h3>
+  <p style="font-size:13.5px;">Yes, you can separate multiple addresses in the "To" field with a comma, and they'll all appear as primary recipients.</p>
+</div>
+<div class="faq-item">
+  <h3>Is the pre-filled text editable by the recipient?</h3>
+  <p style="font-size:13.5px;">Yes, completely — the text and subject are just defaults, and the sender can freely edit them before sending.</p>
+</div>
+<div class="faq-item">
+  <h3>Is a mailto link safe, with no security risk?</h3>
+  <p style="font-size:13.5px;">Yes, completely safe, since it just opens the user's local mail app with pre-filled info, and sends nothing to an external server.</p>
+</div>
+
+<h2>Conclusion</h2>
+<p>
+  A mailto link is a simple, fast solution for making it easier for your site's visitors to reach
+  you, with no need for a complex contact form or extra code — one minute is enough to create a
+  professional link ready to use anywhere on your site.
+</p>
+
+</div>
+</div>
+
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">Advertisement</span>
+<div class="ad-slot-inner">
+<!-- Place your responsive AdSense ad unit code here -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Free online tools for images, PDF files, text, and SEO — all running entirely in your browser without uploading your files to any server.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../index.html">Home</a><a href="../favorites.html">☆ Favorites</a>
+<a href="index.html">Blog</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools</span>
+<span>Built for practical everyday tasks.</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script><script src="../../assets/share-widget.js"></script>
+</body>
+</html>

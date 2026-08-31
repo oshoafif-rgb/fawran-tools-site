@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head><meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Free AI Prompt Library | Fawran Tools</title>
+<meta content="Free, ready-made prompt packs for ChatGPT, Midjourney and more — content writing, coding, images, SEO, and education. Copy or download any pack instantly." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/prompt-library.html" rel="canonical"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<link href="https://fawran.tools/tools/prompt-library.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/prompt-library.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/prompt-library.html" hreflang="x-default" rel="alternate"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Free AI Prompt Library","url":"https://fawran.tools/en/tools/prompt-library.html","description":"Ready-made prompt packs and scripts for AI — download them for free.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (runs in your browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+.lib-shell{max-width:920px;margin:0 auto;}
+.lib-search{width:100%;box-sizing:border-box;padding:14px 18px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit;font-size:15px;margin-bottom:16px;}
+.lib-search:focus{outline:none;border-color:var(--indigo);}
+.lib-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.lib-chip{font-size:13px;font-weight:700;padding:8px 15px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;transition:.15s;}
+.lib-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+.pack-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);margin-bottom:14px;overflow:hidden;}
+.pack-card-head{display:flex;align-items:center;gap:14px;padding:20px;cursor:pointer;}
+.pack-card-icon{font-size:28px;flex-shrink:0;}
+.pack-card-body{flex:1;min-width:0;}
+.pack-card-title{font-weight:900;font-size:16px;}
+.pack-card-desc{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.6;}
+.pack-card-count{font-size:11.5px;color:var(--indigo-deep);font-weight:800;margin-top:6px;font-family:'IBM Plex Mono',monospace;}
+.pack-card-arrow{font-size:18px;color:var(--muted);flex-shrink:0;}
+.pack-card-expand{padding:0 20px 20px;border-top:1px solid var(--line);}
+.prompt-item{padding:16px 0;border-bottom:1px solid var(--line);}
+.prompt-item:last-of-type{border-bottom:none;}
+.prompt-item-title{font-weight:800;font-size:14px;margin-bottom:8px;}
+.prompt-item-text{font-size:13px;color:var(--ink-soft);background:var(--surface-sunk);border-radius:10px;padding:12px 14px;white-space:pre-wrap;line-height:1.8;font-family:'IBM Plex Mono',monospace;font-size:12.5px;margin-bottom:10px;}
+.prompt-copy-btn{font-size:12.5px;padding:8px 14px;}
+.pack-download-btn{margin-top:14px;}
+#noResults{display:none;text-align:center;padding:50px 20px;color:var(--muted);font-size:14px;}
+</style>
+</head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a><nav class="nav"><a href="../index.html">Tools</a><a href="../blog/index.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav><a class="lang-switch" href="https://fawran.tools/tools/prompt-library.html">AR</a></div></header>
+
+<main><div class="wrap lib-shell" style="padding-top:30px;padding-bottom:60px;">
+<div class="crumb"><a href="../index.html">Tools</a> / AI Tools / Prompt Library</div>
+<h1>📚 Free Prompt &amp; File Library</h1>
+<p class="tool-lede">Ready-made prompt packs and scripts for AI — copy any prompt instantly, or download the whole pack as a free text file.</p>
+
+<input class="lib-search" id="librarySearch" placeholder="🔍 Search for a prompt (e.g. email, logo, quiz)..." type="text"/>
+<div class="lib-chips" id="categoryChips"></div>
+
+<div id="packGrid"></div>
+<div id="noResults">No prompts match your search.</div>
+
+<div class="tool-info" style="margin-top:34px;">
+<h2>How to use the library</h2>
+<ol>
+<li>Browse packs by category, or search directly for a word within any prompt.</li>
+<li>Click any pack to open it and see every prompt inside.</li>
+<li>Copy any prompt with one click and paste it into ChatGPT, Claude, or any AI tool.</li>
+<li>Or download the entire pack as a single text file to keep for offline reference.</li>
+</ol>
+<h2>Why prompts matter</h2>
+<p>A carefully written prompt saves you trial-and-error time and gives more precise, targeted results from AI tools — every pack here is built on patterns that are genuinely tested and commonly used in each field.</p>
+</div>
+
+</div></main>
+
+<div class="wrap"><div class="rating-widget" data-tool-slug="prompt-library">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<div class="wrap"><div class="share-widget"></div></div>
+
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Free online tools for images, PDF files, text, and SEO — all running entirely in your browser without uploading your files to any server.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../index.html">Home</a><a href="../favorites.html">☆ Favorites</a>
+<a href="../blog/index.html">Blog</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools</span>
+<span>Built for practical everyday tasks.</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script>
+<script src="../../assets/share-widget.js"></script>
+<script src="../../assets/rating-widget.js"></script>
+<script src="../../assets/prompt-library-en.js"></script>
+<script src="../../assets/prompt-library-engine.js"></script>
+</body></html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Favorites | Fawran Tools</title>
+<meta content="Your favorite and recently used tools on Fawran Tools, saved locally on your device for quick access." name="description"/>
+<meta content="noindex,follow" name="robots"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/favorites.html" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<style>
+.empty-state{text-align:center;padding:60px 20px;color:var(--muted);}
+.empty-state .big-star{font-size:44px;margin-bottom:14px;opacity:.5;}
+.empty-state p{max-width:420px;margin:0 auto 20px;font-size:14.5px;line-height:1.8;}
+.fav-section{margin-bottom:44px;}
+.fav-section h2{font-size:19px;font-weight:900;margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+</style>
+</head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a><div class="nav-wrap"><nav class="nav"><a href="index.html">Tools</a><a href="blog/index.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><button aria-expanded="false" aria-label="Open menu" class="nav-toggle">☰</button><button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">◐</button><a class="lang-switch" href="../favorites.html">AR</a></div></div></header>
+
+<main><div class="wrap tools-hub" style="padding-top:34px;">
+<h1>⭐ Favorites</h1>
+<p class="hero-lede">Your favorite and recently used tools, saved locally on your own device only.</p>
+
+<div id="favSection" class="fav-section">
+<h2>⭐ Favorite tools</h2>
+<div class="tool-grid" id="favGrid"></div>
+</div>
+
+<div id="recentSection" class="fav-section">
+<h2>🕓 Recently used</h2>
+<div class="tool-grid" id="recentGrid"></div>
+</div>
+
+<div id="emptyState" class="empty-state" style="display:none;">
+<div class="big-star">☆</div>
+<p>You don't have any favorite tools yet. Open any tool and click "☆ Add to favorites" above its title to find it here anytime.</p>
+<a class="btn btn-primary" href="index.html">Browse all tools</a>
+</div>
+
+</div></main>
+
+<footer><div class="footer-grid"><div><div class="footer-brand"><span class="mark">FW</span> Fawran Tools</div><p class="footer-desc">Free online tools for images, PDF, text, SEO, websites and YouTube.</p></div><div class="footer-col"><h4>Website</h4><a href="index.html">Home</a><a href="favorites.html">☆ Favorites</a><a href="favorites.html">☆ Favorites</a><a href="blog/index.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Fawran Tools</span><span>Free browser-based utilities.</span></div></footer>
+<script src="../assets/tools-index.js"></script>
+<script src="../assets/main.js"></script>
+<script>
+(function(){
+  function load(k){try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(e){return []}}
+  const fav = load('fawran-favorites');
+  const recent = load('fawran-recent').filter(s=>!fav.includes(s));
+  const index = window.TOOLS_INDEX_EN || [];
+  const bySlug = Object.fromEntries(index.map(t=>[t.slug,t]));
+
+  function card(slug){
+    const t = bySlug[slug];
+    if(!t) return '';
+    return `<a class="tool-card live" href="tools/${slug}.html">
+      <span class="tool-name">${t.title}</span>
+      <span class="tool-desc">${t.desc||''}</span>
+    </a>`;
+  }
+
+  const favGrid=document.getElementById('favGrid'), recentGrid=document.getElementById('recentGrid');
+  const favSection=document.getElementById('favSection'), recentSection=document.getElementById('recentSection');
+  const emptyState=document.getElementById('emptyState');
+
+  const favCards = fav.map(card).filter(Boolean).join('');
+  const recentCards = recent.map(card).filter(Boolean).join('');
+
+  if(favCards){ favGrid.innerHTML = favCards; } else { favSection.style.display='none'; }
+  if(recentCards){ recentGrid.innerHTML = recentCards; } else { recentSection.style.display='none'; }
+  if(!favCards && !recentCards){ emptyState.style.display='block'; }
+})();
+</script>
+</body></html>

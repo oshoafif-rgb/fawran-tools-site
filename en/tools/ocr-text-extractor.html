@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head><meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Free Image-to-Text OCR (Arabic &amp; English) | Fawran Tools</title>
+<meta content="Turn any image or scanned document into editable text, supporting both Arabic and English — recognition happens in your browser, your image is never uploaded to any server." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/tools/ocr-text-extractor.html" rel="canonical"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<link href="https://fawran.tools/tools/ocr-text-extractor.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/ocr-text-extractor.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/ocr-text-extractor.html" hreflang="x-default" rel="alternate"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OCR Text Extractor","url":"https://fawran.tools/en/tools/ocr-text-extractor.html","description":"Turn any image into editable text, supporting Arabic and English.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (runs in your browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+.lib-shell{max-width:820px;margin:0 auto;}
+.wb-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:24px;margin-top:18px;}
+.field-label{font-weight:800;font-size:14px;margin:0 0 10px;}
+.ocr-dropzone{padding:38px 20px;text-align:center;border:2px dashed #CBC7DA;border-radius:14px;cursor:pointer;background:var(--surface-sunk);position:relative;}
+.ocr-dropzone.drag{border-color:var(--indigo);background:#F1EFFE;}
+.ocr-dropzone .dz-placeholder{font-size:14px;font-weight:700;color:var(--muted);}
+.ocr-dropzone .big-icon{font-size:32px;margin-bottom:10px;}
+#ocrPreview{display:none;max-width:100%;max-height:280px;border-radius:10px;margin:0 auto;}
+.lang-row{display:flex;gap:16px;margin-top:16px;}
+.lang-row label{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;cursor:pointer;}
+.lang-row input{width:18px;height:18px;accent-color:var(--indigo);cursor:pointer;}
+.trust-note{background:var(--indigo-soft);border-radius:10px;padding:12px 14px;font-size:12.5px;color:var(--indigo-deep);margin-top:16px;line-height:1.7;}
+#ocrProgressWrap{display:none;margin-top:18px;}
+.wb-progress{height:8px;border-radius:99px;background:var(--line);overflow:hidden;}
+.wb-progress-bar{height:100%;background:var(--indigo);width:0%;transition:width .2s linear;}
+.wb-status{font-size:13px;color:var(--muted);margin-top:8px;font-weight:700;text-align:center;}
+#ocrResultWrap{display:none;margin-top:18px;}
+textarea#ocrResultTextarea{width:100%;box-sizing:border-box;min-height:220px;padding:16px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface-sunk);color:var(--ink);font:inherit;font-size:15px;line-height:1.8;resize:vertical;}
+.result-actions{display:flex;gap:10px;margin-top:14px;}
+</style>
+</head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a><nav class="nav"><a href="../index.html">Tools</a><a href="../blog/index.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav><a class="lang-switch" href="https://fawran.tools/tools/ocr-text-extractor.html">AR</a></div></header>
+
+<main><div class="wrap lib-shell" style="padding-top:30px;padding-bottom:60px;">
+<div class="crumb"><a href="../index.html">Tools</a> / AI Tools / OCR Text Extractor</div>
+<h1>📄 Image-to-Text OCR</h1>
+<p class="tool-lede">Turn any image or scanned document into editable, copyable text instantly, supporting both Arabic and English together or separately.</p>
+
+<div class="wb-card">
+  <div class="field-label">Image</div>
+  <div class="ocr-dropzone" id="ocrDropzone">
+    <img id="ocrPreview" alt=""/>
+    <div class="dz-placeholder">
+      <div class="big-icon">🖼️</div>
+      Click or drag an image here
+    </div>
+  </div>
+  <input accept="image/*" id="ocrFileInput" style="display:none;" type="file"/>
+
+  <div class="field-label" style="margin-top:20px;">Language of the text in the image</div>
+  <div class="lang-row">
+    <label><input checked="" id="langAr" type="checkbox"/> Arabic</label>
+    <label><input checked="" id="langEn" type="checkbox"/> English</label>
+  </div>
+
+  <div class="trust-note">🔒 The image itself is never uploaded to any server — recognition happens entirely in your browser. Only on first use, the OCR engine (generic files unrelated to your image) downloads once and is then cached for fast use next time.</div>
+
+  <button class="btn btn-primary" id="extractBtn" style="width:100%;margin-top:20px;font-size:15px;padding:15px;">📄 Extract text</button>
+
+  <div id="ocrProgressWrap">
+    <div class="wb-progress"><div class="wb-progress-bar" id="ocrProgressBar"></div></div>
+    <div class="wb-status" id="ocrProgressLabel"></div>
+  </div>
+
+  <div id="ocrResultWrap">
+    <div class="field-label" style="margin-top:6px;">Extracted text (editable)</div>
+    <textarea id="ocrResultTextarea"></textarea>
+    <div class="result-actions">
+      <button class="btn btn-primary" id="ocrCopyBtn"></button>
+      <button class="btn btn-ghost" id="ocrDownloadBtn"></button>
+    </div>
+  </div>
+</div>
+
+<div class="tool-info" style="margin-top:34px;">
+<h2>What kinds of images work best?</h2>
+<p>The tool works well with clear, high-contrast images: screenshots, scanned documents, book pages, or photos with clean, unrotated text. Accuracy drops with tilted images, handwriting, or very low-quality photos.</p>
+<h2>Privacy</h2>
+<p>Your image is never uploaded to any server at any stage — text recognition happens entirely in your browser via WebAssembly technology. The only thing downloaded from the internet is the recognition engine itself (generic files shared across all users, unrelated to your image's content).</p>
+</div>
+
+</div></main>
+
+<div class="wrap"><div class="rating-widget" data-tool-slug="ocr-text-extractor">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<div class="wrap"><div class="share-widget"></div></div>
+
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">Free online tools for images, PDF files, text, and SEO — all running entirely in your browser without uploading your files to any server.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="../index.html">Home</a><a href="../favorites.html">☆ Favorites</a>
+<a href="../blog/index.html">Blog</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools</span>
+<span>Built for practical everyday tasks.</span>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="../../assets/main.js"></script>
+<script src="../../assets/share-widget.js"></script>
+<script src="../../assets/rating-widget.js"></script>
+<script src="../../assets/ocr-engine.js"></script>
+</body></html>

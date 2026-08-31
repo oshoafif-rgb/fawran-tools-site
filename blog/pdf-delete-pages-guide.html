@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إزاي تحذفي صفحات محددة من PDF بدون برامج تحرير معقدة | فورا.tools</title>
+<meta content="دليل عملي لحذف صفحات فارغة أو غير مرغوبة من ملف PDF بسرعة، من غير الحاجة لبرنامج تحرير مدفوع أو معقد." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/blog/pdf-delete-pages-guide.html" rel="canonical"/>
+
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/blog/pdf-delete-pages-guide.html" property="og:url"/>
+<meta content="إزاي تحذفي صفحات محددة من PDF بدون برامج تحرير معقدة | فورا.tools" property="og:title"/>
+<meta content="دليل عملي لحذف صفحات فارغة أو غير مرغوبة من ملف PDF بسرعة." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="إزاي تحذفي صفحات محددة من PDF بدون برامج معقدة | فورا.tools" name="twitter:title"/>
+<meta content="دليل عملي لحذف صفحات من ملف PDF." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"إزاي تحذفي صفحات محددة من PDF بدون برامج تحرير معقدة","description":"دليل عملي لحذف صفحات فارغة أو غير مرغوبة من ملف PDF بسرعة.","url":"https://fawran.tools/blog/pdf-delete-pages-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/pdf-delete-pages-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"إزاي تحذفي صفحات محددة من PDF بدون برامج تحرير معقدة","item":"https://fawran.tools/blog/pdf-delete-pages-guide.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل حذف صفحة بيأثر على ترقيم باقي الصفحات؟","acceptedAnswer":{"@type":"Answer","text":"الصفحات المتبقية بتتجمّع في ملف جديد بترتيبها الأصلي، لكن لو الملف فيه ترقيم صفحات مطبوع فعليًا كنص (مش رقم الصفحة الفعلي في الملف)، هيفضل زي ما هو ولازم تعدّليه يدويًا لو محتاجة تسلسل متصل."}},{"@type":"Question","name":"هل ممكن أحذف أكتر من صفحة مش متتالية في نفس العملية؟","acceptedAnswer":{"@type":"Answer","text":"نعم، تقدري تحدد أي مجموعة صفحات (متتالية أو متفرقة) وتحذفيها كلها دفعة واحدة، من غير الحاجة لتكرار العملية لكل صفحة على حدة."}},{"@type":"Question","name":"هل حذف صفحة ممكن يتراجع لو غلطت؟","acceptedAnswer":{"@type":"Answer","text":"الأداة بتنشئ ملف جديد ومتفضلش الملف الأصلي كما هو من غير تعديل، فلو غلطتِ، تقدري تبدأي العملية تاني من الملف الأصلي المحفوظ عندك."}},{"@type":"Question","name":"هل ينفع أحذف صفحة فيها توقيع أو ختم رسمي؟","acceptedAnswer":{"@type":"Answer","text":"تقنيًا ممكن، لكن لازم تتأكدي إن حذف الصفحة دي مسموح قانونيًا حسب طبيعة المستند — بعض المستندات الرسمية بيبقى ليها قواعد صارمة بخصوص التعديل بعد التوقيع."}}]}
+</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/pdf-delete-pages-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/pdf-delete-pages-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/pdf-delete-pages-guide.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">الأدوات</a>
+<a class="active" href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/blog/pdf-delete-pages-guide.html" title="View in English">EN</a>
+</div>
+</div>
+</header>
+<div class="wrap">
+<div class="page-head">
+<div class="article-meta"><span class="tag">أدوات PDF</span><span>5 دقائق قراءة</span></div>
+<h1>إزاي تحذفي صفحات محددة من PDF بدون برامج تحرير معقدة</h1>
+</div>
+
+<div class="content-card">
+
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <rect x="100" y="80" width="130" height="170" rx="8" fill="#1A1826"/>
+  <rect x="250" y="80" width="130" height="170" rx="8" fill="#1A1826" opacity="0.35"/>
+  <path d="M280 130 L350 200 M350 130 L280 200" stroke="#B4232C" stroke-width="5" stroke-linecap="round"/>
+  <rect x="400" y="80" width="130" height="170" rx="8" fill="#1A1826"/>
+  <path d="M560 165 L650 165 M620 140 L650 165 L620 190" stroke="#F0A93B" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="670" y="80" width="90" height="170" rx="8" fill="#2F7D53"/>
+  <rect x="690" y="105" width="50" height="120" rx="4" fill="#1A1826"/>
+</svg>
+
+<p>
+  صفحة بيضاء فاضية جوّه مستند اسكانته، أو صفحة مسودة نسيتيها في التقرير النهائي؟ حذف صفحة واحدة أو
+  أكتر من ملف PDF أسهل بكتير مما تتخيلي، ومش محتاج أي برنامج تحرير مدفوع.
+</p>
+
+<div class="toc">
+  <h2>محتوى المقال</h2>
+  <ul>
+    <li><a href="#why">ليه صفحات زيادة بتتسلل للملفات؟</a></li>
+    <li><a href="#usecases">استخدامات شائعة</a></li>
+    <li><a href="#howto">كيف تحذفي صفحات بسهولة؟</a></li>
+    <li><a href="#tips">نصيحة قبل الحذف النهائي</a></li>
+    <li><a href="#faq">أسئلة شائعة</a></li>
+  </ul>
+</div>
+
+<h2 id="why">ليه صفحات زيادة بتتسلل للملفات؟</h2>
+<p>
+  الماسحات الضوئية بتضيف أحيانًا صفحة بيضاء بالخطأ لو ورقة انزلقت في الجهاز، برامج الطباعة PDF
+  بتضيف صفحة غلاف افتراضية مش دايمًا محتاجاها، وملفات دُمجت من مصادر متعددة ممكن تحتوي صفحات
+  مسودة أو ملاحظات داخلية اتنسيت بالخطأ في النسخة النهائية.
+</p>
+
+<h2 id="usecases">استخدامات شائعة</h2>
+<ul>
+  <li><strong>تنظيف مستندات ممسوحة ضوئيًا:</strong> إزالة صفحات فارغة نتجت عن انزلاق الورق.</li>
+  <li><strong>تجهيز نسخة نهائية للنشر:</strong> حذف صفحات مسودة أو ملاحظات داخلية قبل التوزيع.</li>
+  <li><strong>تقليل حجم ملف كبير:</strong> إزالة صفحات غير ضرورية لتصغير حجم الملف الإجمالي.</li>
+  <li><strong>إزالة صفحة غلاف غير مرغوبة:</strong> حذف صفحة افتراضية أضافها برنامج التحويل تلقائيًا.</li>
+</ul>
+
+<h2 id="howto">كيف تحذفي صفحات بسهولة؟</h2>
+<p>
+  باستخدام <a href="../tools/pdf-delete-pages.html" style="color:var(--indigo-deep);font-weight:700;">أداة حذف صفحات من PDF</a> على فورا.tools:
+</p>
+<ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+  <li>ارفع ملف PDF من جهازك.</li>
+  <li>شاهد معاينة كل الصفحات وحدد اللي عايزة تحذفيها.</li>
+  <li>حمّل الملف الجديد بدون الصفحات المحذوفة.</li>
+</ol>
+
+<div class="tool-cta">
+<div>
+<div class="txt">جرّبي أداة حذف صفحات PDF الآن</div>
+<div class="sub">حذف فوري لصفحة واحدة أو أكتر، محليًا داخل متصفحك</div>
+</div>
+<a class="btn btn-primary" href="../tools/pdf-delete-pages.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path></svg>
+    افتح الأداة
+  </a>
+</div>
+
+<h2 id="tips">نصيحة قبل الحذف النهائي</h2>
+<p>
+  احتفظي دائمًا بنسخة من الملف الأصلي قبل الحذف، خصوصًا لو المستند مهم أو رسمي. الأداة بتنشئ ملف
+  جديد ومتلمسش الأصلي، لكن من الأفضل عمومًا الاحتفاظ بنسخة احتياطية قبل أي تعديل نهائي على مستند
+  حساس.
+</p>
+
+<h2 id="faq">أسئلة شائعة</h2>
+<div class="faq-item">
+  <h3>هل حذف صفحة بيأثر على ترقيم باقي الصفحات؟</h3>
+  <p style="font-size:13.5px;">الصفحات المتبقية بتتجمّع بترتيبها الأصلي، لكن ترقيم مطبوع كنص هيفضل زي ما هو ولازم تعدّليه يدويًا.</p>
+</div>
+<div class="faq-item">
+  <h3>هل ممكن أحذف أكتر من صفحة مش متتالية في نفس العملية؟</h3>
+  <p style="font-size:13.5px;">نعم، تقدري تحدد أي مجموعة صفحات وتحذفيها كلها دفعة واحدة.</p>
+</div>
+<div class="faq-item">
+  <h3>هل حذف صفحة ممكن يتراجع لو غلطت؟</h3>
+  <p style="font-size:13.5px;">الأداة بتنشئ ملف جديد ومتفضلش الملف الأصلي كما هو، فتقدري تبدأي تاني من الأصلي المحفوظ عندك.</p>
+</div>
+<div class="faq-item">
+  <h3>هل ينفع أحذف صفحة فيها توقيع أو ختم رسمي؟</h3>
+  <p style="font-size:13.5px;">تقنيًا ممكن، لكن تأكدي إنه مسموح قانونيًا حسب طبيعة المستند.</p>
+</div>
+
+<h2>خلاصة</h2>
+<p>
+  حذف صفحات من PDF مهمة بسيطة لا تحتاج أي برنامج معقد — رفع، تحديد، وتحميل، وملفك جاهز بدون
+  الصفحات اللي مش محتاجاها، في أقل من دقيقة.
+</p>
+
+</div>
+</div>
+
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
+<a href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script>
+</body>
+</html>

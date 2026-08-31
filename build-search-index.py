@@ -21,7 +21,7 @@ import json
 import html
 import sys
 
-HUB_PAGES = {'index', 'images', 'pdf', 'developer', 'text', 'seo', 'youtube', 'website'}
+HUB_PAGES = {'index', 'images', 'pdf', 'developer', 'text', 'seo', 'youtube', 'website', 'email', 'video', 'ai'}
 CATEGORY_HUB_FILES = {
     'images': 'tools/images.html',
     'pdf': 'tools/pdf.html',
@@ -30,6 +30,9 @@ CATEGORY_HUB_FILES = {
     'seo': 'tools/seo.html',
     'youtube': 'tools/youtube.html',
     'websites': 'tools/website.html',
+    'email': 'tools/email.html',
+    'video': 'tools/video.html',
+    'ai': 'tools/ai.html',
 }
 
 

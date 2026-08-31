@@ -16,7 +16,7 @@ add-rating-widget.py
 import re
 import os
 
-HUB_PAGES = {'index', 'images', 'pdf', 'developer', 'text', 'seo', 'youtube', 'website'}
+HUB_PAGES = {'index', 'images', 'pdf', 'developer', 'text', 'seo', 'youtube', 'website', 'email', 'video', 'ai'}
 
 WIDGET_HTML_TEMPLATE = '''<div class="wrap"><div class="rating-widget" data-tool-slug="{slug}">
   <div class="rating-stars"></div>

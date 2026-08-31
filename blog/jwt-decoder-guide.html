@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JWT: إزاي تقرأي محتوى رمز المصادقة بدون أي مخاطرة | فورا.tools</title>
+<meta content="دليل عملي لفهم بنية JWT الثلاثية، ليه فك ترميزه مختلف تمامًا عن كسر أمانه، وإزاي تفحصي محتوى Header وPayload بأمان." name="description"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.svg" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/blog/jwt-decoder-guide.html" rel="canonical"/>
+
+
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/blog/jwt-decoder-guide.html" property="og:url"/>
+<meta content="JWT: إزاي تقرأي محتوى رمز المصادقة بدون أي مخاطرة | فورا.tools" property="og:title"/>
+<meta content="دليل عملي لفهم بنية JWT الثلاثية وليه فك ترميزه مختلف عن كسر أمانه." property="og:description"/>
+<meta content="فورا.tools" property="og:site_name"/>
+<meta content="ar_AR" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="JWT: إزاي تقرأي محتوى رمز المصادقة بدون أي مخاطرة | فورا.tools" name="twitter:title"/>
+<meta content="دليل عملي لفهم بنية JWT." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"JWT: إزاي تقرأي محتوى رمز المصادقة بدون أي مخاطرة","description":"دليل عملي لفهم بنية JWT الثلاثية، وليه فك ترميزه مختلف تمامًا عن كسر أمانه.","url":"https://fawran.tools/blog/jwt-decoder-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/jwt-decoder-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"JWT: إزاي تقرأي محتوى رمز المصادقة بدون أي مخاطرة","item":"https://fawran.tools/blog/jwt-decoder-guide.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل فك ترميز JWT معناه إني كسرت الأمان بتاعه؟","acceptedAnswer":{"@type":"Answer","text":"لا، Header وPayload في JWT مُرمّزين بـBase64 بس، مش مشفّرين، فأي حد يقدر يقرأهم بسهولة. الحماية الفعلية في الـSignature بس، وده اللي مستحيل تولّده من غير المفتاح السري."}},{"@type":"Question","name":"إذن ليه محتاجة مفتاح سري لو أي حد يقدر يقرأ المحتوى؟","acceptedAnswer":{"@type":"Answer","text":"المفتاح السري مش لإخفاء المحتوى، هو لضمان إن الرمز ما اتغيّرش أو اتزوّر بعد إصداره. الخادم بيتحقق من التوقيع باستخدام المفتاح، ولو أي حرف اتغيّر في البيانات، التوقيع هيبقى غير متطابق."}},{"@type":"Question","name":"هل ينفع أحط بيانات حساسة في Payload الخاص بـJWT؟","acceptedAnswer":{"@type":"Answer","text":"لا خالص، لأن أي حد ممكن يقرأ محتوى Payload بسهولة. اكتفي ببيانات غير حساسة زي معرّف المستخدم أو صلاحياته، ومتحطش كلمات مرور أو بيانات شخصية حساسة."}},{"@type":"Question","name":"إيه الفرق بين الأجزاء التلاتة لـJWT؟","acceptedAnswer":{"@type":"Answer","text":"Header بيحدد نوع الخوارزمية المستخدمة، Payload بيحمل البيانات الفعلية (زي معرّف المستخدم وتاريخ الانتهاء)، وSignature هو التوقيع اللي بيثبت إن الرمز أصلي وما اتلاعبش فيه."}}]}
+</script>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/jwt-decoder-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/jwt-decoder-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/jwt-decoder-guide.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav">
+<a href="../index.html">الأدوات</a>
+<a class="active" href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</nav>
+<button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="تبديل الوضع الليلي" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../en/blog/jwt-decoder-guide.html" title="View in English">EN</a>
+</div>
+</div>
+</header>
+<div class="wrap">
+<div class="page-head">
+<div class="article-meta"><span class="tag">أدوات المطورين</span><span>6 دقائق قراءة</span></div>
+<h1>JWT: إزاي تقرأي محتوى رمز المصادقة بدون أي مخاطرة</h1>
+</div>
+
+<div class="content-card">
+
+<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="320" rx="16" fill="#14131F"/>
+  <rect x="80" y="140" width="180" height="50" rx="8" fill="#4F3FF0"/>
+  <text x="170" y="171" font-family="IBM Plex Mono, monospace" font-size="13" fill="#fff" text-anchor="middle">Header</text>
+  <rect x="280" y="140" width="240" height="50" rx="8" fill="#F0A93B"/>
+  <text x="400" y="171" font-family="IBM Plex Mono, monospace" font-size="13" fill="#1A1826" text-anchor="middle">Payload</text>
+  <rect x="540" y="140" width="180" height="50" rx="8" fill="#2F7D53"/>
+  <text x="630" y="171" font-family="IBM Plex Mono, monospace" font-size="13" fill="#fff" text-anchor="middle">Signature</text>
+  <text x="170" y="220" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8B89A3" text-anchor="middle">قابل للقراءة</text>
+  <text x="400" y="220" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8B89A3" text-anchor="middle">قابل للقراءة</text>
+  <text x="630" y="220" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8B89A3" text-anchor="middle">التوقيع الآمن</text>
+</svg>
+
+<p>
+  شوفتِ رمز JWT طويل في طلب API وحبيتِ تعرفي إيه جواه؟ الخبر الجيد: مفيش داعي لأي أداة تحليل معقدة
+  — أغلب محتوى JWT قابل للقراءة مباشرة، والجزء الآمن فيه شيء تاني تمامًا.
+</p>
+
+<div class="toc">
+  <h2>محتوى المقال</h2>
+  <ul>
+    <li><a href="#what">إيه هو JWT؟</a></li>
+    <li><a href="#three-parts">الأجزاء التلاتة: Header وPayload وSignature</a></li>
+    <li><a href="#readable-vs-secure">قابل للقراءة لا يعني غير آمن</a></li>
+    <li><a href="#usecases">استخدامات شائعة لفك الترميز</a></li>
+    <li><a href="#howto">كيف تفكّي ترميز JWT بأمان؟</a></li>
+    <li><a href="#faq">أسئلة شائعة</a></li>
+  </ul>
+</div>
+
+<h2 id="what">إيه هو JWT؟</h2>
+<p>
+  JWT (اختصار JSON Web Token) صيغة معيارية بتُستخدم لنقل معلومات مصادقة بين طرفين بشكل آمن —
+  زي إثبات إن المستخدم مسجّل دخول بالفعل من غير ما يحتاج يرسل اسم المستخدم وكلمة المرور مع كل
+  طلب. بتشاهده غالبًا في هيدر الطلبات (Authorization Header) بعد كلمة "Bearer".
+</p>
+
+<h2 id="three-parts">الأجزاء التلاتة: Header وPayload وSignature</h2>
+<p>
+  رمز JWT مقسّم لتلات أجزاء مفصولة بنقطة (.). الـHeader بيحدد نوع الخوارزمية المستخدمة للتوقيع،
+  الـPayload بيحمل البيانات الفعلية (زي معرّف المستخدم، الصلاحيات، تاريخ انتهاء الصلاحية)،
+  والـSignature هو التوقيع الرقمي اللي بيثبت إن الرمز أصلي وما اتلاعبش فيه بعد إصداره.
+</p>
+
+<h2 id="readable-vs-secure">قابل للقراءة لا يعني غير آمن</h2>
+<p>
+  دي نقطة أساسية كتير من المطورين الجدد بيتلخبطوا فيها: الـHeader والـPayload مُرمّزين بـBase64
+  بس، مش مشفّرين، يعني أي حد يقدر يقرأهم بسهولة تامة من غير أي مفتاح سري. الأمان الحقيقي كله موجود
+  في الـSignature، لأن مستحيل حسابيًا تولّد توقيع صحيح من غير معرفة المفتاح السري بتاع الخادم.
+</p>
+
+<h2 id="usecases">استخدامات شائعة لفك الترميز</h2>
+<ul>
+  <li><strong>تصحيح مشاكل مصادقة:</strong> التأكد من إن الصلاحيات أو معرّف المستخدم في الرمز صحيحين.</li>
+  <li><strong>فحص تاريخ انتهاء الصلاحية:</strong> معرفة امتى الرمز هينتهي بالظبط من غير انتظار خطأ فعلي.</li>
+  <li><strong>مراجعة بنية API لخدمة خارجية:</strong> فهم شكل البيانات اللي بتحطها خدمة تانية في رموزها.</li>
+  <li><strong>تعلّم آلية عمل JWT:</strong> فهم عملي لبنية الرمز أثناء تعلّم أنظمة المصادقة الحديثة.</li>
+</ul>
+
+<h2 id="howto">كيف تفكّي ترميز JWT بأمان؟</h2>
+<p>
+  باستخدام <a href="../tools/jwt-decoder.html" style="color:var(--indigo-deep);font-weight:700;">JWT Decoder</a> على فورا.tools:
+</p>
+<ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
+  <li>الصق رمز JWT كامل (الأجزاء التلاتة مفصولة بنقاط).</li>
+  <li>شاهد محتوى Header وPayload منسّقين وواضحين فورًا.</li>
+  <li>كل حاجة بتتم محليًا داخل متصفحك — الرمز ما بيتبعتش لأي خادم.</li>
+</ol>
+
+<div class="tool-cta">
+<div>
+<div class="txt">جرّبي JWT Decoder الآن</div>
+<div class="sub">فك ترميز فوري وآمن، محليًا داخل متصفحك بالكامل</div>
+</div>
+<a class="btn btn-primary" href="../tools/jwt-decoder.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+    افتح الأداة
+  </a>
+</div>
+
+<h2 id="faq">أسئلة شائعة</h2>
+<div class="faq-item">
+  <h3>هل فك ترميز JWT معناه إني كسرت الأمان بتاعه؟</h3>
+  <p style="font-size:13.5px;">لا، Header وPayload مُرمّزين بـBase64 بس، مش مشفّرين. الحماية الفعلية في الـSignature بس.</p>
+</div>
+<div class="faq-item">
+  <h3>إذن ليه محتاجة مفتاح سري لو أي حد يقدر يقرأ المحتوى؟</h3>
+  <p style="font-size:13.5px;">المفتاح مش لإخفاء المحتوى، هو لضمان إن الرمز ما اتغيّرش بعد إصداره من خلال التحقق من التوقيع.</p>
+</div>
+<div class="faq-item">
+  <h3>هل ينفع أحط بيانات حساسة في Payload الخاص بـJWT؟</h3>
+  <p style="font-size:13.5px;">لا خالص، أي حد ممكن يقرأ محتوى Payload بسهولة. اكتفي ببيانات غير حساسة فقط.</p>
+</div>
+<div class="faq-item">
+  <h3>إيه الفرق بين الأجزاء التلاتة لـJWT؟</h3>
+  <p style="font-size:13.5px;">Header يحدد الخوارزمية، Payload يحمل البيانات الفعلية، وSignature يثبت إن الرمز أصلي.</p>
+</div>
+
+<h2>خلاصة</h2>
+<p>
+  فهم إن JWT قابل للقراءة لكن آمن بفضل التوقيع بس، بيوضح ليه محتوى الـPayload ملهوش أي سرية —
+  ودايمًا افتكري متحطش بيانات حساسة فيه مهما كان الرمز يبان معقد من الخارج.
+</p>
+
+</div>
+</div>
+
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">إعلان · Advertisement</span>
+<div class="ad-slot-inner">
+<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك، مثال: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
+<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+</div>
+<div class="footer-col">
+<h4>الموقع</h4>
+<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
+<a href="index.html">المدونة</a>
+<a href="../about.html">من نحن</a>
+<a href="../contact.html">تواصل معنا</a>
+</div>
+<div class="footer-col">
+<h4>قانوني</h4>
+<a href="../privacy.html">سياسة الخصوصية</a>
+<a href="../terms.html">شروط الاستخدام</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> فورا.tools — جميع الحقوق محفوظة</span>
+<span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
+</div>
+</footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>منشئ ودجت أسعار صرف العملات لموقعك مجانًا | فورا.tools</title>
+<meta content="أنشئي ودجت أسعار صرف حي لموقعك أو مدونتك في 4 خطوات — اختر العملات والتصميم، واحصلي على كود HTML جاهز للصق مباشرة، يتحدث تلقائيًا كل يوم." name="description"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/currency-widget-generator.html" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<link href="https://fawran.tools/tools/currency-widget-generator.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/currency-widget-generator.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/currency-widget-generator.html" hreflang="x-default" rel="alternate"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"منشئ ودجت أسعار صرف العملات","url":"https://fawran.tools/tools/currency-widget-generator.html","description":"أنشئي ودجت أسعار صرف حي لموقعك في خطوات بسيطة، مع كود HTML جاهز للصق.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (يعمل داخل المتصفح)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+.toolbox{max-width:920px;margin:28px auto}
+.step-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:26px;margin-bottom:18px}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--indigo);color:#fff;font-weight:800;font-size:13px;margin-left:8px;}
+.step-title{font-size:16px;font-weight:800;display:flex;align-items:center;margin-bottom:14px;}
+.currency-btn{width:100%;box-sizing:border-box;padding:14px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit;font-weight:800;font-size:15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;text-align:right;}
+.currency-btn:hover{border-color:var(--indigo);}
+.chip-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.currency-chip{font-size:12.5px;font-weight:700;padding:7px 13px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;}
+.currency-chip.active{border-color:var(--indigo);color:var(--indigo-deep);background:var(--indigo-soft);}
+.design-row{display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
+.theme-opt{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13.5px;font-weight:700;}
+.color-swatch{width:28px;height:28px;border-radius:8px;cursor:pointer;border:2px solid transparent;}
+.color-swatch.active{border-color:var(--ink);}
+#codeBox{width:100%;min-height:170px;font-family:'IBM Plex Mono',monospace;direction:ltr;text-align:left;font-size:12.5px;line-height:1.7;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--surface-sunk);resize:vertical}
+.preview-box{background:var(--surface-sunk);border-radius:12px;padding:20px;display:flex;justify-content:center;}
+.status{margin-top:10px;font-weight:700;font-size:13px;}
+
+/* picker */
+.picker-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;display:none;align-items:flex-start;justify-content:center;padding:60px 16px;}
+.picker-overlay.open{display:flex;}
+.picker-box{background:var(--surface);border-radius:16px;width:100%;max-width:420px;max-height:70vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+.picker-search{padding:16px;border-bottom:1px solid var(--line);}
+.picker-search input{width:100%;box-sizing:border-box;padding:11px;border:1px solid var(--line);border-radius:10px;background:var(--surface-sunk);color:var(--ink);font:inherit;}
+.picker-list{overflow-y:auto;flex:1;}
+.picker-item{display:flex;justify-content:space-between;padding:12px 16px;cursor:pointer;border-bottom:1px solid var(--line);}
+.picker-item:hover{background:var(--indigo-soft);}
+.picker-item .code{font-weight:800;font-family:'IBM Plex Mono',monospace;}
+.picker-close{padding:8px 16px;text-align:center;font-size:12.5px;color:var(--muted);cursor:pointer;border-top:1px solid var(--line);}
+</style>
+</head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a><nav class="nav"><a href="../index.html">الأدوات</a><a href="../blog/index.html">المدونة</a><a href="../about.html">من نحن</a><a href="../contact.html">تواصل معنا</a></nav><a class="lang-switch" href="https://fawran.tools/en/tools/currency-widget-generator.html">EN</a></div></header>
+
+<main><div class="wrap toolbox">
+<a href="website.html">← أدوات المواقع</a>
+<h1>منشئ ودجت أسعار صرف العملات</h1>
+<p class="hero-lede">أنشئي ودجت أسعار صرف حي لموقعك أو مدونتك في 4 خطوات بسيطة، واحصلي على كود جاهز للصق يتحدث تلقائيًا كل يوم.</p>
+
+<section class="step-card">
+  <div class="step-title"><span class="step-num">١</span> تحديد العملة الأساسية</div>
+  <button class="currency-btn" id="baseBtn">USD — دولار أمريكي</button>
+</section>
+
+<section class="step-card">
+  <div class="step-title"><span class="step-num">٢</span> تحديد العملات المراد التحويل لها</div>
+  <p class="muted" style="font-size:12.5px;margin:0 0 10px;">اختر حتى 6 عملات هتظهر في الودجت.</p>
+  <div class="chip-grid" id="targetChips"></div>
+</section>
+
+<section class="step-card">
+  <div class="step-title"><span class="step-num">٣</span> إعدادات التصميم</div>
+  <div class="design-row">
+    <label class="theme-opt"><input checked="" id="themeLight" name="theme" type="radio" value="light"/> فاتح</label>
+    <label class="theme-opt"><input id="themeDark" name="theme" type="radio" value="dark"/> داكن</label>
+    <div class="chip-grid" id="colorRow" style="margin-inline-start:10px;">
+      <span class="color-swatch active" data-color="#4F3FF0" style="background:#4F3FF0;"></span>
+      <span class="color-swatch" data-color="#0F766E" style="background:#0F766E;"></span>
+      <span class="color-swatch" data-color="#B4232C" style="background:#B4232C;"></span>
+      <span class="color-swatch" data-color="#C2410C" style="background:#C2410C;"></span>
+    </div>
+  </div>
+</section>
+
+<section class="step-card">
+  <div class="step-title"><span class="step-num">٤</span> معاينة الودجت</div>
+  <div class="preview-box">
+    <div class="fawran-currency-widget" data-accent="#4F3FF0" data-base="usd" data-currencies="eur,gbp,cad,jpy" data-lang="ar" data-theme="light" id="previewWidget"></div>
+  </div>
+</section>
+
+<section class="step-card">
+  <div class="step-title">الرمز الخاص بك — اانسخه والصقه في موقعك</div>
+  <textarea id="codeBox" readonly=""></textarea>
+  <button class="btn btn-primary" id="copyBtn" style="margin-top:12px;">نسخ الرمز</button>
+  <div class="status" id="status"></div>
+</section>
+
+<div class="content-card" style="background:var(--surface-sunk);border-radius:12px;padding:16px 18px;font-size:13.5px;line-height:1.9;margin-top:18px;">
+  <strong>ملاحظة:</strong> الودجت بيتحدث تلقائيًا من بيانات حية عند كل زيارة لصفحتك، فمش محتاجة تحدّثي الكود يدويًا أبدًا.
+</div>
+</div></main>
+
+<div class="picker-overlay" id="pickerOverlay">
+  <div class="picker-box">
+    <div class="picker-search"><input id="pickerSearch" placeholder="ابحثي بالرمز أو الاسم..." type="text"/></div>
+    <div class="picker-list" id="pickerList"></div>
+    <div class="picker-close" id="pickerClose">إغلاق</div>
+  </div>
+</div>
+
+<div class="wrap"><div class="rating-widget" data-tool-slug="currency-widget-generator">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer><div class="footer-grid"><div><div class="footer-brand"><span class="mark">FW</span> فورا.tools</div><p class="footer-desc">مجموعة أدوات أونلاين مجانية تعمل بالكامل داخل متصفحك.</p></div><div class="footer-col"><h4>الموقع</h4><a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a><a href="../blog/index.html">المدونة</a><a href="../about.html">من نحن</a><a href="../contact.html">تواصل معنا</a></div><div class="footer-col"><h4>قانوني</h4><a href="../privacy.html">سياسة الخصوصية</a><a href="../terms.html">شروط الاستخدام</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> فورا.tools</span></div></footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script><script src="../assets/rating-widget.js"></script>
+<script src="../assets/currency-widget.js"></script>
+<script>
+const CURRENCY_NAMES_AR = {
+  usd:'دولار أمريكي', eur:'يورو', gbp:'جنيه إسترليني', jpy:'ين ياباني', sar:'ريال سعودي',
+  aed:'درهم إماراتي', egp:'جنيه مصري', kwd:'دينار كويتي', qar:'ريال قطري', cad:'دولار كندي',
+  aud:'دولار أسترالي', chf:'فرنك سويسري', try:'ليرة تركية', cny:'يوان صيني', inr:'روبية هندية'
+};
+const ALL_CODES = Object.keys(CURRENCY_NAMES_AR);
+const QUICK_TARGETS = ['eur','gbp','cad','jpy','sar','aed'];
+
+let baseCode = 'usd';
+let selectedTargets = ['eur','gbp','cad','jpy'];
+let theme = 'light';
+let accent = '#4F3FF0';
+let pickerTarget = null;
+
+const baseBtn=document.getElementById('baseBtn'),
+      targetChips=document.getElementById('targetChips'),
+      colorSwatches=document.querySelectorAll('.color-swatch'),
+      themeLight=document.getElementById('themeLight'),
+      themeDark=document.getElementById('themeDark'),
+      previewWidget=document.getElementById('previewWidget'),
+      codeBox=document.getElementById('codeBox'),
+      copyBtn=document.getElementById('copyBtn'),
+      statusEl=document.getElementById('status'),
+      pickerOverlay=document.getElementById('pickerOverlay'),
+      pickerSearch=document.getElementById('pickerSearch'),
+      pickerList=document.getElementById('pickerList'),
+      pickerClose=document.getElementById('pickerClose');
+
+function label(code){ return code.toUpperCase()+' — '+(CURRENCY_NAMES_AR[code]||code.toUpperCase()); }
+
+function renderTargetChips(){
+  targetChips.innerHTML = QUICK_TARGETS.map(c=>{
+    const active = selectedTargets.includes(c) ? ' active' : '';
+    return `<span class="currency-chip${active}" data-code="${c}">${c.toUpperCase()}</span>`;
+  }).join('');
+  targetChips.querySelectorAll('.currency-chip').forEach(chip=>{
+    chip.onclick=()=>{
+      const code = chip.dataset.code;
+      if(selectedTargets.includes(code)){
+        selectedTargets = selectedTargets.filter(c=>c!==code);
+      } else {
+        if(selectedTargets.length>=6){
+          statusEl.textContent='أقصى عدد 6 عملات في الودجت.';
+          statusEl.style.color='var(--danger)';
+          return;
+        }
+        selectedTargets.push(code);
+      }
+      statusEl.textContent='';
+      renderTargetChips();
+      updateAll();
+    };
+  });
+}
+
+function openPicker(){
+  pickerTarget='base';
+  pickerSearch.value='';
+  renderPickerList('');
+  pickerOverlay.classList.add('open');
+  pickerSearch.focus();
+}
+function closePicker(){ pickerOverlay.classList.remove('open'); }
+function renderPickerList(query){
+  const q=query.trim().toLowerCase();
+  const filtered = ALL_CODES.filter(code=>{
+    const nm=(CURRENCY_NAMES_AR[code]||'').toLowerCase();
+    return !q || code.includes(q) || nm.includes(q);
+  });
+  pickerList.innerHTML = filtered.map(code=>
+    `<div class="picker-item" data-code="${code}"><span class="code">${code.toUpperCase()}</span><span>${CURRENCY_NAMES_AR[code]}</span></div>`
+  ).join('');
+  pickerList.querySelectorAll('.picker-item').forEach(item=>{
+    item.onclick=()=>{
+      baseCode=item.dataset.code;
+      baseBtn.textContent=label(baseCode);
+      closePicker();
+      updateAll();
+    };
+  });
+}
+baseBtn.onclick=openPicker;
+pickerClose.onclick=closePicker;
+pickerOverlay.onclick=(e)=>{ if(e.target===pickerOverlay) closePicker(); };
+pickerSearch.addEventListener('input',()=>renderPickerList(pickerSearch.value));
+
+colorSwatches.forEach(sw=>{
+  sw.onclick=()=>{
+    colorSwatches.forEach(s=>s.classList.remove('active'));
+    sw.classList.add('active');
+    accent=sw.dataset.color;
+    updateAll();
+  };
+});
+themeLight.onchange=themeDark.onchange=()=>{
+  theme = themeDark.checked ? 'dark' : 'light';
+  updateAll();
+};
+
+function generateCode(){
+  return `<div class="fawran-currency-widget" data-base="${baseCode}" data-currencies="${selectedTargets.join(',')}" data-theme="${theme}" data-accent="${accent}" data-lang="ar"></div>
+
+<script>
+(function(d, s, id){
+  s = d.createElement('script');
+  s.src = "https://fawran.tools/assets/currency-widget.js";
+  s.id = id;
+  d.getElementsByTagName('head')[0].appendChild(s);
+}(document, 'script', 'fawran-currency-widget-script'));
+<\/script>`;
+}
+
+function updateAll(){
+  if(!selectedTargets.length) selectedTargets=['eur'];
+  previewWidget.setAttribute('data-base', baseCode);
+  previewWidget.setAttribute('data-currencies', selectedTargets.join(','));
+  previewWidget.setAttribute('data-theme', theme);
+  previewWidget.setAttribute('data-accent', accent);
+  if(window.FawranCurrencyWidgetRender){
+    window.FawranCurrencyWidgetRender(previewWidget);
+  }
+  codeBox.value = generateCode();
+}
+
+copyBtn.onclick = async ()=>{
+  try{
+    await navigator.clipboard.writeText(codeBox.value);
+    const orig=copyBtn.textContent;
+    copyBtn.textContent='تم النسخ ✓';
+    setTimeout(()=>copyBtn.textContent=orig,1600);
+  }catch(e){}
+};
+
+renderTargetChips();
+baseBtn.textContent = label(baseCode);
+updateAll();
+</script>
+</body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>مستخرج الإيميلات من النص مجانًا | فورا.tools</title>
+<meta content="الصق أي نص أو مستند واستخرج كل عناوين الإيميل الموجودة فيه فورًا، مع إزالة التكرار تلقائيًا. مجاني ويعمل بالكامل داخل متصفحك." name="description"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/tools/email-extractor.html" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<link href="https://fawran.tools/tools/email-extractor.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/tools/email-extractor.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/tools/email-extractor.html" hreflang="x-default" rel="alternate"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"مستخرج الإيميلات","url":"https://fawran.tools/tools/email-extractor.html","description":"استخرج كل عناوين الإيميل من أي نص فورًا مع إزالة التكرار تلقائيًا.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (يعمل داخل المتصفح)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+.toolbox{max-width:820px;margin:28px auto}
+.toolbox textarea{width:100%;box-sizing:border-box;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit;min-height:200px;resize:vertical}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
+.status{margin-top:14px;font-weight:700}
+.muted{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:28px;margin-bottom:22px}
+.stat-badges{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.stat-badge{background:var(--indigo-soft);color:var(--indigo-deep);font-weight:800;font-size:13px;padding:8px 14px;border-radius:10px;font-family:'IBM Plex Mono',monospace}
+#resultsBox{width:100%;min-height:180px;font-family:'IBM Plex Mono',monospace;direction:ltr;text-align:left;font-size:13px;line-height:1.9;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--surface-sunk);resize:vertical}
+</style>
+</head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a><nav class="nav"><a href="../index.html">الأدوات</a><a href="../blog/index.html">المدونة</a><a href="../about.html">من نحن</a><a href="../contact.html">تواصل معنا</a></nav><a class="lang-switch" href="https://fawran.tools/en/tools/email-extractor.html">EN</a></div></header>
+
+<main><div class="wrap toolbox">
+<a href="email.html">← أدوات الإيميل</a>
+<h1>مستخرج الإيميلات من النص</h1>
+<p class="hero-lede">الصق أي نص، مستند، أو صفحة كاملة، واستخرج كل عناوين الإيميل الموجودة فيها فورًا مع إزالة التكرار تلقائيًا.</p>
+
+<section class="card">
+  <label style="font-size:13px;font-weight:700;display:block;margin-bottom:6px;">الصق النص هنا</label>
+  <textarea id="inputText" placeholder="الصق أي نص فيه عناوين إيميل..."></textarea>
+  <div class="row">
+    <button class="btn btn-primary" id="extractBtn">استخراج الإيميلات</button>
+    <label style="font-size:13px;display:flex;align-items:center;gap:6px;">
+      <input id="sortAlpha" type="checkbox"/> ترتيب أبجدي
+    </label>
+  </div>
+  <div class="stat-badges" id="statBadges" style="display:none;"></div>
+  <div class="status" id="status"></div>
+</section>
+
+<section class="card" id="resultsCard" style="display:none;">
+  <div class="row" style="margin-top:0;justify-content:space-between;">
+    <label style="font-size:13px;font-weight:700;">الإيميلات المستخرجة</label>
+    <div class="row" style="margin:0;">
+      <button class="btn" id="copyBtn">نسخ الكل</button>
+      <button class="btn" id="downloadBtn">تحميل .csv</button>
+    </div>
+  </div>
+  <textarea id="resultsBox" readonly=""></textarea>
+</section>
+</div></main>
+
+<div class="wrap"><div class="rating-widget" data-tool-slug="email-extractor">
+  <div class="rating-stars"></div>
+  <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
+</div></div>
+<div class="wrap"><div class="share-widget"></div></div>
+<footer><div class="footer-grid"><div><div class="footer-brand"><span class="mark">FW</span> فورا.tools</div><p class="footer-desc">مجموعة أدوات أونلاين مجانية تعمل بالكامل داخل متصفحك.</p></div><div class="footer-col"><h4>الموقع</h4><a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a><a href="../blog/index.html">المدونة</a><a href="../about.html">من نحن</a><a href="../contact.html">تواصل معنا</a></div><div class="footer-col"><h4>قانوني</h4><a href="../privacy.html">سياسة الخصوصية</a><a href="../terms.html">شروط الاستخدام</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> فورا.tools</span></div></footer>
+<script src="../assets/main.js"></script><script src="../assets/share-widget.js"></script><script src="../assets/rating-widget.js"></script>
+<script>
+const inputText=document.getElementById('inputText'),
+      extractBtn=document.getElementById('extractBtn'),
+      sortAlpha=document.getElementById('sortAlpha'),
+      statusEl=document.getElementById('status'),
+      statBadges=document.getElementById('statBadges'),
+      resultsCard=document.getElementById('resultsCard'),
+      resultsBox=document.getElementById('resultsBox'),
+      copyBtn=document.getElementById('copyBtn'),
+      downloadBtn=document.getElementById('downloadBtn');
+
+const EMAIL_RE=/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+
+extractBtn.onclick=()=>{
+  const text=inputText.value;
+  const found=text.match(EMAIL_RE)||[];
+  const uniqueLower=new Map();
+  found.forEach(e=>{
+    const key=e.toLowerCase();
+    if(!uniqueLower.has(key)) uniqueLower.set(key,e);
+  });
+  let emails=Array.from(uniqueLower.values());
+  if(sortAlpha.checked) emails.sort((a,b)=>a.localeCompare(b));
+
+  if(!emails.length){
+    statusEl.textContent='مفيش أي عنوان إيميل في النص المُدخل.';
+    statusEl.style.color='var(--danger)';
+    statBadges.style.display='none';
+    resultsCard.style.display='none';
+    return;
+  }
+
+  resultsBox.value=emails.join('\n');
+  resultsCard.style.display='block';
+  statBadges.style.display='flex';
+  statBadges.innerHTML=
+    '<span class="stat-badge">إجمالي الظهور: '+found.length.toLocaleString('ar')+'</span>'+
+    '<span class="stat-badge">إيميلات فريدة: '+emails.length.toLocaleString('ar')+'</span>';
+  statusEl.style.color='var(--good)';
+  statusEl.textContent='تم الاستخراج بنجاح ✓';
+};
+
+copyBtn.onclick=async()=>{
+  try{
+    await navigator.clipboard.writeText(resultsBox.value);
+    const orig=copyBtn.textContent;
+    copyBtn.textContent='تم النسخ ✓';
+    setTimeout(()=>copyBtn.textContent=orig,1600);
+  }catch(e){}
+};
+
+downloadBtn.onclick=()=>{
+  const rows=resultsBox.value.split('\n').filter(Boolean);
+  const csv='email\n'+rows.join('\n');
+  const blob=new Blob([csv],{type:'text/csv'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='extracted-emails.csv';a.click();
+  URL.revokeObjectURL(url);
+};
+</script>
+</body></html>
