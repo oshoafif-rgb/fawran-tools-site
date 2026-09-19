@@ -1,7 +1,9 @@
 {
   "name": "fawran-tools-site",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "@netlify/blobs": "^8.1.0"
+    "@netlify/blobs": "^8.1.0",
+    "ipaddr.js": "^2.2.0"
   }
 }

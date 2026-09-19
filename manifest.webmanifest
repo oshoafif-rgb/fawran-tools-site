@@ -1,7 +1,7 @@
 {
   "name": "Fawran Tools",
   "short_name": "Fawran",
-  "start_url": "/index.html",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#0f0e16",
@@ -18,19 +18,19 @@
   "shortcuts": [
     {
       "name": "Image Compressor",
-      "url": "/tools/image-compressor.html"
+      "url": "/tools/image-compressor"
     },
     {
       "name": "PDF Merger",
-      "url": "/tools/pdf-merge.html"
+      "url": "/tools/pdf-merge"
     },
     {
       "name": "WebP Converter",
-      "url": "/tools/webp-converter.html"
+      "url": "/tools/webp-converter"
     },
     {
       "name": "Word Counter",
-      "url": "/tools/word-counter.html"
+      "url": "/tools/word-counter"
     }
   ]
 }

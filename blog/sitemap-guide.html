@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 
 <html dir="rtl" lang="ar">
-<head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
-
+<head><script data-consent-default="true">window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  analytics_storage:'denied',
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  personalization_storage:'denied',
+  functionality_storage:'granted',
+  security_storage:'granted',
+  wait_for_update:500
+});</script><script data-measurement-id="G-JSG9KGPK0S" defer="" src="../assets/consent.js"></script>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ما هو Sitemap.xml ولماذا موقعك يحتاجه لجوجل 2026 | فورا.tools</title>
+<title>ما هو Sitemap.xml ولماذا موقعكم يحتاجه لجوجل 2026 | فورا.tools</title>
 <meta content="دليل شامل لفهم أهمية خريطة الموقع (Sitemap.xml) للأرشفة في جوجل، وكيف تنشئها بشكل صحيح وتقدّمها في Google Search Console." name="description"/>
 <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../favicon.svg" rel="apple-touch-icon"/>
 <meta content="#4F3FF0" name="theme-color"/>
-<link href="https://fawran.tools/blog/sitemap-guide.html" rel="canonical"/>
+<link href="https://fawran.tools/blog/sitemap-guide" rel="canonical"/>
 <meta content="article" property="og:type"/>
-<meta content="https://fawran.tools/blog/sitemap-guide.html" property="og:url"/>
-<meta content="ما هو Sitemap.xml ولماذا موقعك يحتاجه لجوجل 2026 | فورا.tools" property="og:title"/>
+<meta content="https://fawran.tools/blog/sitemap-guide" property="og:url"/>
+<meta content="ما هو Sitemap.xml ولماذا موقعكم يحتاجه لجوجل 2026 | فورا.tools" property="og:title"/>
 <meta content="دليل شامل لفهم أهمية خريطة الموقع للأرشفة في جوجل، وكيف تنشئها بشكل صحيح." property="og:description"/>
 <meta content="فورا.tools" property="og:site_name"/>
 <meta content="ar_AR" property="og:locale"/>
@@ -24,7 +32,7 @@
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="ما هو Sitemap.xml ولماذا موقعك يحتاجه لجوجل 2026 | فورا.tools" name="twitter:title"/>
+<meta content="ما هو Sitemap.xml ولماذا موقعكم يحتاجه لجوجل 2026 | فورا.tools" name="twitter:title"/>
 <meta content="دليل شامل لفهم أهمية خريطة الموقع للأرشفة في جوجل." name="twitter:description"/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -41,25 +49,21 @@
   .toc li{margin-bottom:6px;}
   .toc a{color:var(--indigo-deep);font-weight:700;}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"ما هو Sitemap.xml ولماذا موقعك يحتاجه لجوجل","description":"دليل شامل لفهم أهمية خريطة الموقع للأرشفة في جوجل، وكيف تنشئها بشكل صحيح وتقدّمها في Google Search Console.","url":"https://fawran.tools/blog/sitemap-guide.html","datePublished":"2026-08-23","dateModified":"2026-08-23","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/sitemap-guide.html"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل موقعي لن يُفهرس أبدًا بدون خريطة موقع؟","acceptedAnswer":{"@type":"Answer","text":"لا، جوجل يمكنه اكتشاف صفحاتك عبر الروابط الداخلية حتى بدون خريطة موقع، لكن الخريطة تسرّع وتضمن عملية الاكتشاف، خصوصًا للمواقع الجديدة أو الكبيرة."}},{"@type":"Question","name":"كم مرة يجب تحديث خريطة الموقع؟","acceptedAnswer":{"@type":"Answer","text":"في كل مرة تضيف أو تحذف صفحة مهمة من موقعك. المواقع النشطة بمحتوى متجدد باستمرار يُفضّل تحديث خريطتها بانتظام لتضمين الصفحات الجديدة."}},{"@type":"Question","name":"ما الفرق بين priority وchangefreq في ملف الخريطة؟","acceptedAnswer":{"@type":"Answer","text":"priority تشير إلى الأهمية النسبية للصفحة داخل موقعك (من 0 إلى 1)، بينما changefreq تخبر محرك البحث بمدى تكرار تحديث محتوى تلك الصفحة تقريبيًا."}},{"@type":"Question","name":"أين أرفع ملف sitemap.xml على موقعي؟","acceptedAnswer":{"@type":"Answer","text":"عادة يُرفع في المجلد الجذري لموقعك (نفس مستوى index.html)، ليكون متاحًا على رابط مثل yoursite.com/sitemap.xml."}}]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "ما هو Sitemap.xml ولماذا موقعكم يحتاجه لجوجل", "description": "دليل شامل لفهم أهمية خريطة الموقع للأرشفة في جوجل، وكيف تنشئها بشكل صحيح وتقدّمها في Google Search Console.", "url": "https://fawran.tools/blog/sitemap-guide", "datePublished": "2026-08-23", "dateModified": "2026-09-20", "author": {"@type": "Organization", "name": "فورا.tools"}, "publisher": {"@type": "Organization", "name": "فورا.tools", "logo": {"@type": "ImageObject", "url": "https://fawran.tools/favicon.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fawran.tools/blog/sitemap-guide"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "هل موقعي لن يُفهرس أبدًا بدون خريطة موقع؟", "acceptedAnswer": {"@type": "Answer", "text": "لا، جوجل يمكنه اكتشاف صفحاتكم عبر الروابط الداخلية حتى بدون خريطة موقع، لكن الخريطة تسرّع وتضمن عملية الاكتشاف، خصوصًا للمواقع الجديدة أو الكبيرة."}}, {"@type": "Question", "name": "كم مرة يجب تحديث خريطة الموقع؟", "acceptedAnswer": {"@type": "Answer", "text": "في كل مرة تضيفوا أو تحذفوا صفحة مهمة من موقعكم. المواقع النشطة بمحتوى متجدد باستمرار يُفضّل تحديث خريطتها بانتظام لتضمين الصفحات الجديدة."}}, {"@type": "Question", "name": "ما الفرق بين priority وchangefreq في ملف الخريطة؟", "acceptedAnswer": {"@type": "Answer", "text": "priority تشير إلى الأهمية النسبية للصفحة داخل موقعكم (من 0 إلى 1)، بينما changefreq تخبر محرك البحث بمدى تكرار تحديث محتوى تلك الصفحة تقريبيًا."}}, {"@type": "Question", "name": "أين أرفع ملف sitemap.xml على موقعي؟", "acceptedAnswer": {"@type": "Answer", "text": "عادة يُرفع في المجلد الجذري لموقعكم (نفس مستوى index.html)، ليكون متاحًا على رابط مثل yoursite.com/sitemap.xml."}}]}</script>
 <link href="../manifest.webmanifest" rel="manifest"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
-<link href="https://fawran.tools/blog/sitemap-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/sitemap-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/sitemap-guide.html" hreflang="x-default" rel="alternate"/></head>
+<link href="https://fawran.tools/blog/sitemap-guide" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/sitemap-guide" hreflang="en" rel="alternate"/><link href="https://fawran.tools/blog/sitemap-guide" hreflang="x-default" rel="alternate"/></head>
 <body>
 <header class="topbar">
 <div class="topbar-inner">
-<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<a class="brand" href="/"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
 <div class="nav-wrap">
 <nav class="nav">
-<a href="../index.html">الأدوات</a>
-<a class="active" href="index.html">المدونة</a>
-<a href="../about.html">من نحن</a>
-<a href="../contact.html">تواصل معنا</a>
+<a href="/">الأدوات</a>
+<a class="active" href="/blog/">المدونة</a>
+<a href="/about">من نحن</a>
+<a href="/contact">تواصل معنا</a>
 </nav>
 <button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
@@ -74,7 +78,7 @@
 <div class="wrap">
 <div class="page-head">
 <div class="article-meta"><span class="tag">أدوات المواقع والمدونات</span><span>6 دقائق قراءة</span></div>
-<h1>ما هو Sitemap.xml ولماذا موقعك يحتاجه لجوجل</h1>
+<h1>ما هو Sitemap.xml ولماذا موقعكم يحتاجه لجوجل</h1>
 </div>
 <div class="content-card">
 <svg class="article-svg" viewbox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
@@ -94,84 +98,78 @@
 <li><a href="#what">ما هو Sitemap.xml بالضبط؟</a></li>
 <li><a href="#why">لماذا يهم للأرشفة في جوجل؟</a></li>
 <li><a href="#structure">مكونات ملف الخريطة الأساسية</a></li>
-<li><a href="#howto">كيف تنشئ الخريطة وتقدّمها؟</a></li>
+<li><a href="#howto">كيف تنشئون الخريطة وتقدّمونها؟</a></li>
 <li><a href="#faq">أسئلة شائعة</a></li>
 </ul>
 </div>
 <p>
-      لو موقعك جديد أو حديث الإطلاق، محرك البحث ما بيعرفش صفحاتك تلقائيًا من أول يوم. خريطة الموقع
-      (Sitemap.xml) هي أشبه بخريطة رسمية بتقدمها لجوجل بنفسك، بتوضح فيها كل صفحاتك المهمة عشان
+      لو موقعكم جديد أو حديث الإطلاق، محرك البحث ما بيعرفش صفحاتكم تلقائيًا من أول يوم. خريطة الموقع
+      (Sitemap.xml) هي أشبه بخريطة رسمية بتقدمها لجوجل بأنفسكم، بتوضح فيها كل صفحاتكم المهمة عشان
       يكتشفها ويفهرسها بسرعة أكبر. في هذا الدليل هنشرح كل حاجة عنها.
     </p>
 <h2 id="what">ما هو Sitemap.xml بالضبط؟</h2>
 <p>
-      ملف Sitemap.xml هو ملف نصي بصيغة XML بيحتوي قائمة بكل الروابط المهمة في موقعك، مع معلومات
+      ملف Sitemap.xml هو ملف نصي بصيغة XML بيحتوي قائمة بكل الروابط المهمة في موقعكم، مع معلومات
       إضافية اختيارية عن كل رابط: آخر تاريخ تحديث، مدى تكرار تحديث المحتوى، وأولوية الصفحة نسبيًا
-      مقارنة بباقي صفحات موقعك. الملف ده مش بيظهر للزوار العاديين — هو موجّه بشكل خاص لمحركات البحث.
+      مقارنة بباقي صفحات موقعكم. الملف ده مش بيظهر للزوار العاديين — هو موجّه بشكل خاص لمحركات البحث.
     </p>
 <h2 id="why">لماذا يهم للأرشفة في جوجل؟</h2>
 <p>
       جوجل بيكتشف صفحات المواقع بطريقتين أساسيتين: تتبع الروابط الداخلية من صفحة لصفحة، أو الاعتماد
       على خريطة موقع مقدَّمة مباشرة. الطريقة الأولى بطيئة وممكن تفوّت صفحات معزولة مش مرتبطة بروابط
-      كافية، خصوصًا في المواقع الجديدة أو الكبيرة. خريطة الموقع بتحل المشكلة دي بالكامل — بتديك تحكم
-      مباشر في إخبار جوجل بكل صفحة مهمة عندك، بدل ما تعتمد على الاكتشاف العشوائي.
+      كافية، خصوصًا في المواقع الجديدة أو الكبيرة. خريطة الموقع بتحل المشكلة دي بالكامل — بتديكم تحكم
+      مباشر في إخبار جوجل بكل صفحة مهمة عندكم، بدل ما تعتمدوا على الاكتشاف العشوائي.
     </p>
 <h2 id="structure">مكونات ملف الخريطة الأساسية</h2>
 <ul>
 <li><strong>loc:</strong> الرابط الكامل للصفحة — العنصر الإلزامي الوحيد.</li>
 <li><strong>lastmod:</strong> تاريخ آخر تعديل على محتوى الصفحة.</li>
 <li><strong>changefreq:</strong> تكرار التحديث التقريبي (يوميًا، أسبوعيًا، شهريًا، إلخ).</li>
-<li><strong>priority:</strong> رقم من 0 إلى 1 يوضح أهمية الصفحة نسبيًا داخل موقعك.</li>
+<li><strong>priority:</strong> رقم من 0 إلى 1 يوضح أهمية الصفحة نسبيًا داخل موقعكم.</li>
 </ul>
-<h2 id="howto">كيف تنشئ الخريطة وتقدّمها؟</h2>
+<h2 id="howto">كيف تنشئون الخريطة وتقدّمونها؟</h2>
 <p>
-      باستخدام <a href="../tools/sitemap-generator.html" style="color:var(--indigo-deep);font-weight:700;">مولّد خريطة الموقع</a> على فورا.tools:
+      باستخدام <a href="/tools/sitemap-generator" style="color:var(--indigo-deep);font-weight:700;">مولّد خريطة الموقع</a> على فورا.tools:
     </p>
 <ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
-<li>الصق روابط موقعك المهمة، رابط في كل سطر.</li>
-<li>اختر تكرار التحديث والأولوية الافتراضية المناسبة لمعظم صفحاتك.</li>
-<li>اضغط "إنشاء الخريطة" واحصل على ملف XML صحيح جاهز.</li>
-<li>حمّل الملف وارفعه لجذر موقعك باسم sitemap.xml.</li>
-<li>قدّم الرابط (yoursite.com/sitemap.xml) في قسم "Sitemaps" داخل Google Search Console.</li>
+<li>الصقوا روابط موقعكم المهمة، رابط في كل سطر.</li>
+<li>اختاروا تكرار التحديث والأولوية الافتراضية المناسبة لمعظم صفحاتكم.</li>
+<li>اضغطوا "إنشاء الخريطة" واحصل على ملف XML صحيح جاهز.</li>
+<li>حمّلوا الملف وارفعوه لجذر موقعكم باسم sitemap.xml.</li>
+<li>قدّموا الرابط (yoursite.com/sitemap.xml) في قسم "Sitemaps" داخل Google Search Console.</li>
 </ol>
 <h2 id="faq">أسئلة شائعة</h2>
 <div class="faq-item">
 <h3>هل موقعي لن يُفهرس أبدًا بدون خريطة موقع؟</h3>
-<p style="font-size:13.5px;">لا، جوجل يمكنه اكتشاف صفحاتك عبر الروابط الداخلية حتى بدون خريطة موقع، لكن الخريطة تسرّع وتضمن عملية الاكتشاف.</p>
+<p style="font-size:13.5px;">لا، جوجل يمكنه اكتشاف صفحاتكم عبر الروابط الداخلية حتى بدون خريطة موقع، لكن الخريطة تسرّع وتضمن عملية الاكتشاف.</p>
 </div>
 <div class="faq-item">
 <h3>كم مرة يجب تحديث خريطة الموقع؟</h3>
-<p style="font-size:13.5px;">في كل مرة تضيف أو تحذف صفحة مهمة من موقعك. المواقع النشطة بمحتوى متجدد يُفضّل تحديث خريطتها بانتظام.</p>
+<p style="font-size:13.5px;">في كل مرة تضيفوا أو تحذفوا صفحة مهمة من موقعكم. المواقع النشطة بمحتوى متجدد يُفضّل تحديث خريطتها بانتظام.</p>
 </div>
 <div class="faq-item">
 <h3>ما الفرق بين priority وchangefreq في ملف الخريطة؟</h3>
-<p style="font-size:13.5px;">priority تشير إلى الأهمية النسبية للصفحة داخل موقعك، بينما changefreq تخبر محرك البحث بمدى تكرار تحديث محتوى تلك الصفحة.</p>
+<p style="font-size:13.5px;">priority تشير إلى الأهمية النسبية للصفحة داخل موقعكم، بينما changefreq تخبر محرك البحث بمدى تكرار تحديث محتوى تلك الصفحة.</p>
 </div>
 <div class="faq-item">
 <h3>أين أرفع ملف sitemap.xml على موقعي؟</h3>
-<p style="font-size:13.5px;">عادة يُرفع في المجلد الجذري لموقعك، ليكون متاحًا على رابط مثل yoursite.com/sitemap.xml.</p>
+<p style="font-size:13.5px;">عادة يُرفع في المجلد الجذري لموقعكم، ليكون متاحًا على رابط مثل yoursite.com/sitemap.xml.</p>
 </div>
 <div class="tool-cta">
 <div>
-<div class="txt">جرّب مولّد خريطة الموقع الآن</div>
-<div class="sub">ملف XML صحيح جاهز خلال ثوانٍ من قائمة روابطك</div>
+<div class="txt">جرّبوا مولّد خريطة الموقع الآن</div>
+<div class="sub">ملف XML صحيح جاهز خلال ثوانٍ من قائمة روابطكم</div>
 </div>
-<a class="btn btn-primary" href="../tools/sitemap-generator.html">
+<a class="btn btn-primary" href="/tools/sitemap-generator">
 <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="7" rx="1.5" width="7" x="3" y="3"></rect><rect height="7" rx="1.5" width="7" x="14" y="3"></rect><rect height="7" rx="1.5" width="7" x="3" y="14"></rect><rect height="7" rx="1.5" width="7" x="14" y="14"></rect></svg>
-        افتح الأداة
+        افتحوا الأداة
       </a>
 </div>
 <p>
-      بعد إنشاء الخريطة، تأكد من إعداد
-      <a href="../tools/robots-generator.html" style="color:var(--indigo-deep);font-weight:700;">ملف robots.txt</a>
-      الصحيح، وإضافة <a href="../tools/schema-generator.html" style="color:var(--indigo-deep);font-weight:700;">بيانات منظّمة</a> لأهم صفحاتك.
+      بعد إنشاء الخريطة، تأكدوا من إعداد
+      <a href="/tools/robots-generator" style="color:var(--indigo-deep);font-weight:700;">ملف robots.txt</a>
+      الصحيح، وإضافة <a href="/tools/schema-generator" style="color:var(--indigo-deep);font-weight:700;">بيانات منظّمة</a> لأهم صفحاتكم.
     </p>
-</div>
-</div>
-<div class="wrap">
-<div class="ad-slot ad-slot-leaderboard">
-<span class="ad-label">إعلان · Advertisement</span>
-<div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
 </div>
 </div>
 <div class="wrap"><div class="share-widget"></div></div>
@@ -179,19 +177,19 @@
 <div class="footer-grid">
 <div>
 <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
-<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+<p class="footer-desc">مجموعة أدوات مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث؛ تتم معظم معالجة الملفات محليًا داخل متصفحكم.</p>
 </div>
 <div class="footer-col">
 <h4>الموقع</h4>
-<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
-<a href="index.html">المدونة</a>
-<a href="../about.html">من نحن</a>
-<a href="../contact.html">تواصل معنا</a>
+<a href="/">الصفحة الرئيسية</a><a href="/favorites">☆ المفضلة</a>
+<a href="/blog/">المدونة</a>
+<a href="/about">من نحن</a>
+<a href="/contact">تواصل معنا</a>
 </div>
 <div class="footer-col">
 <h4>قانوني</h4>
-<a href="../privacy.html">سياسة الخصوصية</a>
-<a href="../terms.html">شروط الاستخدام</a>
+<a href="/privacy">سياسة الخصوصية</a>
+<a href="/terms">شروط الاستخدام</a>
 </div>
 </div>
 <div class="footer-bottom">

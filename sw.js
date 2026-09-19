@@ -1,7 +1,7 @@
-const CACHE = "fawran-v5";
+const CACHE = "fawran-v6";
 const CORE = [
-  "/", "/index.html", "/en/index.html",
-  "/assets/style.css", "/assets/main.js",
+  "/", "/en/",
+  "/assets/style.css", "/assets/main.js", "/assets/consent.js",
   "/favicon.svg", "/manifest.webmanifest", "/404.html"
 ];
 
@@ -27,11 +27,10 @@ self.addEventListener("fetch", event => {
   if (url.origin !== location.origin) return;
 
   const isNavigation = event.request.mode === "navigate" ||
-    event.request.destination === "document" ||
-    url.pathname.endsWith(".html") || url.pathname === "/";
+    event.request.destination === "document";
 
   if (isNavigation) {
-    // Fresh HTML first so Netlify deploys are visible immediately; cached HTML is offline fallback.
+    // Network-first keeps deployed HTML fresh; cache is only an offline fallback.
     event.respondWith(
       fetch(event.request)
         .then(response => {
@@ -46,7 +45,6 @@ self.addEventListener("fetch", event => {
     return;
   }
 
-  // Static assets: cache-first for fast repeat visits.
   event.respondWith(
     caches.match(event.request).then(cached => {
       if (cached) return cached;

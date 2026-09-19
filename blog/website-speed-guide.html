@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 
 <html dir="rtl" lang="ar">
-<head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
-
+<head><script data-consent-default="true">window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  analytics_storage:'denied',
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  personalization_storage:'denied',
+  functionality_storage:'granted',
+  security_storage:'granted',
+  wait_for_update:500
+});</script><script data-measurement-id="G-JSG9KGPK0S" defer="" src="../assets/consent.js"></script>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>فحص سرعة الموقع مجانًا: دليل Core Web Vitals للمبتدئين 2026 | فورا.tools</title>
-<meta content="دليل عملي لفهم نتائج فحص سرعة موقعك، شرح مبسّط لمؤشرات Core Web Vitals (LCP وCLS وTBT)، وأهم خطوات تحسين السرعة الفعلية." name="description"/>
+<meta content="دليل عملي لفهم نتائج فحص سرعة موقعكم، شرح مبسّط لمؤشرات Core Web Vitals (LCP وCLS وTBT)، وأهم خطوات تحسين السرعة الفعلية." name="description"/>
 <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../favicon.svg" rel="apple-touch-icon"/>
 <meta content="#4F3FF0" name="theme-color"/>
-<link href="https://fawran.tools/blog/website-speed-guide.html" rel="canonical"/>
+<link href="https://fawran.tools/blog/website-speed-guide" rel="canonical"/>
 <meta content="article" property="og:type"/>
-<meta content="https://fawran.tools/blog/website-speed-guide.html" property="og:url"/>
+<meta content="https://fawran.tools/blog/website-speed-guide" property="og:url"/>
 <meta content="فحص سرعة الموقع مجانًا: دليل Core Web Vitals للمبتدئين 2026 | فورا.tools" property="og:title"/>
-<meta content="دليل عملي لفهم نتائج فحص سرعة موقعك، شرح مبسّط لمؤشرات Core Web Vitals وأهم خطوات تحسين السرعة." property="og:description"/>
+<meta content="دليل عملي لفهم نتائج فحص سرعة موقعكم، شرح مبسّط لمؤشرات Core Web Vitals وأهم خطوات تحسين السرعة." property="og:description"/>
 <meta content="فورا.tools" property="og:site_name"/>
 <meta content="ar_AR" property="og:locale"/>
 <meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
@@ -25,7 +33,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="فحص سرعة الموقع مجانًا: دليل Core Web Vitals للمبتدئين 2026 | فورا.tools" name="twitter:title"/>
-<meta content="دليل عملي لفهم نتائج فحص سرعة موقعك وشرح مبسّط لمؤشرات Core Web Vitals." name="twitter:description"/>
+<meta content="دليل عملي لفهم نتائج فحص سرعة موقعكم وشرح مبسّط لمؤشرات Core Web Vitals." name="twitter:description"/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="//fonts.googleapis.com" rel="dns-prefetch"/>
@@ -41,25 +49,21 @@
   .toc li{margin-bottom:6px;}
   .toc a{color:var(--indigo-deep);font-weight:700;}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"فحص سرعة الموقع مجانًا: دليل Core Web Vitals للمبتدئين","description":"دليل عملي لفهم نتائج فحص سرعة موقعك، شرح مبسّط لمؤشرات Core Web Vitals، وأهم خطوات تحسين السرعة الفعلية.","url":"https://fawran.tools/blog/website-speed-guide.html","datePublished":"2026-08-23","dateModified":"2026-08-23","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/website-speed-guide.html"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ما هو LCP وكيف أحسّنه؟","acceptedAnswer":{"@type":"Answer","text":"LCP (Largest Contentful Paint) يقيس الوقت حتى يظهر أكبر عنصر مرئي في الصفحة (عادة صورة أو عنوان رئيسي). لتحسينه: ضغط الصور، استخدام صيغة WebP، وتقليل حجم ملفات CSS وJS المحمّلة قبل ظهور المحتوى."}},{"@type":"Question","name":"لماذا نتيجة الجوال أقل من نتيجة الكمبيوتر عادة؟","acceptedAnswer":{"@type":"Answer","text":"يحاكي فحص الجوال شبكة أبطأ ومعالجًا أضعف عمدًا، لأن هذا يمثل الواقع الفعلي لجزء كبير من الزوار. هذا يجعل نتيجة الجوال دائمًا أكثر تشددًا وأقل من نتيجة الكمبيوتر لنفس الموقع."}},{"@type":"Question","name":"هل نقاط الأداء المنخفضة تؤثر على ترتيب موقعي في جوجل؟","acceptedAnswer":{"@type":"Answer","text":"نعم، Core Web Vitals عامل ترتيب رسمي معلن من جوجل، خصوصًا للمواقع المتقاربة في جودة المحتوى — السرعة قد تكون عامل الحسم بينها."}},{"@type":"Question","name":"هل يمكنني تحسين سرعة موقعي بدون معرفة برمجية؟","acceptedAnswer":{"@type":"Answer","text":"جزئيًا نعم — ضغط الصور قبل الرفع وتحويلها لصيغة WebP خطوة يقدر عليها أي شخص بدون خبرة تقنية، وتحسّن السرعة بشكل ملحوظ في أغلب الحالات."}}]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "فحص سرعة الموقع مجانًا: دليل Core Web Vitals للمبتدئين", "description": "دليل عملي لفهم نتائج فحص سرعة موقعكم، شرح مبسّط لمؤشرات Core Web Vitals، وأهم خطوات تحسين السرعة الفعلية.", "url": "https://fawran.tools/blog/website-speed-guide", "datePublished": "2026-08-23", "dateModified": "2026-09-20", "author": {"@type": "Organization", "name": "فورا.tools"}, "publisher": {"@type": "Organization", "name": "فورا.tools", "logo": {"@type": "ImageObject", "url": "https://fawran.tools/favicon.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fawran.tools/blog/website-speed-guide"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ما هو LCP وكيف أحسّنه؟", "acceptedAnswer": {"@type": "Answer", "text": "LCP (Largest Contentful Paint) يقيس الوقت حتى يظهر أكبر عنصر مرئي في الصفحة (عادة صورة أو عنوان رئيسي). لتحسينه: ضغط الصور، استخدام صيغة WebP، وتقليل حجم ملفات CSS وJS المحمّلة قبل ظهور المحتوى."}}, {"@type": "Question", "name": "لماذا نتيجة الجوال أقل من نتيجة الكمبيوتر عادة؟", "acceptedAnswer": {"@type": "Answer", "text": "يحاكي فحص الجوال شبكة أبطأ ومعالجًا أضعف عمدًا، لأن هذا يمثل الواقع الفعلي لجزء كبير من الزوار. هذا يجعل نتيجة الجوال دائمًا أكثر تشددًا وأقل من نتيجة الكمبيوتر لنفس الموقع."}}, {"@type": "Question", "name": "هل نقاط الأداء المنخفضة تؤثر على ترتيب موقعي في جوجل؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، Core Web Vitals عامل ترتيب رسمي معلن من جوجل، خصوصًا للمواقع المتقاربة في جودة المحتوى — السرعة قد تكون عامل الحسم بينها."}}, {"@type": "Question", "name": "هل يمكنني تحسين سرعة موقعي بدون معرفة برمجية؟", "acceptedAnswer": {"@type": "Answer", "text": "جزئيًا نعم — ضغط الصور قبل الرفع وتحويلها لصيغة WebP خطوة يقدر عليها أي شخص بدون خبرة تقنية، وتحسّن السرعة بشكل ملحوظ في أغلب الحالات."}}]}</script>
 <link href="../manifest.webmanifest" rel="manifest"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
-<link href="https://fawran.tools/blog/website-speed-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/website-speed-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/website-speed-guide.html" hreflang="x-default" rel="alternate"/></head>
+<link href="https://fawran.tools/blog/website-speed-guide" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/website-speed-guide" hreflang="en" rel="alternate"/><link href="https://fawran.tools/blog/website-speed-guide" hreflang="x-default" rel="alternate"/></head>
 <body>
 <header class="topbar">
 <div class="topbar-inner">
-<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<a class="brand" href="/"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
 <div class="nav-wrap">
 <nav class="nav">
-<a href="../index.html">الأدوات</a>
-<a class="active" href="index.html">المدونة</a>
-<a href="../about.html">من نحن</a>
-<a href="../contact.html">تواصل معنا</a>
+<a href="/">الأدوات</a>
+<a class="active" href="/blog/">المدونة</a>
+<a href="/about">من نحن</a>
+<a href="/contact">تواصل معنا</a>
 </nav>
 <button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
@@ -88,21 +92,21 @@
 <div class="toc">
 <h2>محتوى المقال</h2>
 <ul>
-<li><a href="#why">لماذا سرعة موقعك مهمة فعليًا؟</a></li>
+<li><a href="#why">لماذا سرعة موقعكم مهمة فعليًا؟</a></li>
 <li><a href="#vitals">شرح مبسّط لمؤشرات Core Web Vitals</a></li>
-<li><a href="#howto">كيف تستخدم الأداة خطوة بخطوة؟</a></li>
+<li><a href="#howto">كيف تستخدمون الأداة خطوة بخطوة؟</a></li>
 <li><a href="#improve">أسرع خطوات لتحسين نقاط الأداء</a></li>
 <li><a href="#mobile">لماذا نتيجة الجوال دائمًا أقل؟</a></li>
 <li><a href="#faq">أسئلة شائعة</a></li>
 </ul>
 </div>
 <p>
-      هل تعرف كم من الوقت تستغرق صفحتك الرئيسية عشان تظهر بالكامل لزائر جديد؟ لو الإجابة "مش متأكد"،
-      فرصة كبيرة إن موقعك بيفقد زوار من غير ما تلاحظ — الدراسات باستمرار بتأكد إن كل ثانية تأخير
+      هل تعرفون كم من الوقت تستغرق صفحتكم الرئيسية عشان تظهر بالكامل لزائر جديد؟ لو الإجابة "مش متأكدين"،
+      فرصة كبيرة إن موقعكم بيفقد زوار من غير ما تلاحظوا — الدراسات باستمرار بتأكد إن كل ثانية تأخير
       إضافية في تحميل الصفحة بتزوّد نسبة مغادرة الزوار قبل حتى ما يشوفوا المحتوى. في هذا الدليل هنشرح
-      إزاي تفحص سرعة موقعك بأدوات جوجل الرسمية، وتفهم النتيجة، وتبدأ تحسّنها فعليًا.
+      إزاي تفحصوا سرعة موقعكم بأدوات جوجل الرسمية، وتفهم النتيجة، وتبدأ تحسّنها فعليًا.
     </p>
-<h2 id="why">لماذا سرعة موقعك مهمة فعليًا؟</h2>
+<h2 id="why">لماذا سرعة موقعكم مهمة فعليًا؟</h2>
 <p>
       السرعة مش بس تجربة مستخدم أفضل — هي كمان عامل ترتيب رسمي معلن من جوجل نفسها ضمن خوارزمية
       البحث. يعني موقعين بنفس جودة المحتوى تقريبًا، الأسرع بينهم غالبًا هيترتب أعلى في نتائج البحث.
@@ -118,31 +122,31 @@
 <li><strong>CLS (ثبات التخطيط):</strong> يقيس مدى "قفز" عناصر الصفحة أثناء التحميل (زي ما يحصل لما صورة تتحمل بعد النص وتزحزحه). الهدف: أقل من 0.1.</li>
 <li><strong>TBT (وقت الحظر الكلي):</strong> الوقت اللي المتصفح بيكون فيه مشغول بمعالجة كود JavaScript ومش قادر يستجيب لتفاعل المستخدم. الهدف: أقل من 200 مللي ثانية.</li>
 </ul>
-<h2 id="howto">كيف تستخدم الأداة خطوة بخطوة؟</h2>
+<h2 id="howto">كيف تستخدمون الأداة خطوة بخطوة؟</h2>
 <p>
-      باستخدام <a href="../tools/website-speed-checker.html" style="color:var(--indigo-deep);font-weight:700;">فاحص سرعة الموقع</a> على فورا.tools:
+      باستخدام <a href="/tools/website-speed-checker" style="color:var(--indigo-deep);font-weight:700;">فاحص سرعة الموقع</a> على فورا.tools:
     </p>
 <ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
-<li>الصق رابط موقعك في الخانة المخصصة.</li>
-<li>اختر استراتيجية الفحص: "الجوال" (الافتراضي، والأهم غالبًا) أو "الكمبيوتر".</li>
-<li>اضغط "فحص السرعة" وانتظر 15-30 ثانية — الأداة بتستخدم بيانات جوجل الرسمية الحقيقية.</li>
-<li>راجع نقاط الأداء الإجمالية (من 100) ومؤشرات Core Web Vitals التفصيلية.</li>
-<li>راجع قائمة "أهم فرص التحسين" لمعرفة أكثر العناصر التي تبطئ موقعك تحديدًا.</li>
+<li>الصقوا رابط موقعكم في الخانة المخصصة.</li>
+<li>اختاروا استراتيجية الفحص: "الجوال" (الافتراضي، والأهم غالبًا) أو "الكمبيوتر".</li>
+<li>اضغطوا "فحص السرعة" وانتظروا 15-30 ثانية — الأداة بتستخدم بيانات جوجل الرسمية الحقيقية.</li>
+<li>راجعوا نقاط الأداء الإجمالية (من 100) ومؤشرات Core Web Vitals التفصيلية.</li>
+<li>راجعوا قائمة "أهم فرص التحسين" لمعرفة أكثر العناصر التي تبطئ موقعكم تحديدًا.</li>
 </ol>
 <h2 id="improve">أسرع خطوات لتحسين نقاط الأداء</h2>
 <p>
       أغلب مشاكل السرعة عند المواقع الصغيرة والمتوسطة بترجع لسبب واحد شائع: <strong>الصور الكبيرة
-      غير المضغوطة</strong>. لو عندك صور بحجم عدة ميجابايت مرفوعة كما هي من الكاميرا، ده أسرع مكان
-      تبدأ منه. جرّب <a href="../tools/image-compressor.html" style="color:var(--indigo-deep);font-weight:700;">ضغط صورك</a>
-      وتحويلها لصيغة <a href="../tools/webp-converter.html" style="color:var(--indigo-deep);font-weight:700;">WebP</a>
+      غير المضغوطة</strong>. لو عندكم صور بحجم عدة ميجابايت مرفوعة كما هي من الكاميرا، ده أسرع مكان
+      تبدأ منه. جرّبوا <a href="/tools/image-compressor" style="color:var(--indigo-deep);font-weight:700;">ضغط صوركم</a>
+      وتحويلها لصيغة <a href="/tools/webp-converter" style="color:var(--indigo-deep);font-weight:700;">WebP</a>
       — الخطوتان دول لوحدهم ممكن يحسّنوا نقاط LCP بشكل ملحوظ في أغلب المواقع، من غير أي تعديل برمجي معقد.
     </p>
 <h2 id="mobile">لماذا نتيجة الجوال دائمًا أقل؟</h2>
 <p>
-      لاحظت إن نقاط الجوال دائمًا أقل من الكمبيوتر لنفس الموقع؟ ده طبيعي ومقصود — جوجل بيحاكي شبكة
+      لاحظتوا إن نقاط الجوال دائمًا أقل من الكمبيوتر لنفس الموقع؟ ده طبيعي ومقصود — جوجل بيحاكي شبكة
       إنترنت أبطأ ومعالج أضعف عمدًا عند فحص الجوال، لأن ده بيمثل الواقع الفعلي لجزء كبير من الزوار
       اللي بيتصفحوا بنت الموبايل أو بأجهزة أقل قوة. لهذا السبب، نقاط الجوال هي المقياس الأهم فعليًا
-      اللي لازم تركّز على تحسينه أولًا.
+      اللي لازم تركّزوا على تحسينه أولًا.
     </p>
 <h2 id="faq">أسئلة شائعة</h2>
 <div class="faq-item">
@@ -163,26 +167,20 @@
 </div>
 <div class="tool-cta">
 <div>
-<div class="txt">جرّب فاحص سرعة الموقع الآن</div>
-<div class="sub">بيانات جوجل الرسمية الحقيقية، مع أهم فرص التحسين لموقعك</div>
+<div class="txt">جرّبوا فاحص سرعة الموقع الآن</div>
+<div class="sub">بيانات جوجل الرسمية الحقيقية، مع أهم فرص التحسين لموقعكم</div>
 </div>
-<a class="btn btn-primary" href="../tools/website-speed-checker.html">
+<a class="btn btn-primary" href="/tools/website-speed-checker">
 <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
-        افتح الأداة
+        افتحوا الأداة
       </a>
 </div>
 <p>
-      بعد ما تحسّن السرعة، تأكد إن موقعك مقدَّم لجوجل بشكل صحيح عبر
-      <a href="../tools/sitemap-generator.html" style="color:var(--indigo-deep);font-weight:700;">خريطة موقع صحيحة</a>،
-      وأضف <a href="../tools/schema-generator.html" style="color:var(--indigo-deep);font-weight:700;">بيانات منظّمة</a>
+      بعد ما تحسّن السرعة، تأكدوا إن موقعكم مقدَّم لجوجل بشكل صحيح عبر
+      <a href="/tools/sitemap-generator" style="color:var(--indigo-deep);font-weight:700;">خريطة موقع صحيحة</a>،
+      وأضيفوا <a href="/tools/schema-generator" style="color:var(--indigo-deep);font-weight:700;">بيانات منظّمة</a>
       لفتح باب النتائج الغنية.
     </p>
-</div>
-</div>
-<div class="wrap">
-<div class="ad-slot ad-slot-leaderboard">
-<span class="ad-label">إعلان · Advertisement</span>
-<div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
 </div>
 </div>
 <div class="wrap"><div class="share-widget"></div></div>
@@ -190,19 +188,19 @@
 <div class="footer-grid">
 <div>
 <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
-<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+<p class="footer-desc">مجموعة أدوات مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث؛ تتم معظم معالجة الملفات محليًا داخل متصفحكم.</p>
 </div>
 <div class="footer-col">
 <h4>الموقع</h4>
-<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
-<a href="index.html">المدونة</a>
-<a href="../about.html">من نحن</a>
-<a href="../contact.html">تواصل معنا</a>
+<a href="/">الصفحة الرئيسية</a><a href="/favorites">☆ المفضلة</a>
+<a href="/blog/">المدونة</a>
+<a href="/about">من نحن</a>
+<a href="/contact">تواصل معنا</a>
 </div>
 <div class="footer-col">
 <h4>قانوني</h4>
-<a href="../privacy.html">سياسة الخصوصية</a>
-<a href="../terms.html">شروط الاستخدام</a>
+<a href="/privacy">سياسة الخصوصية</a>
+<a href="/terms">شروط الاستخدام</a>
 </div>
 </div>
 <div class="footer-bottom">

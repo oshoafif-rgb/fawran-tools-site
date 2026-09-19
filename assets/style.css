@@ -83,44 +83,6 @@
 /* Defer painting of long below-the-fold tool groups without changing their layout. */
 .category{content-visibility:auto;contain-intrinsic-size:1px 520px;}
 
-/* ---------- Ad slots ---------- */
-.ad-slot{
-  margin:28px 0;padding:14px;border:1px dashed var(--line);border-radius:12px;
-  background:var(--surface-sunk);text-align:center;
-}
-.ad-slot .ad-label{
-  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;
-  color:var(--muted);text-transform:uppercase;margin-bottom:8px;display:block;
-}
-.ad-slot .ad-slot-inner{
-  min-height:90px;display:flex;align-items:center;justify-content:center;
-  color:var(--muted);font-size:12px;
-}
-.ad-slot.ad-slot-leaderboard{max-width:728px;margin-inline:auto;}
-.ad-slot.ad-slot-rectangle{max-width:336px;margin-inline:auto;}
-
-/* ---------- Adblock notice ---------- */
-.adblock-banner{
-  position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(120%);
-  z-index:200;max-width:520px;width:calc(100% - 32px);
-  background:var(--ink);color:#fff;border-radius:14px;padding:16px 18px;
-  box-shadow:0 20px 50px -12px rgba(0,0,0,.5);
-  display:flex;align-items:center;gap:14px;
-  transition:transform .35s ease;
-}
-.adblock-banner.show{transform:translateX(-50%) translateY(0);}
-.adblock-banner .icn{
-  width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.12);
-  display:flex;align-items:center;justify-content:center;flex:0 0 auto;
-}
-.adblock-banner .icn svg{width:18px;height:18px;color:var(--gold);}
-.adblock-banner .txt{flex:1;font-size:13px;line-height:1.6;}
-.adblock-banner .txt b{display:block;font-size:13.5px;margin-bottom:2px;}
-.adblock-banner .close-btn{
-  background:none;border:none;color:rgba(255,255,255,.6);cursor:pointer;padding:4px;flex:0 0 auto;
-}
-.adblock-banner .close-btn svg{width:16px;height:16px;}
-
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -568,3 +530,12 @@ input[type=range]::-webkit-slider-thumb{
   background:
     repeating-conic-gradient(#ffffff0d 0% 25%, transparent 0% 50%) 50% / 16px 16px;
 }
+
+/* Privacy consent controls */
+.consent-banner{position:fixed;z-index:10000;inset:auto 18px 18px;max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:var(--surface);color:var(--ink);box-shadow:0 18px 60px rgba(15,14,22,.28)}
+.consent-copy{max-width:720px}.consent-copy>strong{display:block;font-size:16px;margin-bottom:5px}.consent-copy p{margin:0;color:var(--ink-soft);font-size:13px;line-height:1.65}.consent-copy a,.consent-policy-link{display:inline-block;margin-top:5px;color:var(--indigo-deep);font-weight:700;font-size:12.5px}.consent-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.consent-actions .btn{white-space:nowrap;padding:10px 14px;font-size:12.5px}
+.consent-settings-btn{position:fixed;z-index:9000;inset:auto auto 10px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink-soft);padding:7px 11px;font:700 11px 'Tajawal',sans-serif;box-shadow:0 5px 20px rgba(15,14,22,.15);cursor:pointer}.consent-settings-btn:hover{color:var(--indigo-deep);border-color:var(--indigo)}
+[dir="rtl"] .consent-settings-btn{inset:auto 10px 10px auto}
+.consent-modal-backdrop{position:fixed;z-index:11000;inset:0;display:grid;place-items:center;padding:18px;background:rgba(15,14,22,.65)}
+.consent-modal{width:min(560px,100%);max-height:90vh;overflow:auto;padding:22px;border-radius:16px;background:var(--surface);color:var(--ink);box-shadow:0 24px 80px rgba(0,0,0,.35)}.consent-modal h2{margin:0 0 16px;font-size:20px}.consent-option{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0;border-bottom:1px solid var(--line);cursor:pointer}.consent-option span{display:flex;flex-direction:column;gap:3px}.consent-option strong{font-size:14px}.consent-option small{color:var(--muted);font-size:12px;line-height:1.45}.consent-option input{width:19px;height:19px;accent-color:var(--indigo);flex:0 0 auto}.consent-modal .consent-actions{margin-top:18px}
+@media(max-width:760px){.consent-banner{align-items:stretch;flex-direction:column;inset:auto 10px 10px;padding:15px}.consent-actions{width:100%}.consent-banner .consent-actions .btn{flex:1}.consent-settings-btn{bottom:6px}}

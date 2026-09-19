@@ -1,86 +1,73 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-add-google-analytics.py
-=========================
-يضيف كود Google Analytics (GA4) لكل صفحات الموقع دفعة واحدة (عربي + إنجليزي).
+"""Update the GA4 measurement ID used by the consent-controlled loader.
 
-الاستخدام:
+This script deliberately does not inject a direct Google Analytics tag. Analytics
+must remain behind ``assets/consent.js`` so that the default-denied Consent Mode
+command runs first and no Analytics request is made before opt-in.
+
+Run from the repository root:
     python3 add-google-analytics.py
-
-آمن يتشغّل أكتر من مرة (بيتأكد الأول إن الكود مش مضاف قبل كده في كل ملف
-قبل ما يضيفه، فمش هيكرر الإدراج لو شغّلته غلط مرتين).
-
-لتغيير معرّف القياس مستقبلًا، عدّلي قيمة GA_MEASUREMENT_ID تحت وشغّلي
-السكريبت تاني — هيستبدل الكود القديم بالجديد تلقائيًا في كل الصفحات.
 """
 
-import os
+from pathlib import Path
 import re
 
 GA_MEASUREMENT_ID = "G-JSG9KGPK0S"
+CONSENT_TAG_PATTERN = re.compile(
+    r'<script\b[^>]*\bsrc="[^"]*assets/consent\.js"[^>]*></script>',
+    re.IGNORECASE,
+)
+MEASUREMENT_PATTERN = re.compile(
+    r'(\bdata-measurement-id=")[^"]*(")', re.IGNORECASE
+)
 
-GA_SNIPPET = f'''<script async src="https://www.googletagmanager.com/gtag/js?id={GA_MEASUREMENT_ID}"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_MEASUREMENT_ID}');</script>
-'''
 
-SKIP_DIRS = {'.git', 'node_modules', '.tmp', 'netlify'}
+def process_file(path: Path) -> str:
+    content = path.read_text(encoding="utf-8", errors="replace")
+    match = CONSENT_TAG_PATTERN.search(content)
+    if not match:
+        return "missing-consent-loader"
 
-
-def process_file(path):
-    content = open(path, encoding='utf-8', errors='replace').read()
-
-    if 'googletagmanager.com/gtag/js' in content:
-        # موجود بالفعل — تحقق إذا كان بنفس المعرّف الحالي أو محتاج تحديث
-        if GA_MEASUREMENT_ID in content:
-            return 'skipped'
-        # معرّف قديم مختلف — استبدله بالجديد
-        content = re.sub(
-            r"<script async src=\"https://www\.googletagmanager\.com/gtag/js\?id=[^\"]+\"></script>\n"
-            r"<script>window\.dataLayer=window\.dataLayer\|\|\[\];function gtag\(\)\{dataLayer\.push\(arguments\);\}"
-            r"gtag\('js',new Date\(\)\);gtag\('config','[^']+'\);</script>\n",
-            GA_SNIPPET,
-            content
+    tag = match.group(0)
+    if MEASUREMENT_PATTERN.search(tag):
+        new_tag = MEASUREMENT_PATTERN.sub(
+            rf"\g<1>{GA_MEASUREMENT_ID}\g<2>", tag, count=1
         )
-        open(path, 'w', encoding='utf-8').write(content)
-        return 'updated'
+    else:
+        new_tag = tag.replace(">", f' data-measurement-id="{GA_MEASUREMENT_ID}">', 1)
 
-    if '<head>' not in content:
-        return 'no-head-tag'
+    if new_tag == tag:
+        return "unchanged"
+    updated = content[:match.start()] + new_tag + content[match.end():]
+    path.write_text(updated, encoding="utf-8")
+    return "updated"
 
-    content = content.replace('<head>', '<head>\n' + GA_SNIPPET, 1)
-    open(path, 'w', encoding='utf-8').write(content)
-    return 'added'
 
+def main() -> None:
+    if not Path("index.html").is_file():
+        raise SystemExit("Run this script from the repository root.")
 
-def main():
-    if not os.path.isfile('index.html'):
-        print("خطأ: شغّلي السكريبت ده من المجلد الرئيسي للموقع.")
-        return
+    pages = sorted(Path(".").rglob("*.html"))
+    stats: dict[str, int] = {}
+    problems: list[tuple[Path, str]] = []
 
-    stats = {'added': 0, 'skipped': 0, 'updated': 0, 'no-head-tag': 0}
-    problems = []
+    for page in pages:
+        if any(part in {".git", "node_modules", ".netlify"} for part in page.parts):
+            continue
+        result = process_file(page)
+        stats[result] = stats.get(result, 0) + 1
+        if result.startswith("missing-"):
+            problems.append((page, result))
 
-    for root, dirs, files in os.walk('.'):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith('.')]
-        for fname in files:
-            if not fname.endswith('.html'):
-                continue
-            path = os.path.join(root, fname)
-            result = process_file(path)
-            stats[result] = stats.get(result, 0) + 1
-            if result == 'no-head-tag':
-                problems.append(path)
-
-    print(f"أُضيف حديثًا: {stats.get('added',0)}")
-    print(f"محدَّث (معرّف قديم استُبدل): {stats.get('updated',0)}")
-    print(f"متجاهَل (موجود بالفعل بنفس المعرّف): {stats.get('skipped',0)}")
-
+    print(f"Updated: {stats.get('updated', 0)}")
+    print(f"Already current: {stats.get('unchanged', 0)}")
     if problems:
-        print(f"\nملفات بدون وسم <head> واضح (راجعيها يدويًا):")
-        for p in problems:
-            print("  -", p)
+        print("Pages requiring manual consent-loader review:")
+        for page, reason in problems:
+            print(f"  - {page}: {reason}")
+        raise SystemExit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

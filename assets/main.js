@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const base = path.includes('/tools/') ? '' : 'tools/';
     dd.innerHTML = matches.map((t,i)=>`
-      <a class="search-result" href="${base}${t.slug}.html" role="option" data-idx="${i}">
+      <a class="search-result" href="${base}${t.slug}" role="option" data-idx="${i}">
         <span class="sr-cat">${escHtml(catLabel(t.cat))}</span>
         <span class="sr-body"><span class="sr-title">${escHtml(t.title)}</span><span class="sr-desc">${escHtml(t.desc)}</span></span>
       </a>`).join('');
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Favorites + recent tools. Works without login and stays local.
   const store=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
   const load=(k,d=[])=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(d))}catch(e){return d}};
-  const toolKey = path.match(/\/tools\/([^/]+)\.html$/)?.[1];
+  const toolKey = path.match(/\/tools\/([^/]+?)(?:\.html)?\/?$/)?.[1];
   if(toolKey){
     let recent=load('fawran-recent'); recent=[toolKey,...recent.filter(x=>x!==toolKey)].slice(0,12); store('fawran-recent',recent);
     const head=$('h1'); if(head){
@@ -147,13 +147,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // PWA
   if('serviceWorker' in navigator && location.protocol!=='file:') navigator.serviceWorker.register('/sw.js').catch(()=>{});
 
-  // Adblock notice is kept non-blocking and uses textContent to avoid injection.
-  const bait=document.createElement('div'); bait.className='adsbox ad-banner ads ad-placement adsbygoogle'; bait.style.cssText='position:absolute;top:-9999px;left:-9999px;width:1px;height:1px;'; document.body.appendChild(bait);
-  const runAdblockCheck=()=>{const blocked=bait.offsetParent===null||bait.offsetHeight===0||getComputedStyle(bait).display==='none';bait.remove(); if(blocked&&!sessionStorage.getItem('fawran-adblock-dismissed')){
-    const banner=document.createElement('div');banner.className='adblock-banner';
-    const txt=isEn?'We noticed an ad blocker. Fawran is free and ads help cover operating costs.':'لاحظنا أنك تستخدم مانع إعلانات. فورا مجاني والإعلانات تساعدنا على تغطية تكاليف التشغيل.';
-    const span=document.createElement('span');span.className='txt';span.textContent=txt;const close=document.createElement('button');close.className='close-btn';close.type='button';close.setAttribute('aria-label',isEn?'Close':'إغلاق');close.textContent='×';banner.append(span,close); document.body.appendChild(banner); requestAnimationFrame(()=>banner.classList.add('show')); banner.querySelector('.close-btn').onclick=()=>{banner.classList.remove('show');sessionStorage.setItem('fawran-adblock-dismissed','1');setTimeout(()=>banner.remove(),400)};
-  }};
-  if('requestIdleCallback' in window) requestIdleCallback(runAdblockCheck,{timeout:1800});
-  else setTimeout(runAdblockCheck,1200);
 });
