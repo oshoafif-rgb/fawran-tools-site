@@ -14,6 +14,7 @@ gtag('consent','default',{
 });</script><script data-measurement-id="G-JSG9KGPK0S" defer="" src="assets/consent.js"></script>
 
 
+
 <meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 
@@ -63,7 +64,12 @@ gtag('consent','default',{
 </header>
 <main><div class="wrap tools-hub" style="padding-top:34px;">
 <h1>⭐ المفضلة</h1>
-<p class="hero-lede">أدواتك المفضلة والمستخدمة مؤخرًا، محفوظة محليًا على جهازك فقط.</p>
+<p class="hero-lede">أدواتك المفضلة والمستخدمة مؤخرًا، محفوظة محليًا على جهازك فقط. الآن يمكنك إضافة أي أداة للمفضلة من زر النجمة في كل بطاقة أداة وفي صفحة الأداة نفسها.</p>
+<div class="fav-actions">
+<button class="btn btn-ghost" id="clearFavBtn" type="button">مسح المفضلة</button>
+<button class="btn btn-ghost" id="clearRecentBtn" type="button">مسح الأخيرة</button>
+<a class="btn btn-primary" href="/">تصفح كل الأدوات</a>
+</div>
 <div class="fav-section" id="favSection">
 <h2>⭐ الأدوات المفضلة</h2>
 <div class="tool-grid" id="favGrid"></div>
@@ -74,7 +80,7 @@ gtag('consent','default',{
 </div>
 <div class="empty-state" id="emptyState" style="display:none;">
 <div class="big-star">☆</div>
-<p>لسه معندكش أي أدوات مفضلة. افتح أي أداة واضغط على "☆ إضافة للمفضلة" فوق عنوانها عشان تلاقيها هنا بسهولة في أي وقت.</p>
+<p>لسه معندكش أي أدوات مفضلة. افتح أي أداة واضغط على "☆ إضافة للمفضلة" فوق عنوانها، أو اضغط النجمة في أي بطاقة أداة في الرئيسية، عشان تلاقيها هنا بسهولة في أي وقت.</p>
 <a class="btn btn-primary" href="/">تصفّحي كل الأدوات</a>
 </div>
 </div></main>
@@ -107,30 +113,51 @@ gtag('consent','default',{
 <script>
 (function(){
   function load(k){try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(e){return []}}
-  const fav = load('fawran-favorites');
-  const recent = load('fawran-recent').filter(s=>!fav.includes(s));
-  const index = window.TOOLS_INDEX_AR || [];
-  const bySlug = Object.fromEntries(index.map(t=>[t.slug,t]));
-
-  function card(slug){
-    const t = bySlug[slug];
-    if(!t) return '';
-    return `<a class="tool-card live" href="tools/${slug}">
-      <span class="tool-name">${t.title}</span>
-      <span class="tool-desc">${t.desc||''}</span>
-    </a>`;
-  }
-
+  function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
   const favGrid=document.getElementById('favGrid'), recentGrid=document.getElementById('recentGrid');
   const favSection=document.getElementById('favSection'), recentSection=document.getElementById('recentSection');
   const emptyState=document.getElementById('emptyState');
 
-  const favCards = fav.map(card).filter(Boolean).join('');
-  const recentCards = recent.map(card).filter(Boolean).join('');
+  function render(){
+    const fav = load('fawran-favorites');
+    const recent = load('fawran-recent').filter(s=>!fav.includes(s));
+    const index = window.TOOLS_INDEX_AR || [];
+    const bySlug = Object.fromEntries(index.map(t=>[t.slug,t]));
 
-  if(favCards){ favGrid.innerHTML = favCards; } else { favSection.style.display='none'; }
-  if(recentCards){ recentGrid.innerHTML = recentCards; } else { recentSection.style.display='none'; }
-  if(!favCards && !recentCards){ emptyState.style.display='block'; }
+    function card(slug){
+      const t = bySlug[slug];
+      if(!t) return '';
+      return `<a class="tool-card live" href="tools/${slug}" style="position:relative">
+        <span class="tool-name">${t.title}</span>
+        <span class="tool-desc">${t.desc||''}</span>
+      </a>`;
+    }
+
+    const favCards = fav.map(card).filter(Boolean).join('');
+    const recentCards = recent.map(card).filter(Boolean).join('');
+
+    if(favCards){ favGrid.innerHTML = favCards; favSection.style.display=''; } else { favSection.style.display='none'; }
+    if(recentCards){ recentGrid.innerHTML = recentCards; recentSection.style.display=''; } else { recentSection.style.display='none'; }
+    if(!favCards && !recentCards){ emptyState.style.display='block'; } else { emptyState.style.display='none'; }
+
+    // Re-apply star buttons on these dynamically added cards (main.js already handles, but trigger)
+    if(window.dispatchEvent) window.dispatchEvent(new Event('favorites:updated'));
+  }
+
+  document.getElementById('clearFavBtn')?.addEventListener('click', ()=>{ if(confirm('مسح كل المفضلة؟')){ save('fawran-favorites', []); render(); } });
+  document.getElementById('clearRecentBtn')?.addEventListener('click', ()=>{ if(confirm('مسح الأخيرة؟')){ save('fawran-recent', []); render(); } });
+
+  // Initial + after index loads
+  render();
+  window.addEventListener('load', render);
+  // Listen to favorite toggles from main.js
+  const origToggle = window.localStorage ? window.localStorage.setItem : null;
+  window.addEventListener('storage', render);
+  document.addEventListener('click', e=>{
+    if(e.target.closest('.card-fav-btn') || e.target.closest('.favorite-tool-btn')){
+      setTimeout(render, 50);
+    }
+  });
 })();
 </script>
 </body></html>

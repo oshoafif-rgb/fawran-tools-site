@@ -19,6 +19,11 @@
       print: 'Print guide',
       status: 'Tool status messages',
       exit: 'Exit focus mode',
+      fav: 'Add to favorites',
+      favOn: 'Remove from favorites',
+      favorite: 'Favorite',
+      addedFav: 'Added to favorites',
+      removedFav: 'Removed from favorites',
     } : {
       toolbar: 'اختصارات الأداة',
       use: 'استخدام الأداة',
@@ -30,6 +35,11 @@
       print: 'طباعة الدليل',
       status: 'رسائل حالة الأداة',
       exit: 'إنهاء وضع التركيز',
+      fav: 'إضافة للمفضلة',
+      favOn: 'إزالة من المفضلة',
+      favorite: 'المفضلة',
+      addedFav: 'تمت الإضافة للمفضلة',
+      removedFav: 'تمت الإزالة من المفضلة',
     };
 
     const workspace = document.querySelector('.tool-card-shell, .converter-shell, .currency-app, .editor-shell, .tool-workspace, .seo-tool') || main;
@@ -62,6 +72,52 @@
       makeButton(labels.focus, 'focus'),
       makeButton(labels.print, 'print-guide'),
     );
+
+    // Favorite in toolbar (works even if main.js loads later)
+    try{
+      const path = location.pathname;
+      const m = path.match(/\/tools\/([a-z0-9\-]+)(?:\.html)?\/?$/);
+      const slug = m ? m[1] : null;
+      if(slug){
+        const load = (k,d=[])=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(d))}catch(e){return d}};
+        const store = (k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+        const isFav = ()=> load('fawran-favorites').includes(slug);
+        const favBtn = document.createElement('button');
+        favBtn.type='button';
+        favBtn.className='tool-pro-action'+(isFav()?' is-fav':'');
+        favBtn.dataset.action='fav';
+        favBtn.dataset.favSlug=slug;
+        favBtn.setAttribute('aria-pressed', String(isFav()));
+        favBtn.innerHTML=`<span class="fav-icon">${isFav()?'★':'☆'}</span> <span class="fav-label">${labels.favorite}</span>`;
+        favBtn.addEventListener('click', ()=>{
+          let fav = load('fawran-favorites');
+          const idx = fav.indexOf(slug);
+          const willBeActive = idx<0;
+          if(idx>=0) fav.splice(idx,1); else fav.push(slug);
+          store('fawran-favorites', fav);
+          favBtn.classList.toggle('is-fav', willBeActive);
+          favBtn.setAttribute('aria-pressed', String(willBeActive));
+          const icon = favBtn.querySelector('.fav-icon');
+          if(icon) icon.textContent = willBeActive ? '★' : '☆';
+          // Sync other buttons
+          document.querySelectorAll(`[data-fav-slug="${slug}"]`).forEach(btn=>{
+            if(btn===favBtn) return;
+            btn.classList.toggle('is-fav', willBeActive);
+            btn.setAttribute('aria-pressed', String(willBeActive));
+            const ic = btn.querySelector('.fav-icon');
+            if(ic) ic.textContent = willBeActive ? '★' : '☆';
+            const lb = btn.querySelector('.fav-label');
+            if(lb){
+              // Keep original label logic for tool page button
+              const isToolPageBtn = btn.classList.contains('favorite-tool-btn');
+              if(isToolPageBtn) lb.textContent = willBeActive ? labels.favOn : labels.fav;
+            }
+          });
+          live.textContent = willBeActive ? labels.addedFav : labels.removedFav;
+        });
+        toolbar.appendChild(favBtn);
+      }
+    }catch(e){}
 
     const lede = main.querySelector('.tool-lede');
     (lede || main.querySelector('h1'))?.insertAdjacentElement('afterend', toolbar);
