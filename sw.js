@@ -1,7 +1,8 @@
-const CACHE = "fawran-v6";
+const CACHE = "fawran-v7";
 const CORE = [
   "/", "/en/",
-  "/assets/style.css", "/assets/main.js", "/assets/consent.js",
+  "/assets/style.css", "/assets/main.js", "/assets/tool-professional.js", "/assets/consent.js",
+  "/assets/tools-index.js", "/assets/icons/icon-192.png", "/assets/icons/icon-512.png",
   "/favicon.svg", "/manifest.webmanifest", "/404.html"
 ];
 
