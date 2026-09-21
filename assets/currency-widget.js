@@ -57,7 +57,7 @@
       '<div style="' + S.header + '">' + (isAr ? 'أسعار الصرف مقابل ' : 'Exchange rates vs ') + base.toUpperCase() + '</div>' +
       '<div data-fawran-rows></div>' +
       '<div style="' + S.footer + '">' + (isAr ? 'بيانات حية من' : 'Live data by') +
-      ' <a href="https://fawran.tools/tools/currency-converter.html" target="_blank" rel="noopener" style="color:' + accent + ';text-decoration:none;font-weight:700;">Fawran.tools</a></div>' +
+      ' <a href="https://fawran.tools/tools/currency-converter" target="_blank" rel="noopener" style="color:' + accent + ';text-decoration:none;font-weight:700;">Fawran.tools</a></div>' +
       '</div>';
 
     var rowsEl = container.querySelector('[data-fawran-rows]');

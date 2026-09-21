@@ -49,7 +49,10 @@ def build_category_map():
             print(f"  تحذير: صفحة الهاب غير موجودة: {path}")
             continue
         content = open(path, encoding='utf-8', errors='replace').read()
-        for slug in re.findall(r'href="([a-z0-9\-]+)\.html"', content):
+        # Accept current clean URLs (/tools/slug) and legacy relative
+        # references (slug.html) so rebuilding the index stays reliable.
+        hrefs = re.findall(r'href="(?:/tools/)?([a-z0-9\-]+)(?:\.html)?(?:[?#][^"]*)?"', content)
+        for slug in hrefs:
             if slug not in HUB_PAGES:
                 slug_to_cat[slug] = cat
     return slug_to_cat

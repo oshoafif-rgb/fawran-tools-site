@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="ar"><head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<html dir="rtl" lang="ar"><head><script data-consent-default="true">window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  analytics_storage:'denied',
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  personalization_storage:'denied',
+  functionality_storage:'granted',
+  security_storage:'granted',
+  wait_for_update:500
+});</script><script data-measurement-id="G-JSG9KGPK0S" defer="" src="assets/consent.js"></script>
+
+
+
 <meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+
+
+
+
+
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>المفضلة | فورا.tools</title>
 <meta content="أدواتك المفضلة والمستخدمة مؤخرًا في فورا.tools، محفوظة محليًا على جهازك للوصول السريع." name="description"/>
 <meta content="noindex,follow" name="robots"/>
 <meta content="#4F3FF0" name="theme-color"/>
-<link href="https://fawran.tools/favorites.html" rel="canonical"/>
+<link href="https://fawran.tools/favorites" rel="canonical"/>
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="assets/style.css" rel="stylesheet"/>
 <link href="manifest.webmanifest" rel="manifest"/>
@@ -25,18 +38,18 @@
 .fav-section{margin-bottom:44px;}
 .fav-section h2{font-size:19px;font-weight:900;margin:0 0 16px;display:flex;align-items:center;gap:8px;}
 </style>
-</head><body><header class="topbar">
+<link href="https://fawran.tools/favorites" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/favorites" hreflang="en" rel="alternate"/><link href="https://fawran.tools/favorites" hreflang="x-default" rel="alternate"/><link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png"></head><body><header class="topbar">
 <div class="topbar-inner">
-<a class="brand" href="index.html">
+<a class="brand" href="/">
 <span class="mark">FW</span>
       فورا<span class="dot">.</span>tools
     </a>
 <div class="nav-wrap">
 <nav class="nav">
-<a href="index.html">الأدوات</a>
-<a href="blog/index.html">المدونة</a>
-<a href="about.html">من نحن</a>
-<a href="contact.html">تواصل معنا</a>
+<a href="/">الأدوات</a>
+<a href="/blog/">المدونة</a>
+<a href="/about">من نحن</a>
+<a href="/contact">تواصل معنا</a>
 </nav>
 <button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
@@ -45,51 +58,49 @@
 <svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
 <svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
-<a class="lang-switch" href="en/favorites.html" title="View in English">EN</a>
+<a class="lang-switch" href="/en/favorites" title="View in English">EN</a>
 </div>
 </div>
 </header>
-
 <main><div class="wrap tools-hub" style="padding-top:34px;">
 <h1>⭐ المفضلة</h1>
-<p class="hero-lede">أدواتك المفضلة والمستخدمة مؤخرًا، محفوظة محليًا على جهازك فقط.</p>
-
-<div id="favSection" class="fav-section">
+<p class="hero-lede">أدواتك المفضلة والمستخدمة مؤخرًا، محفوظة محليًا على جهازك فقط. الآن يمكنك إضافة أي أداة للمفضلة من زر النجمة في كل بطاقة أداة وفي صفحة الأداة نفسها.</p>
+<div class="fav-actions">
+<button class="btn btn-ghost" id="clearFavBtn" type="button">مسح المفضلة</button>
+<button class="btn btn-ghost" id="clearRecentBtn" type="button">مسح الأخيرة</button>
+<a class="btn btn-primary" href="/">تصفح كل الأدوات</a>
+</div>
+<div class="fav-section" id="favSection">
 <h2>⭐ الأدوات المفضلة</h2>
 <div class="tool-grid" id="favGrid"></div>
 </div>
-
-<div id="recentSection" class="fav-section">
+<div class="fav-section" id="recentSection">
 <h2>🕓 استخدمتها مؤخرًا</h2>
 <div class="tool-grid" id="recentGrid"></div>
 </div>
-
-<div id="emptyState" class="empty-state" style="display:none;">
+<div class="empty-state" id="emptyState" style="display:none;">
 <div class="big-star">☆</div>
-<p>لسه معندكش أي أدوات مفضلة. افتح أي أداة واضغط على "☆ إضافة للمفضلة" فوق عنوانها عشان تلاقيها هنا بسهولة في أي وقت.</p>
-<a class="btn btn-primary" href="index.html">تصفّحي كل الأدوات</a>
+<p>لسه معندكش أي أدوات مفضلة. افتح أي أداة واضغط على "☆ إضافة للمفضلة" فوق عنوانها، أو اضغط النجمة في أي بطاقة أداة في الرئيسية، عشان تلاقيها هنا بسهولة في أي وقت.</p>
+<a class="btn btn-primary" href="/">تصفّحي كل الأدوات</a>
 </div>
-
 </div></main>
-
 <footer>
 <div class="footer-grid">
 <div>
 <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
-<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+<p class="footer-desc">مجموعة أدوات مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث؛ تتم معظم معالجة الملفات محليًا داخل متصفحك.</p>
 </div>
 <div class="footer-col">
 <h4>الموقع</h4>
-<a href="index.html">الصفحة الرئيسية</a><a href="favorites.html">☆ المفضلة</a>
-<a href="favorites.html">☆ المفضلة</a>
-<a href="blog/index.html">المدونة</a>
-<a href="about.html">من نحن</a>
-<a href="contact.html">تواصل معنا</a>
+<a href="/">الصفحة الرئيسية</a><a href="/favorites">☆ المفضلة</a>
+<a href="/blog/">المدونة</a>
+<a href="/about">من نحن</a>
+<a href="/contact">تواصل معنا</a>
 </div>
 <div class="footer-col">
 <h4>قانوني</h4>
-<a href="privacy.html">سياسة الخصوصية</a>
-<a href="terms.html">شروط الاستخدام</a>
+<a href="/privacy">سياسة الخصوصية</a>
+<a href="/terms">شروط الاستخدام</a>
 </div>
 </div>
 <div class="footer-bottom">
@@ -102,30 +113,51 @@
 <script>
 (function(){
   function load(k){try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(e){return []}}
-  const fav = load('fawran-favorites');
-  const recent = load('fawran-recent').filter(s=>!fav.includes(s));
-  const index = window.TOOLS_INDEX_AR || [];
-  const bySlug = Object.fromEntries(index.map(t=>[t.slug,t]));
-
-  function card(slug){
-    const t = bySlug[slug];
-    if(!t) return '';
-    return `<a class="tool-card live" href="tools/${slug}.html">
-      <span class="tool-name">${t.title}</span>
-      <span class="tool-desc">${t.desc||''}</span>
-    </a>`;
-  }
-
+  function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
   const favGrid=document.getElementById('favGrid'), recentGrid=document.getElementById('recentGrid');
   const favSection=document.getElementById('favSection'), recentSection=document.getElementById('recentSection');
   const emptyState=document.getElementById('emptyState');
 
-  const favCards = fav.map(card).filter(Boolean).join('');
-  const recentCards = recent.map(card).filter(Boolean).join('');
+  function render(){
+    const fav = load('fawran-favorites');
+    const recent = load('fawran-recent').filter(s=>!fav.includes(s));
+    const index = window.TOOLS_INDEX_AR || [];
+    const bySlug = Object.fromEntries(index.map(t=>[t.slug,t]));
 
-  if(favCards){ favGrid.innerHTML = favCards; } else { favSection.style.display='none'; }
-  if(recentCards){ recentGrid.innerHTML = recentCards; } else { recentSection.style.display='none'; }
-  if(!favCards && !recentCards){ emptyState.style.display='block'; }
+    function card(slug){
+      const t = bySlug[slug];
+      if(!t) return '';
+      return `<a class="tool-card live" href="tools/${slug}" style="position:relative">
+        <span class="tool-name">${t.title}</span>
+        <span class="tool-desc">${t.desc||''}</span>
+      </a>`;
+    }
+
+    const favCards = fav.map(card).filter(Boolean).join('');
+    const recentCards = recent.map(card).filter(Boolean).join('');
+
+    if(favCards){ favGrid.innerHTML = favCards; favSection.style.display=''; } else { favSection.style.display='none'; }
+    if(recentCards){ recentGrid.innerHTML = recentCards; recentSection.style.display=''; } else { recentSection.style.display='none'; }
+    if(!favCards && !recentCards){ emptyState.style.display='block'; } else { emptyState.style.display='none'; }
+
+    // Re-apply star buttons on these dynamically added cards (main.js already handles, but trigger)
+    if(window.dispatchEvent) window.dispatchEvent(new Event('favorites:updated'));
+  }
+
+  document.getElementById('clearFavBtn')?.addEventListener('click', ()=>{ if(confirm('مسح كل المفضلة؟')){ save('fawran-favorites', []); render(); } });
+  document.getElementById('clearRecentBtn')?.addEventListener('click', ()=>{ if(confirm('مسح الأخيرة؟')){ save('fawran-recent', []); render(); } });
+
+  // Initial + after index loads
+  render();
+  window.addEventListener('load', render);
+  // Listen to favorite toggles from main.js
+  const origToggle = window.localStorage ? window.localStorage.setItem : null;
+  window.addEventListener('storage', render);
+  document.addEventListener('click', e=>{
+    if(e.target.closest('.card-fav-btn') || e.target.closest('.favorite-tool-btn')){
+      setTimeout(render, 50);
+    }
+  });
 })();
 </script>
 </body></html>

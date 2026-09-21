@@ -1,0 +1,6 @@
+# Local dependencies and development artifacts
+node_modules/
+.netlify/
+.translation-cache*.json
+__pycache__/
+.DS_Store

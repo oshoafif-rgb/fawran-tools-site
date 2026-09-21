@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en"><head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
+
+<html dir="ltr" lang="en"><head><script data-consent-default="true">window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  analytics_storage:'denied',
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  personalization_storage:'denied',
+  functionality_storage:'granted',
+  security_storage:'granted',
+  wait_for_update:500
+});</script><script data-measurement-id="G-JSG9KGPK0S" defer="" src="../assets/consent.js"></script>
+
+
+
 <meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+
+
+
+
+
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Favorites | Fawran Tools</title>
 <meta content="Your favorite and recently used tools on Fawran Tools, saved locally on your device for quick access." name="description"/>
 <meta content="noindex,follow" name="robots"/>
 <meta content="#4F3FF0" name="theme-color"/>
-<link href="https://fawran.tools/en/favorites.html" rel="canonical"/>
+<link href="https://fawran.tools/en/favorites" rel="canonical"/>
 <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../assets/style.css" rel="stylesheet"/>
 <link href="../manifest.webmanifest" rel="manifest"/>
@@ -25,60 +38,73 @@
 .fav-section{margin-bottom:44px;}
 .fav-section h2{font-size:19px;font-weight:900;margin:0 0 16px;display:flex;align-items:center;gap:8px;}
 </style>
-</head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a><div class="nav-wrap"><nav class="nav"><a href="index.html">Tools</a><a href="blog/index.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><button aria-expanded="false" aria-label="Open menu" class="nav-toggle">☰</button><button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">◐</button><a class="lang-switch" href="../favorites.html">AR</a></div></div></header>
-
+<link href="https://fawran.tools/favorites" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/favorites" hreflang="en" rel="alternate"/><link href="https://fawran.tools/favorites" hreflang="x-default" rel="alternate"/><link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png"></head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="/en/"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a><div class="nav-wrap"><nav class="nav"><a href="/en/">Tools</a><a href="/en/blog/">Blog</a><a href="/en/about">About</a><a href="/en/contact">Contact</a></nav><button aria-expanded="false" aria-label="Open menu" class="nav-toggle">☰</button><button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">◐</button><a class="lang-switch" href="/favorites">AR</a></div></div></header>
 <main><div class="wrap tools-hub" style="padding-top:34px;">
 <h1>⭐ Favorites</h1>
-<p class="hero-lede">Your favorite and recently used tools, saved locally on your own device only.</p>
-
-<div id="favSection" class="fav-section">
+<p class="hero-lede">Your favorite and recently used tools, saved locally on your own device only. Now you can favorite any tool from the star on every tool card and on every tool page.</p>
+<div class="fav-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 22px;">
+<button class="btn btn-ghost" id="clearFavBtn" type="button">Clear favorites</button>
+<button class="btn btn-ghost" id="clearRecentBtn" type="button">Clear recent</button>
+<a class="btn btn-primary" href="/en/">Browse all tools</a>
+</div>
+<div class="fav-section" id="favSection">
 <h2>⭐ Favorite tools</h2>
 <div class="tool-grid" id="favGrid"></div>
 </div>
-
-<div id="recentSection" class="fav-section">
+<div class="fav-section" id="recentSection">
 <h2>🕓 Recently used</h2>
 <div class="tool-grid" id="recentGrid"></div>
 </div>
-
-<div id="emptyState" class="empty-state" style="display:none;">
+<div class="empty-state" id="emptyState" style="display:none;">
 <div class="big-star">☆</div>
-<p>You don't have any favorite tools yet. Open any tool and click "☆ Add to favorites" above its title to find it here anytime.</p>
-<a class="btn btn-primary" href="index.html">Browse all tools</a>
+<p>You don't have any favorite tools yet. Open any tool and click "☆ Add to favorites" above its title, or click the star on any tool card, to find it here anytime.</p>
+<a class="btn btn-primary" href="/en/">Browse all tools</a>
 </div>
-
 </div></main>
-
-<footer><div class="footer-grid"><div><div class="footer-brand"><span class="mark">FW</span> Fawran Tools</div><p class="footer-desc">Free online tools for images, PDF, text, SEO, websites and YouTube.</p></div><div class="footer-col"><h4>Website</h4><a href="index.html">Home</a><a href="favorites.html">☆ Favorites</a><a href="favorites.html">☆ Favorites</a><a href="blog/index.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Fawran Tools</span><span>Free browser-based utilities.</span></div></footer>
+<footer><div class="footer-grid"><div><div class="footer-brand"><span class="mark">FW</span> Fawran Tools</div><p class="footer-desc">Free online tools for images, PDF, text, SEO, websites and YouTube.</p></div><div class="footer-col"><h4>Website</h4><a href="/en/">Home</a><a href="/en/favorites">☆ Favorites</a><a href="/en/blog/">Blog</a><a href="/en/about">About</a><a href="/en/contact">Contact</a></div><div class="footer-col"><h4>Legal</h4><a href="/en/privacy">Privacy Policy</a><a href="/en/terms">Terms of Use</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Fawran Tools</span><span>Free browser-based utilities.</span></div></footer>
 <script src="../assets/tools-index.js"></script>
 <script src="../assets/main.js"></script>
 <script>
 (function(){
   function load(k){try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(e){return []}}
-  const fav = load('fawran-favorites');
-  const recent = load('fawran-recent').filter(s=>!fav.includes(s));
-  const index = window.TOOLS_INDEX_EN || [];
-  const bySlug = Object.fromEntries(index.map(t=>[t.slug,t]));
-
-  function card(slug){
-    const t = bySlug[slug];
-    if(!t) return '';
-    return `<a class="tool-card live" href="tools/${slug}.html">
-      <span class="tool-name">${t.title}</span>
-      <span class="tool-desc">${t.desc||''}</span>
-    </a>`;
-  }
-
+  function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
   const favGrid=document.getElementById('favGrid'), recentGrid=document.getElementById('recentGrid');
   const favSection=document.getElementById('favSection'), recentSection=document.getElementById('recentSection');
   const emptyState=document.getElementById('emptyState');
 
-  const favCards = fav.map(card).filter(Boolean).join('');
-  const recentCards = recent.map(card).filter(Boolean).join('');
+  function render(){
+    const fav = load('fawran-favorites');
+    const recent = load('fawran-recent').filter(s=>!fav.includes(s));
+    const index = window.TOOLS_INDEX_EN || [];
+    const bySlug = Object.fromEntries(index.map(t=>[t.slug,t]));
 
-  if(favCards){ favGrid.innerHTML = favCards; } else { favSection.style.display='none'; }
-  if(recentCards){ recentGrid.innerHTML = recentCards; } else { recentSection.style.display='none'; }
-  if(!favCards && !recentCards){ emptyState.style.display='block'; }
+    function card(slug){
+      const t = bySlug[slug];
+      if(!t) return '';
+      return `<a class="tool-card live" href="tools/${slug}" style="position:relative">
+        <span class="tool-name">${t.title}</span>
+        <span class="tool-desc">${t.desc||''}</span>
+      </a>`;
+    }
+
+    const favCards = fav.map(card).filter(Boolean).join('');
+    const recentCards = recent.map(card).filter(Boolean).join('');
+
+    if(favCards){ favGrid.innerHTML = favCards; favSection.style.display=''; } else { favSection.style.display='none'; }
+    if(recentCards){ recentGrid.innerHTML = recentCards; recentSection.style.display=''; } else { recentSection.style.display='none'; }
+    if(!favCards && !recentCards){ emptyState.style.display='block'; } else { emptyState.style.display='none'; }
+  }
+
+  document.getElementById('clearFavBtn')?.addEventListener('click', ()=>{ if(confirm('Clear all favorites?')){ save('fawran-favorites', []); render(); } });
+  document.getElementById('clearRecentBtn')?.addEventListener('click', ()=>{ if(confirm('Clear recent?')){ save('fawran-recent', []); render(); } });
+
+  render();
+  window.addEventListener('load', render);
+  document.addEventListener('click', e=>{
+    if(e.target.closest('.card-fav-btn') || e.target.closest('.favorite-tool-btn')){
+      setTimeout(render, 50);
+    }
+  });
 })();
 </script>
 </body></html>

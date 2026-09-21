@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 
 <html dir="ltr" lang="en">
-<head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
-
+<head><script data-consent-default="true">window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  analytics_storage:'denied',
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  personalization_storage:'denied',
+  functionality_storage:'granted',
+  security_storage:'granted',
+  wait_for_update:500
+});</script><script data-measurement-id="G-JSG9KGPK0S" defer="" src="../../assets/consent.js"></script>
 <meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>The Gmail Dot Trick: Create Unlimited Email Addresses From One Inbox | Fawran Tools</title>
-<meta content="A complete explanation of the Gmail dot trick, how it actually works, its most practical real-world uses for tracking sign-ups and organizing mail, plus how to generate variations easily." name="description"/>
+<title>Gmail Dot Trick: How to create unlimited email addresses from a single email | Fawran Tools</title>
+<meta content="A complete explanation of the dot trick in Gmail, how it actually works, its main practical uses in tracking sign-ups and organizing emails, with steps to generate it easily." name="description"/>
 <link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
 <meta content="#4F3FF0" name="theme-color"/>
-<link href="https://fawran.tools/en/blog/gmail-dot-trick-guide.html" rel="canonical"/>
-
+<link href="https://fawran.tools/en/blog/gmail-dot-trick-guide" rel="canonical"/>
 <meta content="article" property="og:type"/>
-<meta content="https://fawran.tools/en/blog/gmail-dot-trick-guide.html" property="og:url"/>
-<meta content="The Gmail Dot Trick: Create Unlimited Email Addresses From One Inbox | Fawran Tools" property="og:title"/>
-<meta content="A complete explanation of the Gmail dot trick and how to use it for tracking sign-ups and organizing mail." property="og:description"/>
+<meta content="https://fawran.tools/en/blog/gmail-dot-trick-guide" property="og:url"/>
+<meta content="Gmail Dot Trick: How to create unlimited email addresses from a single email | Fawran Tools" property="og:title"/>
+<meta content="A complete explanation of the dot trick in Gmail and how to use it to track sign-ups and organize mail." property="og:description"/>
 <meta content="Fawran Tools" property="og:site_name"/>
 <meta content="en_US" property="og:locale"/>
 <meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="The Gmail Dot Trick: Create Unlimited Email Addresses From One Inbox | Fawran Tools" name="twitter:title"/>
-<meta content="A complete explanation of the Gmail dot trick and its practical uses." name="twitter:description"/>
+<meta content="Gmail Dot Trick: How to create unlimited email addresses from a single email | Fawran Tools" name="twitter:title"/>
+<meta content="A complete explanation of the dot trick in Gmail and how to use it to track sign-ups." name="twitter:description"/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+
+
+
 <link href="../../assets/style.css" rel="stylesheet"/>
 <style>
   .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
@@ -42,28 +49,22 @@
   .toc li{margin-bottom:6px;}
   .toc a{color:var(--indigo-deep);font-weight:700;}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"The Gmail Dot Trick: Create Unlimited Email Addresses From One Inbox","description":"A complete explanation of the Gmail dot trick, how it works, and its most practical real-world uses.","url":"https://fawran.tools/en/blog/gmail-dot-trick-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","inLanguage":"en","author":{"@type":"Organization","name":"Fawran Tools"},"publisher":{"@type":"Organization","name":"Fawran Tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/en/blog/gmail-dot-trick-guide.html"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://fawran.tools/en/blog/index.html"},{"@type":"ListItem","position":2,"name":"The Gmail Dot Trick: Create Unlimited Email Addresses From One Inbox","item":"https://fawran.tools/en/blog/gmail-dot-trick-guide.html"}]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the Gmail dot trick work with every email provider?","acceptedAnswer":{"@type":"Answer","text":"No, this is a feature officially specific to Gmail. Other providers like Outlook or Yahoo don't ignore dots the same way — dots are treated as a real, meaningful part of the address there."}},{"@type":"Question","name":"Can a website block me from using a dotted version of my email?","acceptedAnswer":{"@type":"Answer","text":"Some websites now programmatically strip dots from Gmail addresses before saving them, specifically to prevent the same person from signing up multiple times using this trick."}},{"@type":"Question","name":"Is using this trick safe, with no real risks?","acceptedAnswer":{"@type":"Answer","text":"Yes, it's completely safe for personal use (organizing your mail or tracking who shares your email). The only risk is if you use it to bypass a free-tier account limit, which could violate that service's own terms of use."}},{"@type":"Question","name":"Is there a limit to how many dots I can add?","acceptedAnswer":{"@type":"Answer","text":"Dots can't be placed at the very start or end of the username, and they can't appear consecutively. Beyond that, you can place a dot in any gap between characters, with practically no upper limit."}}]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Gmail Dot Trick: How to create unlimited email addresses from a single email", "description": "A complete explanation of Gmail dot tricks, how they actually work, and their main practical uses.", "url": "https://fawran.tools/en/blog/gmail-dot-trick-guide", "datePublished": "2026-08-29", "dateModified": "2026-09-20", "author": {"@type": "Organization", "name": "Fawran Tools"}, "publisher": {"@type": "Organization", "name": "Fawran Tools", "logo": {"@type": "ImageObject", "url": "https://fawran.tools/favicon.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fawran.tools/en/blog/gmail-dot-trick-guide"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://fawran.tools/en/blog/"}, {"@type": "ListItem", "position": 2, "name": "Gmail Dot Trick: How to create unlimited email addresses from a single email", "item": "https://fawran.tools/en/blog/gmail-dot-trick-guide"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does the Gmail Dot Trick work with all email providers?", "acceptedAnswer": {"@type": "Answer", "text": "No, this trick is an officially announced feature of Gmail only. Other providers like Outlook or Yahoo do not ignore dots in the same way, so dots for them are part of the actual address."}}, {"@type": "Question", "name": "Is it possible for a site to prevent me from using a dot version of my email?", "acceptedAnswer": {"@type": "Answer", "text": "Some sites now programmatically check the titles and remove dots before saving to prevent registering multiple times with the same actual email — so not all sites will accept this trick with the same effectiveness."}}, {"@type": "Question", "name": "Is using this trick safe and risk-free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it’s completely safe for personal use (organizing your mail or tracking who shares your email). The only risk is if you use it to bypass limits of a free subscription to a certain service, which may violate the service’s own Terms of Use."}}, {"@type": "Question", "name": "Is there a maximum number of points I can add?", "acceptedAnswer": {"@type": "Answer", "text": "Dots cannot be placed at the beginning or end of a username, and they cannot be repeated consecutively. Other than that, you can place a dot in any gap between letters practically without limit."}}]}</script>
 <link href="../../manifest.webmanifest" rel="manifest"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
-<link href="https://fawran.tools/blog/gmail-dot-trick-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/gmail-dot-trick-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/gmail-dot-trick-guide.html" hreflang="x-default" rel="alternate"/></head>
+<link href="https://fawran.tools/blog/gmail-dot-trick-guide" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/gmail-dot-trick-guide" hreflang="en" rel="alternate"/><link href="https://fawran.tools/blog/gmail-dot-trick-guide" hreflang="x-default" rel="alternate"/></head>
 <body>
 <header class="topbar">
 <div class="topbar-inner">
-<a class="brand" href="../index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<a class="brand" href="/en/"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
 <div class="nav-wrap">
 <nav class="nav">
-<a href="../index.html">Tools</a>
-<a class="active" href="index.html">Blog</a>
-<a href="../about.html">About</a>
-<a href="../contact.html">Contact</a>
+<a href="/en/">Tools</a>
+<a class="active" href="/en/blog/">Blog</a>
+<a href="/en/about">About</a>
+<a href="/en/contact">Contact</a>
 </nav>
 <button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
@@ -72,152 +73,107 @@
 <svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
 <svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
-<a class="lang-switch" href="../../blog/gmail-dot-trick-guide.html" title="عرض بالعربي">AR</a>
+<a class="lang-switch" href="/blog/gmail-dot-trick-guide" title="Read in Arabic">AR</a>
 </div>
 </div>
 </header>
 <div class="wrap">
 <div class="page-head">
-<div class="article-meta"><span class="tag">Email Tools</span><span>7 min read</span></div>
-<h1>The Gmail Dot Trick: Create Unlimited Email Addresses From One Inbox</h1>
+<div class="article-meta"><span class="tag">Email tools</span><span>7 minutes reading</span></div>
+<h1>Gmail Dot Trick: How to create unlimited email addresses from a single email</h1>
 </div>
-
 <div class="content-card">
-
-<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="320" rx="16" fill="#14131F"/>
-  <rect x="240" y="60" width="320" height="200" rx="10" fill="#1A1826"/>
-  <text x="400" y="140" font-family="IBM Plex Mono, monospace" font-size="20" fill="#8B89A3" text-anchor="middle">john@gmail.com</text>
-  <text x="400" y="180" font-family="IBM Plex Mono, monospace" font-size="20" fill="#F0A93B" text-anchor="middle">john.doe@gmail.com</text>
-  <text x="400" y="220" font-family="IBM Plex Mono, monospace" font-size="20" fill="#2F7D53" text-anchor="middle">j.oh.n@gmail.com</text>
-  <path d="M400 250 L400 280" stroke="#4F3FF0" stroke-width="4" stroke-dasharray="4 4"/>
-  <circle cx="400" cy="290" r="20" fill="#4F3FF0"/>
-  <path d="M392 290 L398 296 L408 284" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<svg class="article-svg" viewbox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#14131F" height="320" rx="16" width="800"></rect>
+<rect fill="#1A1826" height="200" rx="10" width="320" x="240" y="60"></rect>
+<text fill="#8B89A3" font-family="IBM Plex Mono, monospace" font-size="22" text-anchor="middle" x="400" y="140">ahmed@gmail.com</text>
+<text fill="#F0A93B" font-family="IBM Plex Mono, monospace" font-size="22" text-anchor="middle" x="400" y="180">ahmed.mohamed@gmail.com</text>
+<text fill="#2F7D53" font-family="IBM Plex Mono, monospace" font-size="22" text-anchor="middle" x="400" y="220">ahm.ed@gmail.com</text>
+<path d="M400 250 L400 280" stroke="#4F3FF0" stroke-dasharray="4 4" stroke-width="4"></path>
+<circle cx="400" cy="290" fill="#4F3FF0" r="20"></circle>
+<path d="M392 290 L398 296 L408 284" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
 </svg>
-
 <p>
-  Add an extra dot to your email or leave it out — Google won't notice the difference at all. The
-  message still lands in the exact same inbox. This officially documented fact opens the door to
-  several practical uses that go well beyond a fun technical trivia fact.
+  If you write your email with or without an extra dot, Google doesn’t care at all — the message will reach you in the exact same inbox. This fact, officially announced by Google, opens the door to many practical uses beyond just being an interesting technical detail.
 </p>
-
 <div class="toc">
-  <h2>On this page</h2>
-  <ul>
-    <li><a href="#what">What exactly is the Gmail dot trick?</a></li>
-    <li><a href="#why-google">Why does Google ignore dots in the first place?</a></li>
-    <li><a href="#uses">Real practical uses</a></li>
-    <li><a href="#vs-plus">The difference from the plus-sign trick</a></li>
-    <li><a href="#howto">How to generate every variation easily</a></li>
-    <li><a href="#limits">Limits of the trick and when it doesn't work</a></li>
-    <li><a href="#faq">Frequently asked questions</a></li>
-  </ul>
+<h2>Article content:</h2>
+<ul>
+<li><a href="#what">What exactly is the Gmail Dot Trick?</a></li>
+<li><a href="#why-google">Why does Google ignore periods in the first place?</a></li>
+<li><a href="#uses">Real practical uses</a></li>
+<li><a href="#vs-plus">The Difference Between It and the + Trick</a></li>
+<li><a href="#howto">How do you easily generate all possibilities?</a></li>
+<li><a href="#limits">The limits of the trick and when it doesn't work</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+</ul>
 </div>
-
-<h2 id="what">What exactly is the Gmail dot trick?</h2>
+<h2 id="what">What exactly is the Gmail Dot Trick?</h2>
 <p>
-  Google officially documents that dots in the local part of a Gmail address (before the @) have
-  zero effect on where the message is delivered. That means
-  <span style="font-family:'IBM Plex Mono',monospace;">john.doe@gmail.com</span>,
-  <span style="font-family:'IBM Plex Mono',monospace;">johndoe@gmail.com</span>, and
-  <span style="font-family:'IBM Plex Mono',monospace;">j.o.h.n.d.o.e@gmail.com</span>
-  all land in the exact same inbox — reading one is exactly the same as reading any of the others.
+  Google officially documents that the dots within the first part of a Gmail address (before the @ sign) have no effect on the
+  destination of the email. Meaning <span style="direction:ltr;display:inline-block;font-family:'IBM Plex Mono',monospace;">ahmed.mohamed@gmail.com</span>,
+  <span style="direction:ltr;display:inline-block;font-family:'IBM Plex Mono',monospace;">ahmedmohamed@gmail.com</span>, and
+  <span style="direction:ltr;display:inline-block;font-family:'IBM Plex Mono',monospace;">a.h.m.e.d.m.o.h.a.m.e.d@gmail.com</span>
+  They all reach exactly the same inbox, as if you were reading the same email from any of them.
 </p>
-
-<h2 id="why-google">Why does Google ignore dots in the first place?</h2>
+<h2 id="why-google">Why does Google ignore periods in the first place?</h2>
 <p>
-  This is a deliberate decision by Google, not a technical loophole or bug. The main goal was
-  reducing user confusion — many people forget whether they included a dot in their email at
-  sign-up or not, so Google decided to make it not matter at all, so nobody fails to log in just
-  because they forgot a dot.
+  This decision is from Google itself, not a technical vulnerability or error. The main goal was to reduce confusion for users — many people forget whether they put a dot in their email when registering or not, so Google decided to make it irrelevant so that no one fails to log in due to forgetting a dot.
 </p>
-
 <h2 id="uses">Real practical uses</h2>
 <p>
-  The most common use is <strong>tracking who shares your email with third parties</strong>. If
-  you signed up on a shopping site using
-  <span style="font-family:'IBM Plex Mono',monospace;">john.shopping@gmail.com</span>, and later
-  start receiving spam from a completely different company at that exact address, you know exactly
-  who leaked your data. Another common use is <strong>setting up automatic mail filters</strong> —
-  each dotted variation can be tied to a Gmail filter rule that automatically moves messages into a
-  separate folder or applies a label.
+  The most common use is <strong>Track who shares your email with third parties</strong>. If you registered on a shopping site
+  with the address <span style="direction:ltr;display:inline-block;font-family:'IBM Plex Mono',monospace;">ahmed.shopping@gmail.com</span>,
+  and then you find spam messages from another company sent to the exact same address, you know exactly who leaked
+  your data. Another common use is <strong>Create automatic email filters</strong> — Each copy has a different dot
+  You can link it to a filter in Gmail to put the emails in a separate folder or automatically label them with a certain color.
 </p>
-
-<h2 id="vs-plus">The difference from the plus-sign trick</h2>
+<h2 id="vs-plus">The Difference Between It and the + Trick</h2>
 <p>
-  A similar trick uses a plus sign instead of dots (like
-  <span style="font-family:'IBM Plex Mono',monospace;">john+shopping@gmail.com</span>). The key
-  difference: a plus sign creates a clear, readable "tag," while dots blend into the username
-  itself and aren't always obvious at a glance. Some sites also reject addresses containing a "+"
-  during sign-up because they consider it "invalid," while dotted addresses are accepted almost
-  everywhere since they look like an ordinary email on the surface.
+  Another similar trick uses the + sign instead of dots (like
+  <span style="direction:ltr;display:inline-block;font-family:'IBM Plex Mono',monospace;">ahmed+shopping@gmail.com</span>The main difference: the + sign separates a clear and readable "tag," whereas dots get mixed up with the username itself, so they are not always clear to the naked eye. Also, some sites reject addresses with + during registration because they consider them "invalid," while addresses with dots are accepted almost everywhere because they look like any normal email.
 </p>
-
-<h2 id="howto">How to generate every variation easily</h2>
+<h2 id="howto">How do you easily generate all possibilities?</h2>
 <p>
-  If your username is long, the number of possible dot placements grows quickly (every gap between
-  two letters can either have a dot or not). Instead of calculating them by hand, the
-  <a href="../../tools/gmail-dot-trick-generator.html" style="color:var(--indigo-deep);font-weight:700;">Gmail Dot Trick Generator</a>
-  generates them all automatically — type your username, choose to generate every variation or a
-  random sample, and download the full list as a text file.
+  If your username is long, the number of possibilities for placing dots increases quickly (every gap between two letters may contain a dot or not). Instead of calculating them manually, the tool
+  <a href="/en/tools/gmail-dot-trick-generator" style="color:var(--indigo-deep);font-weight:700;">Gmail Dot Trick generator</a>
+  It generates them all automatically — you write your username and choose to generate all possibilities or a random sample of them, with the option to download the full list as a text file.
 </p>
-
 <div class="tool-cta">
 <div>
-<div class="txt">Try the Gmail Dot Trick Generator now</div>
-<div class="sub">Instantly generate every dot variation, free, with nothing uploaded to any server</div>
+<div class="txt">Try the Gmail Dot Trick generator now</div>
+<div class="sub">Instant generation for all point possibilities, free and without uploading any data to a server</div>
 </div>
-<a class="btn btn-primary" href="../../tools/gmail-dot-trick-generator.html">
-<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 6l-10 7L2 6"></path></svg>
+<a class="btn btn-primary" href="/en/tools/gmail-dot-trick-generator">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="M22 6l-10 7L2 6"></path></svg>
     Open the tool
   </a>
 </div>
-
-<h2 id="limits">Limits of the trick and when it doesn't work</h2>
+<h2 id="limits">The limits of the trick and when it doesn't work</h2>
 <p>
-  This trick is specific to Gmail — if you have an Outlook, Yahoo, or any other provider's email,
-  dots are a real part of the address and are not ignored. Some larger websites have also become
-  aware of this trick and now strip dots programmatically from any Gmail address before saving it
-  to their database, specifically to prevent the same person from registering more than once under
-  the guise of "different" emails.
+  This trick is specific to Gmail only — if you have an email from Outlook, Yahoo, or any other provider, the dots are an actual part of the address and are not ignored. Also, some major websites have become aware of this trick and programmatically remove the dots from any Gmail address before storing it in their database to prevent the same person from signing up multiple times under 'different emails.'
 </p>
-
-<h2 id="faq">Frequently asked questions</h2>
+<h2 id="faq">Frequently Asked Questions</h2>
 <div class="faq-item">
-  <h3>Does the Gmail dot trick work with every email provider?</h3>
-  <p style="font-size:13.5px;">No, this is a feature officially specific to Gmail. Other providers like Outlook or Yahoo don't ignore dots the same way.</p>
+<h3>Does the Gmail Dot Trick work with all email providers?</h3>
+<p style="font-size:13.5px;">No, this trick is an officially announced Gmail feature only. Other providers like Outlook or Yahoo do not ignore dots in the same way.</p>
 </div>
 <div class="faq-item">
-  <h3>Can a website block me from using a dotted version of my email?</h3>
-  <p style="font-size:13.5px;">Some websites now programmatically strip dots from Gmail addresses before saving them, to prevent the same person signing up multiple times.</p>
+<h3>Is it possible for a site to prevent me from using a dot version of my email?</h3>
+<p style="font-size:13.5px;">Some sites programmatically check titles and remove dots before saving to prevent duplicate registration, so not all sites will accept this trick with the same effectiveness.</p>
 </div>
 <div class="faq-item">
-  <h3>Is using this trick safe, with no real risks?</h3>
-  <p style="font-size:13.5px;">Yes, it's completely safe for personal use. The only risk is using it to bypass a free-tier account limit, which could violate that service's terms.</p>
+<h3>Is using this trick safe and risk-free?</h3>
+<p style="font-size:13.5px;">Yes, completely safe for personal use. The only risk is if you use it to bypass the limits of a free subscription, which could violate the terms of service themselves.</p>
 </div>
 <div class="faq-item">
-  <h3>Is there a limit to how many dots I can add?</h3>
-  <p style="font-size:13.5px;">Dots can't be placed at the very start or end, and can't appear consecutively. Beyond that, you can place a dot in any gap, with practically no limit.</p>
+<h3>Is there a maximum number of points I can add?</h3>
+<p style="font-size:13.5px;">Dots cannot be placed at the first or last character, and they cannot be repeated consecutively. Other than that, you can place a dot in any gap between letters practically without limit.</p>
 </div>
-
-<h2>Conclusion</h2>
+<h2>Summary</h2>
 <p>
-  The Gmail dot trick is simple, official, and safe — genuinely useful if you use it correctly to
-  track where your messages are coming from or organize your inbox with automatic filters, without
-  ever needing to create an extra email account.
+  The dot trick in Gmail is simple, official, and safe — and actually useful if you use it correctly to track the sources of your messages or organize your inbox with automatic filters, without needing to open any additional email account.
 </p>
-
-</div>
-</div>
-
-<div class="wrap">
-<div class="ad-slot ad-slot-leaderboard">
-<span class="ad-label">Advertisement</span>
-<div class="ad-slot-inner">
-<!-- Place your responsive AdSense ad unit code here -->
-<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-</div>
 </div>
 </div>
 <div class="wrap"><div class="share-widget"></div></div>
@@ -225,24 +181,24 @@
 <div class="footer-grid">
 <div>
 <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
-<p class="footer-desc">Free online tools for images, PDF files, text, and SEO — all running entirely in your browser without uploading your files to any server.</p>
+<p class="footer-desc">A free toolkit for images, PDFs, text, and SEO. Most file processing runs locally in your browser.</p>
 </div>
 <div class="footer-col">
 <h4>Website</h4>
-<a href="../index.html">Home</a><a href="../favorites.html">☆ Favorites</a>
-<a href="index.html">Blog</a>
-<a href="../about.html">About</a>
-<a href="../contact.html">Contact</a>
+<a href="/en/">Home</a><a href="/en/favorites">☆ Favorites</a>
+<a href="/en/blog/">Blog</a>
+<a href="/en/about">About</a>
+<a href="/en/contact">Contact</a>
 </div>
 <div class="footer-col">
 <h4>Legal</h4>
-<a href="../privacy.html">Privacy Policy</a>
-<a href="../terms.html">Terms of Use</a>
+<a href="/en/privacy">Privacy Policy</a>
+<a href="/en/terms">Terms of Use</a>
 </div>
 </div>
 <div class="footer-bottom">
-<span>© <span id="year"></span> Fawran Tools</span>
-<span>Built for practical everyday tasks.</span>
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Built for practical everyday web tasks.</span>
 </div>
 </footer>
 <script src="../../assets/main.js"></script><script src="../../assets/share-widget.js"></script>

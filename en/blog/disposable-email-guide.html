@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 
 <html dir="ltr" lang="en">
-<head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
-
+<head><script data-consent-default="true">window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  analytics_storage:'denied',
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  personalization_storage:'denied',
+  functionality_storage:'granted',
+  security_storage:'granted',
+  wait_for_update:500
+});</script><script data-measurement-id="G-JSG9KGPK0S" defer="" src="../../assets/consent.js"></script>
 <meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>How to Protect Sign-Up Forms From Fake Accounts With Disposable Emails | Fawran Tools</title>
-<meta content="A practical guide to understanding disposable email services, why people use them, and how to protect your website or marketing campaign from fake sign-ups using them." name="description"/>
+<title>How to protect registration forms from fake accounts using temporary emails | Fawran Tools</title>
+<meta content="A practical guide to understanding temporary email sites, why people use them, and how to protect your site or marketing campaign from fake registrations using them." name="description"/>
 <link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
 <meta content="#4F3FF0" name="theme-color"/>
-<link href="https://fawran.tools/en/blog/disposable-email-guide.html" rel="canonical"/>
-
+<link href="https://fawran.tools/en/blog/disposable-email-guide" rel="canonical"/>
 <meta content="article" property="og:type"/>
-<meta content="https://fawran.tools/en/blog/disposable-email-guide.html" property="og:url"/>
-<meta content="How to Protect Sign-Up Forms From Fake Accounts With Disposable Emails | Fawran Tools" property="og:title"/>
-<meta content="A practical guide to understanding disposable email services and how to protect your site from them." property="og:description"/>
+<meta content="https://fawran.tools/en/blog/disposable-email-guide" property="og:url"/>
+<meta content="How to protect registration forms from fake accounts using temporary emails | Fawran Tools" property="og:title"/>
+<meta content="A practical guide to understanding temporary email sites and how to protect your site from fake registrations." property="og:description"/>
 <meta content="Fawran Tools" property="og:site_name"/>
 <meta content="en_US" property="og:locale"/>
 <meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="How to Protect Sign-Up Forms From Fake Accounts With Disposable Emails | Fawran Tools" name="twitter:title"/>
-<meta content="A practical guide to disposable email services." name="twitter:description"/>
+<meta content="How to protect registration forms from fake accounts using temporary emails | Fawran Tools" name="twitter:title"/>
+<meta content="A practical guide to understanding temporary email sites." name="twitter:description"/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+
+
+
 <link href="../../assets/style.css" rel="stylesheet"/>
 <style>
   .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
@@ -42,28 +49,22 @@
   .toc li{margin-bottom:6px;}
   .toc a{color:var(--indigo-deep);font-weight:700;}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Protect Sign-Up Forms From Fake Accounts With Disposable Emails","description":"A practical guide to understanding disposable email services and how to protect your site from them.","url":"https://fawran.tools/en/blog/disposable-email-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","inLanguage":"en","author":{"@type":"Organization","name":"Fawran Tools"},"publisher":{"@type":"Organization","name":"Fawran Tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/en/blog/disposable-email-guide.html"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://fawran.tools/en/blog/index.html"},{"@type":"ListItem","position":2,"name":"How to Protect Sign-Up Forms From Fake Accounts With Disposable Emails","item":"https://fawran.tools/en/blog/disposable-email-guide.html"}]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the list cover every disposable email service that exists?","acceptedAnswer":{"@type":"Answer","text":"No, the list covers over 100 common domains, but new disposable email services with new domains appear constantly, so no list can ever be 100% comprehensive at any given time."}},{"@type":"Question","name":"Is using a disposable email for sign-up illegal?","acceptedAnswer":{"@type":"Answer","text":"No, using a disposable email isn't illegal in itself, but some websites consider it a violation of their own terms of use, especially when the goal is bypassing a free-tier or trial limit."}},{"@type":"Question","name":"Can I integrate this check directly with my site's sign-up form?","acceptedAnswer":{"@type":"Answer","text":"This tool is designed for manual or batch checking, not direct programmatic integration with your site. For an automated solution built into your code, you'd need a dedicated email verification API service."}},{"@type":"Question","name":"Why do some people use a disposable email in the first place?","acceptedAnswer":{"@type":"Answer","text":"Plenty of legitimate uses: trying a service once without long-term commitment, protecting privacy from unwanted newsletters, or testing sign-up forms while developing a website."}}]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to protect registration forms from fake accounts using temporary emails.", "description": "A practical guide to understanding temporary email sites, why people use them, and how to protect your site from them.", "url": "https://fawran.tools/en/blog/disposable-email-guide", "datePublished": "2026-08-29", "dateModified": "2026-09-20", "author": {"@type": "Organization", "name": "Fawran Tools"}, "publisher": {"@type": "Organization", "name": "Fawran Tools", "logo": {"@type": "ImageObject", "url": "https://fawran.tools/favicon.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fawran.tools/en/blog/disposable-email-guide"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://fawran.tools/en/blog/"}, {"@type": "ListItem", "position": 2, "name": "How to protect registration forms from fake accounts using temporary emails.", "item": "https://fawran.tools/en/blog/disposable-email-guide"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does the list cover all existing temporary email sites?", "acceptedAnswer": {"@type": "Answer", "text": "No, the list covers more than 100 popular domains, but temporary email sites keep appearing with new domains, so no list can ever be 100% comprehensive at any time."}}, {"@type": "Question", "name": "Is using a temporary email to register illegal?", "acceptedAnswer": {"@type": "Answer", "text": "No, using a temporary email is not illegal in itself, but some websites consider it a violation of their Terms of Use, especially if the goal is to bypass a free subscription limit or trial."}}, {"@type": "Question", "name": "Can I integrate this check directly with my website's registration form?", "acceptedAnswer": {"@type": "Answer", "text": "This tool is designed for manual or batch checking, not for direct programmatic integration with your site. If you need an automated solution integrated into code, you'll need an API service specialized in email verification."}}, {"@type": "Question", "name": "Why do some people use a temporary email in the first place?", "acceptedAnswer": {"@type": "Answer", "text": "There are many legitimate uses: trying a service once without a long-term commitment, protecting privacy from unwanted newsletters, or testing registration forms while developing a website."}}]}</script>
 <link href="../../manifest.webmanifest" rel="manifest"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
-<link href="https://fawran.tools/blog/disposable-email-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/disposable-email-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/disposable-email-guide.html" hreflang="x-default" rel="alternate"/></head>
+<link href="https://fawran.tools/blog/disposable-email-guide" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/disposable-email-guide" hreflang="en" rel="alternate"/><link href="https://fawran.tools/blog/disposable-email-guide" hreflang="x-default" rel="alternate"/></head>
 <body>
 <header class="topbar">
 <div class="topbar-inner">
-<a class="brand" href="../index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<a class="brand" href="/en/"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
 <div class="nav-wrap">
 <nav class="nav">
-<a href="../index.html">Tools</a>
-<a class="active" href="index.html">Blog</a>
-<a href="../about.html">About</a>
-<a href="../contact.html">Contact</a>
+<a href="/en/">Tools</a>
+<a class="active" href="/en/blog/">Blog</a>
+<a href="/en/about">About</a>
+<a href="/en/contact">Contact</a>
 </nav>
 <button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
@@ -72,133 +73,94 @@
 <svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
 <svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
-<a class="lang-switch" href="../../blog/disposable-email-guide.html" title="عرض بالعربي">AR</a>
+<a class="lang-switch" href="/blog/disposable-email-guide" title="Read in Arabic">AR</a>
 </div>
 </div>
 </header>
 <div class="wrap">
 <div class="page-head">
-<div class="article-meta"><span class="tag">Email Tools</span><span>6 min read</span></div>
-<h1>How to Protect Sign-Up Forms From Fake Accounts With Disposable Emails</h1>
+<div class="article-meta"><span class="tag">Email tools</span><span>6 minutes reading</span></div>
+<h1>How to protect registration forms from fake accounts using temporary emails.</h1>
 </div>
-
 <div class="content-card">
-
-<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="320" rx="16" fill="#14131F"/>
-  <path d="M300 60 L460 60 L460 200 C460 240 380 270 380 270 C380 270 300 240 300 200 Z" fill="#1A1826"/>
-  <path d="M340 165 L420 165" stroke="#B4232C" stroke-width="6" stroke-linecap="round"/>
-  <path d="M340 195 L420 195" stroke="#B4232C" stroke-width="6" stroke-linecap="round"/>
-  <text x="380" y="220" font-family="IBM Plex Mono, monospace" font-size="13" fill="#8B89A3" text-anchor="middle">temp@mailinator.com</text>
+<svg class="article-svg" viewbox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#14131F" height="320" rx="16" width="800"></rect>
+<path d="M300 60 L460 60 L460 200 C460 240 380 270 380 270 C380 270 300 240 300 200 Z" fill="#1A1826"></path>
+<path d="M355 165 L370 180 L410 140" fill="none" opacity="0" stroke="#F0A93B" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path>
+<path d="M340 165 L420 165" stroke="#B4232C" stroke-linecap="round" stroke-width="6"></path>
+<path d="M340 195 L420 195" stroke="#B4232C" stroke-linecap="round" stroke-width="6"></path>
+<text fill="#8B89A3" font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="380" y="220">temp@mailinator.com</text>
 </svg>
-
 <p>
-  Noticed a lot of sign-ups on your site with strange email addresses that never lead to any real
-  engagement? These are likely disposable email services — services that give you a temporary
-  inbox that lives for a few minutes and then disappears completely.
+  Noticed many sign-ups on your site with strange emails that never respond? These are probably temporary email sites — services that give you a temporary inbox that works for just minutes, then disappears completely.
 </p>
-
 <div class="toc">
-  <h2>On this page</h2>
-  <ul>
-    <li><a href="#what">What are disposable email services?</a></li>
-    <li><a href="#why-people">Why do people use them?</a></li>
-    <li><a href="#business-risk">What are the risks to your site or campaign?</a></li>
-    <li><a href="#howto">How to check an email before accepting it</a></li>
-    <li><a href="#limitations">Limits of the solution and when you need stronger protection</a></li>
-    <li><a href="#faq">Frequently asked questions</a></li>
-  </ul>
+<h2>Article content:</h2>
+<ul>
+<li><a href="#what">What are temporary email sites?</a></li>
+<li><a href="#why-people">Why do people use it?</a></li>
+<li><a href="#business-risk">What are the risks to your site or campaign?</a></li>
+<li><a href="#howto">How do you check an email before accepting it?</a></li>
+<li><a href="#limitations">Solution limits and when stronger protection is needed</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+</ul>
 </div>
-
-<h2 id="what">What are disposable email services?</h2>
+<h2 id="what">What are temporary email sites?</h2>
 <p>
-  Services like Mailinator, Guerrilla Mail, and YOPmail give you an instant random email address
-  you can use to receive a verification message or code, with no sign-up or commitment required.
-  The inbox is temporary — it usually disappears after minutes or hours, and anyone who knows the
-  address can see the same messages.
+  Sites like Mailinator, Guerrilla Mail, and YOPmail give you an instant random email address. You can receive an activation email or verification code without any registration or commitment. This inbox is temporary — it usually disappears after minutes or hours, and anyone who knows the address can see the same messages.
 </p>
-
-<h2 id="why-people">Why do people use them?</h2>
+<h2 id="why-people">Why do people use it?</h2>
 <p>
-  Plenty of legitimate uses: trying a service once without handing over your real email, protecting
-  yourself from unwanted newsletters afterward, or testing a sign-up form while developing a
-  website. But they're also sometimes used to work around "one account per email" limits on free
-  trials or first sign-up discount coupons.
+  There are many legitimate uses: trying a service once without giving your real email, protecting against annoying newsletters later, or testing a registration form while developing a website. But it is also sometimes used to bypass the "one account per email" limit in free trials or first-time discount coupons.
 </p>
-
 <h2 id="business-risk">What are the risks to your site or campaign?</h2>
 <p>
-  If your site offers a free trial or a first sign-up discount coupon, disposable emails open the
-  door to exploiting that offer an unlimited number of times. If you're building a marketing mail
-  list, disposable emails also inflate your "subscriber" count with fake numbers that don't
-  represent a real audience that will engage with your future messages.
+  If your site offers a free trial or discount coupon for first-time sign-ups, temporary emails open the door to unlimited exploitation of this offer. Also, if you are collecting a mailing list for marketing, temporary emails inflate the number of "subscribers" with fake numbers that do not represent a real audience who will interact with your messages in the future.
 </p>
-
-<h2 id="howto">How to check an email before accepting it</h2>
+<h2 id="howto">How do you check an email before accepting it?</h2>
 <p>
-  Using the <a href="../../tools/disposable-email-checker.html" style="color:var(--indigo-deep);font-weight:700;">Disposable Email Checker</a> on Fawran Tools:
+  Using <a href="/en/tools/disposable-email-checker" style="color:var(--indigo-deep);font-weight:700;">Temporary email detector</a> on Fawran Tools:
 </p>
 <ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
-  <li>Paste one email or a full list (one address per line).</li>
-  <li>Click "Check now" — each address shows a clear tag (temporary or regular).</li>
-  <li>Review the result and decide your action (reject the sign-up, request an alternate email, etc.).</li>
+<li>Paste one email or a full list (one line per address).</li>
+<li>Click "Check Now" — each address appears with a clear mark (temporary or regular).</li>
+<li>Review the result and decide your action (reject registration, request an alternative email, etc.).</li>
 </ol>
-
 <div class="tool-cta">
 <div>
-<div class="txt">Try the Disposable Email Checker now</div>
-<div class="sub">A list covering 100+ common domains, single or batch checking</div>
+<div class="txt">Try the temporary email detector now</div>
+<div class="sub">A list covering 100+ common domains, individual or batch check</div>
 </div>
-<a class="btn btn-primary" href="../../tools/disposable-email-checker.html">
+<a class="btn btn-primary" href="/en/tools/disposable-email-checker">
 <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"></path><path d="M9.5 9.5l5 5M14.5 9.5l-5 5"></path></svg>
     Open the tool
   </a>
 </div>
-
-<h2 id="limitations">Limits of the solution and when you need stronger protection</h2>
+<h2 id="limitations">Solution limits and when stronger protection is needed</h2>
 <p>
-  The list covers over 100 common, known domains, but disposable email services appear constantly
-  with new domains, so no list can ever be 100% comprehensive. If your site is experiencing a high
-  volume of fake sign-up attempts, you may need an additional layer of protection like phone number
-  verification or bot-detection systems (CAPTCHA) alongside email checking.
+  The list covers more than 100 common and well-known domains, but temporary email sites continuously appear with new domains, so no list can be 100% comprehensive. If your site is facing high-frequency fake registration attempts, you might need an additional layer of protection, such as phone number verification or bot detection systems (Captcha) alongside email checking.
 </p>
-
-<h2 id="faq">Frequently asked questions</h2>
+<h2 id="faq">Frequently Asked Questions</h2>
 <div class="faq-item">
-  <h3>Does the list cover every disposable email service that exists?</h3>
-  <p style="font-size:13.5px;">No, the list covers over 100 common domains, but new services appear constantly, so no list can ever be 100% comprehensive.</p>
+<h3>Does the list cover all existing temporary email sites?</h3>
+<p style="font-size:13.5px;">No, the list covers more than 100 common domains, but new sites keep appearing, so no list can be 100% comprehensive.</p>
 </div>
 <div class="faq-item">
-  <h3>Is using a disposable email for sign-up illegal?</h3>
-  <p style="font-size:13.5px;">No, it isn't illegal in itself, but some websites consider it a violation of their terms, especially for bypassing a free-tier limit.</p>
+<h3>Is using a temporary email to register illegal?</h3>
+<p style="font-size:13.5px;">No, it is not illegal in itself, but some websites consider it a violation of the Terms of Use, especially for exceeding a free subscription limit.</p>
 </div>
 <div class="faq-item">
-  <h3>Can I integrate this check directly with my site's sign-up form?</h3>
-  <p style="font-size:13.5px;">This tool is designed for manual or batch checking. For direct programmatic integration, you'd need a dedicated email verification API.</p>
+<h3>Can I integrate this check directly with my website's registration form?</h3>
+<p style="font-size:13.5px;">The tool is designed for manual or batch checking. For direct programmatic integration, you will need a specialized API service for email verification.</p>
 </div>
 <div class="faq-item">
-  <h3>Why do some people use a disposable email in the first place?</h3>
-  <p style="font-size:13.5px;">Plenty of legitimate uses: trying a service once, protecting privacy from unwanted newsletters, or testing sign-up forms during development.</p>
+<h3>Why do some people use a temporary email in the first place?</h3>
+<p style="font-size:13.5px;">Many legitimate uses: trying a service once, protecting privacy from annoying newsletters, or testing registration forms during development.</p>
 </div>
-
-<h2>Conclusion</h2>
+<h2>Summary</h2>
 <p>
-  Checking for disposable emails is a simple step that protects your data quality and the integrity
-  of your free offers from repeated exploitation — not a complete solution on its own, but an
-  effective first line of defense against most fake sign-up attempts.
+  Checking temporary emails is a simple step that protects the quality of your data and the integrity of your free offers from repeated abuse — it’s not a complete solution on its own, but it is an effective first line of defense against most fake registration attempts.
 </p>
-
-</div>
-</div>
-
-<div class="wrap">
-<div class="ad-slot ad-slot-leaderboard">
-<span class="ad-label">Advertisement</span>
-<div class="ad-slot-inner">
-<!-- Place your responsive AdSense ad unit code here -->
-<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-</div>
 </div>
 </div>
 <div class="wrap"><div class="share-widget"></div></div>
@@ -206,24 +168,24 @@
 <div class="footer-grid">
 <div>
 <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
-<p class="footer-desc">Free online tools for images, PDF files, text, and SEO — all running entirely in your browser without uploading your files to any server.</p>
+<p class="footer-desc">A free toolkit for images, PDFs, text, and SEO. Most file processing runs locally in your browser.</p>
 </div>
 <div class="footer-col">
 <h4>Website</h4>
-<a href="../index.html">Home</a><a href="../favorites.html">☆ Favorites</a>
-<a href="index.html">Blog</a>
-<a href="../about.html">About</a>
-<a href="../contact.html">Contact</a>
+<a href="/en/">Home</a><a href="/en/favorites">☆ Favorites</a>
+<a href="/en/blog/">Blog</a>
+<a href="/en/about">About</a>
+<a href="/en/contact">Contact</a>
 </div>
 <div class="footer-col">
 <h4>Legal</h4>
-<a href="../privacy.html">Privacy Policy</a>
-<a href="../terms.html">Terms of Use</a>
+<a href="/en/privacy">Privacy Policy</a>
+<a href="/en/terms">Terms of Use</a>
 </div>
 </div>
 <div class="footer-bottom">
-<span>© <span id="year"></span> Fawran Tools</span>
-<span>Built for practical everyday tasks.</span>
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Built for practical everyday web tasks.</span>
 </div>
 </footer>
 <script src="../../assets/main.js"></script><script src="../../assets/share-widget.js"></script>

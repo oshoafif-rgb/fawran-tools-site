@@ -1,3 +1,16 @@
+/* Self-hosted fonts: no render-blocking third-party font request. */
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/ibm-plex-mono-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Tajawal';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/tajawal-400-arabic.woff2') format('woff2');unicode-range:U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;}
+@font-face{font-family:'Tajawal';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/tajawal-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Tajawal';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/tajawal-500-arabic.woff2') format('woff2');unicode-range:U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;}
+@font-face{font-family:'Tajawal';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/tajawal-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Tajawal';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/tajawal-700-arabic.woff2') format('woff2');unicode-range:U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;}
+@font-face{font-family:'Tajawal';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/tajawal-700-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Tajawal';font-style:normal;font-weight:800;font-display:swap;src:url('fonts/tajawal-800-arabic.woff2') format('woff2');unicode-range:U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;}
+@font-face{font-family:'Tajawal';font-style:normal;font-weight:800;font-display:swap;src:url('fonts/tajawal-800-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Tajawal';font-style:normal;font-weight:900;font-display:swap;src:url('fonts/tajawal-900-arabic.woff2') format('woff2');unicode-range:U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;}
+@font-face{font-family:'Tajawal';font-style:normal;font-weight:900;font-display:swap;src:url('fonts/tajawal-900-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+
 /* ===========================================================
    Fawran Tools — Design System
    Brand: أدوات فورا — Fawran ("instant") — a fast, focused tools hub
@@ -82,44 +95,6 @@
 /* ---------- Rendering performance ---------- */
 /* Defer painting of long below-the-fold tool groups without changing their layout. */
 .category{content-visibility:auto;contain-intrinsic-size:1px 520px;}
-
-/* ---------- Ad slots ---------- */
-.ad-slot{
-  margin:28px 0;padding:14px;border:1px dashed var(--line);border-radius:12px;
-  background:var(--surface-sunk);text-align:center;
-}
-.ad-slot .ad-label{
-  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;
-  color:var(--muted);text-transform:uppercase;margin-bottom:8px;display:block;
-}
-.ad-slot .ad-slot-inner{
-  min-height:90px;display:flex;align-items:center;justify-content:center;
-  color:var(--muted);font-size:12px;
-}
-.ad-slot.ad-slot-leaderboard{max-width:728px;margin-inline:auto;}
-.ad-slot.ad-slot-rectangle{max-width:336px;margin-inline:auto;}
-
-/* ---------- Adblock notice ---------- */
-.adblock-banner{
-  position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(120%);
-  z-index:200;max-width:520px;width:calc(100% - 32px);
-  background:var(--ink);color:#fff;border-radius:14px;padding:16px 18px;
-  box-shadow:0 20px 50px -12px rgba(0,0,0,.5);
-  display:flex;align-items:center;gap:14px;
-  transition:transform .35s ease;
-}
-.adblock-banner.show{transform:translateX(-50%) translateY(0);}
-.adblock-banner .icn{
-  width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.12);
-  display:flex;align-items:center;justify-content:center;flex:0 0 auto;
-}
-.adblock-banner .icn svg{width:18px;height:18px;color:var(--gold);}
-.adblock-banner .txt{flex:1;font-size:13px;line-height:1.6;}
-.adblock-banner .txt b{display:block;font-size:13.5px;margin-bottom:2px;}
-.adblock-banner .close-btn{
-  background:none;border:none;color:rgba(255,255,255,.6);cursor:pointer;padding:4px;flex:0 0 auto;
-}
-.adblock-banner .close-btn svg{width:16px;height:16px;}
 
 
 *{box-sizing:border-box;}
@@ -568,3 +543,138 @@ input[type=range]::-webkit-slider-thumb{
   background:
     repeating-conic-gradient(#ffffff0d 0% 25%, transparent 0% 50%) 50% / 16px 16px;
 }
+
+/* Privacy consent controls */
+.consent-banner{position:fixed;z-index:10000;inset:auto 18px 18px;max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:var(--surface);color:var(--ink);box-shadow:0 18px 60px rgba(15,14,22,.28)}
+.consent-copy{max-width:720px}.consent-copy>strong{display:block;font-size:16px;margin-bottom:5px}.consent-copy p{margin:0;color:var(--ink-soft);font-size:13px;line-height:1.65}.consent-copy a,.consent-policy-link{display:inline-block;margin-top:5px;color:var(--indigo-deep);font-weight:700;font-size:12.5px}.consent-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.consent-actions .btn{white-space:nowrap;padding:10px 14px;font-size:12.5px}
+.consent-settings-btn{position:fixed;z-index:9000;inset:auto auto 10px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink-soft);padding:7px 11px;font:700 11px 'Tajawal',sans-serif;box-shadow:0 5px 20px rgba(15,14,22,.15);cursor:pointer}.consent-settings-btn:hover{color:var(--indigo-deep);border-color:var(--indigo)}
+[dir="rtl"] .consent-settings-btn{inset:auto 10px 10px auto}
+.consent-modal-backdrop{position:fixed;z-index:11000;inset:0;display:grid;place-items:center;padding:18px;background:rgba(15,14,22,.65)}
+.consent-modal{width:min(560px,100%);max-height:90vh;overflow:auto;padding:22px;border-radius:16px;background:var(--surface);color:var(--ink);box-shadow:0 24px 80px rgba(0,0,0,.35)}.consent-modal h2{margin:0 0 16px;font-size:20px}.consent-option{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0;border-bottom:1px solid var(--line);cursor:pointer}.consent-option span{display:flex;flex-direction:column;gap:3px}.consent-option strong{font-size:14px}.consent-option small{color:var(--muted);font-size:12px;line-height:1.45}.consent-option input{width:19px;height:19px;accent-color:var(--indigo);flex:0 0 auto}.consent-modal .consent-actions{margin-top:18px}
+@media(max-width:760px){.consent-banner{align-items:stretch;flex-direction:column;inset:auto 10px 10px;padding:15px}.consent-actions{width:100%}.consent-banner .consent-actions .btn{flex:1}.consent-settings-btn{bottom:6px}}
+
+
+/* Professional tool-page experience */
+.skip-link{
+  position:fixed;z-index:20000;inset-block-start:10px;inset-inline-start:10px;
+  transform:translateY(-160%);padding:10px 16px;border-radius:10px;
+  background:var(--ink);color:var(--surface);font-weight:800;box-shadow:0 8px 28px rgba(0,0,0,.24);
+}
+.skip-link:focus{transform:translateY(0);outline:3px solid var(--gold);outline-offset:2px;}
+.visually-hidden{
+  position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;
+  overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;
+}
+.tool-pro-toolbar{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 22px;padding:10px;
+  border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--surface) 92%,var(--indigo-soft));
+}
+.tool-pro-action{
+  appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 12px;
+  border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink-soft);
+  font:700 12.5px 'Tajawal',system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:border-color .16s,color .16s,background .16s,transform .16s;
+}
+.tool-pro-action:hover{border-color:var(--indigo);color:var(--indigo-deep);transform:translateY(-1px);}
+.tool-pro-action:focus-visible{outline:3px solid color-mix(in srgb,var(--indigo) 35%,transparent);outline-offset:2px;}
+.tool-pro-action.primary{background:var(--indigo);border-color:var(--indigo);color:#fff;}
+.tool-pro-action.primary:hover{background:var(--indigo-deep);color:#fff;}
+.tool-guide-wrap{margin-block:10px 28px;}
+.tool-guide{
+  overflow:hidden;border:1px solid var(--line);border-radius:22px;background:var(--surface);
+  box-shadow:0 14px 42px rgba(20,19,31,.06);
+}
+.guide-heading{padding:26px 28px 18px;background:linear-gradient(135deg,var(--indigo-soft),var(--surface));}
+.guide-heading h2{margin:7px 0 8px;font-size:clamp(21px,3vw,28px);line-height:1.35;}
+.guide-heading p{max-width:760px;margin:0;color:var(--ink-soft);line-height:1.8;font-size:14px;}
+.guide-badge{
+  display:inline-flex;padding:5px 10px;border-radius:999px;background:var(--indigo);color:#fff;
+  font-size:11.5px;font-weight:800;letter-spacing:.02em;
+}
+.tool-steps{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:0;padding:6px 28px 20px;counter-reset:none;}
+.tool-steps li{display:grid;grid-template-columns:38px minmax(0,1fr);gap:12px;padding:20px 0;border-bottom:1px solid var(--line);}
+.tool-steps li:nth-child(odd){padding-inline-end:22px;border-inline-end:1px solid var(--line);}
+.tool-steps li:nth-child(even){padding-inline-start:22px;}
+.tool-steps li:nth-last-child(-n+2){border-bottom:0;}
+.step-number{
+  display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--indigo-soft);
+  color:var(--indigo-deep);font:800 14px 'IBM Plex Mono',ui-monospace,monospace;
+}
+.tool-steps h3{margin:1px 0 6px;font-size:15px;line-height:1.4;}
+.tool-steps p{margin:0;color:var(--ink-soft);font-size:13.5px;line-height:1.75;}
+.tool-tip{margin:0 28px 26px;padding:17px 18px;border:1px solid color-mix(in srgb,var(--gold) 45%,var(--line));border-radius:14px;background:var(--gold-soft);}
+.tool-tip h3{margin:0 0 5px;font-size:14px;}
+.tool-tip p{margin:0;color:var(--ink-soft);font-size:13.5px;line-height:1.75;}
+.tool-focus-overlay,.tool-native-fullscreen{
+  position:fixed!important;z-index:15000!important;inset:0!important;width:100vw!important;height:100dvh!important;
+  max-width:none!important;margin:0!important;padding:clamp(16px,3vw,36px)!important;border-radius:0!important;
+  overflow:auto!important;background:var(--bg)!important;color:var(--ink)!important;
+}
+body.tool-focus-active{overflow:hidden!important;}
+.tool-focus-exit{
+  position:sticky;z-index:2;inset-block-start:0;inset-inline-start:100%;margin-block-end:14px;padding:9px 13px;
+  border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font-weight:800;cursor:pointer;
+}
+@media(max-width:760px){
+  .tool-pro-toolbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));}
+  .tool-pro-action{width:100%;}
+  .tool-steps{grid-template-columns:1fr;padding-inline:20px;}
+  .tool-steps li,.tool-steps li:nth-child(odd),.tool-steps li:nth-child(even){padding:17px 0;border-inline-end:0;border-bottom:1px solid var(--line);}
+  .tool-steps li:nth-last-child(2){border-bottom:1px solid var(--line);}
+  .tool-steps li:last-child{border-bottom:0;}
+  .guide-heading{padding:22px 20px 16px;}
+  .tool-tip{margin:0 20px 22px;}
+}
+@media(prefers-reduced-motion:reduce){
+  html:focus-within{scroll-behavior:auto;}
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+}
+@media print{
+  body.print-tool-guide>*{display:none!important;}
+  body.print-tool-guide>.tool-guide-wrap{display:block!important;}
+  body.print-tool-guide .tool-guide{box-shadow:none;border-color:#bbb;}
+  body.print-tool-guide .tool-steps{display:block;}
+  body.print-tool-guide .tool-steps li{break-inside:avoid;border-inline:0;padding:14px 0;}
+}
+
+/* Drag & drop professional enhancement */
+.tool-has-drop{position:relative;}
+.tool-drop-overlay{
+  position:absolute;inset:0;z-index:5;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--surface) 86%,var(--indigo-soft));
+  border:2px dashed var(--indigo);border-radius:18px;
+  opacity:0;pointer-events:none;transform:scale(.98);
+  transition:opacity .18s,transform .18s;
+}
+.tool-drop-overlay.is-active{opacity:1;pointer-events:auto;transform:scale(1);}
+.tool-drop-overlay .drop-inner{display:grid;place-items:center;gap:6px;padding:24px;text-align:center;}
+.tool-drop-overlay .drop-icon{font-size:32px;line-height:1;color:var(--indigo-deep);}
+.tool-drop-overlay strong{font-size:16px;font-weight:900;color:var(--ink);}
+.tool-drop-overlay small{font-size:12.5px;color:var(--muted);}
+.tool-card-shell, .seo-tool, .converter-shell{transition:box-shadow .18s,border-color .18s;}
+.tool-has-drop.is-dragover .tool-card-shell{border-color:var(--indigo);box-shadow:0 0 0 3px color-mix(in srgb,var(--indigo) 18%,transparent);}
+
+/* Favorites — visible on every tool */
+.favorite-tool-btn{
+  display:inline-flex;align-items:center;gap:8px;margin:0 0 18px;padding:10px 16px;
+  border:1.5px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);
+  font:800 13px 'Tajawal',system-ui,sans-serif;cursor:pointer;transition:.18s;
+  box-shadow:0 2px 10px rgba(20,19,31,.06);
+}
+.favorite-tool-btn:hover{border-color:var(--indigo);color:var(--indigo-deep);transform:translateY(-1px);}
+.favorite-tool-btn.is-fav{border-color:var(--indigo);background:var(--indigo-soft);color:var(--indigo-deep);}
+.favorite-tool-btn .fav-icon{font-size:15px;line-height:1;}
+.tool-pro-toolbar .tool-pro-action.is-fav{border-color:var(--indigo);background:var(--indigo-soft);color:var(--indigo-deep);}
+
+.card-fav-btn{
+  position:absolute;inset-block-start:10px;inset-inline-end:10px;
+  width:34px;height:34px;display:grid;place-items:center;
+  border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--surface) 88%,transparent);
+  color:var(--muted);cursor:pointer;transition:.18s;z-index:2;backdrop-filter:blur(6px);
+}
+.card-fav-btn:hover{border-color:var(--indigo);color:var(--indigo-deep);transform:scale(1.06);}
+.card-fav-btn.is-fav{border-color:var(--gold);background:var(--gold-soft);color:#9a6a0a;}
+.card-fav-btn.is-fav .fav-icon{color:#c4880a;}
+[dir="rtl"] .card-fav-btn{inset-inline-end:auto;inset-inline-start:10px;}
+
+.fav-actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 22px;}
+.fav-actions .btn{padding:9px 14px;font-size:13px;}

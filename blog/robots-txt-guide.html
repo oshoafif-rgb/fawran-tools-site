@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 
 <html dir="rtl" lang="ar">
-<head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
-
+<head><script data-consent-default="true">window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  analytics_storage:'denied',
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  personalization_storage:'denied',
+  functionality_storage:'granted',
+  security_storage:'granted',
+  wait_for_update:500
+});</script><script data-measurement-id="G-JSG9KGPK0S" defer="" src="../assets/consent.js"></script>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ما هو robots.txt وكيف يتحكم في زحف جوجل لموقعك 2026 | فورا.tools</title>
-<meta content="دليل شامل لفهم ملف robots.txt، كيف يوجّه روبوتات محركات البحث، والأخطاء الشائعة التي قد تمنع أرشفة موقعك بالكامل بالخطأ." name="description"/>
+<title>ما هو robots.txt وكيف يتحكم في زحف جوجل لموقعكم 2026 | فورا.tools</title>
+<meta content="دليل شامل لفهم ملف robots.txt، كيف يوجّه روبوتات محركات البحث، والأخطاء الشائعة التي قد تمنع أرشفة موقعكم بالكامل بالخطأ." name="description"/>
 <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../favicon.svg" rel="apple-touch-icon"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
 <meta content="#4F3FF0" name="theme-color"/>
-<link href="https://fawran.tools/blog/robots-txt-guide.html" rel="canonical"/>
+<link href="https://fawran.tools/blog/robots-txt-guide" rel="canonical"/>
 <meta content="article" property="og:type"/>
-<meta content="https://fawran.tools/blog/robots-txt-guide.html" property="og:url"/>
-<meta content="ما هو robots.txt وكيف يتحكم في زحف جوجل لموقعك 2026 | فورا.tools" property="og:title"/>
+<meta content="https://fawran.tools/blog/robots-txt-guide" property="og:url"/>
+<meta content="ما هو robots.txt وكيف يتحكم في زحف جوجل لموقعكم 2026 | فورا.tools" property="og:title"/>
 <meta content="دليل شامل لفهم ملف robots.txt وكيف يوجّه روبوتات محركات البحث." property="og:description"/>
 <meta content="فورا.tools" property="og:site_name"/>
 <meta content="ar_AR" property="og:locale"/>
@@ -24,12 +32,12 @@
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="ما هو robots.txt وكيف يتحكم في زحف جوجل لموقعك 2026 | فورا.tools" name="twitter:title"/>
+<meta content="ما هو robots.txt وكيف يتحكم في زحف جوجل لموقعكم 2026 | فورا.tools" name="twitter:title"/>
 <meta content="دليل شامل لفهم ملف robots.txt." name="twitter:description"/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+
+
+
 <link href="../assets/style.css" rel="stylesheet"/>
 <style>
   .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
@@ -42,25 +50,21 @@
   .toc a{color:var(--indigo-deep);font-weight:700;}
   .code-box{background:var(--ink);color:#E8E6F5;border-radius:12px;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.9;direction:ltr;text-align:left;margin:14px 0;}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"ما هو robots.txt وكيف يتحكم في زحف جوجل لموقعك","description":"دليل شامل لفهم ملف robots.txt، كيف يوجّه روبوتات محركات البحث، والأخطاء الشائعة التي قد تمنع أرشفة موقعك بالكامل.","url":"https://fawran.tools/blog/robots-txt-guide.html","datePublished":"2026-08-23","dateModified":"2026-08-23","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/robots-txt-guide.html"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل robots.txt يمنع الصفحة من الظهور في جوجل نهائيًا؟","acceptedAnswer":{"@type":"Answer","text":"ليس بالضرورة، robots.txt يمنع الزحف (قراءة المحتوى) وليس بالضرورة الفهرسة. صفحة محظورة من الزحف قد تظهر في نتائج البحث بدون وصف إذا كانت مرتبطة بروابط من صفحات أخرى."}},{"@type":"Question","name":"أين يجب وضع ملف robots.txt؟","acceptedAnswer":{"@type":"Answer","text":"في المجلد الجذري لموقعك مباشرة، ليكون متاحًا على الرابط yoursite.com/robots.txt بالضبط، وليس في أي مجلد فرعي."}},{"@type":"Question","name":"ماذا يحدث إذا لم يكن لموقعي ملف robots.txt؟","acceptedAnswer":{"@type":"Answer","text":"في غياب الملف، تفترض روبوتات محركات البحث عادة أن كل صفحات الموقع مسموح بزحفها، وهو السلوك الافتراضي الآمن لمعظم المواقع الصغيرة."}},{"@type":"Question","name":"هل يجب أن أضيف رابط خريطة الموقع داخل robots.txt؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يُفضّل إضافة سطر Sitemap يشير لرابط ملف sitemap.xml، لأن هذا يساعد محركات البحث تكتشف الخريطة بسهولة أكبر أثناء زحفها للملف."}}]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "ما هو robots.txt وكيف يتحكم في زحف جوجل لموقعكم", "description": "دليل شامل لفهم ملف robots.txt، كيف يوجّه روبوتات محركات البحث، والأخطاء الشائعة التي قد تمنع أرشفة موقعكم بالكامل.", "url": "https://fawran.tools/blog/robots-txt-guide", "datePublished": "2026-08-23", "dateModified": "2026-09-20", "author": {"@type": "Organization", "name": "فورا.tools"}, "publisher": {"@type": "Organization", "name": "فورا.tools", "logo": {"@type": "ImageObject", "url": "https://fawran.tools/favicon.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fawran.tools/blog/robots-txt-guide"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "هل robots.txt يمنع الصفحة من الظهور في جوجل نهائيًا؟", "acceptedAnswer": {"@type": "Answer", "text": "ليس بالضرورة، robots.txt يمنع الزحف (قراءة المحتوى) وليس بالضرورة الفهرسة. صفحة محظورة من الزحف قد تظهر في نتائج البحث بدون وصف إذا كانت مرتبطة بروابط من صفحات أخرى."}}, {"@type": "Question", "name": "أين يجب وضع ملف robots.txt؟", "acceptedAnswer": {"@type": "Answer", "text": "في المجلد الجذري لموقعكم مباشرة، ليكون متاحًا على الرابط yoursite.com/robots.txt بالضبط، وليس في أي مجلد فرعي."}}, {"@type": "Question", "name": "ماذا يحدث إذا لم يكن لموقعي ملف robots.txt؟", "acceptedAnswer": {"@type": "Answer", "text": "في غياب الملف، تفترض روبوتات محركات البحث عادة أن كل صفحات الموقع مسموح بزحفها، وهو السلوك الافتراضي الآمن لمعظم المواقع الصغيرة."}}, {"@type": "Question", "name": "هل يجب أن أضيف رابط خريطة الموقع داخل robots.txt؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، يُفضّل إضافة سطر Sitemap يشير لرابط ملف sitemap.xml، لأن هذا يساعد محركات البحث تكتشف الخريطة بسهولة أكبر أثناء زحفها للملف."}}]}</script>
 <link href="../manifest.webmanifest" rel="manifest"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
-<link href="https://fawran.tools/blog/robots-txt-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/robots-txt-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/robots-txt-guide.html" hreflang="x-default" rel="alternate"/></head>
+<link href="https://fawran.tools/blog/robots-txt-guide" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/robots-txt-guide" hreflang="en" rel="alternate"/><link href="https://fawran.tools/blog/robots-txt-guide" hreflang="x-default" rel="alternate"/></head>
 <body>
 <header class="topbar">
 <div class="topbar-inner">
-<a class="brand" href="../index.html"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
+<a class="brand" href="/"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a>
 <div class="nav-wrap">
 <nav class="nav">
-<a href="../index.html">الأدوات</a>
-<a class="active" href="index.html">المدونة</a>
-<a href="../about.html">من نحن</a>
-<a href="../contact.html">تواصل معنا</a>
+<a href="/">الأدوات</a>
+<a class="active" href="/blog/">المدونة</a>
+<a href="/about">من نحن</a>
+<a href="/contact">تواصل معنا</a>
 </nav>
 <button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
@@ -75,7 +79,7 @@
 <div class="wrap">
 <div class="page-head">
 <div class="article-meta"><span class="tag">أدوات SEO</span><span>7 دقائق قراءة</span></div>
-<h1>ما هو robots.txt وكيف يتحكم في زحف جوجل لموقعك</h1>
+<h1>ما هو robots.txt وكيف يتحكم في زحف جوجل لموقعكم</h1>
 </div>
 <div class="content-card">
 <svg class="article-svg" viewbox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
@@ -97,18 +101,18 @@
 <li><a href="#what">ما هو robots.txt بالضبط؟</a></li>
 <li><a href="#syntax">فهم بنية الملف الأساسية</a></li>
 <li><a href="#mistakes">الخطأ الأخطر: حظر الموقع كامل بالغلط</a></li>
-<li><a href="#howto">كيف تنشئ ملف robots.txt صحيح؟</a></li>
+<li><a href="#howto">كيف تنشئون ملف robots.txt صحيح؟</a></li>
 <li><a href="#faq">أسئلة شائعة</a></li>
 </ul>
 </div>
 <p>
-      ملف صغير بسطرين أو ثلاثة، لكن لو اتكتب غلط ممكن يمنع جوجل من أرشفة موقعك بالكامل من غير ما
-      تلاحظ. robots.txt هو أول ملف تقريبًا بتزوره روبوتات محركات البحث لما توصل لموقعك، وبيحدد لهم
+      ملف صغير بسطرين أو ثلاثة، لكن لو اتكتب غلط ممكن يمنع جوجل من أرشفة موقعكم بالكامل من غير ما
+      تلاحظوا. robots.txt هو أول ملف تقريبًا بتزوره روبوتات محركات البحث لما توصل لموقعكم، وبيحدد لهم
       إيه المسموح يزحفوه وإيه الممنوع. في هذا الدليل هنشرح كل حاجة عنه بأمان.
     </p>
 <h2 id="what">ما هو robots.txt بالضبط؟</h2>
 <p>
-      robots.txt هو ملف نصي بسيط بيتحط في جذر موقعك، وبيحتوي تعليمات لروبوتات محركات البحث (زي
+      robots.txt هو ملف نصي بسيط بيتحط في جذر موقعكم، وبيحتوي تعليمات لروبوتات محركات البحث (زي
       Googlebot) عن أي أجزاء من الموقع مسموح لها تزحفها وأي أجزاء ممنوعة. الملف مش بيمنع الصفحة من
       الوصول ليها المستخدمين العاديين — هو موجّه فقط للروبوتات الآلية، وبيعتمد على التزام طوعي منها
       (محركات البحث الكبرى زي جوجل بتحترمه، لكن مش كل الروبوتات ملتزمة بيه).
@@ -123,7 +127,7 @@ Sitemap: https://example.com/sitemap.xml</div>
 <p>
 <strong>User-agent:</strong> يحدد أي روبوت تنطبق عليه القاعدة (* تعني كل الروبوتات).
       <strong>Disallow:</strong> يمنع الزحف لمسار معين. <strong>Allow:</strong> يسمح بالزحف صراحة
-      (مفيد لاستثناء مجلد فرعي داخل مجلد ممنوع). <strong>Sitemap:</strong> يشير لرابط خريطة موقعك
+      (مفيد لاستثناء مجلد فرعي داخل مجلد ممنوع). <strong>Sitemap:</strong> يشير لرابط خريطة موقعكم
       لتسهيل اكتشافها.
     </p>
 <h2 id="mistakes">الخطأ الأخطر: حظر الموقع كامل بالغلط</h2>
@@ -131,18 +135,18 @@ Sitemap: https://example.com/sitemap.xml</div>
 Disallow: /</div>
 <p>
       السطرين دول بيمنعوا زحف <strong>الموقع كامل</strong> — خطأ شائع جدًا خصوصًا لو نُسخ ملف
-      robots.txt من بيئة تطوير (Staging) للموقع الحي بالغلط بدون تعديل. لو موقعك مش بيظهر في جوجل
-      رغم إنك عملت كل حاجة صح، أول حاجة تتأكد منها هي محتوى ملف robots.txt بتاعك.
+      robots.txt من بيئة تطوير (Staging) للموقع الحي بالغلط بدون تعديل. لو موقعكم مش بيظهر في جوجل
+      رغم إنكم عملتوا كل حاجة صح، أول حاجة تتأكدوا منها هي محتوى ملف robots.txt بتاعكم.
     </p>
-<h2 id="howto">كيف تنشئ ملف robots.txt صحيح؟</h2>
+<h2 id="howto">كيف تنشئون ملف robots.txt صحيح؟</h2>
 <p>
-      باستخدام <a href="../tools/robots-generator.html" style="color:var(--indigo-deep);font-weight:700;">مولّد robots.txt</a> على فورا.tools:
+      باستخدام <a href="/tools/robots-generator" style="color:var(--indigo-deep);font-weight:700;">مولّد robots.txt</a> على فورا.tools:
     </p>
 <ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
-<li>حدد المسارات (إن وجدت) اللي عايز تمنع الروبوتات من زحفها.</li>
-<li>أضف رابط خريطة موقعك (sitemap.xml) للسطر المخصص.</li>
-<li>راجع الملف الناتج للتأكد إنه مش بيمنع الموقع كامل بالخطأ.</li>
-<li>حمّل الملف وارفعه لجذر موقعك باسم robots.txt بالضبط.</li>
+<li>حددوا المسارات (إن وجدت) اللي عايزين تمنعوا الروبوتات من زحفها.</li>
+<li>أضيفوا رابط خريطة موقعكم (sitemap.xml) للسطر المخصص.</li>
+<li>راجعوا الملف الناتج للتأكد إنه مش بيمنع الموقع كامل بالخطأ.</li>
+<li>حمّلوا الملف وارفعوه لجذر موقعكم باسم robots.txt بالضبط.</li>
 </ol>
 <h2 id="faq">أسئلة شائعة</h2>
 <div class="faq-item">
@@ -151,7 +155,7 @@ Disallow: /</div>
 </div>
 <div class="faq-item">
 <h3>أين يجب وضع ملف robots.txt؟</h3>
-<p style="font-size:13.5px;">في المجلد الجذري لموقعك مباشرة، ليكون متاحًا على الرابط yoursite.com/robots.txt بالضبط.</p>
+<p style="font-size:13.5px;">في المجلد الجذري لموقعكم مباشرة، ليكون متاحًا على الرابط yoursite.com/robots.txt بالضبط.</p>
 </div>
 <div class="faq-item">
 <h3>ماذا يحدث إذا لم يكن لموقعي ملف robots.txt؟</h3>
@@ -163,25 +167,19 @@ Disallow: /</div>
 </div>
 <div class="tool-cta">
 <div>
-<div class="txt">جرّب مولّد robots.txt الآن</div>
+<div class="txt">جرّبوا مولّد robots.txt الآن</div>
 <div class="sub">ملف صحيح مع رابط خريطة الموقع، جاهز للرفع مباشرة</div>
 </div>
-<a class="btn btn-primary" href="../tools/robots-generator.html">
+<a class="btn btn-primary" href="/tools/robots-generator">
 <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="7" rx="1" width="7" x="3" y="3"></rect><rect height="7" rx="1" width="7" x="14" y="3"></rect><rect height="7" rx="1" width="7" x="3" y="14"></rect><rect height="7" rx="1" width="7" x="14" y="14"></rect></svg>
-        افتح الأداة
+        افتحوا الأداة
       </a>
 </div>
 <p>
-      بعد إعداد robots.txt، تأكد من إنشاء
-      <a href="../tools/sitemap-generator.html" style="color:var(--indigo-deep);font-weight:700;">خريطة موقع صحيحة</a>
+      بعد إعداد robots.txt، تأكدوا من إنشاء
+      <a href="/tools/sitemap-generator" style="color:var(--indigo-deep);font-weight:700;">خريطة موقع صحيحة</a>
       وتقديمها في <a href="https://search.google.com/search-console" style="color:var(--indigo-deep);font-weight:700;">Google Search Console</a>.
     </p>
-</div>
-</div>
-<div class="wrap">
-<div class="ad-slot ad-slot-leaderboard">
-<span class="ad-label">إعلان · Advertisement</span>
-<div class="ad-slot-inner"><!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك --></div>
 </div>
 </div>
 <div class="wrap"><div class="share-widget"></div></div>
@@ -189,19 +187,19 @@ Disallow: /</div>
 <div class="footer-grid">
 <div>
 <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
-<p class="footer-desc">مجموعة أدوات أونلاين مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث، تعمل بالكامل داخل متصفحك دون رفع ملفاتك لأي خادم.</p>
+<p class="footer-desc">مجموعة أدوات مجانية للصور وملفات PDF والنصوص وتحسين محركات البحث؛ تتم معظم معالجة الملفات محليًا داخل متصفحكم.</p>
 </div>
 <div class="footer-col">
 <h4>الموقع</h4>
-<a href="../index.html">الصفحة الرئيسية</a><a href="../favorites.html">☆ المفضلة</a>
-<a href="index.html">المدونة</a>
-<a href="../about.html">من نحن</a>
-<a href="../contact.html">تواصل معنا</a>
+<a href="/">الصفحة الرئيسية</a><a href="/favorites">☆ المفضلة</a>
+<a href="/blog/">المدونة</a>
+<a href="/about">من نحن</a>
+<a href="/contact">تواصل معنا</a>
 </div>
 <div class="footer-col">
 <h4>قانوني</h4>
-<a href="../privacy.html">سياسة الخصوصية</a>
-<a href="../terms.html">شروط الاستخدام</a>
+<a href="/privacy">سياسة الخصوصية</a>
+<a href="/terms">شروط الاستخدام</a>
 </div>
 </div>
 <div class="footer-bottom">

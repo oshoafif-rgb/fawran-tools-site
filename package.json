@@ -1,7 +1,14 @@
 {
   "name": "fawran-tools-site",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "@netlify/blobs": "^8.1.0"
+    "@netlify/blobs": "^8.1.0",
+    "ipaddr.js": "^2.2.0"
+  },
+  "scripts": {
+    "seo:indexnow": "node scripts/submit-indexnow.mjs",
+    "tools:upgrade": "python3 scripts/upgrade-tool-pages.py",
+    "search:build": "python3 build-search-index.py"
   }
 }

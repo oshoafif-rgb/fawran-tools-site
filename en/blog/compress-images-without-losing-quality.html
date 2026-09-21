@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 
 <html dir="ltr" lang="en">
-<head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
-
+<head><script data-consent-default="true">window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  analytics_storage:'denied',
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  personalization_storage:'denied',
+  functionality_storage:'granted',
+  security_storage:'granted',
+  wait_for_update:500
+});</script><script data-measurement-id="G-JSG9KGPK0S" defer="" src="../../assets/consent.js"></script>
 <meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>How to Compress Images Without Noticeable Quality Loss | Fawran Tools</title>
-<meta content="The difference between lossless and lossy compression, which to choose, how image size affects your site's speed and SEO, and practical steps to compress your images the right way." name="description"/>
+<title>How to compress your images without noticeable quality loss | Fawran Tools</title>
+<meta content="The difference between lossless and lossy compression, which one to choose, the effect of image size on your site speed and SEO, with practical steps to compress your images for the best result." name="description"/>
 <link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
 <meta content="#4F3FF0" name="theme-color"/>
-<link href="https://fawran.tools/en/blog/compress-images-without-losing-quality.html" rel="canonical"/>
-
+<link href="https://fawran.tools/en/blog/compress-images-without-losing-quality" rel="canonical"/>
 <meta content="article" property="og:type"/>
-<meta content="https://fawran.tools/en/blog/compress-images-without-losing-quality.html" property="og:url"/>
-<meta content="How to Compress Images Without Noticeable Quality Loss | Fawran Tools" property="og:title"/>
-<meta content="The difference between lossless and lossy compression, and how image size affects your site's speed and SEO." property="og:description"/>
+<meta content="https://fawran.tools/en/blog/compress-images-without-losing-quality" property="og:url"/>
+<meta content="How to compress your images without noticeable quality loss | Fawran Tools" property="og:title"/>
+<meta content="The difference between lossless and lossy compression, which one to choose, and the impact of image size on your site speed and SEO." property="og:description"/>
 <meta content="Fawran Tools" property="og:site_name"/>
 <meta content="en_US" property="og:locale"/>
 <meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="How to Compress Images Without Noticeable Quality Loss | Fawran Tools" name="twitter:title"/>
-<meta content="The difference between lossless and lossy compression, and how image size affects speed and SEO." name="twitter:description"/>
+<meta content="How to compress your images without noticeable quality loss | Fawran Tools" name="twitter:title"/>
+<meta content="The difference between lossless and lossy compression, and the effect of image size on your site speed and SEO." name="twitter:description"/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+
+
+
 <link href="../../assets/style.css" rel="stylesheet"/>
 <style>
   .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
@@ -42,28 +49,22 @@
   .toc li{margin-bottom:6px;}
   .toc a{color:var(--indigo-deep);font-weight:700;}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Compress Images Without Noticeable Quality Loss","description":"The difference between lossless and lossy compression, which to choose, how image size affects your site's speed and SEO, and practical steps.","url":"https://fawran.tools/en/blog/compress-images-without-losing-quality.html","datePublished":"2026-08-22","dateModified":"2026-08-25","inLanguage":"en","author":{"@type":"Organization","name":"Fawran Tools"},"publisher":{"@type":"Organization","name":"Fawran Tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/en/blog/compress-images-without-losing-quality.html"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://fawran.tools/en/blog/index.html"},{"@type":"ListItem","position":2,"name":"How to Compress Images Without Noticeable Quality Loss","item":"https://fawran.tools/en/blog/compress-images-without-losing-quality.html"}]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does image compression actually affect my Google ranking?","acceptedAnswer":{"@type":"Answer","text":"Yes, indirectly — page load speed (closely tied to image size) is an official Google ranking factor within Core Web Vitals, especially the LCP metric, which is often directly affected by the size of the largest image on the page."}},{"@type":"Question","name":"What's the ideal quality percentage for compressing web images?","acceptedAnswer":{"@type":"Answer","text":"A range between 70% and 85% gives an excellent balance between file size and visual quality for most images, and you rarely need 100% quality for ordinary web images."}},{"@type":"Question","name":"Does compressing an image multiple times damage its quality cumulatively?","acceptedAnswer":{"@type":"Answer","text":"Yes, specifically with lossy compression — each new compression pass on an already-compressed file adds further loss. It's always best to compress from the original, uncompressed file."}},{"@type":"Question","name":"Is there a difference between compressing an image and resizing it?","acceptedAnswer":{"@type":"Answer","text":"Yes — compression reduces file size while keeping the same dimensions (width and height), while resizing changes the image's actual dimensions. The two are often used together for the best result."}}]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to compress your images without noticeable loss in quality", "description": "The difference between lossless and lossy compression, which one to choose, the effect of image size on your site speed and SEO, with practical steps to compress your images for the best result.", "url": "https://fawran.tools/en/blog/compress-images-without-losing-quality", "datePublished": "2026-08-22", "dateModified": "2026-09-20", "author": {"@type": "Organization", "name": "Fawran Tools"}, "publisher": {"@type": "Organization", "name": "Fawran Tools", "logo": {"@type": "ImageObject", "url": "https://fawran.tools/favicon.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fawran.tools/en/blog/compress-images-without-losing-quality"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://fawran.tools/en/blog/"}, {"@type": "ListItem", "position": 2, "name": "How to compress your images without noticeable loss in quality", "item": "https://fawran.tools/en/blog/compress-images-without-losing-quality"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does image compression actually affect my site's ranking on Google?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, indirectly — page loading speed (related to image size) is an official ranking factor announced by Google within Core Web Vitals, especially the LCP metric which is often directly affected by the largest image on the page."}}, {"@type": "Question", "name": "What is the ideal quality percentage for compressing web images?", "acceptedAnswer": {"@type": "Answer", "text": "A ratio between 70% and 85% provides an excellent balance between size and visual quality for most images, and 100% quality is rarely needed for regular web images."}}, {"@type": "Question", "name": "Does compressing an image multiple times harm its quality cumulatively?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, specifically with lossy compression — each new compression operation on the previously compressed file adds more loss. It is always preferable to compress from the original uncompressed copy."}}, {"@type": "Question", "name": "Is there a difference between image compression and resizing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, compression reduces file size while maintaining the same dimensions (width and height), whereas resizing changes the actual dimensions of the image. Both are often used together to achieve the best result."}}]}</script>
 <link href="../../manifest.webmanifest" rel="manifest"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
-<link href="https://fawran.tools/blog/compress-images-without-losing-quality.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/compress-images-without-losing-quality.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/compress-images-without-losing-quality.html" hreflang="x-default" rel="alternate"/></head>
+<link href="https://fawran.tools/blog/compress-images-without-losing-quality" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/compress-images-without-losing-quality" hreflang="en" rel="alternate"/><link href="https://fawran.tools/blog/compress-images-without-losing-quality" hreflang="x-default" rel="alternate"/></head>
 <body>
 <header class="topbar">
 <div class="topbar-inner">
-<a class="brand" href="../index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<a class="brand" href="/en/"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
 <div class="nav-wrap">
 <nav class="nav">
-<a href="../index.html">Tools</a>
-<a class="active" href="index.html">Blog</a>
-<a href="../about.html">About</a>
-<a href="../contact.html">Contact</a>
+<a href="/en/">Tools</a>
+<a class="active" href="/en/blog/">Blog</a>
+<a href="/en/about">About</a>
+<a href="/en/contact">Contact</a>
 </nav>
 <button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
@@ -72,154 +73,99 @@
 <svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
 <svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
-<a class="lang-switch" href="../../blog/compress-images-without-losing-quality.html" title="عرض بالعربي">AR</a>
+<a class="lang-switch" href="/blog/compress-images-without-losing-quality" title="Read in Arabic">AR</a>
 </div>
 </div>
 </header>
 <div class="wrap">
 <div class="page-head">
-<div class="article-meta"><span class="tag">Image Tools</span><span>8 min read</span></div>
-<h1>How to Compress Images Without Noticeable Quality Loss</h1>
+<div class="article-meta"><span class="tag">Image tools</span><span>8 minutes read</span></div>
+<h1>How to compress your images without noticeable loss in quality</h1>
 </div>
-
 <div class="content-card">
-
-<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="320" rx="16" fill="#14131F"/>
-  <rect x="90" y="70" width="280" height="180" rx="10" fill="#1A1826"/>
-  <rect x="120" y="100" width="220" height="120" rx="6" fill="#4F3FF0"/>
-  <text x="230" y="260" font-family="IBM Plex Mono, monospace" font-size="14" fill="#8B89A3" text-anchor="middle">4.2 MB</text>
-  <path d="M400 160 L470 160 M440 135 L470 160 L440 185" stroke="#F0A93B" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="510" y="90" width="200" height="160" rx="10" fill="#1A1826"/>
-  <rect x="535" y="112" width="150" height="116" rx="6" fill="#4F3FF0"/>
-  <text x="610" y="270" font-family="IBM Plex Mono, monospace" font-size="14" fill="#2F7D53" text-anchor="middle">480 KB</text>
+<svg class="article-svg" viewbox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#14131F" height="320" rx="16" width="800"></rect>
+<rect fill="#1A1826" height="180" rx="10" width="280" x="90" y="70"></rect>
+<rect fill="#4F3FF0" height="120" rx="6" width="220" x="120" y="100"></rect>
+<text fill="#8B89A3" font-family="IBM Plex Mono, monospace" font-size="14" text-anchor="middle" x="230" y="260">4.2 MB</text>
+<path d="M400 160 L470 160 M440 135 L470 160 L440 185" fill="none" stroke="#F0A93B" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path>
+<rect fill="#1A1826" height="160" rx="10" width="200" x="510" y="90"></rect>
+<rect fill="#4F3FF0" height="116" rx="6" width="150" x="535" y="112"></rect>
+<text fill="#2F7D53" font-family="IBM Plex Mono, monospace" font-size="14" text-anchor="middle" x="610" y="270">480 KB</text>
 </svg>
-
 <p>
-  "Image compression" gets used as a general catch-all term, but there are actually two completely
-  different types of compression, and understanding the difference will save you a lot of trial
-  and error.
+  "Image compression" is a term generally used, but in reality, there are two completely different types of compression, and understanding the difference between them can save you a lot of trial and error.
 </p>
-
 <div class="toc">
-  <h2>On this page</h2>
-  <ul>
-    <li><a href="#why">Why image size actually matters</a></li>
-    <li><a href="#lossless">Type one: lossless compression</a></li>
-    <li><a href="#lossy">Type two: lossy compression</a></li>
-    <li><a href="#choose">Which one should you choose?</a></li>
-    <li><a href="#steps">Practical steps to compress your images</a></li>
-    <li><a href="#mistakes">Common mistakes when compressing images</a></li>
-    <li><a href="#faq">Frequently asked questions</a></li>
-  </ul>
+<h2>Article content:</h2>
+<ul>
+<li><a href="#why">Why the image size actually matters?</a></li>
+<li><a href="#lossless">Type one: Lossless compression</a></li>
+<li><a href="#lossy">The second type: Lossy compression</a></li>
+<li><a href="#choose">Which one do you choose?</a></li>
+<li><a href="#steps">Practical steps to compress your images</a></li>
+<li><a href="#mistakes">Common mistakes when compressing images</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+</ul>
 </div>
-
-<h2 id="why">Why image size actually matters</h2>
+<h2 id="why">Why the image size actually matters?</h2>
 <p>
-  Images are usually the single biggest contributor to a page's total weight — sometimes making up
-  more than 60% of a page's overall size. That means one oversized image alone can noticeably slow
-  down your page load, and that's not just a poor user experience — it's also an official Google
-  ranking factor within Core Web Vitals, especially the LCP metric (Largest Contentful Paint), which
-  is very often an image. In other words, compressing your images isn't a technical nicety — it's a
-  fundamental step for both SEO and visitor experience.
+  Images are often the largest component of any webpage's weight — sometimes constituting more than 60% of the total page size. This means that a single large image can noticeably slow down your page load time, which is not only a poor user experience but also an official ranking factor in Google within the Core Web Vitals metrics — especially the LCP indicator (Largest Contentful Paint), which is often an image. Therefore, compressing your images is not a technical luxury; it is an essential step for both search engine optimization (SEO) and visitor experience.
 </p>
-
-<h2 id="lossless">Type one: lossless compression</h2>
+<h2 id="lossless">Type one: Lossless compression</h2>
 <p>
-  This type reorganizes an image's data more efficiently without discarding any visual detail — the
-  resulting image is pixel-for-pixel identical to the original, just in a smaller file. The PNG
-  format uses this type of compression by its very nature, which is why there's much less room to
-  shrink it further.
+  This type rearranges image data more efficiently without deleting any visual detail — the resulting image is pixel-perfect identical to the original, but the file size is smaller. The PNG format naturally uses this type of compression, so the margin available for further reduction is very limited.
 </p>
-
-<h2 id="lossy">Type two: lossy compression</h2>
+<h2 id="lossy">The second type: Lossy compression</h2>
 <p>
-  This type discards extremely fine visual details that are hard for the human eye to notice, in
-  exchange for a much larger reduction in file size. This is the foundation of the JPG format, and
-  it's why any compression tool has a "quality" slider — the lower the percentage, the more detail
-  gets discarded and the smaller the file gets.
+  This type removes very fine visual details that the human eye does not easily notice, in exchange for a significant reduction in file size. This is the basis of the JPG format, which is why there is a "quality ratio" in any compression tool — the lower the ratio, the more details are removed and the file size decreases.
 </p>
 <blockquote>
-  Rule of thumb: a quality setting between 70% and 85% gives an excellent balance between size and
-  visual quality for most images — you rarely need 100% quality for ordinary web images.
+  A practical rule: quality between 70% and 85% provides an excellent balance between size and visual quality for most images — rarely will you need 100% quality for regular web images.
 </blockquote>
-
-<h2 id="choose">Which one should you choose?</h2>
+<h2 id="choose">Which one do you choose?</h2>
 <p>
-  If the image contains text or sharp edges and fine lines (like a screenshot or a chart), lossless
-  compression or the PNG format is usually the better fit. Ordinary photographic images — products,
-  people, landscapes — can handle medium-to-high lossy compression with no noticeable difference to
-  the naked eye. For the best possible result, the modern WebP format combines the strengths of both
-  and delivers a smaller file than JPG at roughly the same quality.
+  If the image contains text, sharp edges, and fine lines (like a screenshot or chart), lossless compression or PNG format is usually the best option. As for regular photographs — products, people, landscapes — they can withstand lossy compression at medium to high quality without any noticeable difference to the naked eye. If you want the best possible result, the modern WebP format combines the advantages of both and gives a smaller size than JPG with almost the same quality.
 </p>
-
 <h2 id="steps">Practical steps to compress your images</h2>
 <p>
-  Always start around 80% quality, and compare the resulting image side by side with the original
-  on the same screen. If the difference isn't noticeable, try dropping to 70% or lower for extra
-  savings. If you start noticing artifacts around edges or a clear loss of detail, go back up to a
-  higher quality setting.
+  Always start with a quality of around 80% and compare the resulting image with the original on the same screen. If the difference is unnoticeable, try lowering it to 70% or less for maximum saving. If you start noticing artifacts around the edges or a clear loss of detail, return to the higher quality.
 </p>
-
 <h2 id="mistakes">Common mistakes when compressing images</h2>
 <p>
-  The most common mistake is compressing the same image more than once — every lossy compression
-  pass adds new loss on top of the last one, so after a few rounds the result is visibly poor quality
-  even if each individual step seemed reasonable on its own. The fix: always keep the original,
-  uncompressed file, and compress directly from it every time instead of compressing an already
-  compressed copy. Another common mistake is applying the same compression ratio to every image
-  without a visual review — different images tolerate different compression levels depending on
-  their content (lots of fine detail tolerates less, flat colors tolerate more).
+  The most common mistake is compressing the same image more than once — each lossy compression adds a new loss on top of the previous one, so the result after several times is noticeably poor quality even if each step individually was reasonable. The solution: always keep the original uncompressed version, and compress directly from it each time instead of compressing over a previously compressed version. Another common mistake: using the same compression ratio for all images without visual review — different images tolerate different compression ratios depending on their content (images with lots of details tolerate less, flat colors tolerate more).
 </p>
-
 <div class="tool-cta">
 <div>
 <div class="txt">Try the image compressor now</div>
-<div class="sub">Keeps the same original image format (JPG stays JPG) while reducing file size</div>
+<div class="sub">Keep the same original image format (JPG remains JPG) while reducing the size.</div>
 </div>
-<a class="btn btn-primary" href="../../tools/image-compressor.html">
+<a class="btn btn-primary" href="/en/tools/image-compressor">
 <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 14h6v6"></path><path d="M20 10h-6V4"></path><path d="M14 10l7-7"></path><path d="M3 21l7-7"></path></svg>
     Open the tool
   </a>
 </div>
-
-<h2 id="faq">Frequently asked questions</h2>
+<h2 id="faq">Frequently Asked Questions</h2>
 <div class="faq-item">
-  <h3>Does image compression actually affect my Google ranking?</h3>
-  <p style="font-size:13.5px;">Yes, indirectly — page load speed is an official Google ranking factor within Core Web Vitals, especially the LCP metric, which is often directly affected by the largest image on the page.</p>
+<h3>Does image compression actually affect my site's ranking on Google?</h3>
+<p style="font-size:13.5px;">Yes, indirectly — page load speed is an official ranking factor in Google within Core Web Vitals, especially the LCP metric, which is often directly affected by the size of the largest image on the page.</p>
 </div>
 <div class="faq-item">
-  <h3>What's the ideal quality percentage for compressing web images?</h3>
-  <p style="font-size:13.5px;">A range between 70% and 85% gives an excellent balance between size and visual quality for most images, and you rarely need 100% quality.</p>
+<h3>What is the ideal quality percentage for compressing web images?</h3>
+<p style="font-size:13.5px;">A ratio between 70% and 85% gives an excellent balance between size and visual quality for most images, and 100% quality is rarely needed.</p>
 </div>
 <div class="faq-item">
-  <h3>Does compressing an image multiple times damage its quality cumulatively?</h3>
-  <p style="font-size:13.5px;">Yes, specifically with lossy compression — each new compression pass on an already-compressed file adds further loss. Always compress from the original.</p>
+<h3>Does compressing an image multiple times harm its quality cumulatively?</h3>
+<p style="font-size:13.5px;">Yes, particularly with lossy compression — each new compression of an already compressed file adds additional loss. It is always preferable to compress from the original version.</p>
 </div>
 <div class="faq-item">
-  <h3>Is there a difference between compressing an image and resizing it?</h3>
-  <p style="font-size:13.5px;">Yes, compression reduces file size while keeping the same dimensions, while resizing changes the actual dimensions. The two are often used together for the best result.</p>
+<h3>Is there a difference between image compression and resizing?</h3>
+<p style="font-size:13.5px;">Yes, compression reduces the file size while keeping the same dimensions, whereas resizing changes the actual dimensions of the image. Often both are used together for the best result.</p>
 </div>
-
-<h2>Conclusion</h2>
+<h2>Summary</h2>
 <p>
-  There's no single "correct" quality number that fits every image — but starting at 75-80% and
-  visually comparing the result is the fastest way to find the right balance for your own images,
-  keeping in mind that your site's speed and search results directly benefit from every kilobyte
-  you save.
+  There is no single “correct” number for quality that fits all images — but starting from 75-80% and comparing the result visually is the fastest way to find the optimal balance for your images, keeping in mind that your site speed and search results directly benefit from every kilobyte saved.
 </p>
-
-</div>
-</div>
-
-<div class="wrap">
-<div class="ad-slot ad-slot-leaderboard">
-<span class="ad-label">Advertisement</span>
-<div class="ad-slot-inner">
-<!-- Place your responsive AdSense ad unit code here -->
-<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-</div>
 </div>
 </div>
 <div class="wrap"><div class="share-widget"></div></div>
@@ -227,24 +173,24 @@
 <div class="footer-grid">
 <div>
 <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
-<p class="footer-desc">Free online tools for images, PDF files, text, and SEO — all running entirely in your browser without uploading your files to any server.</p>
+<p class="footer-desc">A free toolkit for images, PDFs, text, and SEO. Most file processing runs locally in your browser.</p>
 </div>
 <div class="footer-col">
 <h4>Website</h4>
-<a href="../index.html">Home</a><a href="../favorites.html">☆ Favorites</a>
-<a href="index.html">Blog</a>
-<a href="../about.html">About</a>
-<a href="../contact.html">Contact</a>
+<a href="/en/">Home</a><a href="/en/favorites">☆ Favorites</a>
+<a href="/en/blog/">Blog</a>
+<a href="/en/about">About</a>
+<a href="/en/contact">Contact</a>
 </div>
 <div class="footer-col">
 <h4>Legal</h4>
-<a href="../privacy.html">Privacy Policy</a>
-<a href="../terms.html">Terms of Use</a>
+<a href="/en/privacy">Privacy Policy</a>
+<a href="/en/terms">Terms of Use</a>
 </div>
 </div>
 <div class="footer-bottom">
-<span>© <span id="year"></span> Fawran Tools</span>
-<span>Built for practical everyday tasks.</span>
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Built for practical everyday web tasks.</span>
 </div>
 </footer>
 <script src="../../assets/main.js"></script><script src="../../assets/share-widget.js"></script>

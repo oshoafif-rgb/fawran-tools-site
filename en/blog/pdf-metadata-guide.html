@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 
 <html dir="ltr" lang="en">
-<head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
-
+<head><script data-consent-default="true">window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  analytics_storage:'denied',
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  personalization_storage:'denied',
+  functionality_storage:'granted',
+  security_storage:'granted',
+  wait_for_update:500
+});</script><script data-measurement-id="G-JSG9KGPK0S" defer="" src="../../assets/consent.js"></script>
 <meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>The Hidden Data in a PDF File That Can Reveal More Than You Think | Fawran Tools</title>
+<title>Hidden data in PDF files that can reveal more about you than you imagine | Fawran Tools</title>
 <meta content="A practical guide to understanding hidden metadata in PDF files, what it actually reveals, and how to remove it before sharing any sensitive file." name="description"/>
 <link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../favicon.svg" rel="apple-touch-icon"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
 <meta content="#4F3FF0" name="theme-color"/>
-<link href="https://fawran.tools/en/blog/pdf-metadata-guide.html" rel="canonical"/>
-
+<link href="https://fawran.tools/en/blog/pdf-metadata-guide" rel="canonical"/>
 <meta content="article" property="og:type"/>
-<meta content="https://fawran.tools/en/blog/pdf-metadata-guide.html" property="og:url"/>
-<meta content="The Hidden Data in a PDF File That Can Reveal More Than You Think | Fawran Tools" property="og:title"/>
-<meta content="A practical guide to understanding hidden PDF metadata and how to remove it." property="og:description"/>
+<meta content="https://fawran.tools/en/blog/pdf-metadata-guide" property="og:url"/>
+<meta content="Hidden data in PDF files that can reveal more about you than you imagine | Fawran Tools" property="og:title"/>
+<meta content="A practical guide to understanding hidden metadata in PDF files and how to remove it." property="og:description"/>
 <meta content="Fawran Tools" property="og:site_name"/>
 <meta content="en_US" property="og:locale"/>
 <meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="The Hidden Data in a PDF File That Can Reveal More Than You Think | Fawran Tools" name="twitter:title"/>
-<meta content="A practical guide to PDF metadata." name="twitter:description"/>
+<meta content="Hidden data in a PDF file that may reveal information about you | Fawran Tools" name="twitter:title"/>
+<meta content="A practical guide to understanding PDF metadata." name="twitter:description"/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+
+
+
 <link href="../../assets/style.css" rel="stylesheet"/>
 <style>
   .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
@@ -42,31 +49,25 @@
   .toc li{margin-bottom:6px;}
   .toc a{color:var(--indigo-deep);font-weight:700;}
   .size-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
-  .size-table th, .size-table td{padding:9px 12px;border:1px solid var(--line);text-align:left;}
+  .size-table th, .size-table td{padding:9px 12px;border:1px solid var(--line);text-align:right;}
   .size-table th{background:var(--surface-sunk);font-weight:800;}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"The Hidden Data in a PDF File That Can Reveal More Than You Think","description":"A practical guide to understanding hidden metadata in PDF files and how to remove it before sharing.","url":"https://fawran.tools/en/blog/pdf-metadata-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","inLanguage":"en","author":{"@type":"Organization","name":"Fawran Tools"},"publisher":{"@type":"Organization","name":"Fawran Tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/en/blog/pdf-metadata-guide.html"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://fawran.tools/en/blog/index.html"},{"@type":"ListItem","position":2,"name":"The Hidden Data in a PDF File That Can Reveal More Than You Think","item":"https://fawran.tools/en/blog/pdf-metadata-guide.html"}]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does removing metadata affect the file's content?","acceptedAnswer":{"@type":"Answer","text":"No, removing metadata only strips hidden information (author name, software used, etc.) and has zero effect on the text, images, or formatting visible in the file."}},{"@type":"Question","name":"How do I see the metadata in my own PDF?","acceptedAnswer":{"@type":"Answer","text":"In most PDF readers (like Adobe Reader), you can find it under 'Document Properties'. Dedicated tools display it more clearly and comprehensively."}},{"@type":"Question","name":"Do all PDF editing programs leave the same kind of data?","acceptedAnswer":{"@type":"Answer","text":"No, every program leaves a different fingerprint — some record the company name, some record the original file path on your device, and some keep a history of every edit made to the file."}},{"@type":"Question","name":"Do large companies actually care about scrubbing metadata?","acceptedAnswer":{"@type":"Answer","text":"Yes, this is a standard security practice at many companies and legal institutions before publishing any official document to the public, specifically to avoid accidentally leaking internal information."}}]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Hidden data in a PDF file that may reveal more about you than you imagine.", "description": "A practical guide to understanding hidden metadata in PDF files, and how to remove it before sharing.", "url": "https://fawran.tools/en/blog/pdf-metadata-guide", "datePublished": "2026-08-29", "dateModified": "2026-09-20", "author": {"@type": "Organization", "name": "Fawran Tools"}, "publisher": {"@type": "Organization", "name": "Fawran Tools", "logo": {"@type": "ImageObject", "url": "https://fawran.tools/favicon.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fawran.tools/en/blog/pdf-metadata-guide"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://fawran.tools/en/blog/"}, {"@type": "ListItem", "position": 2, "name": "Hidden data in a PDF file that may reveal more about you than you imagine.", "item": "https://fawran.tools/en/blog/pdf-metadata-guide"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does removing metadata affect the file content?", "acceptedAnswer": {"@type": "Answer", "text": "No, removing metadata only removes hidden information (author name, software used, etc.) and has no effect on the text, images, or visible formatting in the file."}}, {"@type": "Question", "name": "How can I see the metadata in my PDF file?", "acceptedAnswer": {"@type": "Answer", "text": "In most PDF readers (like Adobe Reader), you can access it from the 'Document Properties' menu. Specialized tools display it more clearly and comprehensively."}}, {"@type": "Question", "name": "Do all PDF editors leave the same type of data?", "acceptedAnswer": {"@type": "Answer", "text": "No, each program leaves a different footprint — some record the company name, some record the original file path on your device, and some keep a history of every change made to the file."}}, {"@type": "Question", "name": "Do big companies actually care about clearing metadata?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, this is a standard security measure in many companies and legal institutions before publishing any official document to the public, specifically to avoid accidentally leaking internal information."}}]}</script>
 <link href="../../manifest.webmanifest" rel="manifest"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
-<link href="https://fawran.tools/blog/pdf-metadata-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/pdf-metadata-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/pdf-metadata-guide.html" hreflang="x-default" rel="alternate"/></head>
+<link href="https://fawran.tools/blog/pdf-metadata-guide" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/pdf-metadata-guide" hreflang="en" rel="alternate"/><link href="https://fawran.tools/blog/pdf-metadata-guide" hreflang="x-default" rel="alternate"/></head>
 <body>
 <header class="topbar">
 <div class="topbar-inner">
-<a class="brand" href="../index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<a class="brand" href="/en/"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
 <div class="nav-wrap">
 <nav class="nav">
-<a href="../index.html">Tools</a>
-<a class="active" href="index.html">Blog</a>
-<a href="../about.html">About</a>
-<a href="../contact.html">Contact</a>
+<a href="/en/">Tools</a>
+<a class="active" href="/en/blog/">Blog</a>
+<a href="/en/about">About</a>
+<a href="/en/contact">Contact</a>
 </nav>
 <button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
@@ -75,136 +76,103 @@
 <svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
 <svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
-<a class="lang-switch" href="../../blog/pdf-metadata-guide.html" title="عرض بالعربي">AR</a>
+<a class="lang-switch" href="/blog/pdf-metadata-guide" title="Read in Arabic">AR</a>
 </div>
 </div>
 </header>
 <div class="wrap">
 <div class="page-head">
-<div class="article-meta"><span class="tag">PDF Tools</span><span>6 min read</span></div>
-<h1>The Hidden Data in a PDF File That Can Reveal More Than You Think</h1>
+<div class="article-meta"><span class="tag">PDF Tools</span><span>6 minutes reading</span></div>
+<h1>Hidden data in a PDF file that may reveal more about you than you imagine.</h1>
 </div>
-
 <div class="content-card">
-
-<svg class="article-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="320" rx="16" fill="#14131F"/>
-  <rect x="280" y="60" width="240" height="200" rx="10" fill="#1A1826"/>
-  <rect x="300" y="85" width="200" height="10" rx="3" fill="#332F4C"/>
-  <rect x="300" y="105" width="150" height="10" rx="3" fill="#332F4C"/>
-  <rect x="300" y="125" width="200" height="10" rx="3" fill="#332F4C"/>
-  <path d="M400 165 L400 195" stroke="#4F3FF0" stroke-width="3" stroke-dasharray="3 3"/>
-  <rect x="330" y="200" width="140" height="45" rx="8" fill="#B4232C" opacity="0.15" stroke="#B4232C" stroke-width="1.5"/>
-  <text x="400" y="227" font-family="IBM Plex Mono, monospace" font-size="11" fill="#B4232C" text-anchor="middle">Author: John</text>
+<svg class="article-svg" viewbox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#14131F" height="320" rx="16" width="800"></rect>
+<rect fill="#1A1826" height="200" rx="10" width="240" x="280" y="60"></rect>
+<rect fill="#332F4C" height="10" rx="3" width="200" x="300" y="85"></rect>
+<rect fill="#332F4C" height="10" rx="3" width="150" x="300" y="105"></rect>
+<rect fill="#332F4C" height="10" rx="3" width="200" x="300" y="125"></rect>
+<path d="M400 165 L400 195" stroke="#4F3FF0" stroke-dasharray="3 3" stroke-width="3"></path>
+<rect fill="#B4232C" height="45" opacity="0.15" rx="8" stroke="#B4232C" stroke-width="1.5" width="140" x="330" y="200"></rect>
+<text fill="#B4232C" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle" x="400" y="227">Author: Ahmed</text>
 </svg>
-
 <p>
-  Deleted your name from a PDF's content before sending it, and thought the file was now fully
-  anonymous? In reality, PDF files retain hidden data about the file's author and the software
-  used, even when the visible text contains no name at all.
+  You deleted your name from the content of a PDF file before sending it, and you thought the file became completely anonymous? In fact, PDF files retain hidden data about the file author and the program used, even if the visible text contains no name.
 </p>
-
 <div class="toc">
-  <h2>On this page</h2>
-  <ul>
-    <li><a href="#what">What is metadata in the first place?</a></li>
-    <li><a href="#reveals">What can it actually reveal?</a></li>
-    <li><a href="#why-matters">Why does this matter before sharing any file?</a></li>
-    <li><a href="#usecases">Cases where you must remove it</a></li>
-    <li><a href="#howto">How to remove metadata easily</a></li>
-    <li><a href="#faq">Frequently asked questions</a></li>
-  </ul>
+<h2>Article content:</h2>
+<ul>
+<li><a href="#what">What is metadata in the first place?</a></li>
+<li><a href="#reveals">What can it actually reveal?</a></li>
+<li><a href="#why-matters">Why Is This Important Before Sharing Any File?</a></li>
+<li><a href="#usecases">Cases when data should be removed</a></li>
+<li><a href="#howto">How to remove metadata easily?</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+</ul>
 </div>
-
 <h2 id="what">What is metadata in the first place?</h2>
 <p>
-  Every PDF file carries hidden information not visible in the page content itself, called
-  metadata. This is recorded automatically by the program that created the file (Word, Adobe, or
-  others), usually without the user noticing.
+  Every PDF file carries hidden information that is not visible in the content of the pages themselves, called metadata. This is recorded automatically by the program that created the file (Word, Adobe, or others), usually without the user noticing.
 </p>
-
 <h2 id="reveals">What can it actually reveal?</h2>
 <table class="size-table">
-  <tr><th>Data type</th><th>Example</th></tr>
-  <tr><td>Author name</td><td>The device's user account name</td></tr>
-  <tr><td>Software used</td><td>Microsoft Word 2021, Adobe Acrobat</td></tr>
-  <tr><td>Creation and edit dates</td><td>Precise timestamp of each operation</td></tr>
-  <tr><td>Company name</td><td>If registered in the software's settings</td></tr>
+<tr><th>Data type:</th><th>Example</th></tr>
+<tr><td>Author Name</td><td>User account name on the device</td></tr>
+<tr><td>The program used</td><td>Microsoft Word 2021, Adobe Acrobat</td></tr>
+<tr><td>Creation and modification date</td><td>The precise timestamp for each transaction</td></tr>
+<tr><td>Company Name</td><td>If registered in the user's program settings</td></tr>
 </table>
-
-<h2 id="why-matters">Why does this matter before sharing any file?</h2>
+<h2 id="why-matters">Why Is This Important Before Sharing Any File?</h2>
 <p>
-  If you're sharing an employment contract, an internal report, or any sensitive document with an
-  external party, metadata can reveal information you intended to hide — like a specific internal
-  employee's name, a confidential partner company's name, or even an edit history showing who
-  actually participated in drafting the document.
+  If you share a contract, internal report, or any sensitive document with an external party, metadata can reveal information meant to be hidden — like a specific internal employee's name, a secret partner company’s name, or even a sequence of edits showing who actually contributed to drafting the document.
 </p>
-
-<h2 id="usecases">Cases where you must remove it</h2>
+<h2 id="usecases">Cases when data should be removed</h2>
 <ul>
-  <li><strong>Sharing legal documents:</strong> hiding the actual editor's identity or edit history.</li>
-  <li><strong>Publishing public reports:</strong> removing any reference to internal names or specific company departments.</li>
-  <li><strong>Sending a resume:</strong> making sure there's no data left over from an old version or previous employer.</li>
-  <li><strong>Publishing research or academic papers:</strong> hiding details about the software or device used in preparation.</li>
+<li><strong>Sharing legal documents:</strong> Hide the actual editor’s identity or the edit sequence.</li>
+<li><strong>Publishing general reports:</strong> Remove any reference to internal names or specific company departments.</li>
+<li><strong>Send a resume:</strong> Ensure there is no data from an old version or previous employer.</li>
+<li><strong>Publishing research or academic papers:</strong> Hide program or device details used in the setup.</li>
 </ul>
-
-<h2 id="howto">How to remove metadata easily</h2>
+<h2 id="howto">How to remove metadata easily?</h2>
 <p>
-  Using the <a href="../../tools/pdf-metadata-remover.html" style="color:var(--indigo-deep);font-weight:700;">PDF Metadata Remover</a> on Fawran Tools:
+  Using <a href="/en/tools/pdf-metadata-remover" style="color:var(--indigo-deep);font-weight:700;">PDF data removal tool</a> on Fawran Tools:
 </p>
 <ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
-  <li>Upload a PDF file from your device.</li>
-  <li>Click the remove button — the tool strips common metadata automatically.</li>
-  <li>Download the clean file, ready to share safely.</li>
+<li>Upload a PDF file from your device.</li>
+<li>Click the remove button — the tool automatically removes common metadata.</li>
+<li>Download the clean file, ready to share safely.</li>
 </ol>
-
 <div class="tool-cta">
 <div>
-<div class="txt">Try the PDF Metadata Remover now</div>
-<div class="sub">Instant metadata removal, entirely local in your browser</div>
+<div class="txt">Try the PDF data removal tool now</div>
+<div class="sub">Immediate removal of metadata, entirely locally within your browser.</div>
 </div>
-<a class="btn btn-primary" href="../../tools/pdf-metadata-remover.html">
+<a class="btn btn-primary" href="/en/tools/pdf-metadata-remover">
 <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path></svg>
     Open the tool
   </a>
 </div>
-
-<h2 id="faq">Frequently asked questions</h2>
+<h2 id="faq">Frequently Asked Questions</h2>
 <div class="faq-item">
-  <h3>Does removing metadata affect the file's content?</h3>
-  <p style="font-size:13.5px;">No, removal only strips hidden information and has zero effect on the visible text or images.</p>
+<h3>Does removing metadata affect the file content?</h3>
+<p style="font-size:13.5px;">No, removal only deletes hidden information and has no effect on the visible text or images in the file.</p>
 </div>
 <div class="faq-item">
-  <h3>How do I see the metadata in my own PDF?</h3>
-  <p style="font-size:13.5px;">In most PDF readers, you can find it under "Document Properties."</p>
+<h3>How can I see the metadata in my PDF file?</h3>
+<p style="font-size:13.5px;">In most PDF readers, you can access it from the "Document Properties" menu.</p>
 </div>
 <div class="faq-item">
-  <h3>Do all PDF editing programs leave the same kind of data?</h3>
-  <p style="font-size:13.5px;">No, every program leaves a different fingerprint — some record the company name, some the original file path.</p>
+<h3>Do all PDF editors leave the same type of data?</h3>
+<p style="font-size:13.5px;">No, each program leaves a different footprint — some record the company name, and some the original file path.</p>
 </div>
 <div class="faq-item">
-  <h3>Do large companies actually care about scrubbing metadata?</h3>
-  <p style="font-size:13.5px;">Yes, a standard security practice at many companies before publishing any official document publicly.</p>
+<h3>Do big companies actually care about clearing metadata?</h3>
+<p style="font-size:13.5px;">Yes, a standard security procedure in many companies before publishing any official document to the public.</p>
 </div>
-
-<h2>Conclusion</h2>
+<h2>Summary</h2>
 <p>
-  Hidden PDF metadata is an often-forgotten part of sharing files safely — one simple step before
-  sending any sensitive file protects you from leaking information you thought was already
-  completely removed.
+  Hidden metadata in PDF files is often a forgotten part of secure sharing — one simple step before sending any sensitive file protects you from leaking information you were sure was completely removed from the file.
 </p>
-
-</div>
-</div>
-
-<div class="wrap">
-<div class="ad-slot ad-slot-leaderboard">
-<span class="ad-label">Advertisement</span>
-<div class="ad-slot-inner">
-<!-- Place your responsive AdSense ad unit code here -->
-<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-</div>
 </div>
 </div>
 <div class="wrap"><div class="share-widget"></div></div>
@@ -212,24 +180,24 @@
 <div class="footer-grid">
 <div>
 <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
-<p class="footer-desc">Free online tools for images, PDF files, text, and SEO — all running entirely in your browser without uploading your files to any server.</p>
+<p class="footer-desc">A free toolkit for images, PDFs, text, and SEO. Most file processing runs locally in your browser.</p>
 </div>
 <div class="footer-col">
 <h4>Website</h4>
-<a href="../index.html">Home</a><a href="../favorites.html">☆ Favorites</a>
-<a href="index.html">Blog</a>
-<a href="../about.html">About</a>
-<a href="../contact.html">Contact</a>
+<a href="/en/">Home</a><a href="/en/favorites">☆ Favorites</a>
+<a href="/en/blog/">Blog</a>
+<a href="/en/about">About</a>
+<a href="/en/contact">Contact</a>
 </div>
 <div class="footer-col">
 <h4>Legal</h4>
-<a href="../privacy.html">Privacy Policy</a>
-<a href="../terms.html">Terms of Use</a>
+<a href="/en/privacy">Privacy Policy</a>
+<a href="/en/terms">Terms of Use</a>
 </div>
 </div>
 <div class="footer-bottom">
-<span>© <span id="year"></span> Fawran Tools</span>
-<span>Built for practical everyday tasks.</span>
+<span>© <span id="year"></span> Fawran Tools — All rights reserved</span>
+<span>Built for practical everyday web tasks.</span>
 </div>
 </footer>
 <script src="../../assets/main.js"></script><script src="../../assets/share-widget.js"></script>

@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const base = path.includes('/tools/') ? '' : 'tools/';
     dd.innerHTML = matches.map((t,i)=>`
-      <a class="search-result" href="${base}${t.slug}.html" role="option" data-idx="${i}">
+      <a class="search-result" href="${base}${t.slug}" role="option" data-idx="${i}">
         <span class="sr-cat">${escHtml(catLabel(t.cat))}</span>
         <span class="sr-body"><span class="sr-title">${escHtml(t.title)}</span><span class="sr-desc">${escHtml(t.desc)}</span></span>
       </a>`).join('');
@@ -110,19 +110,94 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click',e=>{ if(searchResults && !searchInput.contains(e.target) && !searchResults.contains(e.target)) closeDropdown(); });
   }
 
-  // Favorites + recent tools. Works without login and stays local.
+  // Favorites + recent tools. Works without login and stays local — now visible on every tool card and every tool page.
   const store=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
   const load=(k,d=[])=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(d))}catch(e){return d}};
-  const toolKey = path.match(/\/tools\/([^/]+)\.html$/)?.[1];
+  const extractSlug = href => {
+    if(!href) return null;
+    const m = href.match(/\/tools\/([a-z0-9\-]+)(?:\.html)?\/?(?:[?#].*)?$/);
+    return m ? m[1] : null;
+  };
+  const toolKey = extractSlug(path);
+  const favState = new Set(load('fawran-favorites'));
+  const updateFavButtons = (slug, active) => {
+    document.querySelectorAll(`[data-fav-slug=\"${slug}\"]`).forEach(btn=>{
+      btn.setAttribute('aria-pressed', String(active));
+      btn.classList.toggle('is-fav', active);
+      const icon = btn.querySelector('.fav-icon');
+      if(icon) icon.textContent = active ? '★' : '☆';
+      const label = btn.querySelector('.fav-label');
+      if(label) label.textContent = active ? labels.favOn : labels.fav;
+      btn.title = active ? labels.favOn : labels.fav;
+    });
+  };
+  const toggleFav = (slug) => {
+    let fav = load('fawran-favorites');
+    const idx = fav.indexOf(slug);
+    const willBeActive = idx < 0;
+    if(idx>=0) fav.splice(idx,1); else fav.push(slug);
+    store('fawran-favorites', fav);
+    favState.clear(); fav.forEach(s=>favState.add(s));
+    updateFavButtons(slug, willBeActive);
+    return willBeActive;
+  };
+
+  // Recent tracking for tool pages
   if(toolKey){
     let recent=load('fawran-recent'); recent=[toolKey,...recent.filter(x=>x!==toolKey)].slice(0,12); store('fawran-recent',recent);
-    const head=$('h1'); if(head){
-      const b=document.createElement('button'); b.type='button'; b.className='favorite-tool-btn';
-      const fav=load('fawran-favorites'); const active=fav.includes(toolKey); b.setAttribute('aria-pressed',String(active)); b.textContent=(active?'★ ':'☆ ')+(active?labels.favOn:labels.fav);
-      b.addEventListener('click',()=>{let f=load('fawran-favorites'); const i=f.indexOf(toolKey); if(i>=0)f.splice(i,1);else f.push(toolKey);store('fawran-favorites',f); const on=f.includes(toolKey);b.setAttribute('aria-pressed',String(on));b.textContent=(on?'★ ':'☆ ')+(on?labels.favOn:labels.fav);});
+  }
+
+  // 1) Tool page: prominent favorite button after H1 + also in professional toolbar
+  if(toolKey){
+    const head=$('h1');
+    if(head && !document.querySelector('.favorite-tool-btn[data-fav-slug]')){
+      const favActive = favState.has(toolKey);
+      const b=document.createElement('button');
+      b.type='button';
+      b.className='favorite-tool-btn'+(favActive?' is-fav':'');
+      b.dataset.favSlug = toolKey;
+      b.setAttribute('aria-pressed', String(favActive));
+      b.innerHTML=`<span class=\"fav-icon\">${favActive?'★':'☆'}</span><span class=\"fav-label\">${favActive?labels.favOn:labels.fav}</span>`;
+      b.addEventListener('click',()=>{ const on = toggleFav(toolKey); /* live region */ const live = document.querySelector('[aria-label=\"Tool status messages\"], [aria-label=\"رسائل حالة الأداة\"]'); if(live) live.textContent = on ? (isEn ? 'Added to favorites' : 'تمت الإضافة للمفضلة') : (isEn ? 'Removed from favorites' : 'تمت الإزالة من المفضلة'); });
       head.parentNode.insertBefore(b,head.nextSibling);
     }
+    // If professional toolbar exists, also add favorite there
+    const proToolbar = document.querySelector('.tool-pro-toolbar');
+    if(proToolbar && !proToolbar.querySelector('[data-action=\"fav\"]')){
+      const favActive = favState.has(toolKey);
+      const favBtn = document.createElement('button');
+      favBtn.type='button';
+      favBtn.className='tool-pro-action'+(favActive?' is-fav':'');
+      favBtn.dataset.action='fav';
+      favBtn.dataset.favSlug=toolKey;
+      favBtn.setAttribute('aria-pressed', String(favActive));
+      favBtn.innerHTML=`<span class=\"fav-icon\">${favActive?'★':'☆'}</span> <span class=\"fav-label\">${isEn ? 'Favorite' : 'المفضلة'}</span>`;
+      favBtn.addEventListener('click', ()=> toggleFav(toolKey));
+      proToolbar.appendChild(favBtn);
+    }
   }
+
+  // 2) Every tool card on home / hub / favorites pages gets a star
+  const toolCards = $$('.tool-card[href*=\"/tools/\"]');
+  toolCards.forEach(card=>{
+    if(card.querySelector('.card-fav-btn')) return;
+    const slug = extractSlug(card.getAttribute('href')||'');
+    if(!slug) return;
+    card.style.position='relative';
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.className='card-fav-btn'+(favState.has(slug)?' is-fav':'');
+    btn.dataset.favSlug=slug;
+    btn.setAttribute('aria-pressed', String(favState.has(slug)));
+    btn.setAttribute('aria-label', favState.has(slug) ? labels.favOn : labels.fav);
+    btn.title = favState.has(slug) ? labels.favOn : labels.fav;
+    btn.innerHTML=`<span class=\"fav-icon\">${favState.has(slug)?'★':'☆'}</span>`;
+    btn.addEventListener('click', e=>{
+      e.preventDefault(); e.stopPropagation();
+      toggleFav(slug);
+    });
+    card.appendChild(btn);
+  });
 
   // Copy buttons: announce success accessibly.
   document.addEventListener('click',e=>{
@@ -147,13 +222,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // PWA
   if('serviceWorker' in navigator && location.protocol!=='file:') navigator.serviceWorker.register('/sw.js').catch(()=>{});
 
-  // Adblock notice is kept non-blocking and uses textContent to avoid injection.
-  const bait=document.createElement('div'); bait.className='adsbox ad-banner ads ad-placement adsbygoogle'; bait.style.cssText='position:absolute;top:-9999px;left:-9999px;width:1px;height:1px;'; document.body.appendChild(bait);
-  const runAdblockCheck=()=>{const blocked=bait.offsetParent===null||bait.offsetHeight===0||getComputedStyle(bait).display==='none';bait.remove(); if(blocked&&!sessionStorage.getItem('fawran-adblock-dismissed')){
-    const banner=document.createElement('div');banner.className='adblock-banner';
-    const txt=isEn?'We noticed an ad blocker. Fawran is free and ads help cover operating costs.':'لاحظنا أنك تستخدم مانع إعلانات. فورا مجاني والإعلانات تساعدنا على تغطية تكاليف التشغيل.';
-    const span=document.createElement('span');span.className='txt';span.textContent=txt;const close=document.createElement('button');close.className='close-btn';close.type='button';close.setAttribute('aria-label',isEn?'Close':'إغلاق');close.textContent='×';banner.append(span,close); document.body.appendChild(banner); requestAnimationFrame(()=>banner.classList.add('show')); banner.querySelector('.close-btn').onclick=()=>{banner.classList.remove('show');sessionStorage.setItem('fawran-adblock-dismissed','1');setTimeout(()=>banner.remove(),400)};
-  }};
-  if('requestIdleCallback' in window) requestIdleCallback(runAdblockCheck,{timeout:1800});
-  else setTimeout(runAdblockCheck,1200);
 });
